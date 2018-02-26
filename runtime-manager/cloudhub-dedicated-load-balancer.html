@@ -1201,14 +1201,14 @@
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>This is an optional addition to your Anypoint infrastructure that is not included by default in all Anypoint Platform plans. To enable it, you must first own an Anypoint <a href="/runtime-manager/virtual-private-cloud">Virtual Private Cloud</a>. You can associate multiple environments to the same VPC, meaning that you can use the same dedicated load balancer for your different environments.</p> 
+        <p>This is an optional addition to your Anypoint infrastructure that is not included by default in all Anypoint Platform plans. Prior to a Dedicated Load Balancer’s creation, you must first have an Anypoint <a href="/runtime-manager/virtual-private-cloud">Virtual Private Cloud</a> created for your organization. You can associate multiple environments to the same VPC, meaning that you can use the same dedicated load balancer for your different environments.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>Although this feature will eventually be built into the Runtime Manager UI, currently it’s only available as a service that can be used via the <a href="/runtime-manager/anypoint-platform-cli">Anypoint Platform Command Line Interface</a> or the <a href="/runtime-manager/runtime-manager-api">Cloudhub API</a>.<br> Check the <a href="#creating-and-configuring-a-dedicated-load-balancer">Creating and Configuring a Dedicated Load Balancer</a> section for more information.</p> 
+   <p>Check the <a href="#creating-and-configuring-a-dedicated-load-balancer">Creating and Configuring a Dedicated Load Balancer</a> section for more information.</p> 
   </div> 
  </div> 
 </div> 
@@ -2001,12 +2001,13 @@ AES128-SHA</pre>
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>There are two ways of creating and configurin a dedicated load balancer for your VPC:</p> 
+   <p>There are three ways of creating and configurin a dedicated load balancer for your VPC:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Using the <a href="/runtime-manager/anypoint-platform-cli#cloudhub-load-balancer-create">cloudhub load-balancer create</a> command from the <strong>Anypoint Platform Command Line Interface</strong></p> </li> 
     <li> <p>Using the <a href="/runtime-manager/runtime-manager-api">Cloudhub API</a> through the endpoints <code>anypoint.mulesoft.com/cloudhub/api/organizations/{orgid}/loadbalancers</code> and <code>anypoint.mulesoft.com/cloudhub/api/organizations/{orgid}/vpcs</code>.</p> </li> 
+    <li> <p>Using <a href="https://docs.mulesoft.com/runtime-manager/lb-create-arm">Runtime Manager</a> from the <strong>Anypoint Platform UI</strong></p> </li> 
    </ol> 
   </div> 
   <div class="admonitionblock note"> 
