@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/runtime-manager/alerts-on-runtime-manager" />
-  <meta name="description" content="You can set up Alerts that trigger the sending of emails whenever certain events related to your application or servers occur. This mechanism works..." />
+  <meta name="description" content="This topic describes how to configure alerts in Runtime Manager. You can set up alerts that send an email notification when certain events occur. T..." />
   <meta class="swiftype" name="title" data-type="string" content="About Configuring Alerts using Runtime Manager" />
 </head>
 <body>
@@ -1156,7 +1156,7 @@
 <li>
 <i></i>
 <a href="/release-notes/runtime-manager-release-notes">Runtime Manager Release Notes</a><ul>
-<li><i></i><a href="/release-notes/runtime-manager-2.7.0-release-notes">Runtime Manager 2.7.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.6.1-release-notes">Runtime Manager 2.6.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.6.0-release-notes">Runtime Manager 2.6.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.5.0-release-notes">Runtime Manager 2.5.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.4.3-release-notes">Runtime Manager 2.4.3 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.4.0-release-notes">Runtime Manager 2.4.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.3.1-release-notes">Runtime Manager 2.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.3.0-release-notes">Runtime Manager 2.3.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.2.0-release-notes">Runtime Manager 2.2.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.1.0-release-notes">Runtime Manager 2.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.0-release-notes">Runtime Manager 2.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.5.1-release-notes">Runtime Manager 1.5.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.5.0-release-notes">Runtime Manager 1.5.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.4.1-release-notes">Runtime Manager 1.4.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.4.0-release-notes">Runtime Manager 1.4.0 Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-runtime-manager-1.3.1-release-notes">Runtime Manager 1.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-runtime-manager-1.3-release-notes">Runtime Manager 1.3 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.2.0-release-notes">Runtime Manager 1.2</a></li></ul></li>
+<li><i></i><a href="/release-notes/runtime-manager-2.8.1-release-notes">Runtime Manager 2.8.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.7.0-release-notes">Runtime Manager 2.7.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.6.1-release-notes">Runtime Manager 2.6.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.6.0-release-notes">Runtime Manager 2.6.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.5.0-release-notes">Runtime Manager 2.5.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.4.3-release-notes">Runtime Manager 2.4.3 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.4.0-release-notes">Runtime Manager 2.4.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.3.1-release-notes">Runtime Manager 2.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.3.0-release-notes">Runtime Manager 2.3.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.2.0-release-notes">Runtime Manager 2.2.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.1.0-release-notes">Runtime Manager 2.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-2.0-release-notes">Runtime Manager 2.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.5.1-release-notes">Runtime Manager 1.5.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.5.0-release-notes">Runtime Manager 1.5.0 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.4.1-release-notes">Runtime Manager 1.4.1 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.4.0-release-notes">Runtime Manager 1.4.0 Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-runtime-manager-1.3.1-release-notes">Runtime Manager 1.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-runtime-manager-1.3-release-notes">Runtime Manager 1.3 Release Notes</a></li><li><i></i><a href="/release-notes/runtime-manager-1.2.0-release-notes">Runtime Manager 1.2</a></li></ul></li>
 </ul></li>
 
         </ul>
@@ -1173,44 +1173,19 @@
       <h1>About Configuring Alerts using Runtime Manager</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Starting on May 14, 2016 all CloudHub Alerts created through the old alerts mechanism were migrated to a global view and are managed as explained in this document. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
- <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can set up <strong>Alerts</strong> that trigger the sending of <strong>emails</strong> whenever certain events related to your application or servers occur. This mechanism works in the same way for applications deployed through any of the <a href="/runtime-manager/deployment-strategies#deployment-scenarios">deployment scenarios</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Runtime Manager includes several out of the box <strong>standard alert</strong> types, for example:</p> 
+   <p>This topic describes how to configure alerts in Runtime Manager. You can set up alerts that send an email notification when certain events occur. These can be events for an application or server. Runtime Manager includes several out of the box <strong>standard alert</strong> types, for example:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>You exceed a certain number of events processed in a certain time period.</p> </li> 
+    <li> <p>An application exceeds a certain number of events processed within a certain time period.</p> </li> 
     <li> <p>A deployment completes with success or failure.</p> </li> 
     <li> <p>CloudHub encounters a problem with the worker on an application via the worker monitoring system.</p> </li> 
-    <li> <p>A <a href="/runtime-manager/managing-servers">server</a> is disconnected or deleted</p> </li> 
+    <li> <p>A server is disconnected or deleted</p> </li> 
    </ul> 
   </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> CloudHub also lets you create a custom alert for an application. Custom alerts are triggered by notifications that your application sends to the Runtime Manager console using the CloudHub Connector. See <a href="/runtime-manager/custom-application-alerts">Custom Application Alerts</a> for more information. Custom alerts are only available for apps deployed to CloudHub. You cannot configure an alert for an application that you deploy locally. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
+  <div class="paragraph"> 
+   <p>CloudHub also enables you to create a custom alert for an application. Custom alerts are triggered by notifications that your application sends to Runtime Manager console using the CloudHub Connector. See <a href="/runtime-manager/custom-application-alerts">Custom Application Alerts</a> for more information. Custom alerts are only available for applications deployed to CloudHub. You cannot configure an alert for an application deployed to a customer-hosted runtime.</p> 
   </div> 
  </div> 
 </div> 
@@ -1708,7 +1683,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#access-alerts">Access Alerts</a></li><li><a class="scroll-menu-link" href="#rate-limits-on-alerts">Rate Limits on Alerts</a></li><li><a class="scroll-menu-link" href="#create-an-alert">Create an Alert</a></li><li><a class="scroll-menu-link" href="#alert-conditions">Alert Conditions</a></li><li><a class="scroll-menu-link" href="#alert-properties">Alert Properties</a></li><li><a class="scroll-menu-link" href="#editing-existing-alerts">Editing Existing Alerts</a></li><li><a class="scroll-menu-link" href="#viewing-alert-history">Viewing Alert History</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#access-alerts">Access Alerts</a></li><li><a class="scroll-menu-link" href="#rate-limits-on-alerts">Rate Limits on Alerts</a></li><li><a class="scroll-menu-link" href="#create-an-alert">Create an Alert</a></li><li><a class="scroll-menu-link" href="#alert-conditions">Alert Conditions</a></li><li><a class="scroll-menu-link" href="#alert-properties">Alert Properties</a></li><li><a class="scroll-menu-link" href="#editing-existing-alerts">Editing Existing Alerts</a></li><li><a class="scroll-menu-link" href="#viewing-alert-history">Viewing Alert History</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
