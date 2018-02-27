@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/access-management/roles" />
-  <meta name="description" content="This page assumes that you have an Organization Administrator role in your organization, or that you have API Versions Owner permissions and want t..." />
+  <meta name="description" content="This topic describes how use roles to manage permissions within Anypoint Platform. This topic assumes that you have an Organization Administrator r..." />
   <meta class="swiftype" name="title" data-type="string" content="Roles" />
 </head>
 <body>
@@ -1171,22 +1171,41 @@
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Access Management</a>/<a href="roles" class="breadcrumb-active-link">Roles</a></div>
       <h1>Roles</h1>
-      <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+      <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This page assumes that you have an Organization Administrator role in your organization, or that you have API Versions Owner permissions and want to manage user permissions for your API version.</p> 
+   <p>This topic describes how use roles to manage permissions within Anypoint Platform. This topic assumes that you have an Organization Administrator role in your organization or that you have API Versions Owner permissions and want to manage user permissions for an API version.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>A role is a set of pre-defined permissions for each product component within Anypoint Platform. Depending on the product, you can use pre-defined roles with standard permissions, or you can specify your own permissions for each role. You can assign individuals to a role, or you can assign a role to another role.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Anypoint Platform provides two types of roles:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>Default roles</strong>: roles that are created automatically when an organization or business group is created. These roles provide permissions and access to core functionality of Anypoint Platform. You can modify default roles by assigning users or other roles. However, you cannot delete a default role.</p> </li> 
+    <li> <p><strong>Custom roles</strong>: roles that a user can create, customize, and delete. You can assign users or roles to a custom role. You can also associate a custom role to a specific application. For example, you can create a custom role called Application Designer and assign that role to the Design Center application. This enables users assigned the Application Designer role to access the Design Center application.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To access the Roles menu in Access Management, ensure that you are in the correct business group by clicking the menu next to your username on the top-right of the screen.</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="./_images/roles-a3471.png" alt="roles-a3471"> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
+ <h2 id="the-organization-owner"><a class="anchor" href="#the-organization-owner"></a>The Organization Owner</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A <em>role</em> within the Anypoint Platform is a set of pre-defined permissions for each different product within the Platform.<br> Depending on the product, you can find pre-defined roles with their standard permissions, or you can customize your own permissions for each role.<br></p> 
+   <p>The user who first signs up for the Anypoint Platform organization is known as the <strong>Organization Owner</strong>. This is not a role but an identifier for this single user, who inherits the Organization Administrator role by default.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>The <strong>Access Management</strong> section grants you a space in which you can create Roles for the products to which you own the appropriate entitlements.</p> 
+   <p>When the Organization Owner creates a business-group, it must assign a user as the owner of it. This user holds an Administrator role within that business group by default.</p> 
   </div> 
  </div> 
 </div> 
@@ -1194,326 +1213,170 @@
  <h2 id="default-roles"><a class="anchor" href="#default-roles"></a>Default Roles</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>These are the default roles available in every new organization and business group when first created:</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 27.2727%;"> 
-    <col style="width: 72.7273%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Role Name</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">API Creators</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Create and manage API versions in the Anypoint Platform for APIs.<br> Members of the API Creator role have the ability to add new APIs to the platform on the API administration page.<br> This role grants no permissions on Runtime Manager.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Portals Viewer</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Portal Viewers can see a list of the Private API Portals to which they have Portal Viewer permissions from the Developer Portal. They can also click to view those API Portals.<br> Note that the ability to view an API Portal does not automatically give a user access to the API. Also note that you cannot grant Portal Viewer permissions unless the API has an API Portal.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">API Versions Owner</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">An API Versions Owner can manage, delete, and deprecate any API in the organization.<br> They can edit the portal of any API in the organization.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Audit Log Viewers</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Users of this role have access to the UI for the Audit Log under Access Management.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Cloudhub Admin</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Access to all Runtime Manager functionality.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Cloudhub Developer</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Deprecated)</strong> Access to all Runtime Manager functionality, except organization and billing settings.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Cloudhub Support</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>(Deprecated)</strong> Read-only access to dashboards, notifications, alerts, logs, and their user settings.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Organization Administrators</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Editing access to all versions of all APIs, all registered applications, and all API Portals in the Anypoint Platform. Access to the Organization Administration page, where they can add and manage users and roles, view and edit organization details, access API Manager &gt; Client Applications, access the client ID and client secret for the organization, and customize the theme of the Developer Portal.<br> Members of the Organization Administrator role also inherit the role of <strong>API Creator</strong> by default.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Exchange Administrators</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Manage Exchange Portal customization, manage assets, manage reviews.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Exchange Contributors</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Contribute Exchange assets and manage versions.</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Exchange Viewers</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">View and consume Exchange assets.</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="paragraph"> 
-   <p>If you click on a role, you can edit it, change its name or description and add or remove users to it.</p> 
+   <p>Default roles are roles that are created by default within an Organization.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="organization-owner"><a class="anchor" href="#organization-owner"></a>Organization Owner</h3> 
+   <h3 id="to-edit-a-default-role"><a class="anchor" href="#to-edit-a-default-role"></a>To Edit a Default Role</h3> 
    <div class="paragraph"> 
-    <p>The user who first signs up for the Anypoint Platform organization is known as the <strong>Organization Owner</strong>. This is not a role but an identifier for this single user, who inherits the Organization Administrator role by default.</p> 
+    <p>You can edit a role by changing its name, description, or by adding users to the role.</p> 
    </div> 
-   <div class="paragraph"> 
-    <p>When the Organization Owner creates a business-group, it must assign a user as the owner of it. This user holds an Administrator role within that business group by default.</p> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Login to Access Management, then click Roles.</p> </li> 
+     <li> <p>Click the name of the default role you want to edit.</p> 
+      <div class="paragraph"> 
+       <p>Default roles do not have a radial button next to them.</p> 
+      </div> </li> 
+     <li> <p>To add a user to the role, enter their name in the search box.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> When editing Role names and/or descriptions, use the 'Enter' key to save changes. Clicking outside the text box cancels the edit without saving it. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="permission-scopes-for-default-roles"><a class="anchor" href="#permission-scopes-for-default-roles"></a>Permission Scopes for Default Roles</h3> 
+   <h3 id="list-of-default-roles-and-permission-scopes"><a class="anchor" href="#list-of-default-roles-and-permission-scopes"></a>List of Default Roles and Permission Scopes</h3> 
    <div class="paragraph"> 
-    <p>Each default Role in Anypoint Platform holds pre-defined permissions with a <em>scope of actions</em> that allow the user holding them specific actions within the platform:<br></p> 
+    <p>The following are the default roles that are automatically created as part of an organization. Each default Role in Anypoint Platform contains a set of pre-defined permissions and scope of actions that enable the user to perform specific actions within the platform.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 30%;"> 
-     <col style="width: 70%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Role</th> 
-      <th class="tableblock halign-left valign-top">Scope</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Organization Administrators</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Edit Developer portal theme settings</p> </li> 
-          <li> <p>Request API access terms &amp; conditions</p> </li> 
-          <li> <p>Edit Portal Terms and Conditions</p> </li> 
-          <li> <p>Set Custom Policies</p> </li> 
-          <li> <p>Manage access of third party applications to an API (Specific to the Organization Administrator of the Master Business Group)</p> </li> 
-          <li> <p>Edit users email address</p> </li> 
-          <li> <p>Grant <a href="/runtime-manager/virtual-private-cloud">VPC</a> and <a href="/runtime-manager/cloudhub-dedicated-load-balancer">CloudHub dedicated Load Balancer</a> permissions</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>API Creators</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Create/Import an API Version</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>API Versions Owner</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Manage any API Version in the organization</p> </li> 
-          <li> <p>Delete any API Version in the organization</p> </li> 
-          <li> <p>Deprecate any API Version in the organization</p> </li> 
-          <li> <p>Edit the Portal of any API version in the organization</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Portals Viewer</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>View API Portal</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Audit Log Viewers</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Visualize logs in the <a href="/access-management/audit-logging">Audit Logs</a> section.</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Cloudhub Admin</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Create Applications</p> </li> 
-          <li> <p>Delete Applications</p> </li> 
-          <li> <p>Download Applications</p> </li> 
-          <li> <p>Manage Alerts</p> </li> 
-          <li> <p>Manage Application Data</p> </li> 
-          <li> <p>Manage Queues</p> </li> 
-          <li> <p>Manage Schedules</p> </li> 
-          <li> <p>Manage Servers</p> </li> 
-          <li> <p>Manage Settings</p> </li> 
-          <li> <p>Read Applications</p> </li> 
-          <li> <p>Read Servers</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Cloudhub Developer</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Create Applications</p> </li> 
-          <li> <p>Download Applications</p> </li> 
-          <li> <p>Manage Alerts</p> </li> 
-          <li> <p>Manage Application Data</p> </li> 
-          <li> <p>Manage Queues</p> </li> 
-          <li> <p>Manage Schedules</p> </li> 
-          <li> <p>Manage Settings</p> </li> 
-          <li> <p>Read Applications</p> </li> 
-          <li> <p>Read Servers</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Cloudhub Support</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Read Applications</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Exchange Administrators</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Create content</p> </li> 
-          <li> <p>Manage assets</p> </li> 
-          <li> <p>Publish/Delete/Deprecate content</p> </li> 
-          <li> <p>Manage asset public visibility</p> </li> 
-          <li> <p>Customize Exchange portal</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Exchange Contributors</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Create content</p> </li> 
-          <li> <p>Manage own content/versions</p> </li> 
-          <li> <p>Manage own reviews - Add/Edit/Delete</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Exchange Viewers</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>View and consume Exchange assets</p> </li> 
-          <li> <p>Manage own reviews - Add/Edit/Delete</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="paragraph"> 
+    <p>For more information on permissions in Anypoint Platform, see <a href="/access-management/managing-permissions">Managing Permissions</a>.</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>API Creators</strong>: Enables a user to create and manage API versions in the Anypoint Platform for APIs. Members of the API Creator role have the ability to add new APIs to the platform on the API administration page. This role does not grant privileges for Runtime Manager. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Create/Import an API Version</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Portals Viewer</strong>: Enable a user to view a list of the Private API Portals to which they have Portal Viewer permissions from the Developer Portal. They can also click to view those API Portals. The ability to view an API Portal does not automatically give a user access to the API. You cannot grant Portal Viewer permissions unless the API has an API Portal. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>View API Portal</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>API Versions Owner</strong>: Enables a user to manage, delete, and deprecate any API in the organization. They can edit the portal of any API in the organization. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Manage any API Version in the organization</p> </li> 
+        <li> <p>Delete any API Version in the organization</p> </li> 
+        <li> <p>Deprecate any API Version in the organization</p> </li> 
+        <li> <p>Edit the Portal of any API version in the organization</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Audit Log Viewers</strong>: Enables a user to access to the UI for the Audit Log under Access Management. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Visualize logs in the <a href="/access-management/audit-logging">Audit Logs</a> section.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Cloudhub Admin</strong>: Provides access to all Runtime Manager functionality. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Create Applications</p> </li> 
+        <li> <p>Delete Applications</p> </li> 
+        <li> <p>Download Applications</p> </li> 
+        <li> <p>Manage Alerts</p> </li> 
+        <li> <p>Manage Application Data</p> </li> 
+        <li> <p>Manage Queues</p> </li> 
+        <li> <p>Manage Schedules</p> </li> 
+        <li> <p>Manage Servers</p> </li> 
+        <li> <p>Manage Settings</p> </li> 
+        <li> <p>Read Applications</p> </li> 
+        <li> <p>Read Servers</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Cloudhub Developer</strong>: <strong>(Deprecated)</strong> Provides access to all Runtime Manager functionality, except organization and billing settings. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Create Applications</p> </li> 
+        <li> <p>Download Applications</p> </li> 
+        <li> <p>Manage Alerts</p> </li> 
+        <li> <p>Manage Application Data</p> </li> 
+        <li> <p>Manage Queues</p> </li> 
+        <li> <p>Manage Schedules</p> </li> 
+        <li> <p>Manage Settings</p> </li> 
+        <li> <p>Read Applications</p> </li> 
+        <li> <p>Read Servers</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Cloudhub Support</strong>: <strong>(Deprecated)</strong> Provides read-only access to dashboards, notifications, alerts, logs, and their user settings. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Read Applications</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Organization Administrators</strong>: Enables a user to edit to all versions of all APIs, all registered applications, and all API Portals in the Anypoint Platform. Access to the Organization Administration page, where they can add and manage users and roles, view and edit organization details, access API Manager &gt; Client Applications, access the client ID and client secret for the organization, and customize the theme of the Developer Portal. Members of the Organization Administrator role also inherit the role of <strong>API Creator</strong> by default. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Edit Developer portal theme settings</p> </li> 
+        <li> <p>Request API access terms &amp; conditions</p> </li> 
+        <li> <p>Edit Portal Terms and Conditions</p> </li> 
+        <li> <p>Set Custom Policies</p> </li> 
+        <li> <p>Manage access of third party applications to an API (Specific to the Organization Administrator of the Master Business Group)</p> </li> 
+        <li> <p>Edit users email address</p> </li> 
+        <li> <p>Grant VPC and CloudHub dedicated Load Balancer permissions</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Exchange Administrators</strong>: Manage Exchange Portal Enables a user to manage Exchange Portals, including customization, manage assets, manage reviews. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Create content</p> </li> 
+        <li> <p>Manage assets</p> </li> 
+        <li> <p>Publish/Delete/Deprecate content</p> </li> 
+        <li> <p>Manage asset public visibility</p> </li> 
+        <li> <p>Customize Exchange portal</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Exchange Contributors</strong>: Enables a user to contribute Exchange assets and This role has the following permission scopes:manage versions. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Create content</p> </li> 
+        <li> <p>Manage own content/versions</p> </li> 
+        <li> <p>Manage own reviews - Add/Edit/Delete</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>Exchange Viewers</strong>: Enables a user to view and consume Exchange assets. This role has the following permission scopes:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>View and consume Exchange assets</p> </li> 
+        <li> <p>Manage own reviews - Add/Edit/Delete</p> </li> 
+       </ul> 
+      </div> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="managing-roles"><a class="anchor" href="#managing-roles"></a>Managing Roles</h2> 
+ <h2 id="custom-roles"><a class="anchor" href="#custom-roles"></a>Custom Roles</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To access the <strong>Roles</strong> menu, first make sure you’re in the correct business group (by clicking the menu next to your username on the top-right of the screen), then click the appropriate link in the left menu.</p> 
+   <p>As an organization administrator, you can create custom roles by combining API or applications, permissions, and users. Depending on the product to which the role is associated, these options may vary. For example, API roles cannot be removed and their permissions cannot be modified, however you can add a description and add users to that role.</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/roles-a3471.png" alt="roles-a3471"> 
-   </div> 
+  <div class="paragraph"> 
+   <p>If the only permissions associated with your role are Portal Viewer​, *Exchange Viewer​ and/or ​Application Owner​, then users belonging to this role won’t have access to the organization’s support portal.</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Product permissions are specific to a single environment. If you have multiple environments and want to give a role the same permissions on all, you must add these permissions multiple times, one for each environment. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="creating-custom-roles"><a class="anchor" href="#creating-custom-roles"></a>Creating Custom Roles</h3> 
-   <div class="paragraph"> 
-    <p>As an organization administrator, you can create custom roles by combining API resources, permissions, and users.</p> 
-   </div> 
+   <h3 id="to-create-a-custom-role"><a class="anchor" href="#to-create-a-custom-role"></a>To Create a Custom Role</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Click the <strong>Roles</strong> tab in the left navigation of your Organization Administration page.</p> </li> 
@@ -1522,83 +1385,105 @@
      <li> <p>Your custom role now appears in your list of roles. Click the name of your new role to assign permissions to it.</p> </li> 
     </ol> 
    </div> 
-   <div class="admonitionblock warning"> 
+   <div class="paragraph"> 
+    <p>After creating a custom role, you can access more information about that role, change its name and description, add permissions to it, or assign this role to specific users.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
     <table> 
      <tbody> 
       <tr> 
-       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> When editing Role names and/or descriptions, use the 'Enter' key to save changes, clicking outside the text box cancels the edit without saving it. </td> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> When editing Role names and/or descriptions, use the 'Enter' key to save changes. Clicking outside the text box cancels the edit without saving it. </td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="assigning-permissions-to-roles"><a class="anchor" href="#assigning-permissions-to-roles"></a>Assigning Permissions to Roles</h3> 
+   <h3 id="to-add-a-user-to-a-custom-role"><a class="anchor" href="#to-add-a-user-to-a-custom-role"></a>To Add a User to a Custom Role</h3> 
    <div class="paragraph"> 
-    <p>By clicking a role name, you can access more information about that role, change its name and description, add permissions to it, or assign this role to specific users.<br> Depending on the product to which the role is associated, these options may vary. For example, API roles cannot be removed and their permissions cannot be modified, however you can add a description and add users to that role.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Depending on the amount of products you own in the Anypoint Platform, the tabs displayed under the <em>Permissions</em> tab vary as well. Usually it’s one tab per product enabled on your organization.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>By default, all Anypoint Platform accounts have <strong>API</strong> and <strong>Runtime Manager</strong> permissions.<br></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To add permissions to a role do the following:</p> 
+    <p>After creating a custom role, you assign users to the role.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Make sure you’re in the right business group</p> </li> 
-     <li> <p>Pick the Permissions tab</p> </li> 
-     <li> <p>Choose the product whose permissions you want to assign (a full list of permissions can be found in our <a href="/access-management/managing-permissions">permissions</a> section)</p> 
-      <div class="olist loweralpha"> 
-       <ol class="loweralpha" type="a"> 
-        <li> <p>If you want to assign <strong>API permissions</strong>:</p> 
-         <div class="olist lowerroman"> 
-          <ol class="lowerroman" type="i"> 
-           <li> <p>Start typing your API name in the <code>Select the API resource by name</code> field</p> </li> 
-           <li> <p>Select the version of the API. You can also choose <code>all</code> to grant privileges to all versions of the API you selected</p> </li> 
-           <li> <p>Select the API permission you wish to grant.<br> (API Permissions share the same name as API Roles and they grant the same privileges)</p> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>If you want to assign <strong>Product Permissions</strong>:</p> 
-         <div class="olist lowerroman"> 
-          <ol class="lowerroman" type="i"> 
-           <li> <p>Type in the name of one of the environments existing in your organization (if these environments belong to a business group, they are only available when creating a role in that same business group)</p> </li> 
-           <li> <p>Now you are able to select what permissions to grant within that environment. You can also pick <strong>Select All</strong> to assign all permissions related to that environment to that role.</p> </li> 
-          </ol> 
-         </div> </li> 
-       </ol> 
-      </div> </li> 
-     <li> <p>Click the <code>+</code> icon towards the right to add those permissions to the role</p> </li> 
+     <li> <p>From Access Management, select Roles.</p> </li> 
+     <li> <p>Click the name of the custom role where you want to add users.</p> </li> 
+     <li> <p>Click the Users tab, then enter a username or email in the search field.</p> </li> 
+     <li> <p>Select the user, then click the + icon.</p> </li> 
     </ol> 
    </div> 
-   <div class="admonitionblock warning"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> Note that product permissions are specific to a single environment, so if you have multiple environments and want to give a role the same permissions on all, you must add these permissions multiple times, one for each environment. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-assign-permission-scopes-for-an-application-to-a-custom-role"><a class="anchor" href="#to-assign-permission-scopes-for-an-application-to-a-custom-role"></a>To Assign Permission Scopes for an Application to a Custom Role</h3> 
    <div class="paragraph"> 
-    <p>For a better understanding of how permissions work within the Anypoint Platform, see our <a href="/access-management/managing-permissions">permissions</a> section.</p> 
+    <p>After creating a custom role, you can assign permissions to the role. If these environments belong to a business group, they are only available when creating a role in that same business group</p> 
    </div> 
-   <div class="admonitionblock caution"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-caution" title="Caution"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>If the only permissions associated with your role are <strong>Portal Viewer</strong>​ and/or ​<strong>Exchange Viewer</strong>​ and/or ​<strong>Application Owner</strong>​, then users belonging to this role won’t have access to the organization’s support portal.</p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From Access Management, select Roles.</p> </li> 
+     <li> <p>Click the name of the custom role where you want to add permission scopes.</p> </li> 
+     <li> <p>Click the Permissions tab, then select one of the following tabs:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Runtime Manager</p> </li> 
+        <li> <p>MQ</p> </li> 
+        <li> <p>Data Gateway</p> 
+         <div class="paragraph"> 
+          <p>Depending on your permissions you may not see all of these options.</p> 
+         </div> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Click the Permissions drop-down menu, then select the permissions you want to assign to the custom role.</p> 
+      <div class="paragraph"> 
+       <p>The list of available permissions is different for each application.</p> 
+      </div> </li> 
+     <li> <p>Click the + icon to add the permissions to the role.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-enable-access-to-the-design-center-application"><a class="anchor" href="#to-enable-access-to-the-design-center-application"></a>To Enable Access to the Design Center Application</h3> 
+   <div class="paragraph"> 
+    <p>After creating a custom role, you can enable access to the Design Center application by granting the Design Center Developer permission scope to the custom role.</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From Access Management, select Roles.</p> </li> 
+     <li> <p>Click the name of the custom role where you want to add users.</p> </li> 
+     <li> <p>Click Permissions, then click Design Center.</p> 
+      <div class="imageblock"> 
+       <div class="content"> 
+        <img src="./_images/design-center-permissions.png" alt="Adding permissions to Design Center"> 
+       </div> 
+      </div> </li> 
+     <li> <p>Click the Select Access drop-down, then click the check box next to Design Center Developer.</p> </li> 
+     <li> <p>Click the + icon to add the Designer Center Developer permission scope.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-assign-api-permissions-to-a-custom-role"><a class="anchor" href="#to-assign-api-permissions-to-a-custom-role"></a>To Assign API Permissions to a Custom Role</h3> 
+   <div class="paragraph"> 
+    <p>You can also associate an API or an Anypoint application to the custom role. This enables you to create roles that give users access to a specific API.</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From Access Management, select Roles.</p> </li> 
+     <li> <p>Click the name of the custom role you want to grant access to an API.</p> 
+      <div class="paragraph"> 
+       <p>Custom roles have a radial button next to them.</p> 
+      </div> </li> 
+     <li> <p>Click Permissions, then click APIs.</p> </li> 
+     <li> <p>Select an API from the drop-down list.</p> </li> 
+     <li> <p>Select the API version. Select All to enable access to all versions of this API.</p> </li> 
+     <li> <p>Select the permission from the drop-down list. You can add the following permissions to an API:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>API Version Owner</p> </li> 
+        <li> <p>Portal Viewer</p> </li> 
+       </ul> 
+      </div> </li> 
+    </ol> 
    </div> 
   </div> 
  </div> 
@@ -1614,8 +1499,12 @@
 <div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="/access-management/map-users-roles-ldap-task">Map users to roles in an LDAP group</a></p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="/access-management/managing-permissions">Managing Permissions</a></p> </li> 
+    <li> <p><a href="/design-center/v/1.0/user-access-to-design-center">About Accessing Design Center</a></p> </li> 
+    <li> <p><a href="/access-management/map-users-roles-ldap-task">To Map Users to Roles in an LDAP Group</a></p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -1623,7 +1512,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#default-roles">Default Roles</a></li><li><a class="scroll-menu-link" href="#managing-roles">Managing Roles</a></li><li><a class="scroll-menu-link" href="#role-mapping">Role Mapping</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#the-organization-owner">The Organization Owner</a></li><li><a class="scroll-menu-link" href="#default-roles">Default Roles</a></li><li><a class="scroll-menu-link" href="#custom-roles">Custom Roles</a></li><li><a class="scroll-menu-link" href="#role-mapping">Role Mapping</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
