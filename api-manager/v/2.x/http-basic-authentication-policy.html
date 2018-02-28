@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Add Request/Response Headers, Remove Request/Response Headers // MuleSoft Documentation </title>
+  <title>HTTP Basic Authentication Policy // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -20,9 +20,9 @@
   <script src="/js/trafficSource.js"></script>
   <script src="/js/scripts.js?t=1513800862"></script>
 
-  <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/add-remove-headers-latest-task" />
-  <meta name="description" content="Currently, the add or remove header policies are available on Anypoint Exchange. Follow the step-by-step procedures to download, set up, and apply ..." />
-  <meta class="swiftype" name="title" data-type="string" content="Add Request/Response Headers, Remove Request/Response Headers" />
+  <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/http-basic-authentication-policy" />
+  
+  <meta class="swiftype" name="title" data-type="string" content="HTTP Basic Authentication Policy" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -70,7 +70,7 @@
         <a href="#" class="tree-icon glyphicon glyphicon-th-list"><span>Nav</span></a>
       </div>
       <div class="toolbar-dropdown edit-github">
-        <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/api-manager/v/2.x/add-remove-headers-latest-task.adoc" target="_blank"><span>Edit on GitHub</span></a>
+        <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/api-manager/v/2.x/http-basic-authentication-policy.adoc" target="_blank"><span>Edit on GitHub</span></a>
       </div>
       <div class="toolbar-dropdown helpful">
         <div class="btn btn-default dropdown-toggle" id="dropdown-helpful">
@@ -105,7 +105,7 @@
       </div>
     </div>
     <div class="version-selector col-md-4 col-xs-12">
-      <label for="version-selector">API Manager Version</label><select onChange="window.location.href=this.value" id="version-selector"><option value="/api-manager/v/2.x/add-remove-headers-latest-task">2.x (Latest)</option><option value="/api-manager/v/1.x">1.x</option></select>
+      <label for="version-selector">API Manager Version</label><select onChange="window.location.href=this.value" id="version-selector"><option value="/api-manager/v/2.x/http-basic-authentication-policy">2.x (Latest)</option><option value="/api-manager/v/1.x/http-basic-authentication-policy">1.x</option></select>
 
     </div>
   </div>
@@ -237,14 +237,14 @@
 <li><i></i><a href="/api-manager/v/2.x/resource-level-policies-about">About Resource Level Policies</a></li><li><i></i><a href="/api-manager/v/2.x/resource-level-policy-reference">Resource Level Policy Reference</a></li><li class="expanded">
 <i></i>
 <a href="/api-manager/v/2.x/available-policies">About Provided Policies</a><ul style="display: block;">
-<li class="expanded">
+<li>
 <i></i>
-<a href="/api-manager/v/2.x/add-remove-headers-concept">About Add/Remove Headers</a><ul style="display: block;">
-<li class="active"><i></i><a href="/api-manager/v/2.x/add-remove-headers-latest-task">Add/Remove Headers</a></li></ul></li>
-<li><i></i><a href="/api-manager/v/2.x/cors-policy">To Apply and Edit a CORS Policy</a></li><li><i></i><a href="/api-manager/v/2.x/avoid-restrictions-task">To Avoid Same-Origin Restrictions</a></li><li><i></i><a href="/api-manager/v/2.x/client-id-based-policies">Client ID-Based Policies Reference</a></li><li>
+<a href="/api-manager/v/2.x/add-remove-headers-concept">About Add/Remove Headers</a><ul>
+<li><i></i><a href="/api-manager/v/2.x/add-remove-headers-latest-task">Add/Remove Headers</a></li></ul></li>
+<li><i></i><a href="/api-manager/v/2.x/cors-policy">To Apply and Edit a CORS Policy</a></li><li><i></i><a href="/api-manager/v/2.x/avoid-restrictions-task">To Avoid Same-Origin Restrictions</a></li><li><i></i><a href="/api-manager/v/2.x/client-id-based-policies">Client ID-Based Policies Reference</a></li><li class="expanded">
 <i></i>
-<a href="/api-manager/v/2.x/basic-authentication-concept">About Basic Authentication and LDAP Policies</a><ul>
-<li><i></i><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></li></ul></li>
+<a href="/api-manager/v/2.x/basic-authentication-concept">About Basic Authentication and LDAP Policies</a><ul style="display: block;">
+<li><i></i><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4)</a></li><li class="active"><i></i><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/ip-blacklist">To Apply IP Blacklist</a></li><li><i></i><a href="/api-manager/v/2.x/ip-whitelist">To Apply IP Whitelist</a></li><li>
 <i></i>
 <a href="/api-manager/v/2.x/json-xml-threat-policy">JSON and XML Threat Protection</a><ul>
@@ -1135,233 +1135,19 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="add-remove-headers-concept">About Add/Remove Headers</a>/<a href="add-remove-headers-latest-task" class="breadcrumb-active-link">Add/Remove Headers</a></div>
-      <h1>Add Request/Response Headers, Remove Request/Response Headers</h1>
-      <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Currently, the add or remove header policies are available on Anypoint Exchange. Follow the step-by-step procedures to download, set up, and apply these policies.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To download add or remove header policies:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Login to Anypoint Platform and go to Exchange.</p> </li> 
-    <li> <p>Search for and download the following assets from Exchange:</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Add Request Headers Policy</p> </li> 
-       <li> <p>Remove Request Headers Policy</p> </li> 
-       <li> <p>Add Response Headers Policy</p> </li> 
-       <li> <p>Remove Response Headers Policy</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>Unzip each policy archive.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>An xml and yaml file appears in each of the folders created by unzipping the archives. For example, the add-request-header-policy folder contains the following files:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>add-request.xml</p> </li> 
-    <li> <p>add-request.yaml</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You use these files to set up the policy as described later.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="to-set-up-and-apply-add-or-remove-header-policies"><a class="anchor" href="#to-set-up-and-apply-add-or-remove-header-policies"></a>To Set Up and Apply Add or Remove Header Policies</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>If you have configured custom policies in Anypoint Platform, the process is basically the same for add or remove header policies. The following steps show how to set up and apply the policies in Anypoint Platform.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To set up add or remove header policies:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Go to API Manager &gt; API Administration.</p> </li> 
-    <li> <p>Click Custom Policies.</p> 
-     <div class="paragraph"> 
-      <p>Custom Policies appears listing custom policies, if there are any, that are available for the API.</p> 
-     </div> </li> 
-    <li> <p>Click Add Custom Policy.</p> </li> 
-    <li> <p>Select the Mule Runtime Version you use to deploy the API.</p> </li> 
-    <li> <p>In Name, enter a name for the policy, for example <code>add request header policy</code>.</p> </li> 
-    <li> <p>In Policy Definition, click Choose File to locate the YAML file, <code>add-request.yaml</code> in this example, that you downloaded.</p> </li> 
-    <li> <p>In Policy Configuration, choose the XML file, for example, <code>add-request.xml</code>, that you downloaded.</p> </li> 
-    <li> <p>Click Add.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/gw-add-custom-pol.png" alt="gw-add-custom-pol"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The policy, add request header policy in this example, appears on the Custom Policies page. <span class="image"><img src="./_images/gw-custom-pol-list.png" alt="gw-custom-pol-list"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="applying-the-add-request-response-header-policies"><a class="anchor" href="#applying-the-add-request-response-header-policies"></a>Applying the Add Request/Response Header Policies</h3> 
-   <div class="paragraph"> 
-    <p>Continuing with example of the add request header policy, follow steps in this procedure to apply either of the following policies:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Add request header policy</p> </li> 
-     <li> <p>Add response header policy</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To apply add the request header policies or add response header policies:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Assuming you already deployed the API version, select the instance API Administration.</p> </li> 
-     <li> <p>On the API dashboard, select Policies from the list of items.</p> 
-      <div class="paragraph"> 
-       <p>The Add Request Header Policy, for example, appears in the Available Policies list.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>If the header was already provided by the client or another policy, the value is overwritten by the one you provide in this policy.</p> 
-      </div> </li> 
-     <li> <p>Click Apply.</p> 
-      <div class="paragraph"> 
-       <p>The Apply Add Request Header Policy dialog box appears.</p> 
-      </div> </li> 
-     <li> <p>Type the name and value of a header. For example, type <code>extra-header</code> on the left and <code>myvalue</code> on the right.</p> </li> 
-     <li> <p>Optionally, include expressions in the value of the header.</p> 
-      <div class="paragraph"> 
-       <p>For example, include the following expression to substitute the name of the user-agent in the header text.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><code>'#[message.inboundProperties['user-agent']]'</code></p> 
-      </div> </li> 
-     <li> <p>Click <span class="image"><img src="./_images/gw-apply-pol-plus-icon.png" alt="gw-apply-pol-plus-icon"></span>.</p> </li> 
-     <li> <p>Optionally add more names and values of headers to add in the same manner, and click Apply.</p> 
-      <div class="paragraph"> 
-       <p>The policy you applied moves from the Available Policies list to the Applied Policies list.</p> 
-      </div> </li> 
-    </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="applying-the-remove-request-response-header-policies"><a class="anchor" href="#applying-the-remove-request-response-header-policies"></a>Applying the Remove Request/Response Header Policies</h3> 
-   <div class="paragraph"> 
-    <p>Perform the steps in this procedure to apply either of the following policies:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Remove request header policy</p> </li> 
-     <li> <p>Remove response header policy</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To apply the remove request header or remove response header policies:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>On API dashboard, select Policies from the list of items.</p> 
-      <div class="paragraph"> 
-       <p>The policy, Remove Request Header Policy in this example, appears in the Available Policies list.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>If the header was already provided by the client or another policy, the value is overwritten by the one you provide in this policy.</p> 
-      </div> </li> 
-     <li> <p>Click Apply.</p> 
-      <div class="paragraph"> 
-       <p>The Apply Remove Request Headers Policy dialog appears.</p> 
-      </div> </li> 
-     <li> <p>Type the name of each header that you want to remove, separated by commas.</p> 
-      <div class="paragraph"> 
-       <p>You can use wildcards to remove properties that have similar names. For example, using <code>foo-*`</code> will remove foo-bar, foo-test.</p> 
-      </div> </li> 
-     <li> <p>Click Apply.</p> 
-      <div class="paragraph"> 
-       <p>The policy you applied moves from the Available Policies list to the Applied Policies list.</p> 
-      </div> </li> 
-    </ol> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="testing-policy-applications"><a class="anchor" href="#testing-policy-applications"></a>Testing Policy Applications</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>To test the execution of policies, follow the steps in this section to apply a policy and use curl, for example <code>curl</code> <code>http://localhost:8081 -vvv</code> to test the policies.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="add-request-header-policy"><a class="anchor" href="#add-request-header-policy"></a>Add Request Header Policy</h3> 
-   <div class="paragraph"> 
-    <p>The procedure for testing the add or remove request header policies assume that you created a mule application that logs the headers received by the backend service.</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Apply the add request header policy to add a header as described in the previous section.</p> </li> 
-     <li> <p>Run curl.</p> </li> 
-     <li> <p>Check the log of the backend service to verify that request includes the additional header name and value you configured in step 1.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="remove-request-header-policy"><a class="anchor" href="#remove-request-header-policy"></a>Remove Request Header Policy</h3> 
-   <div class="paragraph"> 
-    <p>The procedure for testing the remove request header policy assumes that you created a mule application that logs the headers received by the backend service.</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Apply the remove request header policy to remove a header as described in the previous section.</p> </li> 
-     <li> <p>Run curl.</p> </li> 
-     <li> <p>Verify that the backend service excludes the extra header by checking the log.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="add-response-header-policy"><a class="anchor" href="#add-response-header-policy"></a>Add Response Header Policy</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Run curl.</p> </li> 
-     <li> <p>Check the response to see which headers are being received by the client.</p> </li> 
-     <li> <p>Apply the add response header policy to add a response to the header.</p> </li> 
-     <li> <p>Run curl again.</p> </li> 
-     <li> <p>Verify that the specified header is received.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="remove-response-header-policy"><a class="anchor" href="#remove-response-header-policy"></a>Remove Response Header Policy</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Run curl.</p> </li> 
-     <li> <p>Check the response to see which headers are being received by the client.</p> </li> 
-     <li> <p>Apply the remove response header policy to remove a response from the header.</p> </li> 
-     <li> <p>Run curl again.</p> </li> 
-     <li> <p>Verify that the specified header is removed.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="/anypoint-exchange/to-download-an-asset">To Download an Asset from Exchange</a></p> </li> 
-    <li> <p><a href="/api-manager/v/2.x/add-remove-headers-concept">About Add/Remove Headers</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="basic-authentication-concept">About Basic Authentication and LDAP Policies</a>/<a href="http-basic-authentication-policy" class="breadcrumb-active-link">HTTP Basic Authentication</a></div>
+      <h1>HTTP Basic Authentication Policy</h1>
+      <div class="ulist"> 
+ <ul> 
+  <li> <p><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4.x)</a></p> </li> 
+  <li> <p><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4.x)</a></p> </li> 
+  <li> <p><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></p> </li> 
+  <li> <p><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></p> </li> 
+ </ul> 
 </div>
     </div>
     <!-- END article-content -->
-    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
-                <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-set-up-and-apply-add-or-remove-header-policies">To Set Up and Apply Add or Remove Header Policies</a></li><li><a class="scroll-menu-link" href="#testing-policy-applications">Testing Policy Applications</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+    
   </div>
 </div>
 <!-- START footer -->
