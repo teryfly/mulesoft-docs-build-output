@@ -8218,11 +8218,11 @@ Password: ****</pre></td>
    <h3 id="cloudhub-load-balancer-mappings-add"><a class="anchor" href="#cloudhub-load-balancer-mappings-add"></a>cloudhub load-balancer mappings add</h3> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="Example">&gt; cloudhub load-balancer mappings add &lt;name&gt; &lt;index&gt; &lt;inputUri&gt; &lt;appName&gt; &lt;appUri&gt; [certificateName] [upstreamProtocol]</code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="Example">&gt; cloudhub load-balancer mappings add [options] &lt;name&gt; &lt;index&gt; &lt;inputUri&gt; &lt;appName&gt; &lt;appUri&gt; [certificateName]</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>This command adds a proxy mapping rule to the load balancer specified in &lt;name&gt; at the priority index specified in &lt;index&gt; in the CN passed under the <code>certificateName</code> option, using the protocol set in <code>upstreamProtocol</code> and the values set in the variables<br></p> 
+    <p>This command adds a proxy mapping rule to the load balancer specified in &lt;name&gt; at the priority index specified in &lt;index&gt; in the CN passed under the <code>certificateName</code> option.<br> If no <code>certificateName</code> is passed, Anypoint CLI adds the mappings to the default SSL endpoint.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -8344,11 +8344,36 @@ Password: ****</pre></td>
     <p>For the values in the example above, for an input call to <code>my-superapp.api.example.com/status?limit=10</code>, the endpoint <code>my-superapp-example: /status?limit=10</code> will be called for the application.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>If no <code>certificateName</code> is passed, Anypoint CLI adds the mappings to the default SSL endpoint.</p> 
+    <p>This command also takes the <code>--upstreamProtocol</code> option.<br> The <code>--upstreamProtocol</code> option sets the protocol used by your application to communicate internally with your load balancer. If no upstreamProtocol is set, HTTP is used as default.</p> 
    </div> 
-   <div class="paragraph"> 
-    <p>The <code>--upstreamProtocol</code> option sets the protocol used by your application to communicate internally with your load balancer.<br> The allowed values are <code>http</code> or <code>https</code>. If no upstreamProtocol is set, HTTP is used as default.</p> 
-   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 12%;"> 
+     <col style="width: 68%;"> 
+     <col style="width: 20%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">--upstreamProtocol &lt;protocol&gt;</th> 
+      <th class="tableblock halign-left valign-top">Look for upstream applications in HTTP port 8091 or HTTPS port 8092.<br> Supported Values: http, https</th> 
+      <th class="tableblock halign-left valign-top">--upsetreamProtocol http</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>--certificateName</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="sect2"> 
    <h3 id="cloudhub-load-balancer-mappings-remove"><a class="anchor" href="#cloudhub-load-balancer-mappings-remove"></a>cloudhub load-balancer mappings remove</h3> 

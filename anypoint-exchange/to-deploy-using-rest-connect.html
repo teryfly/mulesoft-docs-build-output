@@ -1244,7 +1244,6 @@ securitySchemes:
 30
 31
 32
-33
 </pre></td> 
          <td class="code"><pre>#%RAML 1.0
 version: v1
@@ -1277,9 +1276,7 @@ securitySchemes:
             200:
                 body:
                     application/json:
-                        example: '[ { "rest-connect": "2017-03-13" } ]'
-
-</pre></td> 
+                        example: '[ { "rest-connect": "2017-03-13" } ]'</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1390,6 +1387,48 @@ securitySchemes:
         - "read:public_key"
         - "write:public_key"
         - "admin:public_key"</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Pass-through Example:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td> 
+         <td class="code"><pre>#%RAML 1.0
+title: Customer API
+version: 1
+baseUri: https://api.customer.com/v2
+securitySchemes:
+  passthrough:
+    description: |
+      This API supports Pass Through Authentication.
+    type: Pass Through
+    describedBy:
+      headers:
+        api_key:
+          type: string</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
