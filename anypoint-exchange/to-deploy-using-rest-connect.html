@@ -1443,7 +1443,57 @@ securitySchemes:
    <p>REST Connect generates the names of operations based on operationName, displayName, and endpoint in that order. To modify a generated name, you can point to the REST Connect library and use the operationName annotation from a method such as GET, POST, and DELETE, or you can change the text in displayName under the method.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Example:</p> 
+   <p>Example with displayName:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td> 
+         <td class="code"><pre>#%RAML 1.0
+title: Sample API
+baseUri: https://jsonplaceholder.typicode.com
+version: 0.1
+mediaType: application/json
+
+  ...
+  /{postId}:
+    uriParameters:
+      postId: integer
+
+    get:
+      displayName: Get a post by ID.
+      responses:
+        200:
+          body:
+            type: Post</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Example with REST Connect library:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
