@@ -1266,61 +1266,59 @@
  <h2 id="to-configure-auto-discovery-in-studio-mule-runtime-3-x"><a class="anchor" href="#to-configure-auto-discovery-in-studio-mule-runtime-3-x"></a>To Configure Auto-Discovery in Studio (Mule Runtime 3.x)</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this procedure, you pair Anypoint Studio with an Anypoint Platform environment in your organization by adding environment credentials to Studio Preferences. You configure auto-discovery for each flow you want to manage using a global element. . From the Anypoint Studio main menu, select Anypoint Studio &gt; Preferences &gt; Anypoint Studio &gt; Anypoint Platform for APIs.</p> 
+   <p>In this procedure, you pair Anypoint Studio with an Anypoint Platform environment in your organization by adding environment credentials to Studio Preferences. You configure auto-discovery for each flow you want to manage using a global element.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>+ The Preferences dialog for Anypoint Platform for APIs appears. . Copy the environment client ID and client secret from step 1 to Client Credentials.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ <span class="image"><img src="./_images/autodis-pairing.png" alt="autodis-pairing"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ This action pairs Mule Runtime with your Anypoint Platform organization’s environment.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ . Click Validate to verify that the pairing succeeds.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ . In Project Explorer, select the app. For example, select <code>api.xml</code> in <code>src/main/app</code> that you created in the APIkit tutorial. . On the Global Elements tab on the canvas, click Create.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ <span class="image"><img src="./_images/autodis-cerate-global2.png" alt="autodis-create-global2"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ The Choose Global Type dialog appears.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ . Select Component Configurations &gt; API Autodiscovery.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ image::select-auto-discovery.png[]</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ The Global Element Properties - API Autodiscovery dialog appears.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ . Create a global element to declare the details of the API version you want Anypoint Platform to discover:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * In API Name, type the name of the API that you set up to manage from API Manager.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * In API Version, type the version identifier as registered in API Manager, for example <code>1.0</code>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * In Flow Name, select the name of the flow in the API to which you want to direct requests. For example, select <code>api-main</code>, the APIkit tutorial main flow. * In APIkit Router Configuration, click api-config from the drop-down in the case of the APIkit tutorial.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ This configuration is not used by API Manager.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * In Description, write some documentation about the API.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ <span class="image"><img src="./_images/auto-disc-conf2.png" alt="auto-disc-conf2" width="439" height="422"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ . In Project Explorer, right-click the app, <code>api.xml</code> in this example, and select Run As &gt; Mule Application.</p> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>From the Anypoint Studio main menu, select Anypoint Studio &gt; Preferences &gt; Anypoint Studio &gt; Anypoint Platform for APIs.</p> 
+     <div class="paragraph"> 
+      <p>The Preferences dialog for Anypoint Platform for APIs appears.</p> 
+     </div> </li> 
+    <li> <p>Copy the environment client ID and client secret from step 1 to Client Credentials.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/autodis-pairing.png" alt="autodis-pairing"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>This action pairs Mule Runtime with your Anypoint Platform organization’s environment.</p> 
+     </div> </li> 
+    <li> <p>Click Validate to verify that the pairing succeeds.</p> </li> 
+    <li> <p>In Project Explorer, select the app. For example, select <code>api.xml</code> in <code>src/main/app</code> that you created in the APIkit tutorial.</p> </li> 
+    <li> <p>On the Global Elements tab on the canvas, click Create.</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/auto-cerate-global2.png" alt="auto cerate global2"> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The Choose Global Type dialog appears.</p> 
+     </div> </li> 
+    <li> <p>Select Component Configurations &gt; API Autodiscovery.</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/auto-choose-global2.png" alt="auto choose global2"> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The Global Element Properties - API Autodiscovery dialog appears.</p> 
+     </div> </li> 
+    <li> <p>Create a global element to declare the details of the API version you want Anypoint Platform to discover:</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>In API Name, type the name of the API that you set up to manage from API Manager.</p> </li> 
+       <li> <p>In API Version, type the version identifier as registered in API Manager, for example <code>1.0</code>.</p> </li> 
+       <li> <p>In Flow Name, select the name of the flow in the API to which you want to direct requests. For example, select <code>api-main</code>, the APIkit tutorial main flow.</p> </li> 
+       <li> <p>In APIkit Router Configuration, click api-config from the drop-down in the case of the APIkit tutorial.</p> 
+        <div class="paragraph"> 
+         <p>This configuration is not used by API Manager.</p> 
+        </div> </li> 
+       <li> <p>In Description, write some documentation about the API.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/auto-disc-conf2.png" alt="auto-disc-conf2" width="439" height="422"></span></p> 
+        </div> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>In Project Explorer, right-click the app, <code>api.xml</code> in this example, and select Run As &gt; Mule Application.</p> </li> 
+   </ol> 
   </div> 
   <div class="paragraph"> 
    <p>The API should now be manageable from API Manager.</p> 
