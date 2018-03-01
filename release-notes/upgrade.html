@@ -1593,32 +1593,112 @@ organizations/{organizationId}/public/*</pre></td>
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="continuous-integration-and-delivery"><a class="anchor" href="#continuous-integration-and-delivery"></a>Continuous Integration and Delivery</h2> 
+ <h2 id="continuous-integration-and-delivery-ci-cd"><a class="anchor" href="#continuous-integration-and-delivery-ci-cd"></a>Continuous Integration and Delivery (CI/CD)</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This section details the changes introduced as part of the latest release of API Manager. Customers who have built integrations with API Manager APIs as part of the CI/CD process should carefully read through this section and plan accordingly.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>This section details the changes introduced as part of the latest release of API Manager. Customers who have built integrations with API Manager APIs as part of the CI/CD process should carefully read through this section and plan accordingly.</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="api-lifecycle-release-comparison"><a class="anchor" href="#api-lifecycle-release-comparison"></a>API Lifecycle Release Comparison</h3> 
+   <h3 id="ci-cd-architecture"><a class="anchor" href="#ci-cd-architecture"></a>CI/CD Architecture</h3> 
    <div class="paragraph"> 
-    <p>The November 2017 release of Anypoint Platform introduces changes to the API lifecycle. The following table lists each stage of the API lifecycle and compares the tools introduced in the Crowd release with those available in the previous release:</p> 
+    <p>The following diagram gives an overview of the CI/CD (continuous integration and delivery) process.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/upgrade-cicd.png" alt="CI/CD releases"></span></p> 
+    <p><span class="image"><img src="./_images/upgrade-cicd-architecture.png" alt="CI/CD architecture diagram"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>When working with large teams and multiple applications, the manual process for testing and deployment is challenging and teams should consider using a Continuous Integration/Deployment server like Jenkins.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="platform-apis"><a class="anchor" href="#platform-apis"></a>Platform APIs</h3> 
+   <h3 id="about-continuous-integration"><a class="anchor" href="#about-continuous-integration"></a>About Continuous Integration</h3> 
+   <div class="paragraph"> 
+    <p>The need for continuous integration (CI) for a project is very important. By using Maven as your build tool, you can create a build that gets triggered on every project change, and run all its unit and functional tests automatically.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The advantages of continuous integration are:</p> 
+   </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-manager-api/">API Manager API</a></p> </li> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-platform-api/">API Platform (API reference) - 2.2.0</a></p> </li> 
-     <li> <p>ARM - Anypoint Runtime Manager 1.26</p> </li> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/cloudhub-api/">CloudHub (Cloudhub) - 1.59.0</a></p> </li> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/">Exchange Experience API</a></p> </li> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-http/">Graph Service (API Reference) - v1</a> - To try the <a href="https://anypoint.mulesoft.com/graph/api/v1/graphiql/">Graph API</a>, Click the Docs button in the top-right corner.</p> </li> 
-     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-maven-facade-api-http/">Maven Facade (Maven Facade) - v1</a></p> </li> 
+     <li> <p>Early notification of issues in the software development lifecycle.</p> </li> 
+     <li> <p>Ensures code gets fully tested before release.</p> </li> 
+     <li> <p>Successfully tested branches ensure better success when merging to the master branch.</p> </li> 
     </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>A continuous integration system:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Listens for new commits to a project’s source code management system. The CI watches many branches for new commits. You can use either polling to find new commits, or the management system can trigger events that inform your program of commits.</p> </li> 
+     <li> <p>Pulls the newest branch into a centralized server.</p> </li> 
+     <li> <p>Creates build jobs on a centralized server.</p> </li> 
+     <li> <p>Runs configurable unit and integration tests on the code base to compile, test, package, and deploy the project in a sandbox to ensure the project works correctly.</p> </li> 
+     <li> <p>Stores artifacts in a repository.</p> </li> 
+     <li> <p>Displays the results of each build.</p> </li> 
+     <li> <p>Deploys passing builds to production.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-prepare-applications-for-a-ci-cd-server"><a class="anchor" href="#to-prepare-applications-for-a-ci-cd-server"></a>To Prepare Applications for a CI/CD Server</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Use a source code repository, such as GitHub or BitBucket.</p> </li> 
+     <li> <p>Add the following configurations to each Maven pom.xml of each application:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Mule Maven plugin for CloudHub, ARM, and Standalone deployment.</p> </li> 
+        <li> <p>Mule Maven plugin for MUnit.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>If using a Jenkins pipeline, add the Jenkins files to the Mule project.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="anypoint-platform-apis-november-release"><a class="anchor" href="#anypoint-platform-apis-november-release"></a>Anypoint Platform APIs (November Release)</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>See the <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/">MuleSoft Developer Portal</a> for the available Anypoint Platform APIs:</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="exchange-apis"><a class="anchor" href="#exchange-apis"></a>Exchange APIs</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/">Exchange Experience API</a> - Provides access to assets and portals, and allows multiple operations for different organizations depending on the permissions a user has in Anypoint Platform.</p> </li> 
+     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-http/">Exchange Graph Service (API Reference)</a> - Lets you search for Exchange assets and filter by multiple criteria to return only the information you need. To try the <a href="https://anypoint.mulesoft.com/graph/api/v1/graphiql/">Graph API</a>, Click the Docs button in the top-right corner.</p> </li> 
+     <li> <p><a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-maven-facade-api-http/">Exchange Maven Facade (Maven Facade)</a> - Lets you interact with Exchange using the Maven client to publish and consume Exchange assets as Maven dependencies. You can use the Exchange Maven Facade API for Mule applications, templates, examples, connectors, and policies. RAML API specifications are not supported.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="api-manager-api"><a class="anchor" href="#api-manager-api"></a>API Manager API</h3> 
+   <div class="paragraph"> 
+    <p>The <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-manager-api/">API Manager API</a> enables you to manage an API by applying policies, setting SLAs, configuring alerts for your API instances, and promoting API instances.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="api-platform-api"><a class="anchor" href="#api-platform-api"></a>API Platform API</h3> 
+   <div class="paragraph"> 
+    <p>The <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/api-platform-api/">API Platform API</a> exposes the management capabilities of the Anypoint Platform for APIs, enabling them to be used by external sites.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="cloudhub"><a class="anchor" href="#cloudhub"></a>CloudHub</h3> 
+   <div class="paragraph"> 
+    <p>The <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/cloudhub-api/">CloudHub Public API</a> enables you to access application management services for applications deployed to CloudHub.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="proxies"><a class="anchor" href="#proxies"></a>Proxies</h3> 
+   <div class="paragraph"> 
+    <p>The <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform-eng/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/proxies-xapi/">Proxies XAPI</a> allows you to download or deploy proxies into Runtime Manager.</p> 
    </div> 
   </div> 
  </div> 
@@ -1628,10 +1708,10 @@ organizations/{organizationId}/public/*</pre></td>
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><a href="https://docs.mulesoft.com/api-manager/tutorial-set-up-an-api">Set Up an API</a></p> </li> 
-    <li> <p><a href="https://docs.mulesoft.com/runtime-manager/runtime-manager-agent">Runtime Manager Agent</a></p> </li> 
-    <li> <p><a href="https://docs.mulesoft.com/munit/v/1.3/">MUnit</a></p> </li> 
-    <li> <p><a href="https://docs.mulesoft.com/mule-user-guide/v/3.9/mule-maven-plugin">Mule Maven Plugin</a></p> </li> 
+    <li> <p><a href="/api-manager/v/1.x/tutorial-set-up-an-api">Set Up an API</a></p> </li> 
+    <li> <p><a href="/runtime-manager/runtime-manager-agent">Runtime Manager Agent</a></p> </li> 
+    <li> <p><a href="/munit/v/1.3/">MUnit</a></p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.9/mule-maven-plugin">Mule Maven Plugin</a></p> </li> 
     <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a></p> </li> 
     <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a></p> </li> 
    </ul> 
@@ -1642,7 +1722,7 @@ organizations/{organizationId}/public/*</pre></td>
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-group-apis">To Group APIs</a></li><li><a class="scroll-menu-link" href="#to-request-your-data-migration-upgrade">To Request Your Data Migration Upgrade</a></li><li><a class="scroll-menu-link" href="#to-classify-apis-by-environments">To Classify APIs by Environments</a></li><li><a class="scroll-menu-link" href="#to-classify-your-apis-after-migration">To Classify Your APIs After Migration</a></li><li><a class="scroll-menu-link" href="#faq">FAQ</a></li><li><a class="scroll-menu-link" href="#new-and-changed-features">New and Changed Features</a></li><li><a class="scroll-menu-link" href="#continuous-integration-and-delivery">Continuous Integration and Delivery</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#to-group-apis">To Group APIs</a></li><li><a class="scroll-menu-link" href="#to-request-your-data-migration-upgrade">To Request Your Data Migration Upgrade</a></li><li><a class="scroll-menu-link" href="#to-classify-apis-by-environments">To Classify APIs by Environments</a></li><li><a class="scroll-menu-link" href="#to-classify-your-apis-after-migration">To Classify Your APIs After Migration</a></li><li><a class="scroll-menu-link" href="#faq">FAQ</a></li><li><a class="scroll-menu-link" href="#new-and-changed-features">New and Changed Features</a></li><li><a class="scroll-menu-link" href="#continuous-integration-and-delivery-ci-cd">Continuous Integration and Delivery (CI/CD)</a></li><li><a class="scroll-menu-link" href="#anypoint-platform-apis-november-release">Anypoint Platform APIs (November Release)</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
