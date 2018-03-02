@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/re-order-policies-task" />
-  <meta name="description" content="In Mule Runtime 4.x, which policies run first is configurable with the exception of CORS. This procedure describes how to re-order policies provide..." />
+  <meta name="description" content="In Mule Runtime 4.x, which policies run first is configurable with the exception of CORS. CORS has the highest precedence. This procedure describes..." />
   <meta class="swiftype" name="title" data-type="string" content="To Re-order Policies" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
@@ -1137,31 +1137,45 @@
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="basic-policy-tasks-index">Basic Policy Tasks</a>/<a href="re-order-policies-task" class="breadcrumb-active-link">To Re-order Policies</a></div>
       <h1>To Re-order Policies</h1>
-      <div class="paragraph"> 
- <p>In Mule Runtime 4.x, which policies run first is configurable with the exception of CORS. This procedure describes how to re-order policies provided by Anypoint Platform other than CORS. CORS has the highest precedence. You cannot set other policies at a higher level. You can set the order of execution of policies for a custom policy by configuring the policy tag or the before or after blocks.</p> 
+      <div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In Mule Runtime 4.x, which policies run first is configurable with the exception of CORS. CORS has the highest precedence. This procedure describes how to re-order policies provided by Anypoint Platform. You cannot set other policies at a higher level.</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In Anypoint Platform, click API Manager, and in API Administration, click the API version or instance.</p> </li> 
+    <li> <p>On the API dashboard, choose Policies.</p> </li> 
+    <li> <p>In the top of the list of any applied policies, click Edit Policy Order to change the priority.</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/re-order-policies.png" alt="re order policies"> 
+      </div> 
+     </div> </li> 
+    <li> <p>In Reorder Applied Policies, use the up and down arrows to rearrange the order of policies.</p> </li> 
+    <li> <p>Click Apply order.</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/apply-order.png" alt="apply order"> 
+      </div> 
+     </div> </li> 
+   </ol> 
+  </div> 
+ </div> 
 </div> 
-<div class="olist arabic"> 
- <ol class="arabic"> 
-  <li> <p>In Anypoint Platform, click API Manager, and in API Administration, click the API version or instance.</p> </li> 
-  <li> <p>On the API dashboard, choose Policies.</p> </li> 
-  <li> <p>In the top of the list of any applied policies, click Edit Policy Order to change the priority.</p> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/re-order-policies.png" alt="re order policies"> 
-    </div> 
-   </div> </li> 
-  <li> <p>In Reorder Applied Policies, use the up and down arrows to rearrange the order of policies.</p> </li> 
-  <li> <p>Click Apply order.</p> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/apply-order.png" alt="apply order"> 
-    </div> 
-   </div> </li> 
- </ol> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a href="/api-manager/v/2.x/offline-policy-task">To Apply an Offline Policy</a> <a href="/api-manager/v/2.x/cors-mule4">About CORS on Mule Runtime 4.x</a></p> 
+  </div> 
+ </div> 
 </div>
     </div>
     <!-- END article-content -->
-    
+    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
+                <h4>In this topic:</h4>
+                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
