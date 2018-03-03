@@ -1988,21 +1988,11 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
 2
 3
 4
-5
-6
-7
-8
-9
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persistentVmConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">queueTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">1000</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❶
-&nbsp;&nbsp;&nbsp;<span class="tag">&lt;queue-profile</span> <span class="attribute-name">maxOutstandingMessages</span>=<span class="string"><span class="delimiter">"</span><span class="content">100</span><span class="delimiter">"</span></span> <span class="attribute-name">persistent</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/vm:connector&gt;</span>
-&nbsp;
-<span class="tag">&lt;flow&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">in</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❷
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.ComponentClass</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">persistentVmConnector</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span> ❸
-<span class="tag">&lt;/flow&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;dependency&gt;</span>
+   <span class="tag">&lt;groupId&gt;</span>org.mule.transports<span class="tag">&lt;/groupId&gt;</span>
+   <span class="tag">&lt;artifactId&gt;</span>mule-transport-vm<span class="tag">&lt;/artifactId&gt;</span>
+<span class="tag">&lt;/dependency&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
