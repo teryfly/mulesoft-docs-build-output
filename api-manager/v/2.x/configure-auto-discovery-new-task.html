@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>To Configure Auto-Discovery // MuleSoft Documentation </title>
+  <title>Auto-Discovery Configuration Tasks // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -21,8 +21,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/configure-auto-discovery-new-task" />
-  <meta name="description" content="You include API auto-discovery capability in a Mule application to enable API management from Anypoint Platform on the application HTTP endpoint. Y..." />
-  <meta class="swiftype" name="title" data-type="string" content="To Configure Auto-Discovery" />
+  <meta name="description" content="You include API auto-discovery capability in a Mule application to enable API management from Anypoint Platform on the application HTTP endpoint.Yo..." />
+  <meta class="swiftype" name="title" data-type="string" content="Auto-Discovery Configuration Tasks" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -213,7 +213,11 @@
 <li><i></i><a href="/api-manager/v/2.x/manage-versions-instances-concept">About Managing API Versions and Instances</a></li><li class="expanded">
 <i></i>
 <a href="/api-manager/v/2.x/api-auto-discovery-new-concept">About Auto-Discovery</a><ul style="display: block;">
-<li class="active"><i></i><a href="/api-manager/v/2.x/configure-auto-discovery-new-task">To Configure Auto-Discovery</a></li><li><i></i><a href="/api-manager/v/2.x/api-auto-discovery-new-reference">Auto-Discovery Reference</a></li></ul></li>
+<li class="active expanded">
+<i></i>
+<a href="/api-manager/v/2.x/configure-auto-discovery-new-task">Auto-Discovery Configuration Tasks</a><ul style="display: block;">
+<li><i></i><a href="/api-manager/v/2.x/configure-autodiscovery-4-task">To Configure the Auto-Discovery XML Element for Mule 4.x Runtime</a></li><li><i></i><a href="/api-manager/v/2.x/configure-autodiscovery-3-task">To Configure the Auto-Discovery XML Element for Mule 3.x Runtime</a></li></ul></li>
+<li><i></i><a href="/api-manager/v/2.x/api-auto-discovery-new-reference">Auto-Discovery Reference (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/api-platform-gw-attributes-3">Auto-Discovery Reference (Mule 3)</a></li></ul></li>
 <li>
 <i></i>
 <a href="/api-manager/v/2.x/proxy-latest-concept">About Deploying Mule Runtime Proxies</a><ul>
@@ -1135,213 +1139,20 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="api-auto-discovery-new-concept">About Auto-Discovery</a>/<a href="configure-auto-discovery-new-task" class="breadcrumb-active-link">To Configure Auto-Discovery</a></div>
-      <h1>To Configure Auto-Discovery</h1>
-      <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>You include API auto-discovery capability in a Mule application to enable API management from Anypoint Platform on the application HTTP endpoint.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You need to create an instance of an API before setting up auto-discovery. The way you set up auto-discovery depends on the Mule version you use to deploy the API.</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Mule 4</p> 
-     <div class="paragraph"> 
-      <p>Include the API ID-based auto-discovery element in the configuration.xml.</p> 
-     </div> </li> 
-    <li> <p>Mule 3.x: Use one of the following procedures:</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Include the name and version-based auto-discovery element in the configuration.xml.</p> 
-        <div class="paragraph"> 
-         <p><strong>Or</strong></p> 
-        </div> </li> 
-       <li> <p>Set up the global auto-discovery element in Studio 6.</p> </li> 
-      </ul> 
-     </div> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>This topic describes how to incorporate auto-discovery in your Mule 4.x or Mule 3.x Runtime.</p> 
-  </div> 
- </div> 
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="api-auto-discovery-new-concept">About Auto-Discovery</a>/<a href="configure-auto-discovery-new-task" class="breadcrumb-active-link">Auto-Discovery Configuration Tasks</a></div>
+      <h1>Auto-Discovery Configuration Tasks</h1>
+      <div class="paragraph"> 
+ <p>You include API auto-discovery capability in a Mule application to enable API management from Anypoint Platform on the application HTTP endpoint.You need to create an instance of an API before setting up auto-discovery. The way you set up auto-discovery depends on the Mule version you use to deploy the API.</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="to-configure-the-auto-discovery-xml-element-for-mule-4-x-runtime"><a class="anchor" href="#to-configure-the-auto-discovery-xml-element-for-mule-4-x-runtime"></a>To Configure the Auto-Discovery XML Element for Mule 4.x Runtime</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In Mule 4, the apiId and a reference to the API’s main flow identify the API. The main flow is where the HTTP listener is defined. The apiId in Mule 4 replaces the API Name and API Version used to specify auto-discovery in releases before Mule 4.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>On the API administration dashboard, expand the API version name to display the instances.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/instances-jsonplaceholder.png" alt="instances jsonplaceholder" width="518" height="267"> 
-      </div> 
-     </div> </li> 
-    <li> <p>Click an instance name.</p> 
-     <div class="paragraph"> 
-      <p>The API ID appears.</p> 
-     </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/api-id.png" alt="api id"> 
-      </div> 
-     </div> </li> 
-    <li> <p>Use the following syntax to specify the <code>apiId</code> in the configuration.xml:</p> 
-     <div class="paragraph"> 
-      <p><code>&lt;api-gateway:autodiscovery apiId="${api.id}" flowRef="proxy" /&gt;</code></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="to-configure-the-auto-discovery-xml-element-for-mule-3-x-runtime"><a class="anchor" href="#to-configure-the-auto-discovery-xml-element-for-mule-3-x-runtime"></a>To Configure the Auto-Discovery XML Element for Mule 3.x Runtime</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In Mule 3.x, the API name and version reference to the API’s main flow identify the API. The main flow is where the HTTP listener is defined.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In API Administration, click the API version name.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/click-version.png" alt="click version" width="518" height="267"> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The version details page, which shows the API name and version, appears.</p> 
-     </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/name-version.png" alt="name version"> 
-      </div> 
-     </div> </li> 
-    <li> <p>Use the following syntax to specify the <code>apiName</code> and <code>version</code> in the configuration.xml:</p> 
-     <div class="paragraph"> 
-      <p><code>&lt;api-platform-gw:api apiName="${apiName}" version="${apiVersion}" flowRef="proxy" /&gt;</code></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The API name consists of a UUID, which is the group ID and the Exchange asset ID. The API version consists of the version name and the instance ID or the label.</p> 
-     </div> </li> 
-   </ol> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="to-prepare-the-api-to-use-auto-discovery"><a class="anchor" href="#to-prepare-the-api-to-use-auto-discovery"></a>To Prepare the API to Use Auto-discovery</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In Design Center, create an API for each flow you plan to implement in a Mule app.</p> </li> 
-    <li> <p>In Design Center, publish the APIs in Exchange.</p> </li> 
-    <li> <p>In API Manager, set the APIs to manage them from Exchange.</p> </li> 
-   </ol> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="get-the-client-id-and-secret-in-access-management"><a class="anchor" href="#get-the-client-id-and-secret-in-access-management"></a>Get the Client-ID and Secret in Access Management</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In a browser, log in to Anypoint Platform as an administrator, click Access Management &gt; Environments. Click an environment.</p> 
-     <div class="paragraph"> 
-      <p>The environment client ID and client secret appear.</p> 
-     </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/env-clientid-clientsecret.png" alt="env clientid clientsecret"> 
-      </div> 
-     </div> </li> 
-   </ol> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="to-configure-auto-discovery-in-studio-mule-runtime-3-x"><a class="anchor" href="#to-configure-auto-discovery-in-studio-mule-runtime-3-x"></a>To Configure Auto-Discovery in Studio (Mule Runtime 3.x)</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In this procedure, you pair Anypoint Studio with an Anypoint Platform environment in your organization by adding environment credentials to Studio Preferences. You configure auto-discovery for each flow you want to manage using a global element.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>From the Anypoint Studio main menu, select Anypoint Studio &gt; Preferences &gt; Anypoint Studio &gt; Anypoint Platform for APIs.</p> 
-     <div class="paragraph"> 
-      <p>The Preferences dialog for Anypoint Platform for APIs appears.</p> 
-     </div> </li> 
-    <li> <p>Copy the environment client ID and client secret from step 1 to Client Credentials.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/autodis-pairing.png" alt="autodis-pairing"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>This action pairs Mule Runtime with your Anypoint Platform organization’s environment.</p> 
-     </div> </li> 
-    <li> <p>Click Validate to verify that the pairing succeeds.</p> </li> 
-    <li> <p>In Project Explorer, select the app. For example, select <code>api.xml</code> in <code>src/main/app</code> that you created in the APIkit tutorial.</p> </li> 
-    <li> <p>On the Global Elements tab on the canvas, click Create.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/autodis-cerate-global2.png" alt="autodis cerate global2"> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The Choose Global Type dialog appears.</p> 
-     </div> </li> 
-    <li> <p>Select Component Configurations &gt; API Autodiscovery.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/autodis-choose-global2.png" alt="autodis choose global2"> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The Global Element Properties - API Autodiscovery dialog appears.</p> 
-     </div> </li> 
-    <li> <p>Create a global element to declare the details of the API version you want Anypoint Platform to discover:</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>In API Name, type the name of the API that you set up to manage from API Manager.</p> </li> 
-       <li> <p>In API Version, type the version identifier as registered in API Manager, for example <code>1.0</code>.</p> </li> 
-       <li> <p>In Flow Name, select the name of the flow in the API to which you want to direct requests. For example, select <code>api-main</code>, the APIkit tutorial main flow.</p> </li> 
-       <li> <p>In APIkit Router Configuration, click api-config from the drop-down in the case of the APIkit tutorial.</p> 
-        <div class="paragraph"> 
-         <p>This configuration is not used by API Manager.</p> 
-        </div> </li> 
-       <li> <p>In Description, write some documentation about the API.</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/auto-disc-conf2.png" alt="auto-disc-conf2" width="439" height="422"></span></p> 
-        </div> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>In Project Explorer, right-click the app, <code>api.xml</code> in this example, and select Run As &gt; Mule Application.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The API should now be manageable from API Manager.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="/api-manager/v/2.x/api-auto-discovery">About Auto-Discovery</a></p> </li> 
-    <li> <p><a href="/api-manager/v/2.x/create-instance-task">To Create an API Instance</a></p> </li> 
-    <li> <p><a href="/api-manager/v/2.x/api-auto-discovery-new-reference">Auto-Discovery Reference</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p><a href="/api-manager/v/2.x/configure-autodiscovery-4-task">To Configure the Auto-Discovery XML Element for Mule 4.x Runtime</a></p> </li> 
+  <li> <p><a href="/api-manager/v/2.x/configure-autodiscovery-3-task">To Configure the Auto-Discovery XML Element for Mule 3.x Runtime</a></p> </li> 
+ </ul> 
 </div>
     </div>
     <!-- END article-content -->
-    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
-                <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-configure-the-auto-discovery-xml-element-for-mule-4-x-runtime">To Configure the Auto-Discovery XML Element for Mule 4.x Runtime</a></li><li><a class="scroll-menu-link" href="#to-configure-the-auto-discovery-xml-element-for-mule-3-x-runtime">To Configure the Auto-Discovery XML Element for Mule 3.x Runtime</a></li><li><a class="scroll-menu-link" href="#to-prepare-the-api-to-use-auto-discovery">To Prepare the API to Use Auto-discovery</a></li><li><a class="scroll-menu-link" href="#get-the-client-id-and-secret-in-access-management">Get the Client-ID and Secret in Access Management</a></li><li><a class="scroll-menu-link" href="#to-configure-auto-discovery-in-studio-mule-runtime-3-x">To Configure Auto-Discovery in Studio (Mule Runtime 3.x)</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+    
   </div>
 </div>
 <!-- START footer -->

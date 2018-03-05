@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>API Auto-Discovery Reference // MuleSoft Documentation </title>
+  <title>Auto-Discovery Reference (Mule 4) // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -21,8 +21,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/api-auto-discovery-new-reference" />
-  <meta name="description" content="The configuration.xml of a project that includes auto-discovery references the main flow, where you configure the HTTP listener. From the auto-disc..." />
-  <meta class="swiftype" name="title" data-type="string" content="API Auto-Discovery Reference" />
+  <meta name="description" content="The api-platform-gw gateway global element contains the information needed to register an API in Anypoint Platform. The global element include..." />
+  <meta class="swiftype" name="title" data-type="string" content="Auto-Discovery Reference (Mule 4)" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -213,7 +213,11 @@
 <li><i></i><a href="/api-manager/v/2.x/manage-versions-instances-concept">About Managing API Versions and Instances</a></li><li class="expanded">
 <i></i>
 <a href="/api-manager/v/2.x/api-auto-discovery-new-concept">About Auto-Discovery</a><ul style="display: block;">
-<li><i></i><a href="/api-manager/v/2.x/configure-auto-discovery-new-task">To Configure Auto-Discovery</a></li><li class="active"><i></i><a href="/api-manager/v/2.x/api-auto-discovery-new-reference">Auto-Discovery Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/api-manager/v/2.x/configure-auto-discovery-new-task">Auto-Discovery Configuration Tasks</a><ul>
+<li><i></i><a href="/api-manager/v/2.x/configure-autodiscovery-4-task">To Configure the Auto-Discovery XML Element for Mule 4.x Runtime</a></li><li><i></i><a href="/api-manager/v/2.x/configure-autodiscovery-3-task">To Configure the Auto-Discovery XML Element for Mule 3.x Runtime</a></li></ul></li>
+<li class="active"><i></i><a href="/api-manager/v/2.x/api-auto-discovery-new-reference">Auto-Discovery Reference (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/api-platform-gw-attributes-3">Auto-Discovery Reference (Mule 3)</a></li></ul></li>
 <li>
 <i></i>
 <a href="/api-manager/v/2.x/proxy-latest-concept">About Deploying Mule Runtime Proxies</a><ul>
@@ -1135,394 +1139,213 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="api-auto-discovery-new-concept">About Auto-Discovery</a>/<a href="api-auto-discovery-new-reference" class="breadcrumb-active-link">Auto-Discovery Reference</a></div>
-      <h1>API Auto-Discovery Reference</h1>
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="api-auto-discovery-new-concept">About Auto-Discovery</a>/<a href="api-auto-discovery-new-reference" class="breadcrumb-active-link">Auto-Discovery Reference (Mule 4)</a></div>
+      <h1>Auto-Discovery Reference (Mule 4)</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The configuration.xml of a project that includes auto-discovery references the main flow, where you configure the HTTP listener. From the auto-discovery configuration, API Manager obtains the information necessary to manage the APIs described by the global elements.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="api-platform-gw-attributes"><a class="anchor" href="#api-platform-gw-attributes"></a>api-platform-gw Attributes</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The&nbsp;<code>api-platform-gw</code> global element contains the information needed to register an API in Anypoint Platform. The global element includes the description and tag attributes. The api-platform-gw attributes include the <code>flowRef</code> attribute. In an APIkit project, the global element includes an <code>apikitRef</code> that references the APIkit global configuration.</p> 
+   <p>The&nbsp;<code>api-platform-gw</code> gateway global element contains the information needed to register an API in Anypoint Platform. The global element includes the description and tag attributes. The api-platform-gw attributes include the <code>flowRef</code> attribute. In an APIkit project, the global element includes an <code>apikitRef</code> that references the APIkit global configuration.</p> 
   </div> 
   <div class="paragraph"> 
    <p>API Manager 2.x doesn’t support the <code>create</code> attribute. You need to create an API in API Manager before using auto-discovery.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="api-manager-and-mule-3-x"><a class="anchor" href="#api-manager-and-mule-3-x"></a>API Manager and Mule 3.x</h3> 
-   <div class="paragraph"> 
-    <p>The following table lists the <code>api-platform-gw</code> attributes when you use the API Manager 2.x and Mule 3.x:</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3334%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Attribute</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>apiId</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>The friendly API name that appears on API Manager and in Studio on Global Element Properties.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>flowRef</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>A reference to the main flow of your project. It triggers the agent to discover this flow and use it when performing the auto-registration.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>apikitRef</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>No</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>A reference to the APIkit configuration. Used to upload the RAML file to Anypoint Platform after API registration completes and for resource level policies.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>apiName</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>The friendly API name that appears on API Manager and in Studio on Global Element Properties.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>version</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>The version number. Management breaks if you change the version in API Portal.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>API Manager generates the <code>apiName</code> and <code>version</code> of new APIs managed by API Manager. The name and version are displayed on the API instance dashboard:</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/name-version.png" alt="name version"> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If you upgraded a managed API, the existing name and version are preserved to maintain backward compatibility. The following configuration.xml is an example of an API configured for auto-discovery:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Mule Runtime 3.x</strong></p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;api-platform-gw:api</span> <span class="attribute-name">apiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${apiName}</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">${apiVersion}</span><span class="delimiter">"</span></span> <span class="attribute-name">flowRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">proxy</span><span class="delimiter">"</span></span> <span class="attribute-name">create</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">apikitRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">api-config</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">API Autodiscovery</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;api-platform-gw:description&gt;</span>Consume site statistics and perform Q3 computations<span class="tag">&lt;/api-platform-gw:description&gt;</span>
-  <span class="tag">&lt;api-platform-gw:tag&gt;</span>Q3results<span class="tag">&lt;/api-platform-gw:tag&gt;</span>
-<span class="tag">&lt;/api-platform-gw:api&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
+  <div class="paragraph"> 
+   <p>The following table lists the <code>api-platform-gw</code> attributes when you use API Manager 2.x and Mule 4:</p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 33.3333%;"> 
+    <col style="width: 33.3333%;"> 
+    <col style="width: 33.3334%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Attribute</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>apiId</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Yes</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>The friendly API name that appears on API Manager and in Studio on Global Element Properties.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>flowRef</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Yes</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>A reference to the main flow of your project. It triggers the agent to discover this flow and use it when performing the auto-registration.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>apikitRef</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>No</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>A reference to the APIkit configuration. Used to upload the RAML file to Anypoint Platform after API registration completes and for resource level policies.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p>API Manager generates the <code>apiId</code> of new APIs managed by API Manager. The API ID is displayed on the API instance dashboard:</p> 
+  </div> 
+  <div class="imageblock"> 
+   <div class="content"> 
+    <img src="./_images/api-id.png" alt="api id"> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="api-manager-and-mule-4"><a class="anchor" href="#api-manager-and-mule-4"></a>API Manager and Mule 4</h3> 
-   <div class="paragraph"> 
-    <p>The following table lists the <code>api-platform-gw</code> attributes when you use API Manager 2.x and Mule 4:</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3334%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Attribute</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>apiId</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>The friendly API name that appears on API Manager and in Studio on Global Element Properties.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>flowRef</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Yes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>A reference to the main flow of your project. It triggers the agent to discover this flow and use it when performing the auto-registration.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>apikitRef</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>No</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>A reference to the APIkit configuration. Used to upload the RAML file to Anypoint Platform after API registration completes and for resource level policies.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>API Manager generates the <code>apiId</code> of new APIs managed by API Manager. The API ID is displayed on the API instance dashboard:</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/api-id.png" alt="api id"> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The following configuration.xml is an example of an API configured for auto-discovery in Mule Runtime 4.x:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Mule Runtime 4.x</strong></p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+  <div class="paragraph"> 
+   <p>The following configuration.xml is an example of an API configured for auto-discovery in Mule Runtime 4.x:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Mule Runtime 4.x</strong></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
 </pre></td> 
-          <td class="code"><pre><span class="tag">&lt;api-gateway:autodiscovery</span> <span class="attribute-name">apiId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${api.id}</span><span class="delimiter">"</span></span> <span class="attribute-name">flowRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">proxy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">API Autodiscovery</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In Mule Runtime 4.x, <code>create</code>, <code>apikitRef</code> attributes and <code>description</code>, <code>tag</code> elements were removed.</p> 
+         <td class="code"><pre><span class="tag">&lt;api-gateway:autodiscovery</span> <span class="attribute-name">apiId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${api.id}</span><span class="delimiter">"</span></span> <span class="attribute-name">flowRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">proxy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">API Autodiscovery</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="new-api-manager-and-mule-3-x-or-mule-4"><a class="anchor" href="#new-api-manager-and-mule-3-x-or-mule-4"></a>New API Manager and Mule 3.x or Mule 4</h3> 
-   <div class="paragraph"> 
-    <p>The other auto-discovery elements are consistent from Mule releases 3.x to 4.</p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="api-platform-gw-nested-elements"><a class="anchor" href="#api-platform-gw-nested-elements"></a>api-platform-gw Nested Elements</h4> 
-    <div class="paragraph"> 
-     <p>The following attributes list the <code>api-platform-gw</code> nested elements.</p> 
-    </div> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 34%;"> 
-      <col style="width: 33%;"> 
-      <col style="width: 33%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-top">Nested Element</th> 
-       <th class="tableblock halign-left valign-top">Required</th> 
-       <th class="tableblock halign-left valign-top">Description</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><strong>api-platform-gw:description</strong></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>No</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>A description of the API that appears on the API version details page when Anypoint Platform discovers and registers the API.</p> 
-         </div> 
-        </div></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><strong>api-platform-gw:tag</strong></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>No</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-top"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>The tag is searchable metadata in the&nbsp;API Manager and API that appears on the API version details page when Anypoint Platform discovers and registers the API.</p> 
-         </div> 
-        </div></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="auto-discovery-namespace-schema-and-dependency-information"><a class="anchor" href="#auto-discovery-namespace-schema-and-dependency-information"></a>Auto-Discovery Namespace, Schema, and Dependency Information</h4> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway"
-http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd</pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Auto-Discovery Dependency Information</strong></p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>&lt;dependency&gt;
-  &lt;groupId&gt;com.mulesoft.anypoint&lt;/groupId&gt;
-  &lt;artifactId&gt;mule-module-autodiscovery&lt;/artifactId&gt;
-  &lt;version&gt;4.0.0&lt;/version&gt;
-&lt;/dependency&gt;</pre> 
-     </div> 
-    </div> 
-   </div> 
+  <div class="paragraph"> 
+   <p>In Mule Runtime 4.x, <code>create</code>, <code>apikitRef</code> attributes and <code>description</code>, <code>tag</code> elements were removed.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <h2 id="api-platform-gw-nested-elements"><a class="anchor" href="#api-platform-gw-nested-elements"></a>api-platform-gw Nested Elements</h2> 
  <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="/api-manager/v/2.x/api-auto-discovery-new-concept">About Auto-Discovery</a></p> </li> 
-    <li> <p><a href="/api-manager/v/2.x/configure-auto-discovery-new-task">To Configure Auto-Discovery</a></p> </li> 
-   </ul> 
+  <div class="paragraph"> 
+   <p>The following attributes list the <code>api-platform-gw</code> nested elements.</p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 34%;"> 
+    <col style="width: 33%;"> 
+    <col style="width: 33%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Nested Element</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>api-platform-gw:description</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>No</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>A description of the API that appears on the API version details page when Anypoint Platform discovers and registers the API.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>api-platform-gw:tag</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>No</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>The tag is searchable metadata in the&nbsp;API Manager and API that appears on the API version details page when Anypoint Platform discovers and registers the API.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="auto-discovery-namespace-schema-and-dependency-information"><a class="anchor" href="#auto-discovery-namespace-schema-and-dependency-information"></a>Auto-Discovery Namespace, Schema, and Dependency Information</h2> 
+ <div class="sectionbody"> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway"
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd</pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Auto-Discovery Dependency Information</strong></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>&lt;dependency&gt;
+  &lt;groupId&gt;com.mulesoft.anypoint&lt;/groupId&gt;
+  &lt;artifactId&gt;mule-module-autodiscovery&lt;/artifactId&gt;
+  &lt;version&gt;4.0.0&lt;/version&gt;
+&lt;/dependency&gt;</pre> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -1530,7 +1353,7 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#api-platform-gw-attributes">api-platform-gw Attributes</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#api-platform-gw-nested-elements">api-platform-gw Nested Elements</a></li><li><a class="scroll-menu-link" href="#auto-discovery-namespace-schema-and-dependency-information">Auto-Discovery Namespace, Schema, and Dependency Information</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
