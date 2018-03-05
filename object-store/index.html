@@ -1172,10 +1172,19 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Back up all the data in your current object store. No data is migrated from Object Store v1 to v2.</p> </li> 
+    <li> <p>Back up all the data in your current object store.</p> 
+     <div class="admonitionblock important"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+         <td class="content"> Data does not carry over from Object Store v1 to v2. Any data you have in your v1 object store, including watermarks and other Mule component states, will no longer be available after switching to v2. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
     <li> <p>In Anypoint Platform, click Runtime Manager.</p> </li> 
     <li> <p>Click the name of your application to view the application’s dashboard, and click Manage Application. In the Settings screen, click Use Object Store v2. Accept the prompt. The Application Data section of the Runtime Manager’s Dashboard changes to Object Store.</p> </li> 
-    <li> <p>If you have watermarks set, they need to be reset after upgrading to Object Store v2.</p> </li> 
    </ul> 
   </div> 
  </div> 
