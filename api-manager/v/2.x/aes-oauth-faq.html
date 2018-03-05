@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>About OAuth 2.0 // MuleSoft Documentation </title>
+  <title>Building a Mule OAuth Provider Tasks // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -21,8 +21,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/aes-oauth-faq" />
-  <meta name="description" content="In Anypoint Platform, you work with OAuth solutions on the server and client side: Example: Configure an HTTP or Salesforce connector in the app to..." />
-  <meta class="swiftype" name="title" data-type="string" content="About OAuth 2.0" />
+  <meta name="description" content="Using a PingFederate, OpenAM, or a Dynamic Client Registration-compliant provider is recommended. If you don’t want to contract with such a provide..." />
+  <meta class="swiftype" name="title" data-type="string" content="Building a Mule OAuth Provider Tasks" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -233,15 +233,11 @@
 <li>
 <i></i>
 <a href="/api-manager/v/2.x/basic-policy-tasks-index">Basic Policy Tasks</a><ul>
-<li><i></i><a href="/api-manager/v/2.x/tutorial-manage-an-api">To Apply a Policy and SLA Tier</a></li><li><i></i><a href="/api-manager/v/2.x/prepare-raml-task">To Prepare RAML for Policies</a></li><li><i></i><a href="/api-manager/v/2.x/delete-sla-tier-task">To Delete an SLA Tier</a></li><li><i></i><a href="/api-manager/v/2.x/disable-edit-remove-task">To Disable, Edit, or Remove a Policy</a></li><li><i></i><a href="/api-manager/v/2.x/offline-policy-task">To Apply an Offline Policy</a></li><li><i></i><a href="/api-manager/v/2.x/offline-remove-task">To Remove an Offline Policy</a></li><li><i></i><a href="/api-manager/v/2.x/upload-policy-exchange-task">To Upload a Policy to Exchange</a></li><li><i></i><a href="/api-manager/v/2.x/re-order-policies-task">To Re-order Policies</a></li><li><i></i><a href="/api-manager/v/2.x/configure-policy-polling-task">To Configure Policy Polling Time</a></li></ul></li>
+<li><i></i><a href="/api-manager/v/2.x/tutorial-manage-an-api">To Apply a Policy and SLA Tier</a></li><li><i></i><a href="/api-manager/v/2.x/prepare-raml-task">To Prepare RAML for Policies</a></li><li><i></i><a href="/api-manager/v/2.x/delete-sla-tier-task">To Delete an SLA Tier</a></li><li><i></i><a href="/api-manager/v/2.x/re-order-policies-task">To Re-order Policies</a></li><li><i></i><a href="/api-manager/v/2.x/disable-edit-remove-task">To Disable, Edit, or Remove a Policy</a></li><li><i></i><a href="/api-manager/v/2.x/offline-policy-task">To Apply an Offline Policy</a></li><li><i></i><a href="/api-manager/v/2.x/offline-remove-task">To Remove an Offline Policy</a></li><li><i></i><a href="/api-manager/v/2.x/upload-policy-exchange-task">To Upload a Policy to Exchange</a></li><li><i></i><a href="/api-manager/v/2.x/configure-policy-polling-task">To Configure Policy Polling Time</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/resource-level-policies-about">About Resource Level Policies</a></li><li><i></i><a href="/api-manager/v/2.x/resource-level-policy-reference">Resource Level Policy Reference</a></li><li class="expanded">
 <i></i>
 <a href="/api-manager/v/2.x/available-policies">About Provided Policies</a><ul style="display: block;">
-<li>
-<i></i>
-<a href="/api-manager/v/2.x/add-remove-headers-concept">About Add/Remove Headers</a><ul>
-<li><i></i><a href="/api-manager/v/2.x/add-remove-headers-latest-task">Add/Remove Headers</a></li><li><i></i><a href="/api-manager/v/2.x/add-remove-headers">Testing Add and Remove Request Header Policies</a></li></ul></li>
-<li><i></i><a href="/api-manager/v/2.x/cors-policy">To Apply and Edit a CORS Policy</a></li><li><i></i><a href="/api-manager/v/2.x/avoid-restrictions-task">To Avoid Same-Origin Restrictions</a></li><li><i></i><a href="/api-manager/v/2.x/client-id-based-policies">Client ID-Based Policies Reference</a></li><li>
+<li><i></i><a href="/api-manager/v/2.x/cors-policy">To Apply and Edit a CORS Policy</a></li><li><i></i><a href="/api-manager/v/2.x/client-id-based-policies">Client ID-Based Policies Reference</a></li><li>
 <i></i>
 <a href="/api-manager/v/2.x/basic-authentication-concept">About Basic Authentication and LDAP Policies</a><ul>
 <li><i></i><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></li></ul></li>
@@ -255,7 +251,7 @@
 <li><i></i><a href="/api-manager/v/2.x/openam-oauth-token-enforcement-policy">About OpenID Connect, OpenAM, or PingFederate OAuth Token Enforcement Policies</a></li><li><i></i><a href="/api-manager/v/2.x/apply-oauth-token-policy-task">To Configure and Apply an OAuth 2.0 Token Validation Policy</a></li><li><i></i><a href="/api-manager/v/2.x/configure-oauth-proxy-task">To Configure the Proxy Connection to an OAuth Provider</a></li></ul></li>
 <li class="active expanded">
 <i></i>
-<a href="/api-manager/v/2.x/aes-oauth-faq">About OAuth 2.0</a><ul style="display: block;">
+<a href="/api-manager/v/2.x/aes-oauth-faq">Building a Mule OAuth Provider Tasks</a><ul style="display: block;">
 <li><i></i><a href="/api-manager/v/2.x/oauth-build-provider-prerequisites-about">Mule OAuth Provider Prerequisites</a></li><li><i></i><a href="/api-manager/v/2.x/building-an-external-oauth-2.0-provider-application">To Build a Mule OAuth 2.0 Provider</a></li><li><i></i><a href="/api-manager/v/2.x/to-test-local-provider">To Test the Local Provider</a></li><li><i></i><a href="/api-manager/v/2.x/to-deploy-provider">To Deploy the Provider</a></li><li><i></i><a href="/api-manager/v/2.x/to-test-remote-provider">To Test the Remote Provider</a></li><li><i></i><a href="/api-manager/v/2.x/to-configure-provider-multiple-workers">To Configure Multiple Workers</a></li><li><i></i><a href="/api-manager/v/2.x/to-use-authentication">To Use a Mule Provider for OAuth 2.0 Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/oauth-dance-about">About the OAuth Dance</a></li><li><i></i><a href="/api-manager/v/2.x/about-configure-api-for-oauth">About OAuth Policy Prerequisites</a></li><li><i></i><a href="/api-manager/v/2.x/oauth-service-provider-reference">OAuth 2.0 Service Provider Reference</a></li><li><i></i><a href="/api-manager/v/2.x/oauth-grant-types-about">About OAuth Grant Types</a></li><li><i></i><a href="/api-manager/v/2.x/oauth-persist-obj-store-about">About Storing OAuth Tokens</a></li><li><i></i><a href="/api-manager/v/2.x/oauth2-provider-configuration">Mule OAuth 2.0 Provider Configuration Reference</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/spike-control-reference">Spike Control Policy Reference</a></li><li>
 <i></i>
@@ -266,6 +262,10 @@
 <li>
 <i></i>
 <a href="/api-manager/v/2.x/custom-policy-index-latest">About Custom Policies</a><ul>
+<li>
+<i></i>
+<a href="/api-manager/v/2.x/add-remove-headers-concept">Custom Policy Examples</a><ul>
+<li><i></i><a href="/api-manager/v/2.x/add-remove-headers-latest-task">Add/Remove Headers</a></li><li><i></i><a href="/api-manager/v/2.x/add-remove-headers">Testing Add and Remove Request Header Policies</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/http-policy-transform">HTTP Policy Transform Extension</a></li><li><i></i><a href="/api-manager/v/2.x/develop-custom-policies-reference">Custom Policy Development Reference</a></li><li><i></i><a href="/api-manager/v/2.x/custom-policy-4-reference">Custom Policy General Reference</a></li></ul></li>
 <li>
 <i></i>
@@ -1135,127 +1135,29 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="aes-oauth-faq" class="breadcrumb-active-link">About OAuth 2.0</a></div>
-      <h1>About OAuth 2.0</h1>
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="aes-oauth-faq" class="breadcrumb-active-link">Building a Mule OAuth Provider Tasks</a></div>
+      <h1>Building a Mule OAuth Provider Tasks</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In Anypoint Platform, you work with OAuth solutions on the server and client side:</p> 
+   <p>Using a PingFederate, OpenAM, or a Dynamic Client Registration-compliant provider is recommended. If you don’t want to contract with such a provider, you need to build a Mule OAuth provider. Instead of building the provider from the ground up, you can download and import a custom Mule OAuth provider, developed by MuleSoft Consulting, into Anypoint Studio. The following topics cover the tasks involved in building a Mule OAuth Provider:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Accessing an OAuth-protected server from a client app</p> 
-     <div class="paragraph"> 
-      <p>Example: Configure an HTTP or Salesforce connector in the app to access OAuth-protected servers.</p> 
-     </div> </li> 
-    <li> <p>Protecting an API from unauthorized calls from client applications</p> 
-     <div class="paragraph"> 
-      <p>Example: Apply an OAuth 2.0 policy and your configured OAuth provider denies access to unauthenticated client apps.</p> 
-     </div> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth-build-provider-prerequisites-about">Mule OAuth Provider Prerequisites</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/building-an-external-oauth-2.0-provider-application">To Build a Mule OAuth 2.0 Provider</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/to-test-local-provider">To Test the Local Provider</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/to-deploy-provider">To Deploy the Provider</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/to-test-remote-provider">To Test the Remote Provider</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/to-configure-provider-multiple-workers">To Configure Multiple Workers</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/to-use-authentication">To Use a Mule Provider for OAuth 2.0 Authentication</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth-dance-about">About the OAuth Dance</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/about-configure-api-for-oauth">About OAuth Policy Prerequisites</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth-service-provider-reference">OAuth 2.0 Service Provider Reference</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth-grant-types-about">About OAuth Grant Types</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth-persist-obj-store-about">About Storing OAuth Tokens</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/oauth2-provider-configuration">Mule OAuth 2.0 Provider Configuration Reference</a></p> </li> 
    </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You can use the following OAuth provider and policy pairs:</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 40%;"> 
-    <col style="width: 60%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Provider</th> 
-     <th class="tableblock halign-left valign-top">Policy Name</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>PingFederate</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>PingFederate OAuth Token Enforcement</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>OpenAM</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>OpenAM OAuth Token Enforcement</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>A Dynamic Client Registration-compliant identity provider</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>OpenID Connect Access Token Enforcement</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Mule OAuth 2.0</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>OAuth 2.0 Access Token Enforcement Using External Provider</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="paragraph"> 
-   <p>The Dynamic Client Registration-compliant identity provider needs to conform to the OpenID Connect Client Registration 1.0 incorporating errata set 1.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The API to which you apply an OAuth 2.0 policy supports HTTPS communication using a Mule OAuth 2.0 provider. The provider verifies the validity of OAuth 2.0 credentials.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Using a PingFederate, OpenAM, or a Dynamic Client Registration-compliant provider is recommended. If you don’t want to contract with such a provider, you need to build a Mule OAuth provider. Instead of building the provider from the ground up, you can download and import a custom Mule OAuth provider, developed by MuleSoft Consulting, into Anypoint Studio.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="migrating-to-the-mule-oauth-provider"><a class="anchor" href="#migrating-to-the-mule-oauth-provider"></a>Migrating to the Mule OAuth Provider</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>If you are using the deprecated AES OAuth policy provider for non-production environments, the policy as-is is working for you, and can accept tokens exchanged by HTTP (and not HTTPS), no change is required; otherwise, migrate to a Mule OAuth provider as follows:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Customize the Mule OAuth provider to replace the deprecated one.</p> 
-     <div class="paragraph"> 
-      <p>On Exchange, you can download one provider that supports user/password or another that supports LDAP.</p> 
-     </div> </li> 
-    <li> <p>Remove policies from the affected APIs.</p> </li> 
-    <li> <p>Reapply policies.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Your existing registered apps, client IDs, and client secrets continue working.</p> 
   </div> 
  </div> 
 </div> 
@@ -1275,7 +1177,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#migrating-to-the-mule-oauth-provider">Migrating to the Mule OAuth Provider</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
