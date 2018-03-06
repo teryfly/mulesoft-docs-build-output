@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/apply-configure-xml-threat-task" />
-  <meta name="description" content="Malicious attacks on XML applications typically involve large, recursive payloads, XPath/XSLT or SQL injections, and CData. Using the XML Threat Pr..." />
+  <meta name="description" content="The list of any applied policies appears. The following example shows a set of limits.  ..." />
   <meta class="swiftype" name="title" data-type="string" content="To Configure and Apply XML Threat Protection" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
@@ -247,7 +247,7 @@
 <li><i></i><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/ip-blacklist">To Apply IP Blacklist</a></li><li><i></i><a href="/api-manager/v/2.x/ip-whitelist">To Apply IP Whitelist</a></li><li class="expanded">
 <i></i>
-<a href="/api-manager/v/2.x/json-xml-threat-policy">JSON and XML Threat Protection</a><ul style="display: block;">
+<a href="/api-manager/v/2.x/json-xml-threat-policy">About JSON and XML Threat Protection</a><ul style="display: block;">
 <li><i></i><a href="/api-manager/v/2.x/apply-configure-json-threat-task">To Configure and Apply JSON Threat Protection</a></li><li class="active"><i></i><a href="/api-manager/v/2.x/apply-configure-xml-threat-task">To Configure and Apply XML Threat Protection</a></li></ul></li>
 <li>
 <i></i>
@@ -1139,16 +1139,25 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="json-xml-threat-policy">JSON and XML Threat Protection</a>/<a href="apply-configure-xml-threat-task" class="breadcrumb-active-link">To Configure and Apply XML Threat Protection</a></div>
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="json-xml-threat-policy">About JSON and XML Threat Protection</a>/<a href="apply-configure-xml-threat-task" class="breadcrumb-active-link">To Configure and Apply XML Threat Protection</a></div>
       <h1>To Configure and Apply XML Threat Protection</h1>
-      <div class="paragraph"> 
- <p>Malicious attacks on XML applications typically involve large, recursive payloads, XPath/XSLT or SQL injections, and CData. Using the XML Threat Protection policy, you can limit the size of things, such as maximum node depth and text node length, in your XML code to twart malicious attacks. You can limit the size of comments to prevent invasions through CData, for example.</p> 
-</div> 
-<div class="paragraph"> 
- <p>Configure XML threat protection. Set limits, and click apply to start protecting your XML code. The following example shows configuration of an XML threat protection policy.</p> 
-</div> 
-<div class="paragraph"> 
- <p><span class="image"><img src="./_images/xml-threat-policy.png" alt="xml-threat-policy"></span></p> 
+      <div class="olist arabic"> 
+ <ol class="arabic"> 
+  <li> <p>Click the instance number of an API.</p> </li> 
+  <li> <p>On the API dashboard, click Policies.</p> 
+   <div class="paragraph"> 
+    <p>The list of any applied policies appears.</p> 
+   </div> </li> 
+  <li> <p>In Select Policy, choose JSON Threat Protection, and click Configure Policy.</p> </li> 
+  <li> <p>Configure XML threat protection by setting limits.</p> 
+   <div class="paragraph"> 
+    <p>The following example shows a set of limits.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/xml-threat-policy.png" alt="xml-threat-policy"></span></p> 
+   </div> </li> 
+  <li> <p>Click apply to start protecting your XML code.</p> </li> 
+ </ol> 
 </div>
     </div>
     <!-- END article-content -->

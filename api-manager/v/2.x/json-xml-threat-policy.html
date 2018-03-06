@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>JSON and XML Threat Protection Policies // MuleSoft Documentation </title>
+  <title>About JSON and XML Threat Protection Policies // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -22,7 +22,7 @@
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/json-xml-threat-policy" />
   <meta name="description" content="JSON and XML are prone to the same types of malicious injections, often characterized by unusual inflation of elements and nesting levels. Attacker..." />
-  <meta class="swiftype" name="title" data-type="string" content="JSON and XML Threat Protection Policies" />
+  <meta class="swiftype" name="title" data-type="string" content="About JSON and XML Threat Protection Policies" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -247,7 +247,7 @@
 <li><i></i><a href="/api-manager/v/2.x/basic-authentication-simple-concept">Basic Authentication: Simple (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/basic-authentication-ldap-concept">Basic Authentication: LDAP (Mule 4)</a></li><li><i></i><a href="/api-manager/v/2.x/http-basic-authentication-policy">HTTP Basic Authentication</a></li><li><i></i><a href="/api-manager/v/2.x/ldap-security-manager">LDAP Security Manager</a></li></ul></li>
 <li><i></i><a href="/api-manager/v/2.x/ip-blacklist">To Apply IP Blacklist</a></li><li><i></i><a href="/api-manager/v/2.x/ip-whitelist">To Apply IP Whitelist</a></li><li class="active expanded">
 <i></i>
-<a href="/api-manager/v/2.x/json-xml-threat-policy">JSON and XML Threat Protection</a><ul style="display: block;">
+<a href="/api-manager/v/2.x/json-xml-threat-policy">About JSON and XML Threat Protection</a><ul style="display: block;">
 <li><i></i><a href="/api-manager/v/2.x/apply-configure-json-threat-task">To Configure and Apply JSON Threat Protection</a></li><li><i></i><a href="/api-manager/v/2.x/apply-configure-xml-threat-task">To Configure and Apply XML Threat Protection</a></li></ul></li>
 <li>
 <i></i>
@@ -1139,8 +1139,8 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="json-xml-threat-policy" class="breadcrumb-active-link">JSON and XML Threat Protection</a></div>
-      <h1>JSON and XML Threat Protection Policies</h1>
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="json-xml-threat-policy" class="breadcrumb-active-link">About JSON and XML Threat Protection</a></div>
+      <h1>About JSON and XML Threat Protection Policies</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1149,33 +1149,17 @@
   <div class="paragraph"> 
    <p>In the event Mule Runtime fails to detect an attack, you need to monitor and design your services architecture with layers of protection in addition to these policies.</p> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="protecting-json-applications"><a class="anchor" href="#protecting-json-applications"></a>Protecting JSON Applications</h2> 
- <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>By its nature, JSON is vulnerable to JavaScript injection. When you parse the JSON object, the malicious code inflicts its damages. An inordinate increase in the size and depth of the JSON payload can indicate injection. Applying the JSON threat protection policy can limit the size of your JSON payload and thwart recursive additions to the JSON hierarchy.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Configure JSON threat protection using the procedure to protect JSON appications.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="protecting-xml-applications"><a class="anchor" href="#protecting-xml-applications"></a>Protecting XML Applications</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Malicious attacks on XML applications typically involve large, recursive payloads, XPath/XSLT or SQL injections, and CData. Using the XML Threat Protection policy, you can limit the size of things, such as maximum node depth and text node length, in your XML code to thwart malicious attacks. You can limit the size of comments to prevent invasions through CData, for example.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Configure XML threat protection using the procedure to protect XML applications.</p> 
+   <p>Configure and apply the JSON and XML threat protection policies using the procedures in subtopics listed below.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="responses-to-json-and-xml-threat-protection-policies"><a class="anchor" href="#responses-to-json-and-xml-threat-protection-policies"></a>Responses to JSON and XML Threat Protection Policies</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Reponses to these policies are:</p> 
+  </div> 
   <div class="ulist"> 
    <ul> 
     <li> <p>200</p> 
@@ -1196,6 +1180,7 @@
   <div class="ulist"> 
    <ul> 
     <li> <p><a href="/api-manager/v/2.x/apply-configure-json-threat-task">To Configure and Apply JSON Threat Protection</a></p> </li> 
+    <li> <p><a href="/api-manager/v/2.x/apply-configure-xml-threat-task">To Configure and Apply XML Threat Protection</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1204,7 +1189,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#protecting-json-applications">Protecting JSON Applications</a></li><li><a class="scroll-menu-link" href="#protecting-xml-applications">Protecting XML Applications</a></li><li><a class="scroll-menu-link" href="#responses-to-json-and-xml-threat-protection-policies">Responses to JSON and XML Threat Protection Policies</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#responses-to-json-and-xml-threat-protection-policies">Responses to JSON and XML Threat Protection Policies</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
