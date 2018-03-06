@@ -1146,6 +1146,19 @@
   <div class="paragraph"> 
    <p>API auto-discovery is the mechanism to manage an API from API Manager by pairing the deployed application to an API created on the platform. API Management includes tracking, enforcing policies if you apply any, and reporting API analytics. Critical to the auto-discovery process is identifying the API by providing the API name and version.</p> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="unsupported-use-of-auto-discovery"><a class="anchor" href="#unsupported-use-of-auto-discovery"></a>Unsupported Use of Auto-Discovery</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Multiple auto-discovery elements pointing to an API instance is unsupported. For each supported Mule runtime version for an API instance, you can have only one autodiscovery element pointing to the API in API Manager.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="configuring-auto-discovery"><a class="anchor" href="#configuring-auto-discovery"></a>Configuring Auto-Discovery</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>If an API is not registered on Anypoint Platform, auto-discovery triggers that registration. If you manually register and deploy an API, you need to enable auto-discovery to use the API Gateway. If the API is not registered, you need to provide the credentials as follows:</p> 
   </div> 
@@ -1209,7 +1222,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#auto-discovery-process">Auto-discovery Process</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#unsupported-use-of-auto-discovery">Unsupported Use of Auto-Discovery</a></li><li><a class="scroll-menu-link" href="#configuring-auto-discovery">Configuring Auto-Discovery</a></li><li><a class="scroll-menu-link" href="#auto-discovery-process">Auto-discovery Process</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
