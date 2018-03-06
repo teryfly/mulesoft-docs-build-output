@@ -1187,6 +1187,56 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
+    <li> <p>Modify the groupId of the Maven project to be your Organization ID in your project’s POM file:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+            <td class="code"><pre> ...
+ <span class="tag">&lt;groupId&gt;</span>ORGANIZATION_ID<span class="tag">&lt;/groupId&gt;</span>
+ ...</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>add asset type in properties part in your project’s POM file. For example:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+            <td class="code"><pre> ...
+ <span class="tag">&lt;properties&gt;</span>
+  ...
+  <span class="tag">&lt;mule.version&gt;</span>3.9.0<span class="tag">&lt;/mule.version&gt;</span>
+  <span class="tag">&lt;mule.tools.version&gt;</span>1.2<span class="tag">&lt;/mule.tools.version&gt;</span>
+  <span class="tag">&lt;type&gt;</span>template<span class="tag">&lt;/type&gt;</span>
+ <span class="tag">&lt;/properties&gt;</span>
+ ...</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
     <li> <p>Add the Maven facade as a repository in the distribution management section of your project’s POM file:</p> 
      <div class="listingblock"> 
       <div class="content"> 
