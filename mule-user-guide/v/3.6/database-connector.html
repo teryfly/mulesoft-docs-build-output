@@ -1158,7 +1158,7 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Check that your database engine is&nbsp;<a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a>; if it is not, then add the database driver for your database engine.</p> </li> 
+    <li> <p>Check that your database engine is&nbsp;<a href="#configuring-database-engines-supported-out-of-the-box">Configuring Database Engines Supported Out of the Box</a>; if it is not, then add the database driver for your database engine.</p> </li> 
     <li> <p>Configure a Database Global Element where you define:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
@@ -1227,10 +1227,82 @@
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/modif_flowchart.png" alt="modif_flowchart"></span></p> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="configuring-database-engines-supported-out-of-the-box"><a class="anchor" href="#configuring-database-engines-supported-out-of-the-box"></a>Configuring Database Engines Supported Out of the Box</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The database connector currently includes out of the box support for three database engines:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Oracle</p> </li> 
+    <li> <p>MySQL</p> </li> 
+    <li> <p>Derby</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>All other database engines – including MS SQL – are supported by the <strong>Generic Database Configuration</strong> option.</p> 
+  </div> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>Note that the steps below differ depending on if you’re trying to connect to one of the DBs supported out of the box or not, follow only those that correspond to your use case.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>When using the Generic Database Configuration, you manually import the driver for your database engine and specify the driver class as one of the connection parameters. This allows you to use the database connector with any database engine for which you have a driver.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For details on configuring the database connector for any of the above scenarios, see the sections below.</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="database-engines-supported-out-of-the-box"><a class="anchor" href="#database-engines-supported-out-of-the-box"></a>Database Engines Supported Out of the Box</h3> 
+   <h3 id="adding-the-database-driver-for-database-engines-supported-out-of-the-box"><a class="anchor" href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box"></a>Adding the Database Driver For Database Engines Supported Out of the Box</h3> 
    <div class="paragraph"> 
-    <p>The database connector currently includes out of the box support for three database engines:</p> 
+    <p>For database engines supported out of the box, the easiest way to add the database driver is to use the <strong>Add File</strong> button in the global element configuration window. The following is a brief summary of the steps required to create a global database connector and add the driver. For full configuration details including connection parameters and advanced settings, see Configuring the Database Connector below.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To add the database driver for a database engine supported out of the box:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Ensure that you have downloaded the database driver and that it is available on your machine.</p> </li> 
+     <li> <p>Drag a <strong>Database</strong> building block from the Studio palette onto the canvas.</p> </li> 
+     <li> <p>Click the <strong>Database</strong> building block to open its properties editing window.</p> </li> 
+     <li> <p>Click the&nbsp;<span class="image"><img src="./_images/plus.png" alt="plus"></span> icon to the right of <strong>Connector configuration</strong> to create a database global element for this database connector.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/choose.global.type.png" alt="choose.global.type"></span></p> 
+      </div> </li> 
+     <li> <p>Studio displays the <strong>Global Element Properties</strong> window, shown below. At the bottom of the window you find the <strong>Required dependencies</strong> section. Click <strong>Add File</strong> to add the <code>.jar</code> file for your database driver.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/add.driver.oracle.png" alt="add.driver.oracle"></span></p> 
+      </div> </li> 
+     <li> <p>Studio displays the <strong>Global Element Properties</strong> window, shown below. At the bottom of the window you find the <strong>Required dependencies</strong> section. Click <strong>Add File</strong> to add the <code>.jar</code> file for your database driver.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/add.driver.oracle.png" alt="add.driver.oracle"></span></p> 
+      </div> </li> 
+     <li> <p>Browse to and select the <code>.jar</code> file for your database driver. The driver is automatically added to the project.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Should you need to modify the driver after installation (for example when upgrading the driver version) you can use the same configuration window. The <strong>Add File</strong> button is replaced by a <strong>Modify</strong> button (as shown below with an installed MySQL driver). Clicking <strong>Modify</strong> allows you to edit the Java build path for the project.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/installed_mysql_driver.png" alt="installed_mysql_driver"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="configuring-the-global-database-connector-for-database-engines-supported-out-of-the-box"><a class="anchor" href="#configuring-the-global-database-connector-for-database-engines-supported-out-of-the-box"></a>Configuring the Global Database Connector for Database Engines Supported Out of the Box</h3> 
+   <div class="paragraph"> 
+    <p>The following database engines are supported out of the box:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
@@ -1240,864 +1312,365 @@
     </ul> 
    </div> 
    <div class="paragraph"> 
-    <p>All other database engines – including MS SQL – are supported by the <strong>Generic Database Configuration</strong> option.</p> 
-   </div> 
-   <div class="admonitionblock important"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>Note that the steps below differ depending on if you’re trying to connect to one of the DBs supported out of the box or not, follow only those that correspond to your use case.</p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>When using the Generic Database Configuration, you manually import the driver for your database engine and specify the driver class as one of the connection parameters. This allows you to use the database connector with any database engine for which you have a driver.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>For details on configuring the database connector for any of the above scenarios, see the sections below.</p> 
+    <p>This section explains how to configure a database connector for use with any of these databases.</p> 
    </div> 
    <div class="sect3"> 
-    <h4 id="adding-the-database-driver-for-database-engines-supported-out-of-the-box"><a class="anchor" href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box"></a>Adding the Database Driver For Database Engines Supported Out of the Box</h4> 
+    <h4 id="configuring-with-the-studio-visual-editor"><a class="anchor" href="#configuring-with-the-studio-visual-editor"></a>Configuring with the Studio Visual Editor</h4> 
     <div class="paragraph"> 
-     <p>For database engines supported out of the box, the easiest way to add the database driver is to use the <strong>Add File</strong> button in the global element configuration window. The following is a brief summary of the steps required to create a global database connector and add the driver. For full configuration details including connection parameters and advanced settings, see Configuring the Database Connector below.</p> 
+     <p>The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
     </div> 
-    <div class="paragraph"> 
-     <p>To add the database driver for a database engine supported out of the box:</p> 
+    <div class="sect4"> 
+     <h5 id="oracle"><a class="anchor" href="#oracle"></a>Oracle</h5> 
+     <table class="tableblock frame-all grid-all spread"> 
+      <colgroup> 
+       <col> 
+       <col> 
+       <col> 
+      </colgroup> 
+      <thead> 
+       <tr> 
+        <th class="tableblock halign-left valign-top">Attribute, Required</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
+        <th class="tableblock halign-left valign-top">Properties Editor</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
+        <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/oracle_global_elem.png" alt="oracle_global_elem"></span></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above for details.</p></td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Ensure that you have downloaded the database driver and that it is available on your machine.</p> </li> 
-      <li> <p>Drag a <strong>Database</strong> building block from the Studio palette onto the canvas.</p> </li> 
-      <li> <p>Click the <strong>Database</strong> building block to open its properties editing window.</p> </li> 
-      <li> <p>Click the&nbsp;<span class="image"><img src="./_images/plus.png" alt="plus"></span> icon to the right of <strong>Connector configuration</strong> to create a database global element for this database connector.</p> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/choose.global.type.png" alt="choose.global.type"></span></p> 
-       </div> </li> 
-      <li> <p>Studio displays the <strong>Global Element Properties</strong> window, shown below. At the bottom of the window you find the <strong>Required dependencies</strong> section. Click <strong>Add File</strong> to add the <code>.jar</code> file for your database driver.</p> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/add.driver.oracle.png" alt="add.driver.oracle"></span></p> 
-       </div> </li> 
-      <li> <p>Studio displays the <strong>Global Element Properties</strong> window, shown below. At the bottom of the window you find the <strong>Required dependencies</strong> section. Click <strong>Add File</strong> to add the <code>.jar</code> file for your database driver.</p> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/add.driver.oracle.png" alt="add.driver.oracle"></span></p> 
-       </div> </li> 
-      <li> <p>Browse to and select the <code>.jar</code> file for your database driver. The driver is automatically added to the project.</p> </li> 
-     </ol> 
+    <div class="sect4"> 
+     <h5 id="mysql"><a class="anchor" href="#mysql"></a>MySQL</h5> 
+     <table class="tableblock frame-all grid-all spread"> 
+      <colgroup> 
+       <col> 
+       <col> 
+       <col> 
+      </colgroup> 
+      <thead> 
+       <tr> 
+        <th class="tableblock halign-left valign-top">Attribute, Required</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
+        <th class="tableblock halign-left valign-top">Properties Editor</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
+        <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/mysql_global_elem.png" alt="mysql_global_elem"></span></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above for details.</p></td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
-    <div class="paragraph"> 
-     <p>Should you need to modify the driver after installation (for example when upgrading the driver version) you can use the same configuration window. The <strong>Add File</strong> button is replaced by a <strong>Modify</strong> button (as shown below with an installed MySQL driver). Clicking <strong>Modify</strong> allows you to edit the Java build path for the project.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/installed_mysql_driver.png" alt="installed_mysql_driver"></span></p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="ootbconfig"><a class="anchor" href="#ootbconfig"></a>Configuring the Global Database Connector for Database Engines Supported Out of the Box</h4> 
-    <div class="paragraph"> 
-     <p>Currently, the following database engines are supported out of the box:</p> 
-    </div> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>Oracle</p> </li> 
-      <li> <p>MySQL</p> </li> 
-      <li> <p>Derby</p> </li> 
-     </ul> 
-    </div> 
-    <div class="paragraph"> 
-     <p>This section explains how to configure a database connector for use with any of these databases.</p> 
-    </div> 
-    <div class="panel panel-default no-padding"> 
-     <div class="panel-heading no-padding"> 
-      <!-- Nav tabs --> 
-      <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#tab-1_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#tab-1_2" role="tab" data-toggle="tab">XML Editor</a></li> 
-      </ul> 
+    <div class="sect4"> 
+     <h5 id="derby"><a class="anchor" href="#derby"></a>Derby</h5> 
+     <table class="tableblock frame-all grid-all spread"> 
+      <colgroup> 
+       <col> 
+       <col> 
+       <col> 
+      </colgroup> 
+      <thead> 
+       <tr> 
+        <th class="tableblock halign-left valign-top">Attribute, Required</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
+        <th class="tableblock halign-left valign-top">Properties Editor</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
+        <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/derby_global_elem.png" alt="derby_global_elem"></span></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above for details.</p></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     <div class="paragraph"> 
+      <p><strong>OPTIONAL:</strong>&nbsp; The following table describes the attributes of the element that you&nbsp;can&nbsp; <em>optionally</em> &nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
      </div> 
-     <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="tab-1_1"> 
-       <div class="paragraph"> 
-        <p><strong>REQUIRED:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
-       </div> 
-       <div class="sect4"> 
-        <h5 id="oracle"><a class="anchor" href="#oracle"></a>Oracle</h5> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col> 
-          <col> 
-          <col> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Attribute, Required</th> 
-           <th class="tableblock halign-left valign-top">Use</th> 
-           <th class="tableblock halign-left valign-top">Properties Editor</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
-           <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/oracle_global_elem.png" alt="oracle_global_elem"></span></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">[Adding the Database Driver For Database Engines Supported Out of the Box]</a> above for details.</p></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-       </div> 
-       <div class="sect4"> 
-        <h5 id="mysql"><a class="anchor" href="#mysql"></a>MySQL</h5> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col> 
-          <col> 
-          <col> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Attribute, Required</th> 
-           <th class="tableblock halign-left valign-top">Use</th> 
-           <th class="tableblock halign-left valign-top">Properties Editor</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
-           <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/mysql_global_elem.png" alt="mysql_global_elem"></span></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">[Adding the Database Driver For Database Engines Supported Out of the Box]</a> above for details.</p></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-       </div> 
-       <div class="sect4"> 
-        <h5 id="derby"><a class="anchor" href="#derby"></a>Derby</h5> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col> 
-          <col> 
-          <col> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Attribute, Required</th> 
-           <th class="tableblock halign-left valign-top">Use</th> 
-           <th class="tableblock halign-left valign-top">Properties Editor</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database connector element in your application.</p></td> 
-           <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/derby_global_elem.png" alt="derby_global_elem"></span></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database Configuration Parameters</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Configure via spring-bean</strong><br> </p><p class="tableblock">OR<br> </p><p class="tableblock"><strong>Database URL&nbsp;</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to add the database driver to your project. See <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">[Adding the Database Driver For Database Engines Supported Out of the Box]</a> above for details.</p></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-        <div class="paragraph"> 
-         <p><strong>OPTIONAL:</strong>&nbsp; The following table describes the attributes of the element that you&nbsp;can&nbsp; <em>optionally</em> &nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
-        </div> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col> 
-          <col> 
-          <col> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Attribute, Optional</th> 
-           <th class="tableblock halign-left valign-top">Use</th> 
-           <th class="tableblock halign-left valign-top">Properties Editor</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>General tab</strong></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Use to "turn on" DataSense, which enables Mule to make use of message metadata during design time.</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/config_enable_DS.png" alt="config_enable_DS"></span></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions.</p></td> 
-           <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/Advanced+GE.png" alt="Advanced+GE"></span></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Define the amount of time a database connection remains securely active during a period of non-usage before timing-out and demanding logging in again.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Define database read issue levels.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Driver Class Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">The fully qualified name of the database driver class.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Send parameters as key-value pairs&nbsp;to your DB. The parameters that can be set depend on what database software you are connecting to.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Pooling</strong></p></td> 
-           <td class="tableblock halign-left valign-top"> 
-            <div> 
-             <div class="paragraph"> 
-              <p>Define values for any of the connection pooling attributes to customize how your Database Connector reuses connections to the database. You can define values for:</p> 
-             </div> 
-             <div class="ulist"> 
-              <ul> 
-               <li> <p>Max Pool Size</p> </li> 
-               <li> <p>Min Pool Size</p> </li> 
-               <li> <p>Acquire Increment</p> </li> 
-               <li> <p>Prepared Statement Cache Size</p> </li> 
-               <li> <p>Max Wait Millis</p> </li> 
-              </ul> 
-             </div> 
-            </div></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-       </div> 
-      </div> 
-      <div class="tab-pane fade no-padding" id="tab-1_2"> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col> 
-         <col> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top">Attribute</th> 
-          <th class="tableblock halign-left valign-top">Use</th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">DB Config <code>&lt;db:generic-config&gt;</code></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define unique identifier for the global Database Connector element in your application.</p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>database</strong><br> <strong>host</strong><br> <strong>password</strong><br> <strong>port</strong><br> <strong>user</strong><br> <strong>instance</strong> (Oracle only)</p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useXaTransactions</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions.</p></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col> 
-         <col> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
-          <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Pooling Profile&nbsp; <code>&lt;db:pooling-profile/&gt;</code></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>driverClass Name</strong></p></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>The fully qualified name of the database driver class.</p> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>maxPoolSize</strong><br> <strong>minPoolSize</strong><br> <strong>acquireIncrement</strong><br> <strong>preparedStatementCacheSize</strong><br> <strong>maxWaitMillis</strong></p></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>Define values for any of the connection pooling attributes to customize how your Database Connector reuses connections to the database. You can define values for:</p> 
-            </div> 
-            <div class="ulist"> 
-             <ul> 
-              <li> <p>Max Pool Size</p> </li> 
-              <li> <p>Min Pool Size</p> </li> 
-              <li> <p>Acquire Increment</p> </li> 
-              <li> <p>Prepared Statement Cache Size</p> </li> 
-              <li> <p>Max Wait Millis</p> </li> 
-             </ul> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Connection Properties</strong></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><code>&lt;db:connection-properties&gt;</code></p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-      </div> 
-     </div> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="database-engines-not-supported-out-of-the-box-generic-installation"><a class="anchor" href="#database-engines-not-supported-out-of-the-box-generic-installation"></a>Database Engines Not Supported Out of the Box (Generic Installation)</h3> 
-   <div class="paragraph"> 
-    <p>All databases that are not configured <a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a> must be added through the generic database instalation, and then configured accordingly.</p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="adding-the-database-driver-for-generic-db-configuration"><a class="anchor" href="#adding-the-database-driver-for-generic-db-configuration"></a>Adding the Database Driver for Generic DB Configuration</h4> 
-    <div class="paragraph"> 
-     <p>To install the database driver for a generic installation, follow the steps below.</p> 
-    </div> 
-    <div class="panel panel-default no-padding"> 
-     <div class="panel-heading no-padding"> 
-      <!-- Nav tabs --> 
-      <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#tab-2_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#tab-2_2" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
-      </ul> 
-     </div> 
-     <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="tab-2_1"> 
-       <div class="olist arabic"> 
-        <ol class="arabic"> 
-         <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;http://dev.mysql.com/downloads/connector/j/[download] online. &nbsp;</p> </li> 
-         <li> <p>Drag and drop the driver’s&nbsp;<code>jar</code>&nbsp;file from your local drive to the&nbsp;<code>root</code>&nbsp;folder in your&nbsp;project.</p> </li> 
-         <li> <p>Add the <code>.jar</code> file to the build path of your project. Right-click the project name, then select&nbsp;<strong>Build Path</strong>&nbsp;&gt;&nbsp;<strong>Configure Build Path</strong>.</p> </li> 
-         <li> <p>In the wizard that appears, click the <strong>Libraries</strong> tab, then click <strong>Add Jars</strong>.</p> </li> 
-         <li> <p>Navigate to the <code>root</code> folder in your project, then select the ` .jar` file for your database driver.&nbsp;</p> </li> 
-         <li> <p>Click <strong>OK</strong> to save, then <strong>OK</strong> to exit the wizard. Notice that your project now has a new folder named <strong>Referenced Libraries</strong> in which your database driver <code>.jar</code> resides.</p> 
+     <table class="tableblock frame-all grid-all spread"> 
+      <colgroup> 
+       <col> 
+       <col> 
+       <col> 
+      </colgroup> 
+      <thead> 
+       <tr> 
+        <th class="tableblock halign-left valign-top">Attribute, Optional</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
+        <th class="tableblock halign-left valign-top">Properties Editor</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr> 
+        <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>General tab</strong></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Use to "turn on" DataSense, which enables Mule to make use of message metadata during design time.</p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/config_enable_DS.png" alt="config_enable_DS"></span></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions.</p></td> 
+        <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/Advanced+GE.png" alt="Advanced+GE"></span></p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Define the amount of time a database connection remains securely active during a period of non-usage before timing-out and demanding logging in again.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Define database read issue levels.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Driver Class Name</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">The fully qualified name of the database driver class.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">Send parameters as key-value pairs&nbsp;to your DB. The parameters that can be set depend on what database software you are connecting to.</p></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Pooling</strong></p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
           <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/pack_explorer.png" alt="pack_explorer"></span></p> 
-          </div> </li> 
-        </ol> 
-       </div> 
-      </div> 
-      <div class="tab-pane fade no-padding" id="tab-2_2"> 
-       <div class="olist arabic"> 
-        <ol class="arabic"> 
-         <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;http://dev.mysql.com/downloads/connector/j/[download] online. &nbsp;</p> </li> 
-         <li> <p>Add the driver’s&nbsp;<code>.jar</code>&nbsp;file to the&nbsp;<code>root</code>&nbsp;folder&nbsp;in your&nbsp;project. In Studio, you can drag and drop the file from your local drive into the project folder.</p> </li> 
-         <li> <p>Add the <code>.jar</code> file to the build path of your project.</p> </li> 
-        </ol> 
-       </div> 
-      </div> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>After adding the database driver for a database engine not supported out of the box, you need to enter the fully qualified name of the driver class in the global element referenced by the database connector. For details, see Configuring for Other Database Engines Generic Configuration below.</p> 
+           <p>Define values for any of the connection pooling attributes to customize how your Database Connector reuses connections to the database. You can define values for:</p> 
+          </div> 
+          <div class="ulist"> 
+           <ul> 
+            <li> <p>Max Pool Size</p> </li> 
+            <li> <p>Min Pool Size</p> </li> 
+            <li> <p>Acquire Increment</p> </li> 
+            <li> <p>Prepared Statement Cache Size</p> </li> 
+            <li> <p>Max Wait Millis</p> </li> 
+           </ul> 
+          </div> 
+         </div></td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="configuring-the-global-database-connector-for-generic-db-configuration"><a class="anchor" href="#configuring-the-global-database-connector-for-generic-db-configuration"></a>Configuring the Global Database Connector for Generic DB Configuration</h4> 
-    <div class="panel panel-default no-padding"> 
-     <div class="panel-heading no-padding"> 
-      <!-- Nav tabs --> 
-      <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#tab-3_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#tab-3_2" role="tab" data-toggle="tab">XML Editor</a></li> 
-      </ul> 
-     </div> 
-     <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="tab-3_1"> 
-       <div class="paragraph"> 
-        <p><strong>REQUIRED:</strong>&nbsp;The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
-       </div> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col> 
-         <col> 
-         <col> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top">Attribute, required</th> 
-          <th class="tableblock halign-left valign-top">Use</th> 
-          <th class="tableblock halign-left valign-top">Properties Editor</th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define unique identifier for the global Database Connector element in your application.</p></td> 
-          <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/global_elem-generic_DB-gral_tab.png" alt="global_elem-generic_DB-gral_tab"></span></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via spring-bean</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Optional.</strong> Configure this database connection by the Spring bean referenced in <strong>DataSource Reference</strong>. Mutually exclusive with&nbsp;<strong>Database URL</strong>.</p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database URL</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Optional</strong> (can also be configured with <strong>Configure via spring-bean</strong>). The URL for the database connection. Mutually exclusive with <strong>Configure via spring-bean</strong>.</p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Driver Class Name</strong></p></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>Fully-qualified driver class name of the driver for your database, which must be already imported into your project. (For details on importing the driver, see <a href="#ootbconfig">[ootbconfig]</a> above.) You can enter the full name in the empty field or click <strong>…​</strong> to browse the available driver classes.</p> 
-            </div> 
-            <div class="paragraph"> 
-             <p>+ When browsing the available driver classes, type the beginning of the driver class name (which you can check by clicking the driver file under Referenced Libraries in the Package Explorer). Studio displays the list of classes provided by the driver.</p> 
-            </div> 
-            <div class="paragraph"> 
-             <p>+ For a list of driver classes of commonly-used database engines, see <a href="#Common Driver Class Specifications">[Common Driver Class Specifications]</a> below.</p> 
-            </div> 
-           </div></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-       <div class="paragraph"> 
-        <p><strong>OPTIONAL:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Global Database Connector.</p> 
-       </div> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col> 
-         <col> 
-         <col> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top">Attribute, Optional</th> 
-          <th class="tableblock halign-left valign-top">Use</th> 
-          <th class="tableblock halign-left valign-top">Properties Editor</th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>General tab</strong></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to "turn on" DataSense, which enables Mule to make use of message metadata during design time. Default: <code>true</code>.</p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/config_enable_DS.png" alt="config_enable_DS"></span></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Send parameters as key-value pairs&nbsp;to your DB. The parameters that can be set depend on what database software you are connecting to.</p></td> 
-          <td class="tableblock halign-left valign-top" rowspan="3"></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Define the amount of time a database connection remains securely active during a period of non-usage before timing-out and demanding logging in again.</p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Pooling</strong></p></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>Define values for any of the connection pooling attributes to customize how your database connector reuses connections to the database. You can define values for:</p> 
-            </div> 
-            <div class="ulist"> 
-             <ul> 
-              <li> <p>Max Pool Size</p> </li> 
-              <li> <p>Min Pool Size</p> </li> 
-              <li> <p>Acquire Increment</p> </li> 
-              <li> <p>Prepared Statement Cache Size</p> </li> 
-              <li> <p>Max Wait Millis</p> </li> 
-             </ul> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions. Default: <code>false</code>.</p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/use_XA_transact.png" alt="use_XA_transact"></span></p></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-      </div> 
-      <div class="tab-pane fade no-padding" id="tab-3_2"> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col> 
-         <col> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top">Attribute</th> 
-          <th class="tableblock halign-left valign-top">Use</th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>DB Config</strong></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><code>&lt;db:generic-config&gt;</code></p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database Connector element in your application.</p></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><strong>database</strong><br> <strong>host</strong><br> <strong>password</strong><br> <strong>port</strong><br> <strong>user</strong></p> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useXaTransactions</strong></p></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-       <table class="tableblock frame-all grid-all spread"> 
-        <colgroup> 
-         <col style="width: 30%;"> 
-         <col style="width: 70%;"> 
-        </colgroup> 
-        <thead> 
-         <tr> 
-          <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
-          <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
-         </tr> 
-        </thead> 
-        <tbody> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>Pooling Profile</p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><code>&lt;db:pooling-profile/&gt;</code></p> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><strong>driverClassName</strong></p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>The fully qualified name of the database driver class.</p> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><strong>maxPoolSize</strong><br> <strong>minPoolSize</strong><br> <strong>acquireIncrement</strong><br> <strong>preparedStatementCacheSize</strong><br> <strong>maxWaitMillis</strong></p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p>Define values for any of the connection pooling attributes to customize how your database connector reuses connections to the database. You can define values for:</p> 
-            </div> 
-            <div class="ulist"> 
-             <ul> 
-              <li> <p>Max Pool Size</p> </li> 
-              <li> <p>Min Pool Size</p> </li> 
-              <li> <p>Acquire Increment</p> </li> 
-              <li> <p>Prepared Statement Cache Size</p> </li> 
-              <li> <p>Max Wait Millis</p> </li> 
-             </ul> 
-            </div> 
-           </div></td> 
-         </tr> 
-         <tr> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><strong>Connection Properties</strong>&nbsp; <code>&lt;db:connection-properties&gt;</code></p> 
-            </div> 
-           </div></td> 
-          <td class="tableblock halign-left valign-top"> 
-           <div> 
-            <div class="paragraph"> 
-             <p><strong>Advanced Parameters</strong></p> 
-            </div> 
-           </div></td> 
-         </tr> 
-        </tbody> 
-       </table> 
-      </div> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="common-driver-class-specifications"><a class="anchor" href="#common-driver-class-specifications"></a>Common Driver Class Specifications</h4> 
-    <div class="paragraph"> 
-     <p>When you configure a global element for a generic database server, you need to enter the fully qualified name of the driver class as explained in the Driver Class Name cell in the table above. Below are the driver class names provided by some of the most common database drivers.</p> 
-    </div> 
-    <table class="tableblock frame-all grid-all"> 
+    <h4 id="configuring-with-the-xml-editor"><a class="anchor" href="#configuring-with-the-xml-editor"></a>Configuring with the XML Editor</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
      <colgroup> 
-      <col> 
       <col> 
       <col> 
      </colgroup> 
      <thead> 
       <tr> 
-       <th class="tableblock halign-left valign-top">Database</th> 
-       <th class="tableblock halign-left valign-top">Driver version</th> 
-       <th class="tableblock halign-left valign-top">Driver class name</th> 
+       <th class="tableblock halign-left valign-top">Attribute</th> 
+       <th class="tableblock halign-left valign-top">Use</th> 
       </tr> 
      </thead> 
      <tbody> 
       <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>postgresql-9.3-1101.jdbc3.jar</code></p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.postgresql.Driver</code></p></td> 
+       <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">DB Config <code>&lt;db:generic-config&gt;</code></p></td> 
       </tr> 
       <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">MS-SQL</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sqljdbc4.jar</code></p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>com.microsoft.sqlserver.jdbc.SQLServerDriver</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define unique identifier for the global Database Connector element in your application.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>database</strong><br> <strong>host</strong><br> <strong>password</strong><br> <strong>port</strong><br> <strong>user</strong><br> <strong>instance</strong> (Oracle only)</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useXaTransactions</strong></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col> 
+      <col> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
+       <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Pooling Profile&nbsp; <code>&lt;db:pooling-profile/&gt;</code></p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>driverClass Name</strong></p></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The fully qualified name of the database driver class.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>maxPoolSize</strong><br> <strong>minPoolSize</strong><br> <strong>acquireIncrement</strong><br> <strong>preparedStatementCacheSize</strong><br> <strong>maxWaitMillis</strong></p></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Define values for any of the connection pooling attributes to customize how your Database Connector reuses connections to the database. You can define values for:</p> 
+         </div> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p>Max Pool Size</p> </li> 
+           <li> <p>Min Pool Size</p> </li> 
+           <li> <p>Acquire Increment</p> </li> 
+           <li> <p>Prepared Statement Cache Size</p> </li> 
+           <li> <p>Max Wait Millis</p> </li> 
+          </ul> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Connection Properties</strong></p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>&lt;db:connection-properties&gt;</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="configuring-database-engines-not-supported-out-of-the-box-generic-installation"><a class="anchor" href="#configuring-database-engines-not-supported-out-of-the-box-generic-installation"></a>Configuring Database Engines Not Supported Out of the Box (Generic Installation)</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>All databases that are not configured <a href="#Database Engines Supported Out of the Box">[Database Engines Supported Out of the Box]</a> must be added through the generic database instalation, and then configured accordingly.</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="configuring-a-database-connector-instance-inside-a-flow"><a class="anchor" href="#configuring-a-database-connector-instance-inside-a-flow"></a>Configuring a Database Connector Instance Inside a Flow</h3> 
+   <h3 id="adding-the-database-driver-for-generic-db-configuration"><a class="anchor" href="#adding-the-database-driver-for-generic-db-configuration"></a>Adding the Database Driver for Generic DB Configuration</h3> 
    <div class="paragraph"> 
-    <p><strong>REQUIRED:</strong>&nbsp;The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
+    <p>To install the database driver for a generic installation, follow the steps below.</p> 
    </div> 
-   <div class="admonitionblock important"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>Oracle and Derby databases are supported by Mule, but to configure them correctly you cannot do it via Studio’s Visual Interface, but rather through Studio’s XML Editor.</p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
+   <div class="sect3"> 
+    <h4 id="installing-the-database-driver-in-the-studio-visual-editor"><a class="anchor" href="#installing-the-database-driver-in-the-studio-visual-editor"></a>Installing the Database Driver in the Studio Visual Editor</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;http://dev.mysql.com/downloads/connector/j/[download] online. &nbsp;</p> </li> 
+      <li> <p>Drag and drop the driver’s&nbsp;<code>jar</code>&nbsp;file from your local drive to the&nbsp;<code>root</code>&nbsp;folder in your&nbsp;project.</p> </li> 
+      <li> <p>Add the <code>.jar</code> file to the build path of your project. Right-click the project name, then select&nbsp;<strong>Build Path</strong>&nbsp;&gt;&nbsp;<strong>Configure Build Path</strong>.</p> </li> 
+      <li> <p>In the wizard that appears, click the <strong>Libraries</strong> tab, then click <strong>Add Jars</strong>.</p> </li> 
+      <li> <p>Navigate to the <code>root</code> folder in your project, then select the ` .jar` file for your database driver.&nbsp;</p> </li> 
+      <li> <p>Click <strong>OK</strong> to save, then <strong>OK</strong> to exit the wizard. Notice that your project now has a new folder named <strong>Referenced Libraries</strong> in which your database driver <code>.jar</code> resides.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/pack_explorer.png" alt="pack_explorer"></span></p> 
+       </div> </li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="installing-the-database-driver-in-the-xml-editor-or-standalone"><a class="anchor" href="#installing-the-database-driver-in-the-xml-editor-or-standalone"></a>Installing the Database Driver in the XML Editor or Standalone</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;http://dev.mysql.com/downloads/connector/j/[download] online. &nbsp;</p> </li> 
+      <li> <p>Add the driver’s&nbsp;<code>.jar</code>&nbsp;file to the&nbsp;<code>root</code>&nbsp;folder&nbsp;in your&nbsp;project. In Studio, you can drag and drop the file from your local drive into the project folder.</p> </li> 
+      <li> <p>Add the <code>.jar</code> file to the build path of your project.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>After adding the database driver for a database engine not supported out of the box, you need to enter the fully qualified name of the driver class in the global element referenced by the database connector. For details, see Configuring for Other Database Engines Generic Configuration below.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="configuring-the-global-database-connector-for-generic-db-configuration-with-the-studio-visual-editor"><a class="anchor" href="#configuring-the-global-database-connector-for-generic-db-configuration-with-the-studio-visual-editor"></a>Configuring the Global Database Connector for Generic DB Configuration with the Studio Visual Editor</h3> 
+   <div class="paragraph"> 
+    <p>The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the <a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3333%;"> 
-     <col style="width: 33.3334%;"> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top">Attribute, Required</th> 
+      <th class="tableblock halign-left valign-top">Attribute, required</th> 
       <th class="tableblock halign-left valign-top">Use</th> 
       <th class="tableblock halign-left valign-top">Properties Editor</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>Display Name</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Use to define a unique identifier for the Database Connector element in your flow.</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top" rowspan="5"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/config_db_connector.png" alt="config_db_connector"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><strong>Examples:</strong></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/select.png" alt="select"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/insert_w_MEL.png" alt="insert_w_MEL"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/truncate.png" alt="truncate"></span></p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define unique identifier for the global Database Connector element in your application.</p></td> 
+      <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/global_elem-generic_DB-gral_tab.png" alt="global_elem-generic_DB-gral_tab"></span></p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>Config Reference</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Use to identify the Global Database Connector element to which the Database Connector refers for connection details, among other things.</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via spring-bean</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Optional.</strong> Configure this database connection by the Spring bean referenced in <strong>DataSource Reference</strong>. Mutually exclusive with&nbsp;<strong>Database URL</strong>.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>Operation</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Use to instruct the Database Connector to submit a request to perform a specific query in the database:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Select</p> </li> 
-          <li> <p>Insert</p> </li> 
-          <li> <p>Update&nbsp;</p> </li> 
-          <li> <p>Delete</p> </li> 
-          <li> <p>Stored Procedure</p> </li> 
-          <li> <p>Bulk Execute</p> </li> 
-          <li> <p>Execute DDL</p> </li> 
-         </ul> 
-        </div> 
-        <div class="admonitionblock tip"> 
-         <table> 
-          <tbody> 
-           <tr> 
-            <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-            <td class="content"> 
-             <div class="paragraph"> 
-              <p>You can also run a TRUNCATE query by selecting <strong>Update</strong> as the operation, as shown in the bottom image at right.</p> 
-             </div> </td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database URL</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Optional</strong> (can also be configured with <strong>Configure via spring-bean</strong>). The URL for the database connection. Mutually exclusive with <strong>Configure via spring-bean</strong>.</p></td> 
      </tr> 
      <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Driver Class Name</strong></p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Type</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Use to define the type of SQL statement you wish to use to submit queries to a database:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Parameterized</p> </li> 
-          <li> <p>Dynamic</p> </li> 
-          <li> <p>From Template</p> </li> 
-         </ul> 
+         <p>Fully-qualified driver class name of the driver for your database, which must be already imported into your project. (For details on importing the driver, see <a href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above.) You can enter the full name in the empty field or click <strong>…​</strong> to browse the available driver classes.</p> 
         </div> 
         <div class="paragraph"> 
-         <p>Refer to <a href="#query-types">Query Types</a> below for more details.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><strong>SQL Statement</strong></p> 
+         <p>+ When browsing the available driver classes, type the beginning of the driver class name (which you can check by clicking the driver file under Referenced Libraries in the Package Explorer). Studio displays the list of classes provided by the driver.</p> 
         </div> 
         <div class="paragraph"> 
-         <p>OR</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><strong>Template Query Reference</strong></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>If you chose to use a Parameterized or Dynamic query type, use this attribute to define the SQL statement itself.<br></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>If you chose to use a From Template query type, use this attribute to reference the template (defined in a global Template Query element) in which you defined a SQL statement.&nbsp;Refer to Configuring a From Template Query below for more details.</p> 
+         <p>+ For a list of driver classes of commonly-used database engines, see <a href="#common-driver-class-specifications">Common Driver Class Specifications</a> below.</p> 
         </div> 
        </div></td> 
      </tr> 
     </tbody> 
    </table> 
    <div class="paragraph"> 
-    <p><strong>OPTIONAL:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
-   </div> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p><strong>Take advantage of Bulk Mode</strong></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Enable this optional feature to submit collections of data with one query, as opposed to executing one query for every parameter set in a collection. Enabling bulk mode improves the performance of your applications as it reduces the number of individual query executions your application triggers. Bulk mode requires a parameterized query with at least one parameter, or a dynamic query with at least one expression.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>See configuration details below.</p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
+    <p><strong>OPTIONAL:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Global Database Connector.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col> 
      <col> 
      <col> 
      <col> 
@@ -2105,209 +1678,612 @@
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Attribute, Optional</th> 
-      <th class="tableblock halign-left valign-top">Use with Operation</th> 
       <th class="tableblock halign-left valign-top">Use</th> 
       <th class="tableblock halign-left valign-top">Properties Editor</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>General tab</strong></p></td> 
+      <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>General tab</strong></p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to identify a named parameter in your SQL statement for which you wish to use the value at runtime, when your application submits your query which calls upon stored in the database instance.</p></td> 
-      <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><span class="image"><img src="./_images/stored+procedure.png" alt="stored+procedure"></span></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to "turn on" DataSense, which enables Mule to make use of message metadata during design time. Default: <code>true</code>.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/config_enable_DS.png" alt="config_enable_DS"></span></p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Type</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to identify the type of data the stored procedure can expect to receive from your query statement.</p></td> 
+      <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IN/OUT</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Advanced Parameters</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send parameters as key-value pairs&nbsp;to your DB. The parameters that can be set depend on what database software you are connecting to.</p></td> 
+      <td class="tableblock halign-left valign-top" rowspan="3"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Define the amount of time a database connection remains securely active during a period of non-usage before timing-out and demanding logging in again.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Pooling</strong></p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Defines the behavior of your stored procedure:</p> 
+         <p>Define values for any of the connection pooling attributes to customize how your database connector reuses connections to the database. You can define values for:</p> 
         </div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>IN - stored procedure can expect only to receive data</p> </li> 
-          <li> <p>OUT - stored procedure can expect only to return data</p> </li> 
-          <li> <p>INOUT - stored procedure can expect to receive, then return data</p> </li> 
+          <li> <p>Max Pool Size</p> </li> 
+          <li> <p>Min Pool Size</p> </li> 
+          <li> <p>Acquire Increment</p> </li> 
+          <li> <p>Prepared Statement Cache Size</p> </li> 
+          <li> <p>Max Wait Millis</p> </li> 
          </ul> 
         </div> 
        </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the value that overrides the default value for the named parameter in your SQL statement when your application submits your query.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Text</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Bulk Execute</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Type several statements (separated by a semicolon and a new line character) to perform them in bulk.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Supports all operations except&nbsp;<code>Select</code> and <code>Stored procedure</code>.</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/bulk.png" alt="bulk"></span></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>From File</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Bulk Execute</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Reference a file with several statements&nbsp;(separated by a semicolon and a new line character) to perform them in bulk.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Supports all operations except <code>Select</code> and <code>Stored procedure</code>.</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dynamic query</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Execute DDL</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Perform an operation on the data structure, rather than the data itself through a DDL request.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/DLL.png" alt="DLL"></span></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Target</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use an enricher expression to enrich the message with the result of the SQL processing. Use this attribute to specify an alternate source for the output data, such as a variable or property.</p></td> 
-      <td class="tableblock halign-left valign-top" rowspan="10"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Operation = Insert</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/advanced+insert.png" alt="advanced+insert"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Operation = Select</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/advanced+select.png" alt="advanced+select"></span></p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use this expression to obtain the value for calculating the parameters. By default, this is <code>#[payload]</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transactional Action</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Use this attribute to change the default to one of the following values:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>JOIN_IF_POSSIBLE - <em>(Default)</em> joins an in-flight transaction; if no transaction exists, Mule creates a transaction.</p> </li> 
-          <li> <p>ALWAYS_JOIN - always expects a transaction to be in progress; if it cannot find a transaction to join, it throws an exception.</p> </li> 
-          <li> <p>NOT_SUPPORTED - executes outside any existent transaction.</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Rows</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Select</p> </li> 
-          <li> <p>Stored Procedure</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the maximum number of rows your application accepts in a response from a database.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fetch Size</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Select</p> </li> 
-          <li> <p>Stored Procedure</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates how many rows should be fetched from the resultSet. This property is required when streaming is true, the default value is 10.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Streaming</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Select</p> </li> 
-          <li> <p>Stored Procedure</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to facilitate streaming content through the Database Connector to the database. Mule reads data from the database in chunks of records instead of loading the full result set into memory.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bulk Mode</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>Insert</p> </li> 
-          <li> <p>Update</p> </li> 
-          <li> <p>Delete</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enable to submit collections of data with one query, as opposed to executing one query for every parameter set in a collection. Enabling bulk mode improves the performance of your applications as it reduces the number of individual query executions.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Bulk mode requires a parameterized query with at least one parameter.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>For example, imagine you have a query which is designed to insert employees into a database table, and for each employee, it must insert a last name and an ID. If the Database Connector submitted one query for each one of 1000 employees, the operation would be very time consuming and non-performant. If you enable bulk mode, the Database Connector executes one query to the database to insert all the employees' values as a list of parameter sets of last names and IDs.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use this attribute to indicate that auto-generated keys should be made available for retrieval.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys Column Indexes</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Provide a comma-separated list of column indexes that indicates which auto-generated keys should be made available for retrieval.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys Column Names</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Provide a comma-separated list of column names that indicates which auto-generated keys should be made available for retrieval.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to indicate that the created datasource must support extended architecture (XA) transactions. Default: <code>false</code>.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/use_XA_transact.png" alt="use_XA_transact"></span></p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
+  <div class="sect2"> 
+   <h3 id="configuring-the-global-database-connector-for-generic-db-configuration-with-the-xml-editor"><a class="anchor" href="#configuring-the-global-database-connector-for-generic-db-configuration-with-the-xml-editor"></a>Configuring the Global Database Connector for Generic DB Configuration with the XML Editor</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Attribute</th> 
+      <th class="tableblock halign-left valign-top">Use</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>DB Config</strong></p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>&lt;db:generic-config&gt;</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define a unique identifier for the global Database Connector element in your application.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>database</strong><br> <strong>host</strong><br> <strong>password</strong><br> <strong>port</strong><br> <strong>user</strong></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>useXaTransactions</strong></p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 30%;"> 
+     <col style="width: 70%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
+      <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Pooling Profile</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>&lt;db:pooling-profile/&gt;</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>driverClassName</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The fully qualified name of the database driver class.</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>maxPoolSize</strong><br> <strong>minPoolSize</strong><br> <strong>acquireIncrement</strong><br> <strong>preparedStatementCacheSize</strong><br> <strong>maxWaitMillis</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Define values for any of the connection pooling attributes to customize how your database connector reuses connections to the database. You can define values for:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>Max Pool Size</p> </li> 
+          <li> <p>Min Pool Size</p> </li> 
+          <li> <p>Acquire Increment</p> </li> 
+          <li> <p>Prepared Statement Cache Size</p> </li> 
+          <li> <p>Max Wait Millis</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>Connection Properties</strong>&nbsp; <code>&lt;db:connection-properties&gt;</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>Advanced Parameters</strong></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="common-driver-class-specifications"><a class="anchor" href="#common-driver-class-specifications"></a>Common Driver Class Specifications</h3> 
+   <div class="paragraph"> 
+    <p>When you configure a global element for a generic database server, you need to enter the fully qualified name of the driver class as explained in the Driver Class Name cell in the table above. Below are the driver class names provided by some of the most common database drivers.</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Database</th> 
+      <th class="tableblock halign-left valign-top">Driver version</th> 
+      <th class="tableblock halign-left valign-top">Driver class name</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>postgresql-9.3-1101.jdbc3.jar</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.postgresql.Driver</code></p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">MS-SQL</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sqljdbc4.jar</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>com.microsoft.sqlserver.jdbc.SQLServerDriver</code></p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="configuring-a-database-connector-instance-inside-a-flow"><a class="anchor" href="#configuring-a-database-connector-instance-inside-a-flow"></a>Configuring a Database Connector Instance Inside a Flow</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
+  </div> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>Oracle and Derby databases are supported by Mule, but to configure them correctly you cannot do it via Studio’s Visual Interface, but rather through Studio’s XML Editor.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 33.3333%;"> 
+    <col style="width: 33.3333%;"> 
+    <col style="width: 33.3334%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Attribute, Required</th> 
+     <th class="tableblock halign-left valign-top">Use</th> 
+     <th class="tableblock halign-left valign-top">Properties Editor</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Display Name</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use to define a unique identifier for the Database Connector element in your flow.</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top" rowspan="5"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/config_db_connector.png" alt="config_db_connector"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Examples:</strong></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/select.png" alt="select"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/insert_w_MEL.png" alt="insert_w_MEL"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/truncate.png" alt="truncate"></span></p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Config Reference</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use to identify the Global Database Connector element to which the Database Connector refers for connection details, among other things.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Operation</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use to instruct the Database Connector to submit a request to perform a specific query in the database:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Select</p> </li> 
+         <li> <p>Insert</p> </li> 
+         <li> <p>Update&nbsp;</p> </li> 
+         <li> <p>Delete</p> </li> 
+         <li> <p>Stored Procedure</p> </li> 
+         <li> <p>Bulk Execute</p> </li> 
+         <li> <p>Execute DDL</p> </li> 
+        </ul> 
+       </div> 
+       <div class="admonitionblock tip"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+           <td class="content"> 
+            <div class="paragraph"> 
+             <p>You can also run a TRUNCATE query by selecting <strong>Update</strong> as the operation, as shown in the bottom image at right.</p> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Type</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use to define the type of SQL statement you wish to use to submit queries to a database:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Parameterized</p> </li> 
+         <li> <p>Dynamic</p> </li> 
+         <li> <p>From Template</p> </li> 
+        </ul> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Refer to <a href="#query-types">Query Types</a> below for more details.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>SQL Statement</strong></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>OR</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Template Query Reference</strong></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>If you chose to use a Parameterized or Dynamic query type, use this attribute to define the SQL statement itself.<br></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>If you chose to use a From Template query type, use this attribute to reference the template (defined in a global Template Query element) in which you defined a SQL statement.&nbsp;Refer to Configuring a From Template Query below for more details.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong>OPTIONAL:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector-reference">Database Connector Reference</a>.</p> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p><strong>Take advantage of Bulk Mode</strong></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Enable this optional feature to submit collections of data with one query, as opposed to executing one query for every parameter set in a collection. Enabling bulk mode improves the performance of your applications as it reduces the number of individual query executions your application triggers. Bulk mode requires a parameterized query with at least one parameter, or a dynamic query with at least one expression.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>See configuration details below.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Attribute, Optional</th> 
+     <th class="tableblock halign-left valign-top">Use with Operation</th> 
+     <th class="tableblock halign-left valign-top">Use</th> 
+     <th class="tableblock halign-left valign-top">Properties Editor</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>General tab</strong></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Name</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use to identify a named parameter in your SQL statement for which you wish to use the value at runtime, when your application submits your query which calls upon stored in the database instance.</p></td> 
+     <td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><span class="image"><img src="./_images/stored+procedure.png" alt="stored+procedure"></span></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameter Type</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use to identify the type of data the stored procedure can expect to receive from your query statement.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IN/OUT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Defines the behavior of your stored procedure:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>IN - stored procedure can expect only to receive data</p> </li> 
+         <li> <p>OUT - stored procedure can expect only to return data</p> </li> 
+         <li> <p>INOUT - stored procedure can expect to receive, then return data</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Parametized Stored Procedure</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the value that overrides the default value for the named parameter in your SQL statement when your application submits your query.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Text</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Bulk Execute</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Type several statements (separated by a semicolon and a new line character) to perform them in bulk.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Supports all operations except&nbsp;<code>Select</code> and <code>Stored procedure</code>.</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/bulk.png" alt="bulk"></span></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>From File</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Bulk Execute</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Reference a file with several statements&nbsp;(separated by a semicolon and a new line character) to perform them in bulk.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Supports all operations except <code>Select</code> and <code>Stored procedure</code>.</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dynamic query</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Execute DDL</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Perform an operation on the data structure, rather than the data itself through a DDL request.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/DLL.png" alt="DLL"></span></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Advanced tab</strong></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Target</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use an enricher expression to enrich the message with the result of the SQL processing. Use this attribute to specify an alternate source for the output data, such as a variable or property.</p></td> 
+     <td class="tableblock halign-left valign-top" rowspan="10"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Operation = Insert</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/advanced+insert.png" alt="advanced+insert"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Operation = Select</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/advanced+select.png" alt="advanced+select"></span></p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use this expression to obtain the value for calculating the parameters. By default, this is <code>#[payload]</code></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transactional Action</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ALL</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use this attribute to change the default to one of the following values:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>JOIN_IF_POSSIBLE - <em>(Default)</em> joins an in-flight transaction; if no transaction exists, Mule creates a transaction.</p> </li> 
+         <li> <p>ALWAYS_JOIN - Always expects a transaction to be in progress; if it cannot find a transaction to join, it throws an exception.</p> </li> 
+         <li> <p>NOT_SUPPORTED - Executes outside any existent transaction.</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Rows</strong></p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Select</p> </li> 
+         <li> <p>Stored Procedure</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the maximum number of rows your application accepts in a response from a database.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fetch Size</strong></p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Select</p> </li> 
+         <li> <p>Stored Procedure</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates how many rows should be fetched from the resultSet. This property is required when streaming is true, the default value is 10.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Streaming</strong></p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Select</p> </li> 
+         <li> <p>Stored Procedure</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Enable to facilitate streaming content through the Database Connector to the database. Mule reads data from the database in chunks of records instead of loading the full result set into memory.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bulk Mode</strong></p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Insert</p> </li> 
+         <li> <p>Update</p> </li> 
+         <li> <p>Delete</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enable to submit collections of data with one query, as opposed to executing one query for every parameter set in a collection. Enabling bulk mode improves the performance of your applications as it reduces the number of individual query executions.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Bulk mode requires a parameterized query with at least one parameter.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>For example, imagine you have a query which is designed to insert employees into a database table, and for each employee, it must insert a last name and an ID. If the Database Connector submitted one query for each one of 1000 employees, the operation would be very time consuming and non-performant. If you enable bulk mode, the Database Connector executes one query to the database to insert all the employees' values as a list of parameter sets of last names and IDs.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use this attribute to indicate that auto-generated keys should be made available for retrieval.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys Column Indexes</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Provide a comma-separated list of column indexes that indicates which auto-generated keys should be made available for retrieval.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auto-generated Keys Column Names</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Insert</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Provide a comma-separated list of column names that indicates which auto-generated keys should be made available for retrieval.</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -2410,7 +2386,7 @@
    </tbody> 
   </table> 
   <div class="sect2"> 
-   <h3 id="configuring-a-from-template-query"><a class="anchor" href="#configuring-a-from-template-query"></a>Configuring a From-Template Query&nbsp;</h3> 
+   <h3 id="configuring-a-from-template-query"><a class="anchor" href="#configuring-a-from-template-query"></a>Configuring a From-Template Query</h3> 
    <div class="paragraph"> 
     <p>You can use a <strong>template</strong> to pre-define an SQL query that you can use and reuse in your application’s flows. This SQL query may contain variable parameters, whose values are inherited from database connector elements that you specify. An SQL template can contain a parameterized or a dynamic SQL query.</p> 
    </div> 
@@ -2420,174 +2396,162 @@
    <div class="paragraph"> 
     <p>The following steps describe how to configure your database connector to use a query statement from a template.</p> 
    </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#tab-4_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#tab-4_2" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
-     </ul> 
+   <div class="sect3"> 
+    <h4 id="configuring-a-from-template-query-with-the-studio-visual-editor"><a class="anchor" href="#configuring-a-from-template-query-with-the-studio-visual-editor"></a>Configuring a From-Template Query with the Studio Visual Editor</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>From within the&nbsp;<strong>Properties Editor</strong>&nbsp;of the&nbsp;<strong>Database Connector</strong>&nbsp;element in your flow, use the drop-down next to <strong>Type</strong> to select <code>From Template</code>.&nbsp;</p> </li> 
+      <li> <p>Click the plus sign next to the <strong>Template Query Reference</strong> field to create a new <strong>Global Template Query Reference</strong> element (see image, below).</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/template.png" alt="template"></span></p> 
+       </div> </li> 
+      <li> <p>Studio displays the <strong>Global Element Properties</strong> panel, shown below. Provide a <strong>Name</strong> for your global element, then select a query type, either <code>Parameterized</code> or <code>Dynamic</code>.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/template_GE.png" alt="template_GE"></span></p> 
+       </div> </li> 
+      <li> <p>Use the radio buttons to choose the method by which you wish to define the query statement: define it inline, or define from a file.</p> </li> 
+      <li> <p>Write your SQL query, which can optionally include variables. If you include a variable, reference it by prepending its name with a colon (:) as in&nbsp;<code>:myvar</code>.</p> </li> 
+      <li> <p>Use the plus sign next to <strong>Input Parameters</strong> to create the variable, assign its default value and optionally select the data type.</p> </li> 
+      <li> <p>Click <strong>OK</strong> to save your template and return to the Properties Editor of the Database Connector in your flow. Studio auto-populates the value of the <strong>Template Query Reference</strong> field with the name of the global template element you just created.</p> </li> 
+      <li> <p>You can optionally add variables and values to the <strong>Input Parameters</strong> section of the database connector. These variables and their values are valid for <em>all</em> SQL templates. If a variable has been defined here and also in an individual template, then the value specified here takes precedence. In the image below, the variable <code>value</code> has a value of <code>100</code>. This value is valid for any defined templates (which you can see in the drop-down menu) that reference the variable.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/global_var.png" alt="global_var"></span>&nbsp;</p> 
+       </div> </li> 
+      <li> <p>Click the blank space in the Studio canvas to save your changes.</p> </li> 
+     </ol> 
     </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="tab-4_1"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>From within the&nbsp;<strong>Properties Editor</strong>&nbsp;of the&nbsp;<strong>Database Connector</strong>&nbsp;element in your flow, use the drop-down next to <strong>Type</strong> to select <code>From Template</code>.&nbsp;</p> </li> 
-        <li> <p>Click the plus sign next to the <strong>Template Query Reference</strong> field to create a new <strong>Global Template Query Reference</strong> element (see image, below).</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/template.png" alt="template"></span></p> 
-         </div> </li> 
-        <li> <p>Studio displays the <strong>Global Element Properties</strong> panel, shown below. Provide a <strong>Name</strong> for your global element, then select a query type, either <code>Parameterized</code> or <code>Dynamic</code>.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/template_GE.png" alt="template_GE"></span></p> 
-         </div> </li> 
-        <li> <p>Use the radio buttons to choose the method by which you wish to define the query statement: define it inline, or define from a file.</p> </li> 
-        <li> <p>Write your SQL query, which can optionally include variables. If you include a variable, reference it by prepending its name with a colon (:) as in&nbsp;<code>:myvar</code>.</p> </li> 
-        <li> <p>Use the plus sign next to <strong>Input Parameters</strong> to create the variable, assign its default value and optionally select the data type.</p> </li> 
-        <li> <p>Click <strong>OK</strong> to save your template and return to the Properties Editor of the Database Connector in your flow. Studio auto-populates the value of the <strong>Template Query Reference</strong> field with the name of the global template element you just created.</p> </li> 
-        <li> <p>You can optionally add variables and values to the <strong>Input Parameters</strong> section of the database connector. These variables and their values are valid for <em>all</em> SQL templates. If a variable has been defined here and also in an individual template, then the value specified here takes precedence. In the image below, the variable <code>value</code> has a value of <code>100</code>. This value is valid for any defined templates (which you can see in the drop-down menu) that reference the variable.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/global_var.png" alt="global_var"></span>&nbsp;</p> 
-         </div> </li> 
-        <li> <p>Click the blank space in the Studio canvas to save your changes.</p> </li> 
-       </ol> 
-      </div> 
-      <div class="paragraph"> 
-       <p><strong>Example of Parameterized Query Using Variables</strong></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/template_with_vars.png" alt="template_with_vars"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>In the image above, the parameterized query inserts the values referenced by variables&nbsp;<code>:ename</code>,&nbsp;<code>:hdate</code> and&nbsp;<code>:dept</code>. The names and values of these variables are set in the <strong>Input parameters</strong> section below the SQL query. Note that MEL expressions are allowed as values, as in the case of the&nbsp;<code>:hdate</code> field, which retrieves a date stored in a flow variable.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>For each variable, the database connector automatically determines and sets the data type for inserting into the database; however, if type resolution fails, you can manually select the data type by clicking in the&nbsp;<strong>Type</strong> row for the variable. Studio displays a drop-down menu with data types, as shown below.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/datatypes_menu.png" alt="datatypes_menu"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>If the desired data type is not listed, simply type it into the empty field.</p> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="tab-4_2"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>At the top of your project’s XML config file, above all flows, add a ` db:template-query `element. Configure the attributes of the element according to the code sample below.</p> </li> 
-        <li> <p>To the <code>db:template-query</code> element, add one of the following child elements, according to the type of query you wish to write: ` db:parameterized-query` or <code>db:dynamic-query</code>. Configure the attribute of the child element in order to define your SQL statement. The statement may include <strong>named variables</strong> whose values can be dynamically replaced by values defined in individual Database Connector elements. To create a named variable, prepend your desired variable name with a colon (<code>:</code>).&nbsp; For example, to create a named variable for <code>id</code>, use <code>:id</code> in the query statement of your template.&nbsp;Use the <code>db:in-param</code> child element to define a default value of your named variable, if you wish.</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+    <div class="paragraph"> 
+     <p><strong>Example of Parameterized Query Using Variables</strong></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/template_with_vars.png" alt="template_with_vars"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>In the image above, the parameterized query inserts the values referenced by variables&nbsp;<code>:ename</code>,&nbsp;<code>:hdate</code> and&nbsp;<code>:dept</code>. The names and values of these variables are set in the <strong>Input parameters</strong> section below the SQL query. Note that MEL expressions are allowed as values, as in the case of the&nbsp;<code>:hdate</code> field, which retrieves a date stored in a flow variable.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>For each variable, the database connector automatically determines and sets the data type for inserting into the database; however, if type resolution fails, you can manually select the data type by clicking in the&nbsp;<strong>Type</strong> row for the variable. Studio displays a drop-down menu with data types, as shown below.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/datatypes_menu.png" alt="datatypes_menu"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>If the desired data type is not listed, simply type it into the empty field.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="configuring-a-from-template-query-with-the-xml-editor-or-standalone"><a class="anchor" href="#configuring-a-from-template-query-with-the-xml-editor-or-standalone"></a>Configuring a From-Template Query with the XML Editor or Standalone</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>At the top of your project’s XML config file, above all flows, add a ` db:template-query `element. Configure the attributes of the element according to the code sample below.</p> </li> 
+      <li> <p>To the <code>db:template-query</code> element, add one of the following child elements, according to the type of query you wish to write: ` db:parameterized-query` or <code>db:dynamic-query</code>. Configure the attribute of the child element in order to define your SQL statement. The statement may include <strong>named variables</strong> whose values can be dynamically replaced by values defined in individual Database Connector elements. To create a named variable, prepend your desired variable name with a colon (<code>:</code>).&nbsp; For example, to create a named variable for <code>id</code>, use <code>:id</code> in the query statement of your template.&nbsp;Use the <code>db:in-param</code> child element to define a default value of your named variable, if you wish.</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="xml">
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>db:template-query name="Template_Query" doc:name="Template Query"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:parameterized-query<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[insert into simpleemp values (id)]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/db:parameterized-query<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:in-param name="id" defaultValue="2"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/db:template-query<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>In the Database connector in your Mule flow, define the values for the variables in your query statement that Mule should use at runtime when executing the query from the template. In other words, define the values you want to use to replace the default value for any variable that you defined within your template query statement.&nbsp;</p> </li> 
-       </ol> 
-      </div> 
-      <div class="paragraph"> 
-       <p><strong>Input Parameter Attributes</strong></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Child element: <code>db:in-param</code></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all"> 
-       <colgroup> 
-        <col> 
-        <col> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Attribute</th> 
-         <th class="tableblock halign-left valign-top">Description</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Name for the input parameter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultValue</code></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Input parameter default value</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Input parameter data type</p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
-      <div class="paragraph"> 
-       <p><strong>Example of Parameterized Query Using Variables</strong></p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-    
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
+              <td class="code"><pre><span class="tag">&lt;db:template-query</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Template_Query</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Template Query</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:parameterized-query&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>insert into simpleemp values (id)<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/db:parameterized-query&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:in-param</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/db:template-query&gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>In the Database connector in your Mule flow, define the values for the variables in your query statement that Mule should use at runtime when executing the query from the template. In other words, define the values you want to use to replace the default value for any variable that you defined within your template query statement.&nbsp;</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p><strong>Input Parameter Attributes</strong></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Child element: <code>db:in-param</code></p> 
+    </div> 
+    <table class="tableblock frame-all grid-all"> 
+     <colgroup> 
+      <col> 
+      <col> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Attribute</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Name for the input parameter</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>defaultValue</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Input parameter default value</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">Input parameter data type</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p><strong>Example of Parameterized Query Using Variables</strong></p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
 5
 6
 </pre></td> 
-             <td class="code"><pre><span class="entity">&amp;lt;</span>db:template-query name="insert_values" doc:name="Template Query"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:parameterized-query<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[INSERT INTO register("employer_name", "hire_date", "dept") VALUES(:ename,:hdate,:dept);]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/db:parameterized-query<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:in-param name="ename" defaultValue="Genco Pura Olive Oil"/<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:in-param name="hdate" defaultValue="#[flowVar['tdate']]"/<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:in-param name="dept" defaultValue="PR"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/db:template-query<span class="entity">&amp;gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>In the code above, the parameterized query inserts the values referenced by variables for employer name&nbsp;<code>:ename</code>,&nbsp;hire date <code>:hdate</code> and&nbsp;<code>:dept</code>. The names and values of these variables are defined by&nbsp;<code>in-param</code> child elements. Note that MEL expressions are allowed as values, as in the case of the&nbsp;<code>:hdate</code> field, which retrieves a date stored in a flow variable.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>For each variable, the database connector automatically determines and sets the data type for inserting into the database; however, you can also manually define the data type by using the&nbsp;<code>type</code> attribute as shown below.</p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-    
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
+           <td class="code"><pre><span class="tag">&lt;db:template-query</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">insert_values</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Template Query</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:parameterized-query&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>INSERT INTO register("employer_name", "hire_date", "dept") VALUES(:ename,:hdate,:dept);<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/db:parameterized-query&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:in-param</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ename</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">Genco Pura Olive Oil</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:in-param</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">hdate</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVar['tdate']]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:in-param</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">dept</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">PR</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/db:template-query&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>In the code above, the parameterized query inserts the values referenced by variables for employer name&nbsp;<code>:ename</code>,&nbsp;hire date <code>:hdate</code> and&nbsp;<code>:dept</code>. The names and values of these variables are defined by&nbsp;<code>in-param</code> child elements. Note that MEL expressions are allowed as values, as in the case of the&nbsp;<code>:hdate</code> field, which retrieves a date stored in a flow variable.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>For each variable, the database connector automatically determines and sets the data type for inserting into the database; however, you can also manually define the data type by using the&nbsp;<code>type</code> attribute as shown below.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-             <td class="code"><pre>  ...
-<span class="entity">&amp;lt;</span>db:in-param name="value" defaultValue="#[flowVar['price']]" type="MONEY"/<span class="entity">&amp;gt;</span>
+           <td class="code"><pre>  ...
+<span class="tag">&lt;db:in-param</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVar['price']]</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">MONEY</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   ...</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -2621,70 +2585,64 @@
     </tbody> 
    </table> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="execute-ddl-examples-studio-visual-editor"><a class="anchor" href="#execute-ddl-examples-studio-visual-editor"></a>Execute DDL Examples: Studio Visual Editor</h2> 
+ <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="examples"><a class="anchor" href="#examples"></a>Examples</h3> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#tab-5_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#tab-5_2" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
-    </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="tab-5_1"> 
-      <div class="sect4"> 
-       <h5 id="example-1"><a class="anchor" href="#example-1"></a>Example 1</h5> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/dllexample.png" alt="dllexample"></span></p> 
-       </div> 
-      </div> 
-      <div class="sect4"> 
-       <h5 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h5> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/dllexample2.png" alt="dllexample2"></span></p> 
-       </div> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="tab-5_2"> 
-      <div class="sect4"> 
-       <h5 id="example-1"><a class="anchor" href="#example-1"></a>Example 1</h5> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-     
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+   <h3 id="example-1"><a class="anchor" href="#example-1"></a>Example 1</h3> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/dllexample.png" alt="dllexample"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h3> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/dllexample2.png" alt="dllexample2"></span></p> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="execute-ddl-examples-xml-editor"><a class="anchor" href="#execute-ddl-examples-xml-editor"></a>Execute DDL Examples: XML Editor</h2> 
+ <div class="sectionbody"> 
+  <div class="sect4"> 
+   <h5 id="example-1-2"><a class="anchor" href="#example-1-2"></a>Example 1</h5> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 4
 5
 </pre></td> 
-              <td class="code"><pre><span class="entity">&amp;lt;</span>db:execute-ddl config-ref="myDb"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:dynamic-query<span class="entity">&amp;gt;</span>
+          <td class="code"><pre><span class="tag">&lt;db:execute-ddl</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">myDb</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:dynamic-query&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;truncate table #[tablename]
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/db:dynamic-query<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/db:execute-ddl<span class="entity">&amp;gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-      </div> 
-      <div class="sect4"> 
-       <h5 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h5> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-     
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/db:dynamic-query&gt;</span>
+<span class="tag">&lt;/db:execute-ddl&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect4"> 
+   <h5 id="example-2-2"><a class="anchor" href="#example-2-2"></a>Example 2</h5> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2698,8 +2656,8 @@
 12
 13
 </pre></td> 
-              <td class="code"><pre><span class="entity">&amp;lt;</span>db:execute-ddl config-ref="myDb"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>db:dynamic-query<span class="entity">&amp;gt;</span>
+          <td class="code"><pre><span class="tag">&lt;db:execute-ddl</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">myDb</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;db:dynamic-query&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CREATE TABLE emp (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empno INT PRIMARY KEY,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ename VARCHAR(10),
@@ -2709,15 +2667,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sal&nbsp; NUMERIC(7,2),
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comm&nbsp; NUMERIC(7,2) NULL,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dept&nbsp; INT)
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/db:dynamic-query<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/db:execute-ddl<span class="entity">&amp;gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-      </div> 
-     </div> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/db:dynamic-query&gt;</span>
+<span class="tag">&lt;/db:execute-ddl&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -2749,79 +2703,65 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="examples-2"><a class="anchor" href="#examples-2"></a>Examples</h3> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#tab-6_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#tab-6_2" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
+   <h3 id="bulk-updates-examples-studio-visual-editor"><a class="anchor" href="#bulk-updates-examples-studio-visual-editor"></a>Bulk Updates Examples: Studio Visual Editor</h3> 
+   <div class="sect3"> 
+    <h4 id="example-1-3"><a class="anchor" href="#example-1-3"></a>Example 1</h4> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/bulkex1.png" alt="bulkex1"></span></p> 
     </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="tab-6_1"> 
-      <div class="sect3"> 
-       <h4 id="example-1"><a class="anchor" href="#example-1"></a>Example 1</h4> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/bulkex1.png" alt="bulkex1"></span></p> 
-       </div> 
-      </div> 
-      <div class="sect3"> 
-       <h4 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h4> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/bulkex2.png" alt="bulkex2"></span></p> 
-       </div> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="tab-6_2"> 
-      <div class="sect3"> 
-       <h4 id="example-1"><a class="anchor" href="#example-1"></a>Example 1</h4> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-     
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+   </div> 
+   <div class="sect3"> 
+    <h4 id="example-2-3"><a class="anchor" href="#example-2-3"></a>Example 2</h4> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/bulkex2.png" alt="bulkex2"></span></p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="bulk-updates-examples-xml-editor"><a class="anchor" href="#bulk-updates-examples-xml-editor"></a>Bulk Updates Examples: XML Editor</h3> 
+   <div class="sect3"> 
+    <h4 id="example-1-4"><a class="anchor" href="#example-1-4"></a>Example 1</h4> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-              <td class="code"><pre><span class="entity">&amp;lt;</span>db:bulk-update config-ref="myDb"<span class="entity">&amp;gt;</span>
+           <td class="code"><pre><span class="tag">&lt;db:bulk-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">myDb</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;insert into employees columns (ID, name) values (abc, #[some&nbsp;&nbsp;&nbsp; expression]);
 &nbsp;&nbsp;&nbsp;&nbsp;update employees set name = "Pablo" where id = 1; delete from employees where id = 2;
-<span class="entity">&amp;lt;</span>/db:bulk-update<span class="entity">&amp;gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-      </div> 
-      <div class="sect3"> 
-       <h4 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h4> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-     
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+<span class="tag">&lt;/db:bulk-update&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="example-2-4"><a class="anchor" href="#example-2-4"></a>Example 2</h4> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-              <td class="code"><pre><span class="entity">&amp;lt;</span>db:bulk-update config-ref="dbConfig" source="#[bulkQuery]"<span class="entity">&amp;gt;</span>
+           <td class="code"><pre><span class="tag">&lt;db:bulk-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">dbConfig</span><span class="delimiter">"</span></span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[bulkQuery]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;#[payload]
-<span class="entity">&amp;lt;</span>/db:bulk-update<span class="entity">&amp;gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-      </div> 
+<span class="tag">&lt;/db:bulk-update&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -2999,7 +2939,7 @@ not:
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#configuring-a-database-connector">Configuring a Database Connector</a></li><li><a class="scroll-menu-link" href="#query-types">Query Types</a></li><li><a class="scroll-menu-link" href="#execute-ddl">Execute DDL</a></li><li><a class="scroll-menu-link" href="#bulk-updates">Bulk Updates</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li><li><a class="scroll-menu-link" href="#user-defined-data-types">User Defined Data Types</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#configuring-a-database-connector">Configuring a Database Connector</a></li><li><a class="scroll-menu-link" href="#configuring-database-engines-supported-out-of-the-box">Configuring Database Engines Supported Out of the Box</a></li><li><a class="scroll-menu-link" href="#configuring-database-engines-not-supported-out-of-the-box-generic-installation">Configuring Database Engines Not Supported Out of the Box (Generic Installation)</a></li><li><a class="scroll-menu-link" href="#configuring-a-database-connector-instance-inside-a-flow">Configuring a Database Connector Instance Inside a Flow</a></li><li><a class="scroll-menu-link" href="#query-types">Query Types</a></li><li><a class="scroll-menu-link" href="#execute-ddl">Execute DDL</a></li><li><a class="scroll-menu-link" href="#execute-ddl-examples-studio-visual-editor">Execute DDL Examples: Studio Visual Editor</a></li><li><a class="scroll-menu-link" href="#execute-ddl-examples-xml-editor">Execute DDL Examples: XML Editor</a></li><li><a class="scroll-menu-link" href="#bulk-updates">Bulk Updates</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li><li><a class="scroll-menu-link" href="#user-defined-data-types">User Defined Data Types</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
