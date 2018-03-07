@@ -1809,6 +1809,71 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="signature-key-identifier"><a class="anchor" href="#signature-key-identifier"></a>Signature Key Identifier</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Defines which key identifier type to use for signature. This is a String value and is specified with the XML signatureKeyIdentifier element. For more information on each value, see <code>http://coheigea.blogspot.com/2013/03/signature-and-encryption-key.html</code>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Note:</strong> Prior to Mule 3.8.2, signatureKeyIdentifier could only be set to DirectReference. In Mule 3.8.2, MULE-11301 fixed this issue.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Possible values are:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>DirectReference</p> </li> 
+    <li> <p>EmbeddedKeyName</p> </li> 
+    <li> <p>EncryptedKeySHA1</p> </li> 
+    <li> <p>IssuerSerial</p> </li> 
+    <li> <p>SKIKeyIdentifier</p> </li> 
+    <li> <p>Thumbprint</p> </li> 
+    <li> <p>X509KeyIdentifier</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Example:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;cxf:jaxws-client</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SAMLToken Signed SOAP client</span><span class="delimiter">"</span></span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">greet</span><span class="delimiter">"</span></span> <span class="attribute-name">serviceClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.mule.example.security.Greeter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;cxf:ws-security&gt;</span>
+        <span class="tag">&lt;cxf:ws-config&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">action</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">SAMLTokenSigned</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">samlPropFile</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">saml.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">signatureKeyIdentifier</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">DirectReference</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">joe</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">passwordCallbackClass</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.mule.example.security.PasswordCallback</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">samlCallbackClass</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.mule.example.security.SAMLCallbackHandler</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/cxf:ws-config&gt;</span>
+    <span class="tag">&lt;/cxf:ws-security&gt;</span>
+<span class="tag">&lt;/cxf:jaxws-client&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1822,7 +1887,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#enabling-ws-security">Enabling WS-Security</a></li><li><a class="scroll-menu-link" href="#addtokenvalidator">Adding a Token Validator</a></li><li><a class="scroll-menu-link" href="#complete-code-example">Complete Code Example</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#enabling-ws-security">Enabling WS-Security</a></li><li><a class="scroll-menu-link" href="#addtokenvalidator">Adding a Token Validator</a></li><li><a class="scroll-menu-link" href="#complete-code-example">Complete Code Example</a></li><li><a class="scroll-menu-link" href="#signature-key-identifier">Signature Key Identifier</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
