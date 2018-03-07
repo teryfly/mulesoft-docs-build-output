@@ -3398,7 +3398,7 @@
 78
 </pre></td> 
             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0"?<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>mule version="EE-3.5.0" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd&nbsp; http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd&nbsp; http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd&nbsp; http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd "<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd&nbsp; http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd&nbsp; http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd&nbsp; http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd "<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:beans<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:bean class="com.mulesoft.mule.example.security.SAMLCustomValidator" id="Bean" name="samlCustomValidator"/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/spring:beans<span class="entity">&amp;gt;</span>
@@ -3486,6 +3486,28 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="signature-key-identifier"><a class="anchor" href="#signature-key-identifier"></a>Signature Key Identifier</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Defines which key identifier type to use for signature. This is a String value and is specified with the XML signatureKeyIdentifier element. For more information on each value, see <code>http://coheigea.blogspot.com/2013/03/signature-and-encryption-key.html</code>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Possible values are:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>DirectReference</p> </li> 
+    <li> <p>EmbeddedKeyName</p> </li> 
+    <li> <p>EncryptedKeySHA1</p> </li> 
+    <li> <p>IssuerSerial</p> </li> 
+    <li> <p>SKIKeyIdentifier</p> </li> 
+    <li> <p>Thumbprint</p> </li> 
+    <li> <p>X509KeyIdentifier</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -3500,7 +3522,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#set-up-and-run-the-example">Set Up and Run the Example</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#client-side-flows">Client-Side Flows</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#set-up-and-run-the-example">Set Up and Run the Example</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#client-side-flows">Client-Side Flows</a></li><li><a class="scroll-menu-link" href="#signature-key-identifier">Signature Key Identifier</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
