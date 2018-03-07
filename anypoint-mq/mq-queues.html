@@ -1168,6 +1168,74 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="to-create-a-queue"><a class="anchor" href="#to-create-a-queue"></a>To Create a Queue</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>A queue is a temporary storage area for a message. You can use the MQ feature in Anypoint Platform to create a queue, and send and receive messages to a queue. You can also send and receive messages to a queue using Anypoint Studio.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>When you create a queue, you can optionally choose to encrypt all messages in the queue. If enabled, Anypoint MQ encrypts messages using PBE with MD5 and Triple DES, and with a 168-bit key.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Anypoint MQ lets you create either a first-in first-out (FIFO) queue that ensures your messages arrive in order, or you can create a standard queue where message ordering is not guaranteed. FIFO queues are a best fit for applications requiring strict message ordering and exactly once delivery, but where message delivery speed is of less importance. Standard queues are a best fit for applications where messages need to be delivered quickly.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See also <a href="#fifoqueues">About FIFO Queues</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To create a queue or FIFO queue:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Log into Anypoint Platform.</p> </li> 
+    <li> <p>Click MQ from the left navigation bar or from the main Anypoint Platform screen.</p> </li> 
+    <li> <p>Click Destinations.</p> </li> 
+    <li> <p>Click the blue plus circle.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-blue-create.png" alt="mq-blue-create"></span></p> 
+     </div> </li> 
+    <li> <p>Click Queue, Exchange, or FIFO Queue. For Exchange, see <a href="/anypoint-mq/mq-exchanges">To Configure Message Exchanges</a>.</p> </li> 
+    <li> <p>Fill in the fields in the Create Queue or Create FiFO Queue screen.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-create-q-screen-dlq.png" alt="mq-create-q-screen-dlq"></span></p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>ID - Specify a queue name, which can contain these characters: a-z, A-Z, 0-9, period (.), and hyphen (-). Queue names cannot contain spaces or other characters, and can be up to 127 characters in length. The maximum size of a message is 10 MB.</p> </li> 
+       <li> <p>Default TTL - How long unprocessed messages persist before being deleted. The maximum TTL is 2 weeks.</p> </li> 
+       <li> <p>Default Lock TTL - If there is a server failure and a message is not acknowledged, specifies the duration that a message would wait before being put back into the queue. A locked message does not block other messages to be read. The lock makes a message unavailable to other applications while locked. The maximum Lock TTL is 12 hours.</p> </li> 
+       <li> <p>Encryption (Optional) - Set the queue to encrypted. Anypoint MQ uses PBE with MD5 and triple DES to encrypt messages.</p> </li> 
+       <li> <p><a id="qdlq"></a>Assign a Dead Letter Queue (Optional) - Set the dead letter queue (DLQ) name. The DLQ is a previously created queue where undeliverable messages are sent to. For more information, see <a href="#about-dead-letter-queues">About Dead Letter Queues</a>.</p> 
+        <div class="paragraph"> 
+         <p>If you are creating your first queue in a new MQ account, MQ does not support assigning the dead letter queue to the sole queue in the system - you need at least two queues to assign one queue to be a dead letter queue.</p> 
+        </div> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Click Save Changes.</p> </li> 
+    <li> <p>In the Destinations screen, click the right side of the queue entry to list its details.</p> 
+     <div class="paragraph"> 
+      <p>The details for a queue are:</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-dlq-dest.png" alt="mq-dlq-dest"></span></p> 
+     </div> </li> 
+   </ol> 
+  </div> 
+  <div id="dlqfifo" class="paragraph"> 
+   <p>After you expand the detail for a dead letter queue and if a queue is associated with the DLQ, the detail message indicates whether the DLQ is for FIFO or not:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/mqfifo-dlq-types.png" alt="mqfifo-dlq-types"></span></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See <a href="#to-send-a-message-to-a-queue">To Send a Message to a Queue</a> for how Anypoint Platform lets you send messages to a queue and view, return the messages to the queue, or delete the messages. Message content (called a payload) can be text, JSON, or CSV (comma-separated values).</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Note:</strong> If you need to delete a queue, see <a href="/anypoint-mq/mq-faq#how-do-i-delete-a-queue">How do I delete a queue?</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="fifoqueues"><a class="anchor" href="#fifoqueues"></a>About FIFO Queues</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1210,87 +1278,11 @@
     </ul> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="to-create-a-queue"><a class="anchor" href="#to-create-a-queue"></a>To Create a Queue</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>A queue is a temporary storage area for a message. You can use the MQ feature in Anypoint Platform to create a queue, and send and receive messages to a queue. You can also send and receive messages to a queue using Anypoint Studio.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>When you create a queue, you can optionally choose to encrypt all messages in the queue. If enabled, Anypoint MQ encrypts messages using PBE with MD5 and Triple DES, and with a 168-bit key.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Anypoint MQ lets you create either a first-in first-out (FIFO) queue that ensures your messages arrive in order, or you can create a standard queue where message ordering is not guaranteed. FIFO queues are a best fit for applications requiring strict message ordering and exactly once delivery, but where message delivery speed is of less importance. Standard queues are a best fit for applications where messages need to be delivered quickly.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>See also <a href="#fifoqueues">About FIFO Queues</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To create a queue or FIFO queue:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Log into Anypoint Platform.</p> </li> 
-    <li> <p>Click MQ from the left navigation bar or from the main Anypoint Platform screen.</p> </li> 
-    <li> <p>Click Destinations.</p> </li> 
-    <li> <p>Click the blue plus circle.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-blue-create.png" alt="mq-blue-create"></span></p> 
-     </div> </li> 
-    <li> <p>Click Queue, Exchange, or FIFO Queue. For Exchange, see <a href="/anypoint-mq/mq-exchanges">To Configure Message Exchanges</a>.</p> </li> 
-    <li> <p>Fill in the fields in the Create Queue or Create FiFO Queue screen.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-create-q-screen-dlq.png" alt="mq-create-q-screen-dlq"></span></p> 
-     </div> 
-     <div class="olist loweralpha"> 
-      <ol class="loweralpha" type="a"> 
-       <li> <p>ID - Specify a queue name, which can contain these characters: a-z, A-Z, 0-9, period (.), and hyphen (-). Queue names cannot contain spaces or other characters, and can be up to 127 characters in length. The maximum size of a message is 10 MB.</p> </li> 
-       <li> <p>Default TTL - How long unprocessed messages persist before being deleted. The maximum TTL is 2 weeks.</p> </li> 
-       <li> <p>Default Lock TTL - If there is a server failure and a message is not acknowledged, specifies the duration that a message would wait before being put back into the queue. A locked message does not block other messages to be read. The lock makes a message unavailable to other applications while locked. The maximum Lock TTL is 12 hours.</p> </li> 
-       <li> <p>Encryption (Optional) - Set the queue to encrypted. Anypoint MQ uses PBE with MD5 and triple DES to encrypt messages.</p> </li> 
-       <li> <p><a id="qdlq"></a>Assign a Dead Letter Queue*(Optional) - Set the dead letter queue (DLQ) name. The DLQ is a previously created queue where undeliverable messages are sent to. For more information, see <a href="#about-dead-letter-queues">About Dead Letter Queues</a>.</p> 
-        <div class="paragraph"> 
-         <p>If you are creating your first queue in a new MQ account, MQ does not support assigning the dead letter queue to the sole queue in the system - you need at least two queues to assign one queue to be a dead letter queue.</p> 
-        </div> </li> 
-       <li> <p>Click Save Changes.</p> </li> 
-      </ol> 
-     </div> </li> 
-    <li> <p>In the Destinations screen, click the queue name to list its details.</p> 
-     <div class="paragraph"> 
-      <p>If you designate a dead letter queue, the details screen appears as:</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-mdq-with-dlq.png" alt="mq-mdq-with-dlq.png"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The details for the dead letter queue itself are:</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-dlq-dest.png" alt="mq-dlq-dest"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div id="dlqfifo" class="paragraph"> 
-   <p>After you expand the detail for a dead letter queue and if a queue is associated with the DLQ, the detail message indicates whether the DLQ is for FIFO or not:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/mqfifo-dlq-types.png" alt="mqfifo-dlq-types"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>See <a href="#to-send-a-message-to-a-queue">To Send a Message to a Queue</a> for how Anypoint Platform lets you send messages to a queue and view, return the messages to the queue, or delete the messages. Message content (called a payload) can be text, JSON, or CSV (comma-separated values).</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Note:</strong> If you need to delete a queue, see <a href="/anypoint-mq/mq-faq#how-do-i-delete-a-queue">How do I delete a queue?</a></p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="about-fifo-exactly-once-delivery"><a class="anchor" href="#about-fifo-exactly-once-delivery"></a>About FIFO Exactly Once Delivery</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>For applications such as those used in transactional use cases where messages need to be processed exactly once, Anypoint MQ supports exactly once delivery of messages when messages are published to FIFO queues. FIFO queues supports deduplication of messages. For example, if you retry sending a message with the same message ID within the 5-minute deduplication interval to a FIFO queue, Anypoint MQ guarantees the messages with the same message ID are retrieved and processed exactly once by the subscriber. When building applications requiring this feature on Anypoint Studio, you can set the message ID in publisher settings inside Anypoint MQ connector. If a message ID is not explicitly set, MQ auto generates a unique message ID for each message that’s sent to a queue.</p> 
+  <div class="sect2"> 
+   <h3 id="about-fifo-exactly-once-delivery"><a class="anchor" href="#about-fifo-exactly-once-delivery"></a>About FIFO Exactly Once Delivery</h3> 
+   <div class="paragraph"> 
+    <p>For applications such as those used in transactional use cases where messages need to be processed exactly once, Anypoint MQ supports exactly once delivery of messages when messages are published to FIFO queues. FIFO queues supports deduplication of messages. For example, if you retry sending a message with the same message ID within the 5-minute deduplication interval to a FIFO queue, Anypoint MQ guarantees the messages with the same message ID are retrieved and processed exactly once by the subscriber. When building applications requiring this feature on Anypoint Studio, you can set the message ID in publisher settings inside Anypoint MQ connector. If a message ID is not explicitly set, MQ auto generates a unique message ID for each message that’s sent to a queue.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1587,7 +1579,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#fifoqueues">About FIFO Queues</a></li><li><a class="scroll-menu-link" href="#to-create-a-queue">To Create a Queue</a></li><li><a class="scroll-menu-link" href="#about-fifo-exactly-once-delivery">About FIFO Exactly Once Delivery</a></li><li><a class="scroll-menu-link" href="#about-dead-letter-queues">About Dead Letter Queues</a></li><li><a class="scroll-menu-link" href="#to-send-a-message-to-a-queue">To Send a Message to a Queue</a></li><li><a class="scroll-menu-link" href="#to-verify-the-message-in-a-queue">To Verify the Message in a Queue</a></li><li><a class="scroll-menu-link" href="#to-send-a-csv-or-json-message">To Send a CSV or JSON Message</a></li><li><a class="scroll-menu-link" href="#to-purge-messages-from-a-queue">To Purge Messages from a Queue</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#to-create-a-queue">To Create a Queue</a></li><li><a class="scroll-menu-link" href="#fifoqueues">About FIFO Queues</a></li><li><a class="scroll-menu-link" href="#about-dead-letter-queues">About Dead Letter Queues</a></li><li><a class="scroll-menu-link" href="#to-send-a-message-to-a-queue">To Send a Message to a Queue</a></li><li><a class="scroll-menu-link" href="#to-verify-the-message-in-a-queue">To Verify the Message in a Queue</a></li><li><a class="scroll-menu-link" href="#to-send-a-csv-or-json-message">To Send a CSV or JSON Message</a></li><li><a class="scroll-menu-link" href="#to-purge-messages-from-a-queue">To Purge Messages from a Queue</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
