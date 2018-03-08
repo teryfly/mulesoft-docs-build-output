@@ -1376,6 +1376,12 @@
 22
 23
 24
+25
+26
+27
+28
+29
+30
 </pre></td> 
          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
@@ -1384,18 +1390,24 @@
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/3.4/mule-sftp.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.4/mule-file.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.4/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This placeholder bean lets you import the properties from the sftp.properties file. --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">location</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">classpath:sftp.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❶
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:bean&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp2file</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:inbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:inbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span>
+          <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:filename-wildcard-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.txt,*.xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❸
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sftp:inbound-endpoint&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/incoming</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:originalFilename]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
@@ -1449,6 +1461,12 @@
 22
 23
 24
+25
+26
+27
+28
+29
+30
 </pre></td> 
          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
@@ -1457,13 +1475,18 @@
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/3.4/mule-sftp.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/3.4/mule-file.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.4/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This placeholder bean lets you import the properties from the sftp.properties file. --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">location</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">classpath:sftp.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❶
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:bean&gt;</span>
 &nbsp;
@@ -1471,7 +1494,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/outgoing</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:filename-wildcard-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.txt,*.xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❸
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/file:inbound-endpoint&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:outbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:outbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span>
+          <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
         </tr> 
@@ -1670,7 +1694,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound endpoint</h2> 
+ <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound Endpoint</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
    <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
@@ -1733,13 +1757,6 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: 1000 ms The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">autoDelete</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: true Whether to delete the file after successfully reading it.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">fileAge</p></td> 
@@ -1806,28 +1823,14 @@
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No Child Elements of &lt;inbound-endpoint…​&gt;</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h2> 
+ <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound Endpoint</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
    <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of &lt;outbound-endpoint…​&gt;</h3> 
@@ -1935,23 +1938,9 @@
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of &lt;outbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No Child Elements of &lt;outbound-endpoint…​&gt;</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -2020,7 +2009,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-features-of-the-transport">Exchange Patterns / Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound endpoint</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li><li><a class="scroll-menu-link" href="#notes">Notes</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-features-of-the-transport">Exchange Patterns / Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound Endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound Endpoint</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li><li><a class="scroll-menu-link" href="#notes">Notes</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
