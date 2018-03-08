@@ -1300,7 +1300,76 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="about-the-object-store-2-apis-workflow"><a class="anchor" href="#about-the-object-store-2-apis-workflow"></a>About the Object Store 2 APIs Workflow</h2> 
+ <h2 id="to-retrieve-a-list-of-object-stores"><a class="anchor" href="#to-retrieve-a-list-of-object-stores"></a>To Retrieve a List of Object Stores</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Request:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre>curl -X GET \
+-H 'authorization: bearer 520e1242-b9b0-4c28-8eea-9830a88cf4b3' \
+'https://object-store-us-east-1.anypoint.mulesoft.com/api/v1/organizations/70a6632c-a4bf-4bf7-ab4a-bc72415bc298/environments/0ba66102-bcd6-4fe1-b30d-c6bf8b2b7eb5/stores'</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Response:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td> 
+         <td class="code"><pre>{
+  "values": [
+    {
+      "storeId": "APP_os-test_employees",
+      "encrypted": true,
+      "permanentOsFlag": false,
+      "persistent": true,
+      "defaultTtlSeconds": 1209600,
+      "defaultConfirmationTtlSeconds": 600
+    }
+  ]
+  "nextPageToken": null
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="about-the-object-store-v2-apis-workflow"><a class="anchor" href="#about-the-object-store-v2-apis-workflow"></a>About the Object Store v2 APIs Workflow</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Before deploying an object store application, log into Anypoint Platform &gt; Runtime Manager to reduce the number of allowed workers so that you can add a new application.</p> 
@@ -1400,7 +1469,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#about-object-store-v2-operations">About Object Store v2 Operations</a></li><li><a class="scroll-menu-link" href="#about-the-object-store-2-apis-workflow">About the Object Store 2 APIs Workflow</a></li><li><a class="scroll-menu-link" href="#to-deploy-an-application">To Deploy an Application</a></li><li><a class="scroll-menu-link" href="#to-access-the-rest-api">To Access the REST API</a></li><li><a class="scroll-menu-link" href="#to-view-the-app-client-id-and-secret">To View the App Client ID and Secret</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#about-object-store-v2-operations">About Object Store v2 Operations</a></li><li><a class="scroll-menu-link" href="#to-retrieve-a-list-of-object-stores">To Retrieve a List of Object Stores</a></li><li><a class="scroll-menu-link" href="#about-the-object-store-v2-apis-workflow">About the Object Store v2 APIs Workflow</a></li><li><a class="scroll-menu-link" href="#to-deploy-an-application">To Deploy an Application</a></li><li><a class="scroll-menu-link" href="#to-access-the-rest-api">To Access the REST API</a></li><li><a class="scroll-menu-link" href="#to-view-the-app-client-id-and-secret">To View the App Client ID and Secret</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
