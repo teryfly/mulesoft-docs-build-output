@@ -1202,6 +1202,9 @@
 32
 33
 34
+35
+36
+37
 </pre></td> 
          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
@@ -1209,9 +1212,12 @@
       <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xmlns:sftp</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/sftp</span><span class="delimiter">"</span></span><span class="attribute-name">z</span>
       <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-          <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-          <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-          <span class="content">http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+          <span class="content">http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
   <span class="tag">&lt;spring:beans&gt;</span>
         <span class="tag">&lt;spring:import</span> <span class="attribute-name">resource</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp-properties.xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
@@ -1341,7 +1347,7 @@
   <div class="sect2"> 
    <h3 id="schema"><a class="anchor" href="#schema"></a>Schema</h3> 
    <div class="paragraph"> 
-    <p>You can view the full schema for the SFTP transport&nbsp;<a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_sftp/namespace-overview.html">here</a>.</p> 
+    <p>You can view the full schema for the SFTP transport&nbsp;http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_sftp/namespace-overview.html[here].</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1411,25 +1417,25 @@
           </table></code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>Non-prefixed URI:</p> </li> 
-    </ol> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+     <li> <p>Non-prefixed URI:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 </pre></td> 
-          <td class="code"><pre><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp://mule:test123@myhost.com/tmp/sftp</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+             <td class="code"><pre><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp://mule:test123@myhost.com/tmp/sftp</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp://mule:test123@myhost.com/tmp/sftp</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+    </ol> 
    </div> 
   </div> 
  </div> 
@@ -1661,6 +1667,10 @@ sftp.password=icannottellyou</pre></td>
 24
 25
 26
+27
+28
+29
+30
 </pre></td> 
           <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
@@ -1668,10 +1678,14 @@ sftp.password=icannottellyou</pre></td>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This placeholder bean lets you import the properties from the sftp.properties file. --&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span>
@@ -1754,6 +1768,11 @@ sftp.password=icannottellyou</pre></td>
 22
 23
 24
+25
+26
+27
+28
+29
 </pre></td> 
            <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
@@ -1761,13 +1780,18 @@ sftp.password=icannottellyou</pre></td>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core</span>
+          <span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This placeholder bean lets you import the properties from the sftp.properties file. --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">property-placeholder</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.PropertyPlaceholderConfigurer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">location</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">classpath:sftp.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:bean&gt;</span>
 &nbsp;
