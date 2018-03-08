@@ -1568,59 +1568,56 @@
   <div class="paragraph"> 
    <p><strong>Important:</strong> Before running this example, create an SFTP properties file:</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>+ . Create the <strong>sftp.properties</strong>&nbsp;properties file in your Classpath or set your PATH variable to the file’s location. For information on specifying SFTP server access information for a username, password, host, and port, using Anypoint Studio, see <a href="/mule-user-guide/v/3.9/sftp-connector">SFTP Connector</a>.&nbsp; . Provide these parameters:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Create the <strong>sftp.properties</strong>&nbsp;properties file in your Classpath or set your PATH variable to the file’s location. For information on specifying SFTP server access information for a username, password, host, and port, using Anypoint Studio, see <a href="/mule-user-guide/v/3.9/sftp-connector">SFTP Connector</a>.&nbsp;</p> </li> 
+    <li> <p>Provide these parameters:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-         <td class="code"><pre>sftp.user=user
+            <td class="code"><pre>sftp.user=user
 sftp.host=host
 sftp.port=port
 sftp.password=password</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ Substitute each value to the right of the equal sign with SFTP access information.&nbsp; For example:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Substitute each value to the right of the equal sign with SFTP access information.&nbsp; For example:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-         <td class="code"><pre>sftp.user=memyselfandi
+            <td class="code"><pre>sftp.user=memyselfandi
 sftp.host=localhost
 sftp.port=8081
 sftp.password=icannottellyou</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+   </ol> 
   </div> 
   <div class="sect2"> 
    <h3 id="example-sftp-to-file-flow"><a class="anchor" href="#example-sftp-to-file-flow"></a>Example SFTP-to-File Flow</h3> 
@@ -2420,23 +2417,6 @@ sftp.password=icannottellyou</pre></td>
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>autoDelete</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Whether to delete the file after successfully reading it.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Type: Boolean<br> Default: true<br> Required: no</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
          <p>fileAge</p> 
         </div> 
        </div></td> 
@@ -2494,7 +2474,7 @@ sftp.password=icannottellyou</pre></td>
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. <strong>NOte</strong>: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p> 
+         <p>If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. <strong>Note</strong>: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p> 
         </div> 
         <div class="paragraph"> 
          <p>Type: String<br> Default: disabled<br> Required: no</p> 
@@ -2891,12 +2871,23 @@ sftp.password=icannottellyou</pre></td>
    <p>Place your SFTP login credentials in a file and reference them in the Mule configuration.</p> 
   </div> 
  </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a>.</p> </li> 
+    <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a>.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
 </div>
     </div>
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#sftp-accepts-ssh-known-hosts-file">SFTP Accepts SSH Known Hosts File</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-and-features-of-the-transport">Exchange Patterns and Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#proxy-config">Proxy Config</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound Endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound Endpoint</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#sftp-accepts-ssh-known-hosts-file">SFTP Accepts SSH Known Hosts File</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-and-features-of-the-transport">Exchange Patterns and Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#proxy-config">Proxy Config</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound Endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound Endpoint</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->

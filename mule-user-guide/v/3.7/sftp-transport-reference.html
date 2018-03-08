@@ -1526,53 +1526,53 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Create the <strong>sftp.properties</strong>&nbsp;properties file in your Classpath or set your PATH variable to the file’s location. For information on specifying SFTP server access information for a username, password, host, and port, using Anypoint Studio, see <a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a>.&nbsp;</p> </li> 
-    <li> <p>Provide these parameters:</p> </li> 
-   </ol> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+    <li> <p>Provide these parameters:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-         <td class="code"><pre>sftp.user=user
+            <td class="code"><pre>sftp.user=user
 sftp.host=host
 sftp.port=port
 sftp.password=password</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Substitute each value to the right of the equal sign with SFTP access information.&nbsp; For example:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Substitute each value to the right of the equal sign with SFTP access information.&nbsp; For example:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-         <td class="code"><pre>sftp.user=memyselfandi
+            <td class="code"><pre>sftp.user=memyselfandi
 sftp.host=localhost
 sftp.port=8081
 sftp.password=icannottellyou</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+   </ol> 
   </div> 
   <div class="sect2"> 
    <h3 id="example-sftp-to-file-flow"><a class="anchor" href="#example-sftp-to-file-flow"></a>Example SFTP-to-File Flow</h3> 
@@ -1609,6 +1609,8 @@ sftp.password=icannottellyou</pre></td>
 21
 22
 23
+24
+25
 </pre></td> 
           <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
@@ -1627,10 +1629,12 @@ sftp.password=icannottellyou</pre></td>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:bean&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sftp2file</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:inbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:inbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:filename-wildcard-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.txt,*.xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❸
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sftp:inbound-endpoint&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/incoming</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.originalFilename]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/incoming</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.originalFilename]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
          </tr> 
@@ -1677,6 +1681,8 @@ sftp.password=icannottellyou</pre></td>
 21
 22
 23
+24
+25
 </pre></td> 
           <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
@@ -1684,7 +1690,8 @@ sftp.password=icannottellyou</pre></td>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans</span>
+          <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
@@ -1698,7 +1705,8 @@ sftp.password=icannottellyou</pre></td>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/outgoing</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> ❷
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:filename-wildcard-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.txt,*.xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❸
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/file:inbound-endpoint&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:outbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sftp:outbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.port}</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/home/test/sftp-files</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.user}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sftp.password}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> ❹
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
          </tr> 
@@ -2092,20 +2100,6 @@ sftp.password=icannottellyou</pre></td>
        <div> 
         <div class="paragraph"> 
          <p>Type: long. Required: no. Default: 1000 ms. The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>autoDelete</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Type: boolean. Required: no. Default: true. Whether to delete the file after successfully reading it.</p> 
         </div> 
        </div></td> 
      </tr> 
