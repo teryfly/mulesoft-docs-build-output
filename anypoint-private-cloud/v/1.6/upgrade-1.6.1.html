@@ -1279,6 +1279,15 @@ sudo ./upload</pre>
        <pre>./manual_update_161.sh bootstrap-system</pre> 
       </div> 
      </div> </li> 
+    <li> <p>Update planet configuration with proper mounts</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre>./manual_update_161.sh update-config=&lt;node-name&gt;</pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>You must run this command sequentially on each node of your cluster. Wait until this command completes on one node before running it on the next node.</p> 
+     </div> </li> 
     <li> <p>Peform the system update by logging into each node of your cluster and running the following command.</p> 
      <div class="listingblock"> 
       <div class="content"> 

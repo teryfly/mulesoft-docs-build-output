@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/anypoint-private-cloud/v/1.7/prereq-network" />
-  <meta name="description" content="The this topic describes the network requirements for running Anypoint Platform Private Cloud Edition. All servers in the cluster should have stati..." />
+  <meta name="description" content="The this topic describes the network requirements for running Anypoint Platform Private Cloud Edition. To ensure proper cluster load balancing and ..." />
   <meta class="swiftype" name="title" data-type="string" content="About Private Cloud Edition Network Requirements" />
   <meta class="swiftype" name="version" data-type="enum" content="1.7" />
 </head>
@@ -882,7 +882,7 @@
 <li><i></i><a href="/anypoint-private-cloud/v/1.7/supported-cluster-config">About Supported Network Topologies for Anypoint Private Cloud Edition</a></li><li class="expanded">
 <i></i>
 <a href="/anypoint-private-cloud/v/1.7/prereq-workflow">Workflow: Install and Verify Prerequisites for Physical Servers</a><ul style="display: block;">
-<li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-hardware">About Private Cloud Edition Hardware Requirements</a></li><li class="active"><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-network">About Private Cloud Edition Network Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-verify-disk">To Verify Hardware Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-software">About Software Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-verify-software">To Uninstall Unsupported Software</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-gravity-check">To Verify System Requirements for Anypoint Private Cloud on a Physical Server</a></li></ul></li>
+<li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-hardware">About Private Cloud Edition Hardware Requirements</a></li><li class="active"><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-network">About Private Cloud Edition Network Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-verify-disk">To Verify Hardware Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-verify-device">To Verify Anypoint Private Cloud Device Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-software">About Software Requirements</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-verify-software">To Uninstall Unsupported Software</a></li><li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-gravity-check">To Verify System Requirements for Anypoint Private Cloud on a Physical Server</a></li></ul></li>
 <li><i></i><a href="/anypoint-private-cloud/v/1.7/prereq-aws-terraform">To Create Anypoint Private Cloud Resources on Amazon Web Services (AWS)</a></li><li>
 <i></i>
 <a href="/anypoint-private-cloud/v/1.7/install-workflow">About the Anypoint Private Cloud Installers</a><ul>
@@ -1149,6 +1149,20 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="ip-forwarding-and-bridging"><a class="anchor" href="#ip-forwarding-and-bridging"></a>IP Forwarding and Bridging</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>To ensure proper cluster load balancing and routing, you must enable and correctly configure the following:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Kernal IP forwarding: to enable internal Kubernetes load balancing you must enable IPv4 forwarding on all servers.</p> </li> 
+    <li> <p>Bridge-netfilter: enables the Linux kernal to translate packets to and from hosted containers.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="static-ips"><a class="anchor" href="#static-ips"></a>Static IPs</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1298,7 +1312,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#static-ips">Static IPs</a></li><li><a class="scroll-menu-link" href="#vxlan">VXLAN</a></li><li><a class="scroll-menu-link" href="#nat-traffic-requirements">NAT Traffic Requirements</a></li><li><a class="scroll-menu-link" href="#ssl-certificate-requirements">SSL Certificate Requirements</a></li><li><a class="scroll-menu-link" href="#smtp-server-requirements">SMTP Server Requirements</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#ip-forwarding-and-bridging">IP Forwarding and Bridging</a></li><li><a class="scroll-menu-link" href="#static-ips">Static IPs</a></li><li><a class="scroll-menu-link" href="#vxlan">VXLAN</a></li><li><a class="scroll-menu-link" href="#nat-traffic-requirements">NAT Traffic Requirements</a></li><li><a class="scroll-menu-link" href="#ssl-certificate-requirements">SSL Certificate Requirements</a></li><li><a class="scroll-menu-link" href="#smtp-server-requirements">SMTP Server Requirements</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
