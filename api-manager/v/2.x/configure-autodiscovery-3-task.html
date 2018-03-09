@@ -1200,24 +1200,41 @@
  <h2 id="method-2-studio-6-configuration"><a class="anchor" href="#method-2-studio-6-configuration"></a>Method 2: Studio 6 Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>First, you get the Client-ID and Secret from Asset Management in Anypoint Platform. You need these credentials for configuration of auto-discovery in Studio. In Studio, you pair Anypoint Studio with an Anypoint Platform environment in your organization by adding environment credentials to Studio Preferences. You configure auto-discovery for each flow you want to manage using a global element.</p> 
+   <p>First, you get the Client-ID and Secret from Asset Management in Anypoint Platform. You need these credentials for configuration of auto-discovery in Studio. In Studio, you pair Anypoint Studio with an Anypoint Platform environment in your organization by adding the credentials to Studio Preferences. You configure auto-discovery for each flow you want to manage using a global element.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>In a browser, log in to Anypoint Platform as an administrator, click Access Management &gt; Environments. Click an environment.</p> 
      <div class="paragraph"> 
-      <p>The environment client ID and client secret appear.</p> 
+      <p>The environment client ID and client secret appear. You copy/paste these credentials later.</p> 
      </div> 
      <div class="imageblock"> 
       <div class="content"> 
        <img src="./_images/env-clientid-clientsecret.png" alt="env clientid clientsecret"> 
       </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Alternatively, you can get the organization client ID and client secret to copy/paste later:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Click Access Management &gt; Organization.</p> </li> 
+       <li> <p>In Name, click the organization name from the list.</p> 
+        <div class="paragraph"> 
+         <p>The Organization Info appears:</p> 
+        </div> 
+        <div class="imageblock"> 
+         <div class="content"> 
+          <img src="./_images/org-id.png" alt="org id"> 
+         </div> 
+        </div> </li> 
+      </ul> 
      </div> </li> 
     <li> <p>In Studio, from the main menu, select Anypoint Studio &gt; Preferences &gt; Anypoint Studio &gt; Anypoint Platform for APIs.</p> 
      <div class="paragraph"> 
       <p>The Preferences dialog for Anypoint Platform for APIs appears.</p> 
      </div> </li> 
-    <li> <p>Copy the environment client ID and client secret from step 1 to Client Credentials.</p> 
+    <li> <p>Copy the environment or organization client ID and client secret from step 1 and paste to Client Credentials.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/autodis-pairing.png" alt="autodis-pairing"></span></p> 
      </div> 

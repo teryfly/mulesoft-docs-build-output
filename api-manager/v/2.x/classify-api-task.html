@@ -1141,230 +1141,54 @@
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="latest-tasks">Basic API Management Tasks</a>/<a href="classify-api-task" class="breadcrumb-active-link">To Classify an API</a></div>
       <h1>To Classify an API</h1>
-      <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>An unclassified environment is the target environment where all APIs are placed after you upgrade to the API Manager 2.x. APIs you upgrade from the API Manager 1.x to API Manager 2.x reside in the unclassified environment. Also, any API is classified that you didn’t associate with an environment prior to moving to API Manager 2.x. You need to classify any unclassified APIs to govern or otherwise manage the APIs.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If the API is not running, follow the single-step classification process in this procedure. If the API is running, follow the two-step classification process.</p> 
-  </div> 
- </div> 
+      <div class="paragraph"> 
+ <p>An unclassified environment is the target environment where all APIs are placed after you upgrade to the API Manager 2.x. APIs you upgrade from the API Manager 1.x to API Manager 2.x reside in the unclassified environment. Also, any API is classified that you didn’t associate with an environment prior to moving to API Manager 2.x. You need to classify any unclassified APIs to govern or otherwise manage the APIs.</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="single-step-classification"><a class="anchor" href="#single-step-classification"></a>Single-step Classification</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In API Manager, click the environment control, labeled SANDBOX, in this example:</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/environment.png" alt="environment"> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>If you do not see a suitable environment for classification of the API, create one in Access Management.</p> 
-     </div> </li> 
-    <li> <p>In Switch Environment, select Unclassified.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/switch-environment.png" alt="switch environment"> 
-      </div> 
-     </div> </li> 
-    <li> <p>Click Switch.</p> 
-     <div class="paragraph"> 
-      <p>A list of unclassified APIs appears.</p> 
-     </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/classify.png" alt="classify"> 
-      </div> 
-     </div> </li> 
-    <li> <p>Click Classify.</p> </li> 
-    <li> <p>In Target Environment, select the environment for the API from the list of environments available to you. For example, select Test.</p> </li> 
-    <li> <p>In Instance Label, optionally type a unique instance name. For example, type abc-api-1</p> 
-     <div class="paragraph"> 
-      <p>In environments, APIs can have more than a single instance. Therefore, an instance name is required to uniquely identify it.</p> 
-     </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/classify-instance.png" alt="classify instance"> 
-      </div> 
-     </div> </li> 
-   </ol> 
-  </div> 
- </div> 
+<div class="olist arabic"> 
+ <ol class="arabic"> 
+  <li> <p>In API Manager, click the environment control, labeled SANDBOX, in this example:</p> 
+   <div class="imageblock"> 
+    <div class="content"> 
+     <img src="./_images/environment.png" alt="environment"> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If you do not see a suitable environment for classification of the API, create one in Access Management.</p> 
+   </div> </li> 
+  <li> <p>In Switch Environment, select Unclassified.</p> 
+   <div class="imageblock"> 
+    <div class="content"> 
+     <img src="./_images/switch-environment.png" alt="switch environment"> 
+    </div> 
+   </div> </li> 
+  <li> <p>Click Switch.</p> 
+   <div class="paragraph"> 
+    <p>A list of unclassified APIs appears.</p> 
+   </div> 
+   <div class="imageblock"> 
+    <div class="content"> 
+     <img src="./_images/classify.png" alt="classify"> 
+    </div> 
+   </div> </li> 
+  <li> <p>Click Classify.</p> </li> 
+  <li> <p>In Target Environment, select the environment for the API from the list of environments available to you. For example, select Test.</p> </li> 
+  <li> <p>In Instance Label, optionally type a unique instance name. For example, type abc-api-1</p> 
+   <div class="paragraph"> 
+    <p>In environments, APIs can have more than a single instance. Therefore, an instance name is required to uniquely identify it.</p> 
+   </div> 
+   <div class="imageblock"> 
+    <div class="content"> 
+     <img src="./_images/classify-instance.png" alt="classify instance"> 
+    </div> 
+   </div> </li> 
+ </ol> 
 </div> 
-<div class="sect1"> 
- <h2 id="two-step-classification"><a class="anchor" href="#two-step-classification"></a>Two-step Classification</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The classification process involves the following steps when the API is running:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Updating the server where the API or API proxy is running.</p> </li> 
-    <li> <p>Classifying the API into the suggested environment.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="to-update-the-server"><a class="anchor" href="#to-update-the-server"></a>To Update the Server</h3> 
-   <div class="paragraph"> 
-    <p>The procedure to update the server depends on how you deployed the API. Follow instructions below for your deployment type.</p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="managed-by-proxy-deployed-through-api-manager"><a class="anchor" href="#managed-by-proxy-deployed-through-api-manager"></a>Managed by Proxy Deployed through API Manager</h4> 
-    <div class="paragraph"> 
-     <p><strong>Deployed in CloudHub</strong></p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>In API Manager, click the API to classify.</p> </li> 
-      <li> <p>In Configure Endpoint, click Redeploy Proxy.</p> </li> 
-      <li> <p>Choose a Runtime version.</p> </li> 
-      <li> <p>Click Redeploy Proxy.</p> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Deployed in a Standalone Runtime</strong></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>To deploy a new server with Runtime Agent 1.9.x or later:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>In API Manager, click the API to classify.</p> </li> 
-      <li> <p>In Configure Endpoint, click Deploy Proxy.</p> </li> 
-      <li> <p>Select the Runtime with Runtime Agent 1.9.x or later.</p> </li> 
-      <li> <p>Click Redeploy Proxy.</p> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p>To update an existing server:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>SSH into the standalone Runtime server.</p> </li> 
-      <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
-      <li> <p>Update the gateway Runtime agent.</p> </li> 
-      <li> <p>Restart gateway.</p> </li> 
-     </ol> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="managed-by-a-basic-endpoint-or-proxy-deployed-through-runtime-manager"><a class="anchor" href="#managed-by-a-basic-endpoint-or-proxy-deployed-through-runtime-manager"></a>Managed by a Basic Endpoint or Proxy Deployed through Runtime Manager</h4> 
-    <div class="paragraph"> 
-     <p>Anypoint Platform assigns the unique and immutable Organization ID and Environment IDs at organization and environment creation times.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Deployed in CloudHub</strong></p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Get the environment client Id and secret:</p> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>Go to Access Manager.</p> </li> 
-         <li> <p>Click Environments.</p> </li> 
-         <li> <p>Click the environment name that you want to use.</p> </li> 
-         <li> <p>Copy the Client Id and Client Secret.</p> </li> 
-        </ul> 
-       </div> </li> 
-      <li> <p>Update the application in CloudHub:</p> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
-         <li> <p>Click Settings &gt; Properties.</p> </li> 
-         <li> <p>Change the values of the following properties to the values from the Environment:</p> 
-          <div class="ulist"> 
-           <ul> 
-            <li> <p>Anypoint.platform.client_id</p> </li> 
-            <li> <p>Anypoint.platform.client_secret</p> </li> 
-            <li> <p>Click Apply changes.</p> </li> 
-           </ul> 
-          </div> </li> 
-        </ul> 
-       </div> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Deployed in standalone Mule Runtime</strong></p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>SSH into the standalone Runtime server where the application is deployed.</p> </li> 
-      <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
-      <li> <p>Update Runtime Agent.</p> </li> 
-      <li> <p>Restart Mule Runtime.</p> </li> 
-     </ol> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="other-deployments"><a class="anchor" href="#other-deployments"></a>Other Deployments</h4> 
-    <div class="paragraph"> 
-     <p>Perform these steps to prepare Mule Runtime to use API environments without updating the agent or registering the server with Runtime Manager.</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Get the environment client Id and secret:</p> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>Go to Access Manager.</p> </li> 
-         <li> <p>Click Environments.</p> </li> 
-         <li> <p>Click the environment name that you want to use.</p> </li> 
-         <li> <p>Copy the Client Id and Client Secret.</p> </li> 
-        </ul> 
-       </div> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Updating an application in CloudHub</strong></p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
-      <li> <p>Click Settings &gt; Properties.</p> </li> 
-      <li> <p>Change the values of the following properties to the values from the Environment:</p> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>anypoint.platform.client_id</p> </li> 
-         <li> <p>anypoint.platform.client_secret</p> </li> 
-        </ul> 
-       </div> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p><strong>Updating standalone Runtimes</strong></p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>SSH into the Runtime server that you want to update.</p> </li> 
-      <li> <p>Edit the &lt;mule_home&gt;/&lt;conf&gt;/wrapper.conf file.</p> </li> 
-      <li> <p>Change the values of the following properties to the values from the Environment:</p> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>anypoint.platform.client_id</p> </li> 
-         <li> <p>anypoint.platform.client_secret</p> </li> 
-        </ul> 
-       </div> </li> 
-      <li> <p>Restart Mule Runtime.</p> </li> 
-     </ol> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="to-complete-api-classification"><a class="anchor" href="#to-complete-api-classification"></a>To Complete API Classification</h3> 
-   <div class="paragraph"> 
-    <p>After updating the server, when the application is up and running again, a classification suggestion appears in the API list. Click the suggestion and follow the instructions.</p> 
-   </div> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>A classification suggestion appears in the API list. Click the suggestion and follow the instructions.</p> 
 </div>
     </div>
     <!-- END article-content -->
-    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
-                <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#single-step-classification">Single-step Classification</a></li><li><a class="scroll-menu-link" href="#two-step-classification">Two-step Classification</a></li></ul></div></div><!-- /scroll-menu -->
+    
   </div>
 </div>
 <!-- START footer -->
