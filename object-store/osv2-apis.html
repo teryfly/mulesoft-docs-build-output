@@ -1300,124 +1300,6 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="to-retrieve-a-list-of-object-stores"><a class="anchor" href="#to-retrieve-a-list-of-object-stores"></a>To Retrieve a List of Object Stores</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The following procedures assume you have already created an application and given it access to Object Store v2.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="get-client-id-and-secret"><a class="anchor" href="#get-client-id-and-secret"></a>Get Client ID and Secret</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>In Anypoint Platform &gt; Runtime Manager, click an application, and click Manage Application.</p> </li> 
-     <li> <p>Click Object Store &gt; Show Client Credentials to get your Client ID and Client Secret.</p> </li> 
-     <li> <p>Open a text editor to prepare the curl command and copy the Client ID and Client Secret to your text.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="get-the-bearer-id"><a class="anchor" href="#get-the-bearer-id"></a>Get the Bearer ID</h3> 
-   <div class="paragraph"> 
-    <p>Submit this POST command to get an access token with the bearer ID:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-</pre></td> 
-          <td class="code"><pre>curl -X post \
-<span class="error">&gt;</span>   https://anypoint.mulesoft.com/accounts/oauth2/token \
-<span class="error">&gt;</span>   -H 'Content-Type: application/x-www-form-urlencoded' \
-<span class="error">&gt;</span>   -d 'client_id=CLIENT_ID<span class="error">&amp;</span>client_secret=CLIENT_SECRET<span class="error">&amp;</span>grant_type=client_credentials'</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The response is similar to:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code>{"access_token":"BEARER_ID","token_type":"bearer"}</code></pre> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="get-environment-and-organization-ids"><a class="anchor" href="#get-environment-and-organization-ids"></a>Get Environment and Organization IDs</h3> 
-   <div class="paragraph"> 
-    <p>In Access Management &gt; Environments, click the Production environment. Copy the environment ID from the URL, for example:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>`+https://anypoint.mulesoft.com/accounts/#/cs/core/environments/edit/badd09f00f004242badd0942</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In Access Management &gt; Organization, copy your Organization ID.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="view-list-of-object-stores"><a class="anchor" href="#view-list-of-object-stores"></a>View List of Object Stores</h3> 
-   <div class="paragraph"> 
-    <p>Submit this command replacing BEARER_ID with your bearer ID, ORG_ID with your organization ID, and ENV_ID with your environment ID.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-          <td class="code"><pre>curl -X GET \
-<span class="error">&gt;</span> -H 'authorization: bearer BEARER_ID' \
-<span class="error">&gt;</span> 'https://object-store-us-east-1.anypoint.mulesoft.com/api/v1/organizations/ORG_ID/environments/ENV_ID/stores'</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The output has values similar to:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-</pre></td> 
-          <td class="code"><pre>{"values":[{"storeId":"APP_demo-aug12_DEFAULT_USER_STORE","encrypted":true,"permanentOsFlag":false,
-  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600},
-{"storeId":"APP_objectstore42_DEFAULT_USER_STORE","encrypted":false,"permanentOsFlag":false,
-  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600},
-{"storeId":"APP_objectstore42_mypartition","encrypted":false,"permanentOsFlag":false,
-  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600}],"nextPageToken":null}</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
  <h2 id="about-the-object-store-v2-apis-workflow"><a class="anchor" href="#about-the-object-store-v2-apis-workflow"></a>About the Object Store v2 APIs Workflow</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1490,13 +1372,122 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Log into Anypoint Platform &gt; Runtime Manager.</p> </li> 
-    <li> <p>Click an app and click Manage Application. The app can be started or undeployed.</p> </li> 
-    <li> <p>If the app is not associated with Object Store V2, click the checkbox and apply changes. If the Use Object Store v2 checkbox is not visible, ensure that the Runtime Version is 3.8.4 or later.</p> </li> 
-    <li> <p>Click the Object Store menu in the left navigation area.</p> </li> 
-    <li> <p>Click Show Client Credentials.</p> </li> 
-    <li> <p>Click the Copy to Clipboard icon at the end of the client ID or secret value.</p> </li> 
-    <li> <p>Paste the client ID or secret value into your curl application that you use to authenticate the REST API.</p> </li> 
+    <li> <p>Click an application that has Object Store access and click Manage Application. The app can be running or undeployed.</p> </li> 
+    <li> <p>If the app is not yet associated with Object Store V2, click the checkbox and apply changes.</p> </li> 
+    <li> <p>Click the Object Store menu in the left navigation area, click Show Client Credentials.</p> </li> 
+    <li> <p>Click the Copy to Clipboard icon, and paste the client ID or secret value into your curl application that you use to authenticate the REST API.</p> </li> 
    </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="example-retrieve-a-list-of-object-stores"><a class="anchor" href="#example-retrieve-a-list-of-object-stores"></a>Example: Retrieve a List of Object Stores</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The following procedures assume you have already created an application and given it access to Object Store v2.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Note:</strong> Get the Client ID and Secret as described in <a href="#to-view-the-app-client-id-and-secret">To View the App Client ID and Secret</a>.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="get-the-bearer-id"><a class="anchor" href="#get-the-bearer-id"></a>Get the Bearer ID</h3> 
+   <div class="paragraph"> 
+    <p>Submit this POST command to get an access token with the bearer ID:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+          <td class="code"><pre>curl -X post \
+<span class="error">&gt;</span>   https://anypoint.mulesoft.com/accounts/oauth2/token \
+<span class="error">&gt;</span>   -H 'Content-Type: application/x-www-form-urlencoded' \
+<span class="error">&gt;</span>   -d 'client_id=CLIENT_ID<span class="error">&amp;</span>client_secret=CLIENT_SECRET<span class="error">&amp;</span>grant_type=client_credentials'</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The response is similar to:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code>{"access_token":"BEARER_ID","token_type":"bearer"}</code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="get-environment-and-organization-ids"><a class="anchor" href="#get-environment-and-organization-ids"></a>Get Environment and Organization IDs</h3> 
+   <div class="paragraph"> 
+    <p>In Access Management &gt; Environments, click the environment where the application resides. Copy the environment ID from the URL, for example:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>`+https://anypoint.mulesoft.com/accounts/#/cs/core/environments/edit/badd09f00f004242badd0942</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>In Access Management &gt; Organization, copy your Organization ID.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="view-list-of-object-stores"><a class="anchor" href="#view-list-of-object-stores"></a>View List of Object Stores</h3> 
+   <div class="paragraph"> 
+    <p>Submit this command replacing BEARER_ID with your bearer ID, ORG_ID with your organization ID, and ENV_ID with your environment ID.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre>curl -X GET \
+<span class="error">&gt;</span> -H 'authorization: bearer BEARER_ID' \
+<span class="error">&gt;</span> 'https://object-store-us-east-1.anypoint.mulesoft.com/api/v1/organizations/ORG_ID/environments/ENV_ID/stores'</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The output has values similar to:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre>{"values":[{"storeId":"APP_demo-aug12_DEFAULT_USER_STORE","encrypted":true,"permanentOsFlag":false,
+  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600},
+{"storeId":"APP_objectstore42_DEFAULT_USER_STORE","encrypted":false,"permanentOsFlag":false,
+  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600},
+{"storeId":"APP_objectstore42_mypartition","encrypted":false,"permanentOsFlag":false,
+  "persistent":true,"defaultTtlSeconds":1209600,"defaultConfirmationTtlSeconds":600}],"nextPageToken":null}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1517,7 +1508,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#about-object-store-v2-operations">About Object Store v2 Operations</a></li><li><a class="scroll-menu-link" href="#to-retrieve-a-list-of-object-stores">To Retrieve a List of Object Stores</a></li><li><a class="scroll-menu-link" href="#about-the-object-store-v2-apis-workflow">About the Object Store v2 APIs Workflow</a></li><li><a class="scroll-menu-link" href="#to-deploy-an-application">To Deploy an Application</a></li><li><a class="scroll-menu-link" href="#to-access-the-rest-api">To Access the REST API</a></li><li><a class="scroll-menu-link" href="#to-view-the-app-client-id-and-secret">To View the App Client ID and Secret</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#about-object-store-v2-operations">About Object Store v2 Operations</a></li><li><a class="scroll-menu-link" href="#about-the-object-store-v2-apis-workflow">About the Object Store v2 APIs Workflow</a></li><li><a class="scroll-menu-link" href="#to-deploy-an-application">To Deploy an Application</a></li><li><a class="scroll-menu-link" href="#to-access-the-rest-api">To Access the REST API</a></li><li><a class="scroll-menu-link" href="#to-view-the-app-client-id-and-secret">To View the App Client ID and Secret</a></li><li><a class="scroll-menu-link" href="#example-retrieve-a-list-of-object-stores">Example: Retrieve a List of Object Stores</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
