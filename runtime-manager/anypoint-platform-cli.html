@@ -1433,6 +1433,17 @@ Password: ****</pre></td>
    <div class="paragraph"> 
     <p>Note that the "default" profile is used unless the <code>ANYPOINT_PROFILE</code> environment variable is set:</p> 
    </div> 
+   <div class="paragraph"> 
+    <p>The CLI also allows you to pass the token for your account using the <code>--bearer</code> option.<br> You need to hit the https://anypoint.mulesoft.com/accounts/login endpoint with your username and password to get your bearer value, and then pass that value to the CLI:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="Example">&gt; anypoint-cli --host anypoint.mulesoft.com --bearer 00d3ba76-bfaf-416e-960b-5d2ba33df97b</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Your session expires when the token bearer expires.<br> If you send both username and password, and the token bearer, the CLI prioritizes the bearer login.</p> 
+   </div> 
    <div class="listingblock"> 
     <div class="content"> 
      <pre class="CodeRay highlight"><code data-lang="Example">
