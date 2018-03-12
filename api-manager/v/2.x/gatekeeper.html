@@ -1179,7 +1179,42 @@
  <h2 id="security-levels"><a class="anchor" href="#security-levels"></a>Security Levels</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can configure these security levels to enable or disable Gatekeeper functionality.</p> 
+   <p>You can configure security levels to enable or disable Gatekeeper functionality. In the Mule <code>wrapper.conf</code> file configure the gatekeeper property as shown in the following example:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre> #On-Prem Configuration:
+ ...
+ wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.gatekeeper=flexible
+ ...</pre> 
+   </div> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Valid Values for Mule 4 Security Levels</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><code>strict</code></p> </li> 
+       <li> <p><code>flexible</code></p> </li> 
+       <li> <p><code>disabled</code></p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Valid Values for Mule 3 Security Levels</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><code>true</code></p> </li> 
+       <li> <p><code>false</code></p> </li> 
+       <li> <p><code>strict</code></p> </li> 
+       <li> <p><code>flexible</code></p> </li> 
+      </ul> 
+     </div> </li> 
+   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="security-level-definitions"><a class="anchor" href="#security-level-definitions"></a>Security Level Definitions</h3> 
+   <div class="paragraph"> 
+    <p>The following security levels are defined for Gatekeeper.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="false"><a class="anchor" href="#false"></a>False</h3> 
@@ -1199,33 +1234,44 @@
     <p>When this value is set, the default security level is Strict. This value is available only for backward compatibility. Use ‘strict’ or ‘flexible’ instead.</p> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="strict-default"><a class="anchor" href="#strict-default"></a>Strict (Default)</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>When this value is set, GateKeeper security is on and it works as described in "How Gatekeeper Works."</p> 
+  <div class="sect2"> 
+   <h3 id="strict-default"><a class="anchor" href="#strict-default"></a>Strict (Default)</h3> 
+   <div class="paragraph"> 
+    <p>When this value is set, GateKeeper security is on and it works as described in "How Gatekeeper Works."</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If Mule Runtime is restarted, the API is blocked returning a 503 (Service Unavailable), until the conditions listed in "How Gatekeeper Works" are met once again.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If the API is deleted in API Manager, Gatekeeper blocks this API in the next polling cycle. If Mule Runtime is running in cluster mode, the primary node blocks the API in the next polling cycle and notify the other nodes.</p> 
+   </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>If Mule Runtime is restarted, the API is blocked returning a 503 (Service Unavailable), until the conditions listed in "How Gatekeeper Works" are met once again.</p> 
+  <div class="sect2"> 
+   <h3 id="flexible"><a class="anchor" href="#flexible"></a>Flexible</h3> 
+   <div class="paragraph"> 
+    <p>When this value is set, GateKeeper security is on and it works as described in "How Gatekeeper Works."</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If Mule Runtime is restarted, Gatekeeper blocks the API, returning a 503 (Service Unavailable). Mule Runtime first checks if it can retrieve the policies from API Manager, and in case of being unable to retrieve them, it checks the local cache. If neither API Manager nor cache are available, the API remains blocked until the conditions listed in "How Gatekeeper Works" are met once again.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If the API is deleted in API Manager, Gatekeeper blocks the API in the next polling cycle. If Mule Runtime is running in cluster mode, the primary node block sthe API in the next polling cycle, and notifies the other nodes.</p> 
+   </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>If the API is deleted in API Manager, Gatekeeper blocks this API in the next polling cycle. If Mule Runtime is running in cluster mode, the primary node blocks the API in the next polling cycle and notify the other nodes.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="flexible"><a class="anchor" href="#flexible"></a>Flexible</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>When this value is set, GateKeeper security is on and it works as described in "How Gatekeeper Works."</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If Mule Runtime is restarted, Gatekeeper blocks the API, returning a 503 (Service Unavailable). Mule Runtime first checks if it can retrieve the policies from API Manager, and in case of being unable to retrieve them, it checks the local cache. If neither API Manager nor cache are available, the API remains blocked until the conditions listed in "How Gatekeeper Works" are met once again.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If the API is deleted in API Manager, Gatekeeper blocks the API in the next polling cycle. If Mule Runtime is running in cluster mode, the primary node block sthe API in the next polling cycle, and notifies the other nodes.</p> 
+  <div class="sect2"> 
+   <h3 id="default-gatekeeper-configuration"><a class="anchor" href="#default-gatekeeper-configuration"></a>Default Gatekeeper Configuration</h3> 
+   <div class="paragraph"> 
+    <p>By default, Mule releases are configured as follows:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Mule Runtime 3.8.5: Strict</p> </li> 
+     <li> <p>Mule Runtime 3.8.6: Flexible</p> </li> 
+     <li> <p>Mule Runtime 3.9.0: Strict</p> </li> 
+     <li> <p>Mule Runtime 4.0.0: Strict</p> </li> 
+     <li> <p>Mule Runtime 4.1.1 and later: Flexible</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1243,7 +1289,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#how-gatekeeper-works">How Gatekeeper Works</a></li><li><a class="scroll-menu-link" href="#security-levels">Security Levels</a></li><li><a class="scroll-menu-link" href="#strict-default">Strict (Default)</a></li><li><a class="scroll-menu-link" href="#flexible">Flexible</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#how-gatekeeper-works">How Gatekeeper Works</a></li><li><a class="scroll-menu-link" href="#security-levels">Security Levels</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->

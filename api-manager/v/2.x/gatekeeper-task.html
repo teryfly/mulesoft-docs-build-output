@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/gatekeeper-task" />
-  <meta name="description" content="The released version of Gatekeeper is enabled by default in the standalone version of Mule. Enable and configure the gatekeeper property to enhance..." />
+  <meta name="description" content="By default, Gatekeeper is enabled to enhance security. If you disabled Gatekeeper, you can enable it as described in this procedure. Add and set th..." />
   <meta class="swiftype" name="title" data-type="string" content="To Enable Gatekeeper" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
@@ -1144,13 +1144,13 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The released version of Gatekeeper is enabled by default in the standalone version of Mule. Enable and configure the gatekeeper property to enhance security. Add and set the <code>anypoint.platform.gatekeeper</code> property to true in the Mule <code>wrapper.conf</code> file to enable Gatekeeper. For example:</p> 
+   <p>By default, Gatekeeper is enabled to enhance security. If you disabled Gatekeeper, you can enable it as described in this procedure. Add and set the <code>anypoint.platform.gatekeeper</code> property to <code>flexible</code> or <code>strict</code> in the Mule <code>wrapper.conf</code> file to enable Gatekeeper. For example:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
     <pre> #On-Prem Configuration:
  ...
- wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.gatekeeper=true
+ wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.gatekeeper=flexible
  ...</pre> 
    </div> 
   </div> 
