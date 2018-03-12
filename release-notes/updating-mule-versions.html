@@ -1340,24 +1340,13 @@
      </div> </li> 
    </ol> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="upgrading-a-runtime-manager-cluster-with-zero-downtime"><a class="anchor" href="#upgrading-a-runtime-manager-cluster-with-zero-downtime"></a>Upgrading a Runtime Manager Cluster With Zero Downtime</h3> 
-   <div class="paragraph"> 
-    <p>If you wish to migrate your Mule servers in a cluster from one Mule version to another, the procedure is simple and doesn’t require any downtime.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Follow the steps in <a href="#mulerunvers">Mule Runtime Version on Runtime Manager</a> for each server in your cluster, one by one.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Notes:</strong></p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>If you are migrating policies, follow the steps in <a href="#upgrading-an-mmc-cluster-with-zero-downtime">Upgrading an MMC Cluster With Zero Downtime</a>. When a different runtime version starts on the same cluster, the runtime tries to download the serialized policies classes from ARM. As the policies are on a previous version the runtime crashes. The only way to do this is following the steps described for MMC, that requires that you replicate the whole cluster in a new runtime version.</p> </li> 
-     <li> <p>Although you’re not allowed to create a new cluster that includes servers that run different Mule runtime versions, your cluster may exist in a mixed state if you update your already registered Mule instances. This allows you to migrate the Mule instances on your cluster in a safe progressive way.</p> </li> 
-     <li> <p>After all of your servers have been migrated to the target version, you may also wish to migrate the applications that are deployed to it to that version. After you update the <a href="#application-runtime-version">Application Runtime Version</a>, upload its new Mule Deployable Archive (.zip file) to the cluster. Runtime Manager installs the new application version progressively on each server, one at a time, to keep the service working with no downtime throughout the update process.</p> </li> 
-    </ul> 
-   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="upgrading-a-runtime-manager-cluster"><a class="anchor" href="#upgrading-a-runtime-manager-cluster"></a>Upgrading a Runtime Manager Cluster</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Zero downtime cannot be guaranteed when migrating clusters to another version. At some point during the migration the cluster is in a mixed state, with coexisting nodes running two different versions. This might lead to incompatible communication protocols between Hazelcast instances.<br> When such errors occur, every node in the cluster must be shut down to proceed with the migration.</p> 
   </div> 
  </div> 
 </div> 
@@ -1491,7 +1480,7 @@
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> These steps are only valid for clusters created with MMC. For doing this on Runtime Manager see <a href="#upgrading-a-runtime-manager-cluster-with-zero-downtime">Upgrading a Runtime Manager Cluster With Zero Downtime</a>. </td> 
+       <td class="content"> These steps are only valid for clusters created with MMC. For doing this on Runtime Manager see <a href="#Upgrading a Runtime Manager Cluster With Zero Downtime">[Upgrading a Runtime Manager Cluster With Zero Downtime]</a>. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1533,7 +1522,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#application-runtime-version">Application Runtime Version</a></li><li><a class="scroll-menu-link" href="#mule-standalone-runtime-version">Mule Standalone Runtime Version</a></li><li><a class="scroll-menu-link" href="#mulerunvers">Mule Runtime Version on Runtime Manager</a></li><li><a class="scroll-menu-link" href="#mule-management-console-versions">Mule Management Console Versions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#application-runtime-version">Application Runtime Version</a></li><li><a class="scroll-menu-link" href="#mule-standalone-runtime-version">Mule Standalone Runtime Version</a></li><li><a class="scroll-menu-link" href="#mulerunvers">Mule Runtime Version on Runtime Manager</a></li><li><a class="scroll-menu-link" href="#upgrading-a-runtime-manager-cluster">Upgrading a Runtime Manager Cluster</a></li><li><a class="scroll-menu-link" href="#mule-management-console-versions">Mule Management Console Versions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
