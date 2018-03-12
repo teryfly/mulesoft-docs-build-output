@@ -1324,7 +1324,16 @@
    <p>Add the asset’s groupID, artifactID, and version to the <code>dependencies</code> section of your project’s pom.xml file, and add the Maven facade as a repository in the <code>repositories</code> section.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>The Group ID must be the same value as the Organization ID if you are publishing your asset to the master organization. If you are publishing to a business group, the group ID is formed by the masterOrgId plus all the business group names in the hierarchy until you reach your org, joined by '.' For example: <code>masterOrgId.BG1Name.BG1.2Name.BG1.2.1Name</code>.</p> 
+   <p>If you are publishing your asset to the master organization, the group ID is the same as the organization ID. The URL format is:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>https://maven.anypoint.mulesoft.com/api/v1/organizations/ORGANIZATION_ID/maven</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you are publishing your asset to a business group, the group ID is the same as the business group ID. The URL format is:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>https://maven.anypoint.mulesoft.com/api/v1/organizations/BUSINESS_GROUP_ID/maven</code></p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
