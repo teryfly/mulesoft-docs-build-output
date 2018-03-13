@@ -1153,50 +1153,6 @@
   </div> 
  </div> 
 </div> 
-<div class="sect2"> 
- <h3 id="editor-notes"><a class="anchor" href="#editor-notes"></a>Editor Notes</h3> 
- <div class="ulist"> 
-  <ul> 
-   <li> <p>To use the link control, type text, select the text, and click the link control to specify the link URL.</p> </li> 
-   <li> <p>If your Exchange session times out while you’re editing, select all the text on the page and copy it to your clipboard. Then after you log back in, you can paste the content back into the page and save your draft. When a timeout occurs, unsaved content is purged.</p> </li> 
-   <li> <p>You can access international characters by pressing and holding a character.</p> </li> 
-   <li> <p>If you are editing descriptions for many assets, instead of clicking an asset to open it from Exchange, instead right-click the asset and click Open Link in New Window to open the asset in a new browser window. Otherwise, after you publish an asset, control returns to the start of the filter/search list.</p> </li> 
-   <li> <p>Keyboard shortcuts (work in Visual and Markdown): ctrl-b/cmd-b bold, ctrl-i/cmd-i italics, ctrl-d/cmd-d heading, ctrl-e/cmd-e blockquote, ctrl-j/cmd-j code block, ctrl-o/cmd-o numbered list, ctrl-u/cmd-u bullet list, ctrl-k/cmd-k insert link.</p> </li> 
-  </ul> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="markdown-notes"><a class="anchor" href="#markdown-notes"></a>Markdown Notes</h3> 
- <div class="ulist"> 
-  <ul> 
-   <li> <p>Anypoint Exchange uses GitHub Markdown. Everything works in GitHub Markdown except for syntax highlighting, which is not supported in Exchange.</p> </li> 
-   <li> <p>Raw HTML code is not supported.</p> </li> 
-   <li> <p>Insert a link: <code>[MuleSoft.com](http://www.mulesoft.com)</code> or:</p> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-           <td class="code"><pre>[MuleSoft.com][1]
-
-[1]: https://mulesoft.com</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
-    </div> </li> 
-   <li> <p>Insert a YouTube video: <code>![linkname](https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE)</code><br> For example: <code>![](https://www.youtube.com/embed/K3tuHUZ1J04)</code></p> </li> 
-   <li> <p>Insert a Vimeo video: <code>[linkname](VIMEO_URL)</code></p> </li> 
-   <li> <p>Add the asset ID to a youtu.be URL:<br> Change: <code>https://youtu.be/EhJM1GawQec</code><br> To: <code>![](https://www.youtube.com/embed/EhJM1GawQec)</code></p> </li> 
-  </ul> 
- </div> 
-</div> 
 <div class="sect1"> 
  <h2 id="to-add-an-image"><a class="anchor" href="#to-add-an-image"></a>To Add an Image</h2> 
  <div class="sectionbody"> 
@@ -1282,6 +1238,54 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="editor-notes"><a class="anchor" href="#editor-notes"></a>Editor Notes</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>To use the link control, type text, select the text, and click the link control to specify the link URL.</p> </li> 
+    <li> <p>If your Exchange session times out while you’re editing, select all the text on the page and copy it to your clipboard. Then after you log back in, you can paste the content back into the page and save your draft. When a timeout occurs, unsaved content is purged.</p> </li> 
+    <li> <p>You can access international characters by pressing and holding a character.</p> </li> 
+    <li> <p>If you are editing descriptions for many assets, instead of clicking an asset to open it from Exchange, instead right-click the asset and click Open Link in New Window to open the asset in a new browser window. Otherwise, after you publish an asset, control returns to the start of the filter/search list.</p> </li> 
+    <li> <p>Keyboard shortcuts (work in Visual and Markdown): ctrl-b/cmd-b bold, ctrl-i/cmd-i italics, ctrl-d/cmd-d heading, ctrl-e/cmd-e blockquote, ctrl-j/cmd-j code block, ctrl-o/cmd-o numbered list, ctrl-u/cmd-u bullet list, ctrl-k/cmd-k insert link.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="markdown-notes"><a class="anchor" href="#markdown-notes"></a>Markdown Notes</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Anypoint Exchange uses GitHub Markdown. Everything works in GitHub Markdown except for syntax highlighting, which is not supported in Exchange.</p> </li> 
+    <li> <p>Raw HTML code is not supported.</p> </li> 
+    <li> <p>Insert a link: <code>[MuleSoft.com](http://www.mulesoft.com)</code> or:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+            <td class="code"><pre>[MuleSoft.com][1]
+
+[1]: https://mulesoft.com</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Insert a YouTube video: <code>![linkname](https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE)</code><br> For example: <code>![](https://www.youtube.com/embed/K3tuHUZ1J04)</code></p> </li> 
+    <li> <p>Insert a Vimeo video: <code>[linkname](VIMEO_URL)</code></p> </li> 
+    <li> <p>Add the asset ID to a youtu.be URL:<br> Change: <code>https://youtu.be/EhJM1GawQec</code><br> To: <code>![](https://www.youtube.com/embed/EhJM1GawQec)</code></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1295,7 +1299,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-add-an-image">To Add an Image</a></li><li><a class="scroll-menu-link" href="#to-add-pages">To Add Pages</a></li><li><a class="scroll-menu-link" href="#to-create-tags">To Create Tags</a></li><li><a class="scroll-menu-link" href="#to-specify-terms-and-conditions">To Specify Terms and Conditions</a></li><li><a class="scroll-menu-link" href="#to-change-the-version-of-an-asset">To Change the Version of an Asset</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#to-add-an-image">To Add an Image</a></li><li><a class="scroll-menu-link" href="#to-add-pages">To Add Pages</a></li><li><a class="scroll-menu-link" href="#to-create-tags">To Create Tags</a></li><li><a class="scroll-menu-link" href="#to-specify-terms-and-conditions">To Specify Terms and Conditions</a></li><li><a class="scroll-menu-link" href="#to-change-the-version-of-an-asset">To Change the Version of an Asset</a></li><li><a class="scroll-menu-link" href="#editor-notes">Editor Notes</a></li><li><a class="scroll-menu-link" href="#markdown-notes">Markdown Notes</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
