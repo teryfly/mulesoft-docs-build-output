@@ -1156,16 +1156,8 @@
   <div class="paragraph"> 
    <p>Developing in Maven is greatly simplified by the <a href="/mule-user-guide/v/3.8/maven-tools-for-mule-esb">Maven Tools for Mule</a> plugin, which provides Maven archetypes for building Mule applications.</p> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a>Before You Begin</h2> 
- <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are working with Maven outside of Anypoint Studio, and thus are using archetypes to build Mule applications. See&nbsp;<a href="/mule-user-guide/v/3.8/using-maven-with-mule">Using Maven with Mule</a> for an overview of using Maven to manage your Mule projects. This document also assumes you have <a href="https://maven.apache.org/download.cgi">Apache Maven installed</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Note:</strong> Note that you generally do not need to modify your settings.xml file if you are <a href="/mule-user-guide/v/3.8/using-maven-with-mule">working with Maven through Studio</a>, as Studio keeps track of the dependencies you need and attempts to manage them for you in the application’s associated POM file. If dependency errors occur, you may need to manually adjust your POM file, and, in some cases, in your settings.xml. Refer to the Maven documentation for the <a href="http://maven.apache.org/pom.html">pom.xml</a> and <a href="http://maven.apache.org/settings.html">settings.xml</a> for specific instructions.</p> 
+   <p>This document assumes that you are working with Maven outside of Anypoint Studio, and thus are using archetypes to build Mule applications.</p> 
   </div> 
  </div> 
 </div> 
@@ -1177,9 +1169,11 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Ensure that <a href="https://maven.apache.org/download.cgi">Maven is installed</a> in a directory that does not include spaces.</p> </li> 
-    <li> <p>Create or maintain your already-created <code>pom.xml</code> files for your applications to include references to the MuleSoft open-source repositories and any connectors, modules, or other extensions that you need to include in each application. <strong>Note:</strong> <a href="https://www.anypoint.mulesoft.com/exchange/?type=connector">Anypoint Exchange</a> provides Maven dependency information. Click a connector asset and click Dependency Snippets to list the Maven pom.xml file dependency.</p> </li> 
-    <li> <p><em>Enterprise users only:</em>&nbsp;Modify the&nbsp;<code>settings.xml</code>&nbsp;file to point to the Enterprise Customer repository and provide your credentials.</p> </li> 
+    <li> <p>Ensure that Maven is installed in a directory that does not include spaces.</p> </li> 
+    <li> <p>Create or maintain your <code>pom.xml</code> files for your applications to include references to the MuleSoft open-source repositories and any connectors, modules, or other extensions that you need to include in each application.<br> If you are using Enterprise Edition, modify the&nbsp;<code>settings.xml</code>&nbsp;file to point to the Enterprise Customer repository and provide your credentials.</p> 
+     <div class="paragraph"> 
+      <p>Anypoint Exchange provides Maven dependency information.<br> Click a connector asset and click Dependency Snippets to list the Maven pom.xml file dependency.</p> 
+     </div> </li> 
    </ol> 
   </div> 
  </div> 
@@ -1516,7 +1510,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#before-you-begin">Before You Begin</a></li><li><a class="scroll-menu-link" href="#setup-overview">Setup Overview</a></li><li><a class="scroll-menu-link" href="#configuring-your-maven-installation-for-mule">Configuring Your Maven Installation for Mule</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#setup-overview">Setup Overview</a></li><li><a class="scroll-menu-link" href="#configuring-your-maven-installation-for-mule">Configuring Your Maven Installation for Mule</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
