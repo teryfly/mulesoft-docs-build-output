@@ -1260,6 +1260,91 @@
     </tr> 
    </tbody> 
   </table> 
+  <div class="paragraph"> 
+   <p>These MEL expressions evaluate batch step failures. Consider that failed asynchronous processes inside your batch step would not be considered as step failures by the runtime.<br> For example, if you have this batch step:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;batch:step</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Batch_Step</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">test.file</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/batch:step&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Because the file outbound endpoint is one-way, the message is dispatched and the batch step continues processing. So no step failure would be recorded by the runtime. This would mean that the MEL function <code>isFailedRecord()</code> would still return false, even if the outbound endpoint inside the batch step fails.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can force the runtime to record the outbound-endpoint failure as a batch step failure by referencing the outbound endpoint as a synchronous process:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;batch:step</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Batch_Step</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span> <span class="content">#[server.dateTime]: payload is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">category</span>=<span class="string"><span class="delimiter">"</span><span class="content">BATCH_STEP_BEGIN</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">create-file</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/batch:step&gt;</span>
+
+<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">create-file</span><span class="delimiter">"</span></span> <span class="attribute-name">processingStrategy</span>=<span class="string"><span class="delimiter">"</span><span class="content">synchronous</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/test/resources/output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">test.file</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Or by enclosing the asynchronous process inside a transactional scope:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;batch:step</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Batch_Step</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span> <span class="content">#[server.dateTime]: payload is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">category</span>=<span class="string"><span class="delimiter">"</span><span class="content">BATCH_STEP_BEGIN</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;transactional</span> <span class="attribute-name">action</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS_BEGIN</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transactional</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/test/resources/output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">test.file</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/transactional&gt;</span>
+<span class="tag">&lt;/batch:step&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
