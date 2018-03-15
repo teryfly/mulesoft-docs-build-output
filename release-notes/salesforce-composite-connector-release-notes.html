@@ -21,7 +21,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/release-notes/salesforce-composite-connector-release-notes" />
-  <meta name="description" content="The Anypoint™ Connector for Salesforce Composite provides you a way to integrate with Salesforce Composite API Salesforce Composite API. The connec..." />
+  <meta name="description" content="March 2018 Select The Anypoint Connector for Salesforce Composite provides a way to integrate with Salesforce Composite API Salesforce Composite AP..." />
   <meta class="swiftype" name="title" data-type="string" content="Salesforce Composite Connector Release Notes" />
 </head>
 <body>
@@ -1142,34 +1142,77 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Anypoint™ Connector for Salesforce Composite provides you a way to integrate with Salesforce Composite API <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite.htm">Salesforce Composite API</a>. The connector exposes convenient methods for preparing sub-requests, execute them in one batch and parse the results. It provides DataSense on both preparation of sub-requests and parsing response of their execution.</p> 
+   <p><strong>March 2018</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><em>Select</em></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The Anypoint Connector for Salesforce Composite provides a way to integrate with Salesforce Composite API <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite.htm">Salesforce Composite API</a>. The connector exposes convenient methods for preparing sub-requests, executing them in one batch, and parsing the results. It provides DataSense on both the preparation of sub-requests and parsing responses of their execution.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="contents"><a class="anchor" href="#contents"></a>Contents</h2> 
+ <h2 id="sco-connector-1.0.2"><a class="anchor" href="#sco-connector-1.0.2"></a>Version 1.0.2 - March 15, 2018</h2> 
  <div class="sectionbody"> 
-  <div class="ulist"> 
-   <div class="title"> 
-    <a href="#sco-connector-1.0.1">Salesforce Composite Connector 1.0.1 - September 5, 2017</a> 
+  <div class="sect2"> 
+   <h3 id="sco-connector-1.0.2-compatibility"><a class="anchor" href="#sco-connector-1.0.2-compatibility"></a>Version 1.0.2 - Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>The Salesforce Composite 1.0.2 connector is compatible with:</p> 
    </div> 
-   <ul> 
-    <li> <p><a href="#sco-connector-1.0.1-compatibility">Version 1.0.1 Compatibility</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.1-features">Version 1.0.1 Features</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.1-fixes">Version 1.0.1 Fixes</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.1-known-issues">Version 1.0.1 Known Issues</a></p> </li> 
-   </ul> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">3.7.5 or later</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Salesforce Rest API</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">v36.0</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
-  <div class="ulist"> 
-   <div class="title"> 
-    <a href="#sco-connector-1.0.0">Salesforce Composite Connector 1.0.0 - March 10, 2016</a> 
+  <div class="sect2"> 
+   <h3 id="sco-connector-1.0.2-features"><a class="anchor" href="#sco-connector-1.0.2-features"></a>Version 1.0.2 - Features</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>No new features added in this release.</p> </li> 
+    </ul> 
    </div> 
-   <ul> 
-    <li> <p><a href="#sco-connector-1.0.0-compatibility">Version 1.0.0 Compatibility</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.0-features">Version 1.0.0 Features</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.0-fixes">Version 1.0.0 Fixes</a></p> </li> 
-    <li> <p><a href="#sco-connector-1.0.0-known-issues">Version 1.0.0 Known Issues</a></p> </li> 
-   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="sco-connector-1.0.2-fixes"><a class="anchor" href="#sco-connector-1.0.2-fixes"></a>Version 1.0.2 - Fixes</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>SalesForce Composite Connector cannot retrieve metadata.</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>The connector is able to connect to Salesforce without problems. But metadata is not refreshing in Studio and the timeout message is displayed. The problem occurs only for a Composite instance having big hierarchy of objects defined.</p> </li> 
+        <li> <p>Fixed by decreasing the depth level (=2) when computing metadata for objects/fields.</p> </li> 
+       </ul> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="sco-connector-1.0.2-known-issues"><a class="anchor" href="#sco-connector-1.0.2-known-issues"></a>Version 1.0.2 - Known Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Support for TLS1.0 is discontinued in Salesforce.</p> </li> 
+     <li> <p>If by default the application tries to use TLS1.0, then when running it, the following VM argument should be added: -<code>Dhttp.protocols=TLSv1.1,TLSv1.2</code> - This ensures that TLS1.1 or TLS1.2 is used for communication with Salesforce.</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1177,7 +1220,7 @@
  <h2 id="sco-connector-1.0.1"><a class="anchor" href="#sco-connector-1.0.1"></a>Version 1.0.1 - September 5, 2017</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.1-compatibility"><a class="anchor" href="#sco-connector-1.0.1-compatibility"></a>Version 1.0.1 Compatibility</h3> 
+   <h3 id="sco-connector-1.0.1-compatibility"><a class="anchor" href="#sco-connector-1.0.1-compatibility"></a>Version 1.0.1 - Compatibility</h3> 
    <div class="paragraph"> 
     <p>The Salesforce Composite 1.0.1 connector is compatible with:</p> 
    </div> 
@@ -1205,7 +1248,7 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.1-features"><a class="anchor" href="#sco-connector-1.0.1-features"></a>Version 1.0.1 Features</h3> 
+   <h3 id="sco-connector-1.0.1-features"><a class="anchor" href="#sco-connector-1.0.1-features"></a>Version 1.0.1 - Features</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p><strong>Addition of Proxy Support</strong>: Starting with version 1.0.1 the Salesforce Composite Connector allows the connection using a PROXY.</p> </li> 
@@ -1213,7 +1256,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.1-fixes"><a class="anchor" href="#sco-connector-1.0.1-fixes"></a>Version 1.0.1 Fixes</h3> 
+   <h3 id="sco-connector-1.0.1-fixes"><a class="anchor" href="#sco-connector-1.0.1-fixes"></a>Version 1.0.1 - Fixes</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p><strong>INVALID_SESSION_ID not triggering reconnection strategy:</strong> Previously, when the Invalid Session Id exception occurred the reconnection strategy did not kick in as expected. Now, when such an exception occurs the reconnection strategy is successfully started.</p> </li> 
@@ -1222,7 +1265,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.1-known-issues"><a class="anchor" href="#sco-connector-1.0.1-known-issues"></a>Version 1.0.1 Known Issues</h3> 
+   <h3 id="sco-connector-1.0.1-known-issues"><a class="anchor" href="#sco-connector-1.0.1-known-issues"></a>Version 1.0.1 - Known Issues</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>Support for TLS1.0 is discontinued in Salesforce.</p> </li> 
@@ -1239,7 +1282,7 @@
    <p>Release Notes for version 1.0.0 of the Salesforce Composite connector. These Release Notes accompany the <a href="/mule-user-guide/v/3.8/salesforce-composite-connector">Salesforce Composite Connector User Guide</a>.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.0-compatibility"><a class="anchor" href="#sco-connector-1.0.0-compatibility"></a>Version 1.0.0 Compatibility</h3> 
+   <h3 id="sco-connector-1.0.0-compatibility"><a class="anchor" href="#sco-connector-1.0.0-compatibility"></a>Version 1.0.0 - Compatibility</h3> 
    <div class="paragraph"> 
     <p>The Salesforce Composite connector is compatible with:</p> 
    </div> 
@@ -1382,17 +1425,17 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.0-fixes"><a class="anchor" href="#sco-connector-1.0.0-fixes"></a>Version 1.0.0 Fixed in this Release</h3> 
+   <h3 id="sco-connector-1.0.0-fixes"><a class="anchor" href="#sco-connector-1.0.0-fixes"></a>Version 1.0.0 - Fixed in this Release</h3> 
    <div class="paragraph"> 
     <p>None.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sco-connector-1.0.0-known-issues"><a class="anchor" href="#sco-connector-1.0.0-known-issues"></a>Version 1.0.0 Known Issues</h3> 
+   <h3 id="sco-connector-1.0.0-known-issues"><a class="anchor" href="#sco-connector-1.0.0-known-issues"></a>Version 1.0.0 - Known Issues</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>Support for TLS1.0 is discontinued in Salesforce.</p> </li> 
-     <li> <p>If by default the application tries to use TLS1.0, then, when running it, the following VM argument should be added: -Dhttp.protocols=TLSv1.1,TLSv1.2 This will ensure the fact that TLS1.1 or TLS1.2 will be used for the communication with Salesforce.</p> </li> 
+     <li> <p>If by default the application tries to use TLS1.0, then, when running it, the following VM argument should be added: -Dhttp.protocols=TLSv1.1,TLSv1.2 This ensures that TLS1.1 or TLS1.2 isbe used for communication with Salesforce.</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -1402,7 +1445,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#contents">Contents</a></li><li><a class="scroll-menu-link" href="#sco-connector-1.0.1">Version 1.0.1 - September 5, 2017</a></li><li><a class="scroll-menu-link" href="#sco-connector-1.0.0">Version 1.0.0 - March 10, 2016</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#sco-connector-1.0.2">Version 1.0.2 - March 15, 2018</a></li><li><a class="scroll-menu-link" href="#sco-connector-1.0.1">Version 1.0.1 - September 5, 2017</a></li><li><a class="scroll-menu-link" href="#sco-connector-1.0.0">Version 1.0.0 - March 10, 2016</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
