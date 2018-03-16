@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Custom Policy Reference Implementations // MuleSoft Documentation </title>
+  <title>About Mule OAuth 2.0 Provider Prerequisites // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -21,8 +21,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/api-manager/v/2.x/oauth-build-provider-prerequisites-about" />
-  <meta name="description" content="You can use the following minimal policy configuration file to start building your custom policy: The following example of a policy configuration f..." />
-  <meta class="swiftype" name="title" data-type="string" content="Custom Policy Reference Implementations" />
+  <meta name="description" content="You need one of the following installations to build a Mule OAuth provider: To build the provider on API Gateway runtime 2.0 or earlier, download t..." />
+  <meta class="swiftype" name="title" data-type="string" content="About Mule OAuth 2.0 Provider Prerequisites" />
   <meta class="swiftype" name="version" data-type="enum" content="2.x" />
 </head>
 <body>
@@ -1140,208 +1140,41 @@
     <div class="article-content col-md-7">
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="using-policies">About Using Policies</a>/<a href="available-policies">About Provided Policies</a>/<a href="aes-oauth-faq">Building a Mule OAuth Provider Tasks</a>/<a href="oauth-build-provider-prerequisites-about" class="breadcrumb-active-link">Mule OAuth Provider Prerequisites</a></div>
-      <h1>Custom Policy Reference Implementations</h1>
-      <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>You can use the following minimal policy configuration file to start building your custom policy:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td> 
-         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="tag">&lt;policy</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{policyId}}</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">policyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">IP whitelist</span><span class="delimiter">"</span></span> <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:mule</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:api-platform-gw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/api-platform-gw</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy http://www.mulesoft.org/schema/mule/policy/current/mule-policy.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/api-platform-gw http://www.mulesoft.org/schema/mule/api-platform-gw/current/mule-api-platform-gw.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;before&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">PRE</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/before&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;after&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">POST</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/after&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;pointcut&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;api-platform-gw:api-pointcut</span> <span class="attribute-name">apiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{ apiName }}</span><span class="delimiter">"</span></span> <span class="attribute-name">apiVersion</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{ apiVersionName }}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/pointcut&gt;</span>
-&nbsp;
-<span class="tag">&lt;/policy&gt;</span>&nbsp;</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
- </div> 
+      <h1>About Mule OAuth 2.0 Provider Prerequisites</h1>
+      <div class="paragraph"> 
+ <p>You need one of the following installations to build a Mule OAuth provider:</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="full-example-of-a-policy-configuration-file"><a class="anchor" href="#full-example-of-a-policy-configuration-file"></a>Full Example of a Policy Configuration File</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The following example of a policy configuration file implements an IP whitelist filter that matches the previous YAML example. This XML file references several variables enclosed in&nbsp;curly brackets that the YAML file defines and resource level policies.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The IP whitelist filter policy adds a validation that requires all requests to contain a valid IP Address based on a valid list of IPs&nbsp; configured.</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-</pre></td> 
-         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="tag">&lt;policy</span> <span class="attribute-name">online</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{policyId}}</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">policyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">IP whitelist</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:mule</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:ip-filter-gw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ip-filter-gw</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy http://www.mulesoft.org/schema/mule/policy/current/mule-policy.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/ip-filter-gw http://www.mulesoft.org/schema/mule/ip-filter-gw/current/mule-ip-filter-gw.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This section is for building response messages when the policy fails. --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:processor-chain</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{policyId}}-build-response</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">http.status</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">403</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Set HTTP status code to 403 --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">Content-Type</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">application/json</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mule:set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[_ipViolationMessage]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Set the payload to the description of the violation --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/mule:processor-chain&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- This is the element that gets injected at the beginning of every flow. According to the pointcut specified below. --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;before&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ip-filter-gw:filter</span> <span class="attribute-name">ipAddress</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{ipExpression}}</span><span class="delimiter">"</span></span> <span class="attribute-name">onUnaccepted</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{policyId}}-build-response</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>&nbsp;&nbsp; <span class="comment">&lt;!-- If failed, the mule:processor-chain above is executed --&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ip-filter-gw:whitelist&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{#ips}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ip-filter-gw:ip&gt;</span>{{.}}<span class="tag">&lt;/ip-filter-gw:ip&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{/ips}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ip-filter-gw:whitelist&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ip-filter-gw:filter&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/before&gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Pointcuts specify where this policy takes effect--&gt;</span>
-    {{#pointcutData.length}}
-      {{#pointcutData}}
-        <span class="tag">&lt;pointcut&gt;</span>
-          <span class="tag">&lt;api-platform-gw:api-pointcut</span> <span class="attribute-name">apiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{apiName}}</span><span class="delimiter">"</span></span> <span class="attribute-name">apiVersion</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{apiVersionName}}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-          <span class="tag">&lt;resource</span> <span class="attribute-name">methodRegex</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{methodRegex}}</span><span class="delimiter">"</span></span> <span class="attribute-name">uriTemplateRegex</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{uriTemplateRegex}}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;/pointcut&gt;</span>
-      {{/pointcutData}}
-    {{/pointcutData.length}}
-    {{^pointcutData.length}}
-      <span class="tag">&lt;pointcut&gt;</span>
-        <span class="tag">&lt;api-platform-gw:api-pointcut</span> <span class="attribute-name">apiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{apiName}}</span><span class="delimiter">"</span></span> <span class="attribute-name">apiVersion</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{apiVersionName}}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-      <span class="tag">&lt;/pointcut&gt;</span>
-    {{/pointcutData.length}}
-<span class="tag">&lt;/policy&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
- </div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Mule 3.8.0 runtime or later</p> </li> 
+  <li> <p>API Gateway runtime 2.0 or earlier</p> </li> 
+ </ul> 
 </div> 
-<div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="/api-manager/v/2.x/custom-policy-4-reference">Custom Policy Reference</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
+<div class="paragraph"> 
+ <p>To build the provider on API Gateway runtime 2.0 or earlier, download the Gateway Runtime 2.0 version of the External OAuth 2.0 server for Anypoint Platform from Exchange:</p> 
+</div> 
+<div class="paragraph"> 
+ <p><code>https://anypoint.mulesoft.com/exchange</code>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Use the following software:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Anypoint Studio 6.x with Mule Runtime EE 3.8 or later</p> </li> 
+  <li> <p>Java JDK 1.8</p> </li> 
+  <li> <p>Maven 3.3.9</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>The Mule OAuth provider can run on any application server that is in the same organization as your OAuth-protected API. For example, you can run the Mule provider on premises using a Tomcat server or in the cloud using CloudHub.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>To test the provider, you need tools that support <code>curl</code>.</p> 
 </div>
     </div>
     <!-- END article-content -->
-    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
-                <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#full-example-of-a-policy-configuration-file">Full Example of a Policy Configuration File</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+    
   </div>
 </div>
 <!-- START footer -->
