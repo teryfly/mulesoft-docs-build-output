@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Command Line Interface for Anypoint Platform // MuleSoft Documentation </title>
@@ -6790,7 +6791,7 @@ Password: ****</pre></td>
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>This command copies the CloudHub application passed in <code>source</code> to the location passed in <code>target</code>.<br> Arguments "source" and "target" should be formatted as follows: ([group_id]/)&lt;asset_id&gt;/&lt;version&gt;.<br> If "group_id" is not specified, it will default to the currently selected Organization ID.<br> For example:</p> 
+    <p>This command copies the CloudHub application passed in <code>source</code> to the target passed in <code>target</code>.<br> Arguments "source" and "target" should be formatted as follows: ([group_id]/)&lt;asset_id&gt;/&lt;version&gt;.<br> If "group_id" is not specified, it will default to the currently selected Organization ID.<br> For example:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -6943,11 +6944,11 @@ Password: ****</pre></td>
    <h3 id="runtime-mgr-standalone-application-copy"><a class="anchor" href="#runtime-mgr-standalone-application-copy"></a>runtime-mgr standalone-application copy</h3> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="Example">&gt; runtime-mgr standalone-application copy [options] &lt;source&gt; &lt;destination&gt; &lt;targetIdentifier&gt;</code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="Example">&gt; runtime-mgr standalone-application copy [options] &lt;source&gt; &lt;target&gt; &lt;targetIdentifier&gt;</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>This command copies the standalone application passed in <code>source</code> to the location passed in <code>destination</code> and the server, server group or cluster ID or Name passed in <code>targetIdentifier</code>.<br> Both arguments <code>source</code> and <code>destination</code> are represented using the format: <code>&lt;organizationName&gt;:&lt;environmentName&gt;/&lt;appName&gt;</code>, for example:</p> 
+    <p>This command copies the standalone application passed in <code>source</code> to the target passed in <code>target</code> and the server, server group or cluster ID or Name passed in <code>targetIdentifier</code>.<br> Both arguments <code>source</code> and <code>destination</code> are represented using the format: <code>&lt;organizationName&gt;:&lt;environmentName&gt;/&lt;appName&gt;</code>, for example:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
