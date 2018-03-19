@@ -4,7 +4,7 @@
     
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Command Line Interface for Anypoint Platform // MuleSoft Documentation </title>
+  <title>Anypoint CLI // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -22,8 +22,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/runtime-manager/anypoint-platform-cli" />
-  <meta name="description" content=" Anypoint Platform provides you a command line tool to interact with: Through both interactive shell and standard CLI modes for both Anypoint Platf..." />
-  <meta class="swiftype" name="title" data-type="string" content="Command Line Interface for Anypoint Platform" />
+  <meta name="description" content=" Anypoint Platform provides a scripting and command line tool to interact with: through both interactive shell and standard CLI modes for both Anyp..." />
+  <meta class="swiftype" name="title" data-type="string" content="Anypoint CLI" />
 </head>
 <body>
 <!-- START Swiftype -->
@@ -1139,25 +1139,28 @@
     <div class="article-content col-md-7">
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Runtime Manager</a>/<a href="anypoint-platform-cli" class="breadcrumb-active-link">Command Line Interface</a></div>
-      <h1>Command Line Interface for Anypoint Platform</h1>
+      <h1>Anypoint CLI</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p><span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-cloud-active.png" alt="logo cloud active" title="CloudHub"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-hybrid-active.png" alt="logo hybrid active" title="Hybrid Deployment"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-server-disabled.png" alt="logo server disabled" title="Anypoint Platform Private Cloud Edition"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-pcf-disabled.png" alt="logo pcf disabled" title="Pivotal Cloud Foundry"></a></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Anypoint Platform provides you a command line tool to interact with:</p> 
+   <p>Anypoint Platform provides a scripting and command line tool to interact with:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Your applications on CloudHub</p> </li> 
+    <li> <p><a href="/anypoint-exchange/">Anypoint Exchange</a></p> </li> 
+    <li> <p><a href="/access-management">Access Management</a></p> </li> 
+    <li> <p><a href="/runtime-manager/">Runtime Manager</a> for Mule applications deployed to MuleSoft-hosted (CloudHub) and customer-hosted Mule runtimes</p> </li> 
     <li> <p><a href="/runtime-manager/virtual-private-cloud">VPCs</a></p> </li> 
     <li> <p><a href="/runtime-manager/cloudhub-dedicated-load-balancer">Cloudhub load balancers</a></p> </li> 
     <li> <p><a href="/api-manager/">API Manager</a></p> </li> 
+    <li> <p><a href="/design-center/">Design Center</a></p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>Through both interactive shell and standard CLI modes for both <strong>Anypoint Platform</strong> and <strong>Anypoint Platform Private Cloud Edition</strong>.</p> 
+   <p>through both interactive shell and standard CLI modes for both <strong>Anypoint Platform</strong> and <strong>Anypoint Platform Private Cloud Edition</strong>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1179,14 +1182,14 @@
       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>First, you need to make sure you have the node.js runtime environment installed on your machine. Along with it, you’ll need to use node’s default package manager (npm) to be able to install Anypoint-CLI. Following the NodeJS documentation to get both resources.<br> You also need to install the Git version management system on your computer. Installation instructions and links to downloads for your particular Operating System are available at the Git Documentation site.</p> 
+        <p>Anypoint-CLI is a <a href="https://nodejs.org/en/">Node.js</a> application. Before you can install Anypoint CLI on your computer, you first need to make sure you have the Node.js runtime environment installed on your computer. Along with it, you’ll need to use the default Node.js package manager (npm) to be able to install Anypoint CLI. Following the NodeJS documentation to get both resources.<br> You also need to install the Git version management system on your computer. Installation instructions and links to downloads for your particular Operating System are available at the Git Documentation site.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>After you have installed node.js (with npm) and git, you can install Anypoint-CLI using node’s default package manager by typing in your console:</p> 
+   <p>After you have installed Node.js (with npm) and git, you can install Anypoint CLI by opening a command-line interface and typing:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
