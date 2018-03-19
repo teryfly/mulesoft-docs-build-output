@@ -1142,54 +1142,85 @@
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">API Manager</a>/<a href="latest-overview-concept">About API Manager 2.x</a>/<a href="latest-tasks">Basic API Management Tasks</a>/<a href="classify-api-task" class="breadcrumb-active-link">To Classify an API</a></div>
       <h1>To Classify an API</h1>
-      <div class="paragraph"> 
- <p>An unclassified environment is the target environment where all APIs are placed after you upgrade to the API Manager 2.x. APIs you upgrade from the API Manager 1.x to API Manager 2.x reside in the unclassified environment. Also, any API is classified that you didn’t associate with an environment prior to moving to API Manager 2.x. You need to classify any unclassified APIs to govern or otherwise manage the APIs.</p> 
+      <div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>An unclassified environment is the target environment where all APIs are placed after you upgrade to the API Manager 2.x. APIs you upgrade from the API Manager 1.x to API Manager 2.x reside in the unclassified environment. Also, any API is classified that you didn’t associate with an environment prior to moving to API Manager 2.x. You need to classify any unclassified APIs to govern or otherwise manage the APIs.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Even though API Manager supports tracking APIs with both organization and environment credentials, MuleSoft recommends using environment credentials as the permissions associated to them are more restrictive. You need to restart Mule Runtime after changing credentials. Restarting can cause downtime.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Using credentials from one environment does not allow:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Tracking APIs from different environment</p> </li> 
+    <li> <p>Tracking APIs from different organizations</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you need to track APIs in either of these ways, use organization credentials.</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In API Manager, click the environment control, labeled SANDBOX, in this example:</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/environment.png" alt="environment"> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>If you do not see a suitable environment for classification of the API, create one in Access Management.</p> 
+     </div> </li> 
+    <li> <p>In Switch Environment, select Unclassified.</p> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/switch-environment.png" alt="switch environment"> 
+      </div> 
+     </div> </li> 
+    <li> <p>Click Switch.</p> 
+     <div class="paragraph"> 
+      <p>A list of unclassified APIs appears.</p> 
+     </div> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/classify.png" alt="classify"> 
+      </div> 
+     </div> </li> 
+    <li> <p>Click Classify.</p> </li> 
+    <li> <p>In Target Environment, select the environment for the API from the list of environments available to you. For example, select Test.</p> </li> 
+    <li> <p>In Instance Label, optionally type a unique instance name. For example, type abc-api-1</p> 
+     <div class="paragraph"> 
+      <p>In environments, APIs can have more than a single instance. Therefore, an instance name is required to uniquely identify it.</p> 
+     </div> 
+     <div class="imageblock"> 
+      <div class="content"> 
+       <img src="./_images/classify-instance.png" alt="classify instance"> 
+      </div> 
+     </div> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>A classification suggestion appears in the API list. Click the suggestion and follow the instructions.</p> 
+  </div> 
+ </div> 
 </div> 
-<div class="olist arabic"> 
- <ol class="arabic"> 
-  <li> <p>In API Manager, click the environment control, labeled SANDBOX, in this example:</p> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/environment.png" alt="environment"> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If you do not see a suitable environment for classification of the API, create one in Access Management.</p> 
-   </div> </li> 
-  <li> <p>In Switch Environment, select Unclassified.</p> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/switch-environment.png" alt="switch environment"> 
-    </div> 
-   </div> </li> 
-  <li> <p>Click Switch.</p> 
-   <div class="paragraph"> 
-    <p>A list of unclassified APIs appears.</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/classify.png" alt="classify"> 
-    </div> 
-   </div> </li> 
-  <li> <p>Click Classify.</p> </li> 
-  <li> <p>In Target Environment, select the environment for the API from the list of environments available to you. For example, select Test.</p> </li> 
-  <li> <p>In Instance Label, optionally type a unique instance name. For example, type abc-api-1</p> 
-   <div class="paragraph"> 
-    <p>In environments, APIs can have more than a single instance. Therefore, an instance name is required to uniquely identify it.</p> 
-   </div> 
-   <div class="imageblock"> 
-    <div class="content"> 
-     <img src="./_images/classify-instance.png" alt="classify instance"> 
-    </div> 
-   </div> </li> 
- </ol> 
-</div> 
-<div class="paragraph"> 
- <p>A classification suggestion appears in the API list. Click the suggestion and follow the instructions.</p> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="/runtime-manager/servers-actions">To Shutdown, Restart and Delete a Server (Hybrid)</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
 </div>
     </div>
     <!-- END article-content -->
-    
+    <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
+                <h4>In this topic:</h4>
+                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
