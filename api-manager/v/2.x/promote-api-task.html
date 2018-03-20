@@ -1158,6 +1158,18 @@
     <li> <p>Click Promote.</p> </li> 
    </ol> 
   </div> 
+  <div class="paragraph"> 
+   <p><strong>Note</strong>: Promoting an API affects only the API definition, not the existing deployed applications subscribed to the API. After promoting an API, the API Name remains the same, but the API Version changes.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For existing applications that need to subscribe to a promoted API, you need to make following changes:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Update the API Version.</p> </li> 
+    <li> <p>As each environment has different client id and secret, update the application’s client id and secret.</p> </li> 
+   </ol> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 

@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/release-notes/upgrade" />
-  <meta name="description" content="Anypoint Platform provides three steps to upgrade your APIs to the latest Anypoint Platform software: Grouping APIs enables you to remove duplicate..." />
+  <meta name="description" content="The upgrade process described in this document changes the existing Anypoint Platform APIs, which affects CI/CD pipelines built against the API Man..." />
   <meta class="swiftype" name="title" data-type="string" content="Anypoint Platform Upgrade to Latest Software Guide" />
 </head>
 <body>
@@ -1147,7 +1147,13 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
-      <td class="content"> The upgrade process described in this document changes the existing Anypoint Platform APIs, which affects CI/CD pipelines built against the API Manager API and autodiscovery. See the "Continuous Integration and Delivery (CI/CD)" section below for more information. </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>The upgrade process described in this document changes the existing Anypoint Platform APIs, which affects CI/CD pipelines built against the API Manager API and autodiscovery. See the "Continuous Integration and Delivery (CI/CD)" section below for more information.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Note:</strong> After the upgrade and before classifying your APIs, thoroughly test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot be rolled back in the event you encounter upgrade related issues.</p> 
+       </div> </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1237,16 +1243,6 @@
 <div class="sect1"> 
  <h2 id="to-classify-apis-by-environments"><a class="anchor" href="#to-classify-apis-by-environments"></a>To Classify APIs by Environments</h2> 
  <div class="sectionbody"> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> After the upgrade and before classifying your APIs, thoroughly test your APIs, Notebooks, and Portals. After APIs are classified, your organization cannot be rolled back in the event you encounter upgrade related issues. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
   <div class="paragraph"> 
    <p>After the data migration, all APIs are listed in the unclassified environment. From here, you can classify APIs into their appropriate environment</p> 
   </div> 
