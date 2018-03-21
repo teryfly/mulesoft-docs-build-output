@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/first-successful" />
-  <meta name="description" content="The First Successful router sends a message to the next message processor within a "circular" list of processor targets. It is a message processor ..." />
+  <meta name="description" content="The First Successful router iterates through its list of child routes, each containing a set of components, until the first successful execution. I..." />
   <meta class="swiftype" name="title" data-type="string" content="First Successful Router" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -441,9 +441,9 @@
 <a href="/access-management/managing-api-clients">About Client Management</a><ul>
 <li><i></i><a href="/access-management/conf-client-mgmt-openam-task">To Configure OpenAM Client Management</a></li><li><i></i><a href="/access-management/conf-client-mgmt-pf-task">To Configure PingFederate Client Management</a></li><li><i></i><a href="/access-management/configure-client-management-openid-task">To Configure OpenID Connect Client Management</a></li></ul></li>
 <li><i></i><a href="/access-management/audit-logging">Audit Logging</a></li><li><i></i><a href="/access-management/managing-permissions">Managing Permissions</a></li><li><i></i><a href="/access-management/troubleshooting-anypoint-platform-access">Troubleshooting Anypoint Platform Access</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/">About Mule</a><ul>
+<a href="/mule-user-guide/v/4.1/">About Mule</a><ul style="display: block;">
 <li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/index-migration">Mule 4 for Mule 3 Users</a><ul>
@@ -480,9 +480,9 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/about-mule-event">About the Mule Event</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/about-mule-message">About the Mule Message</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-mule-variables">About Variables in the Mule Event</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-processors">About Event Processors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-source">About the Event Source</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/about-components">Mule Components</a><ul>
+<a href="/mule-user-guide/v/4.1/about-components">Mule Components</a><ul style="display: block;">
 <li><i></i><a href="/mule-user-guide/v/4.1/async-scope-reference">Async Scope</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/batch-processing-concept">Batch Processors</a><ul>
@@ -503,11 +503,11 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/choice-router-concept">Choice Router</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/choice-router-xml-reference">Choice Router XML Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/dynamic-evaluate-component-reference">Dynamic Evaluate Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/flowref-about">Flow Ref</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dynamic-evaluate-component-reference">Dynamic Evaluate Component</a></li><li class="active"><i></i><a href="/mule-user-guide/v/4.1/first-successful">First Successful Router</a></li><li><i></i><a href="/mule-user-guide/v/4.1/flowref-about">Flow Ref</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/for-each-scope-concept">For Each Scope</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/for-each-scope-xml-reference">For Each Scope Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/logger-component-reference">Logger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/raise-error-component-reference">Raise Error Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/remove-variable">Remove Variable</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/4.1/logger-component-reference">Logger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/raise-error-component-reference">Raise Error Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/round-robin">Round Robin Router</a></li><li><i></i><a href="/mule-user-guide/v/4.1/remove-variable">Remove Variable</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/scheduler-concept">Scheduler</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/scheduler-xml-reference">Scheduler XML Reference</a></li></ul></li>
@@ -1272,29 +1272,10 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">About Mule</a>/<a href="about-components">Mule Components</a>/<a href="first-successful" class="breadcrumb-active-link">First Successful Router</a></div>
       <h1>First Successful Router</h1>
       <div class="paragraph"> 
- <p>The First Successful router sends a message to the next message processor within a "circular" list of processor targets. It is a message processor that iterates through its list of child message processors, routing a received message to each of them in order until one processes the message successfully. If none succeed, an exception is thrown.</p> 
-</div> 
-<div class="paragraph"> 
- <p>Success is defined as:</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>If the child message processor thows an exception, this is a failure.</p> </li> 
-  <li> <p>Otherwise:</p> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>If the child message processor returns a message that contains an exception payload, this is a failure.</p> </li> 
-     <li> <p>If the child message processor returns a message that does not contain an exception payload, this is a success.</p> </li> 
-     <li> <p>If the child message processor does not return a message (e.g. is a one-way connector), this is a success.</p> </li> 
-    </ul> 
-   </div> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>This message processor was added in Mule 3.0.1.</p> 
+ <p>The First Successful router iterates through its list of child routes, each containing a set of components, until the first successful execution. If none succeed, an exception is thrown.</p> 
 </div> 
 <div class="listingblock"> 
  <div class="content"> 
@@ -1309,48 +1290,94 @@
 4
 5
 6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
 </pre></td> 
-       <td class="code"><pre><span class="tag">&lt;first-successful&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port90</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port91</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port92</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp; <span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">dead-letter-queue</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/first-successful&gt;</span></pre></td> 
+       <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:sockets</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/sockets</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:db</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/db</span><span class="delimiter">"</span></span>  <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+                            <span class="content">http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd</span>
+                            <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
+                            <span class="content">http://www.mulesoft.org/schema/mule/sockets http://www.mulesoft.org/schema/mule/sockets/current/mule-sockets.xsd</span>
+                            <span class="content">http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;http:request-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Request_configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Request configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">b026579b-5a59-444f-8f91-ff209bed8342</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;http:request-connection</span> <span class="tag">&gt;</span>
+                        <span class="tag">&lt;http:client-socket-properties</span> <span class="tag">&gt;</span>
+                                <span class="tag">&lt;sockets:tcp-client-socket-properties</span> <span class="attribute-name">connectionTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">500</span><span class="delimiter">"</span></span> <span class="attribute-name">clientTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">500</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/http:client-socket-properties&gt;</span>
+                <span class="tag">&lt;/http:request-connection&gt;</span>
+        <span class="tag">&lt;/http:request-config&gt;</span>
+        <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_config</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener config</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">4631e4fd-571f-41c8-831d-d908b1763ef2</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;http:listener-connection</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/http:listener-config&gt;</span>
+        <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">testFlow</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">79cd7fcd-d355-418b-898b-5d7e3a1cbcab</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;scheduler</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Scheduler</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">6dc5dcc7-ce33-4d18-9de9-2c665f713508</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                        <span class="tag">&lt;scheduling-strategy</span> <span class="tag">&gt;</span>
+                                <span class="tag">&lt;fixed-frequency</span> <span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/scheduling-strategy&gt;</span>
+                <span class="tag">&lt;/scheduler&gt;</span>
+                <span class="tag">&lt;first-successful</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">First Successful</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">6ae009e7-ebe5-47cf-b860-db6d51a31251</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                        <span class="tag">&lt;route&gt;</span>
+                                <span class="tag">&lt;file:read</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Read non existent file</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">199cdb01-cb43-404e-acfd-211fe5a9167e</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">nonExistentFile</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                                <span class="tag">&lt;set-variable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set successfulRoute var to route 1</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">c740b39e-a1c4-41d6-8a28-0766ca815ec6</span><span class="delimiter">"</span></span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">successfulRoute</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+                        <span class="tag">&lt;route&gt;</span>
+                                <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[vars.nonExistentVar!]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload with non existent variable</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">0cc9ac4d-5622-4e10-971c-99073cb58df0</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+                                <span class="tag">&lt;set-variable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set successfulRoute var to route 2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">88f15c26-d242-4b11-af49-492c35625b84</span><span class="delimiter">"</span></span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">successfulRoute</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+                        <span class="tag">&lt;route&gt;</span>
+                                <span class="tag">&lt;set-variable</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">3</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set successfulRoute var to route 3</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">446afb25-0181-45e5-b04a-68ecb98b57b7</span><span class="delimiter">"</span></span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">successfulRoute</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+            <span class="tag">&lt;route</span> <span class="tag">&gt;</span>
+                                <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">b94b905a-3a68-4c88-b753-464bc3d0cfeb</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">This route is never going to be executed</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+                <span class="tag">&lt;/first-successful&gt;</span>
+                <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">ERROR</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">9ffe328d-2595-4f28-81e8-ae731fc6cb89</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['Successful route was $(vars.successfulRoute)']</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/flow&gt;</span>
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
       </tr> 
      </tbody> 
     </table></code></pre> 
  </div> 
 </div> 
 <div class="paragraph"> 
- <p><strong>From 3.1.0</strong> you can further customize the behavior of this router by specifying a <em>'failureExpression'</em> that allows you to use <a href="/mule-user-guide/v/3.8/non-mel-expressions-configuration-reference">Mule Expressions</a> to define a failure. The <em>failureExpression</em> attribute is configured as follows:</p> 
-</div> 
-<div class="listingblock"> 
- <div class="content"> 
-  <pre class="CodeRay highlight"><code data-lang="xml">
-       
-    <table class="CodeRay"> 
-     <tbody> 
-      <tr> 
-       <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-</pre></td> 
-       <td class="code"><pre><span class="tag">&lt;first-successful</span> <span class="attribute-name">failureExpression</span>=<span class="string"><span class="delimiter">"</span><span class="content">exception-type:java.net.SocketTimeoutException</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port90</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port91</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port92</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">dead-letter-queue</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/first-successful&gt;</span></pre></td> 
-      </tr> 
-     </tbody> 
-    </table></code></pre> 
- </div> 
-</div> 
-<div class="paragraph"> 
- <p>In the above example a failure expression is being used to more exactly define the exception type that will be considered a failure, alternatively you can use any other Mule expression that can be used with expression filters, just remember that the expression denotes failure rather than success.</p> 
+ <p>The first two routes will fail because the first is trying to read a file that does not exist, and the second is trying to access a variable that does not exist. The third route, which sets a variable <code>successfulRoute</code> to a value of <code>3</code>, will execute successfully. First Successful completes its execution upon success, so the fourth route will not be executed.</p> 
 </div>
     </div>
     <!-- END article-content -->

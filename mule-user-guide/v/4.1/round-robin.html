@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/round-robin" />
-  <meta name="description" content="The Round Robin router iterates through a list of two or more message processors, sending successive messages to the next message processor on the ..." />
+  <meta name="description" content="The Round Robin router iterates through a list of two or more routes in order, but it only routes to one of the routes each time it is executed. It..." />
   <meta class="swiftype" name="title" data-type="string" content="Round Robin Router" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -441,9 +441,9 @@
 <a href="/access-management/managing-api-clients">About Client Management</a><ul>
 <li><i></i><a href="/access-management/conf-client-mgmt-openam-task">To Configure OpenAM Client Management</a></li><li><i></i><a href="/access-management/conf-client-mgmt-pf-task">To Configure PingFederate Client Management</a></li><li><i></i><a href="/access-management/configure-client-management-openid-task">To Configure OpenID Connect Client Management</a></li></ul></li>
 <li><i></i><a href="/access-management/audit-logging">Audit Logging</a></li><li><i></i><a href="/access-management/managing-permissions">Managing Permissions</a></li><li><i></i><a href="/access-management/troubleshooting-anypoint-platform-access">Troubleshooting Anypoint Platform Access</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/">About Mule</a><ul>
+<a href="/mule-user-guide/v/4.1/">About Mule</a><ul style="display: block;">
 <li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/index-migration">Mule 4 for Mule 3 Users</a><ul>
@@ -480,9 +480,9 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/about-mule-event">About the Mule Event</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/about-mule-message">About the Mule Message</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-mule-variables">About Variables in the Mule Event</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-processors">About Event Processors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-source">About the Event Source</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/about-components">Mule Components</a><ul>
+<a href="/mule-user-guide/v/4.1/about-components">Mule Components</a><ul style="display: block;">
 <li><i></i><a href="/mule-user-guide/v/4.1/async-scope-reference">Async Scope</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/batch-processing-concept">Batch Processors</a><ul>
@@ -503,11 +503,11 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/choice-router-concept">Choice Router</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/choice-router-xml-reference">Choice Router XML Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/dynamic-evaluate-component-reference">Dynamic Evaluate Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/flowref-about">Flow Ref</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dynamic-evaluate-component-reference">Dynamic Evaluate Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/first-successful">First Successful Router</a></li><li><i></i><a href="/mule-user-guide/v/4.1/flowref-about">Flow Ref</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/for-each-scope-concept">For Each Scope</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/for-each-scope-xml-reference">For Each Scope Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/logger-component-reference">Logger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/raise-error-component-reference">Raise Error Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/remove-variable">Remove Variable</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/4.1/logger-component-reference">Logger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/raise-error-component-reference">Raise Error Component</a></li><li class="active"><i></i><a href="/mule-user-guide/v/4.1/round-robin">Round Robin Router</a></li><li><i></i><a href="/mule-user-guide/v/4.1/remove-variable">Remove Variable</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/scheduler-concept">Scheduler</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/scheduler-xml-reference">Scheduler XML Reference</a></li></ul></li>
@@ -1272,13 +1272,10 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">About Mule</a>/<a href="about-components">Mule Components</a>/<a href="round-robin" class="breadcrumb-active-link">Round Robin Router</a></div>
       <h1>Round Robin Router</h1>
       <div class="paragraph"> 
- <p>The Round Robin router iterates through a list of two or more message processors, sending successive messages to the next message processor on the list. When it reaches the end of the list, it jumps to the start of the list and resumes the iteration.</p> 
-</div> 
-<div class="paragraph"> 
- <p>It is a message processor that iterates through a list of child message processors in round-robin fashion: the first message received is routed to the first child, the second message to the second child, and so on. After a message has been routed to each child, the next is routed to the first child again, restarting the iteration.</p> 
+ <p>The Round Robin router iterates through a list of two or more routes in order, but it only routes to <em>one</em> of the routes each time it is executed. It keeps track of the previously selected route and never selects the same route consecutively. For example, the first time Round Robin executes, it selects the first route. The next time, it selects the second route. If the previously selected route is the last route in the list, Round Robin jumps to the first route.</p> 
 </div> 
 <div class="listingblock"> 
  <div class="content"> 
@@ -1292,16 +1289,47 @@
 3
 4
 5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
 </pre></td> 
-       <td class="code"><pre><span class="tag">&lt;round-robin&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port90</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port91</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Config_port92</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">weather-forecast</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/round-robin&gt;</span></pre></td> 
+       <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">round-robinFlow</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">95d79691-4142-43b1-9719-7d6dc19c40bd</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;scheduler</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Scheduler</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">77a281f1-7643-422d-be72-25456b767d68</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                        <span class="tag">&lt;scheduling-strategy</span> <span class="tag">&gt;</span>
+                                <span class="tag">&lt;fixed-frequency</span> <span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/scheduling-strategy&gt;</span>
+                <span class="tag">&lt;/scheduler&gt;</span>
+                <span class="tag">&lt;round-robin</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Round Robin</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">6fe1f667-05b2-47d3-81d2-e9ef27f7c9b6</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                        <span class="tag">&lt;route&gt;</span>
+                                <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">ERROR</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">e38d4396-d4ea-4eec-88dc-2bf60f579d5d</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Route1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+                        <span class="tag">&lt;route&gt;</span>
+                                <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">ERROR</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">6127fe32-0bc0-48e9-bb18-a9f3bfc45d0b</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Route2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                        <span class="tag">&lt;/route&gt;</span>
+                <span class="tag">&lt;/round-robin&gt;</span>
+        <span class="tag">&lt;/flow&gt;</span>
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
       </tr> 
      </tbody> 
     </table></code></pre> 
  </div> 
+</div> 
+<div class="paragraph"> 
+ <p>In the example above, the first time the Round Robin is executed it prints <code>Route1</code>. The next time, it prints <code>Route2</code>. The third time, since there are only two routes, Round Robin starts again with the first route and prints <code>Route1</code>.</p> 
 </div>
     </div>
     <!-- END article-content -->
