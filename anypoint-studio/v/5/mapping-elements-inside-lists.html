@@ -106,7 +106,7 @@
       </div>
     </div>
     <div class="version-selector col-md-4 col-xs-12">
-      <label for="version-selector">Anypoint Studio Version</label><select onChange="window.location.href=this.value" id="version-selector"><option value="/anypoint-studio/v/5/mapping-elements-inside-lists">5 (Active)</option><option value="/anypoint-studio/v/7.1">7.1</option><option value="/anypoint-studio/v/7">7</option><option value="/anypoint-studio/v/6/mapping-elements-inside-lists">6 (Latest)</option></select>
+      <label for="version-selector">Anypoint Studio Version</label><select onChange="window.location.href=this.value" id="version-selector"><option value="/anypoint-studio/v/5/mapping-elements-inside-lists">5 (Active)</option><option value="/anypoint-studio/v/7.1">7.1 (Latest)</option><option value="/anypoint-studio/v/7">7</option><option value="/anypoint-studio/v/6/mapping-elements-inside-lists">6</option></select>
 
     </div>
   </div>
@@ -443,328 +443,196 @@
 <li><i></i><a href="/access-management/audit-logging">Audit Logging</a></li><li><i></i><a href="/access-management/managing-permissions">Managing Permissions</a></li><li><i></i><a href="/access-management/troubleshooting-anypoint-platform-access">Troubleshooting Anypoint Platform Access</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/">Mule Runtime</a><ul>
+<a href="/mule-user-guide/v/4.1/">About Mule</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/mule-runtime-updates">What’s New</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/index-migration">Mule 4 for Mule 3 Users</a><ul>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/mule-concepts">Key Concepts</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-message-structure">Mule Message Structure</a></li><li><i></i><a href="/mule-user-guide/v/3.9/message-state">Mule Message Transformation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-flows-for-service-orchestration">Flows</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-application-architecture">Flow Architecture in a Mule Application</a></li><li>
+<a href="/mule-user-guide/v/4.1/intro-overview">Introduction to Mule 4</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/intro-studio">Studio 7</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-mule-message">The Mule Message</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-expressions">DataWeave Expression Language</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-transformations">Transformations and Streaming</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-connectors">Connectors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-error-handlers">Error Handlers</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-java-integration">Java Integration</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-dataweave2">DataWeave Language Changes</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-packaging">Packaging Applications</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-configuration">Configuring Applications</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-programming-model">Mule 4 Programming Model</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-engine">Execution Engine, Threads, and Concurrency</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-prep">Preparing for the Migration</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-process">About the Migration Process</a></li><li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/elements-in-a-mule-flow">Elements in a Flow</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-components">Components</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-transformers">Transformers</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-filters-scopes-and-routers">Filters, Scopes, and Routers</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-connectors">Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/global-elements">Global Elements</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-high-availability-ha-clusters">High Availability Clusters</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/migration-patterns">Migration Patterns</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-message-properties">Migrating Message Properties</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-patterns-reconnection-strategies">Migrating Reconnection Strategies</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-secure-properties-placeholder">Migrating the Secure Properties Placeholder</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-patterns-watermark">Migrating Watermarks</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/migration-core">Migrating Core Components</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-core-batch">Migrating the Batch Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-core-choice">Migrating the Choice Router</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-core-exception-strategies">Migrating Exception Strategies to Error Handlers</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-core-enricher">Migrating Enrichers to Target Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-core-foreach">Migrating the For Each Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-core-poll">Migrating the Poll Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-transformers">Migrating Transformers</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/installing">Installing and Deploying Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/3.9/supported-sw-and-systems">Supported Software and Systems</a></li><li><i></i><a href="/mule-user-guide/v/3.9/downloading-and-starting-mule-esb">Downloading Mule Runtime</a></li><li><i></i><a href="/mule-user-guide/v/3.9/installing-an-enterprise-license">Installing an Enterprise License</a></li><li><i></i><a href="/mule-user-guide/v/3.9/third-party-software-in-mule">Third Party Software in Mule</a></li><li>
+<a href="/mule-user-guide/v/4.1/migration-connectors">Migrating Connectors</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-database">Migrating the Database Connector</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-file">Migrating the File Connector</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-ftp-sftp">Migrating the FTP and SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-http">Migrating the HTTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-objectstore">Migrating the Object Store Connector</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-module-scripting">Migrating the Scripting Module</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-module-spring">Migrating the Spring Module</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-module-validation">Migrating the Validation Module</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-module-vm">Migrating the VM Module</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-module-wsc">Migrating the Web Service Consumer Module</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-connectors-xml">Migrating the XML Module</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-example-complex">Example: Migrating an APIkit application</a></li><li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/deploying">Deploying Mule Runtime</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/starting-and-stopping-mule-esb">Starting and Stopping Mule</a></li><li>
+<a href="/mule-user-guide/v/4.1/migration-api-gateways">Migrating API Gateways</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-api-gateways-autodiscovery">Migrating API Gateways: Auto-Discovery</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-api-gateways-policies">Migrating API Policies</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-api-gateways-runtime-config">Migrating Mule Runtime Configurations for API Gateways</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-mel">Migrating from MEL to DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-dataweave">Migrating from DataWeave 1.0 to 2.x</a></li><li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/mule-deployment-model">Mule App Deployment Model</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/hot-deployment">Hot Deployment</a></li><li><i></i><a href="/mule-user-guide/v/3.9/application-deployment">Application Deployment</a></li><li><i></i><a href="/mule-user-guide/v/3.9/application-format">Application Format</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-application-deployment-descriptor">Mule Application Deployment Descriptor</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/deployment-scenarios">Mule Runtime Embedded Deployment Scenarios</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/deploying-mule-to-jboss">Deploying Mule to JBoss</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-as-mbean">Mule as MBean</a></li><li><i></i><a href="/mule-user-guide/v/3.9/deploying-mule-to-weblogic">Deploying Mule to WebLogic</a></li><li><i></i><a href="/mule-user-guide/v/3.9/deploying-mule-to-websphere">Deploying Mule to WebSphere</a></li><li><i></i><a href="/mule-user-guide/v/3.9/deploying-mule-as-a-service-to-tomcat">Deploying Mule as a Service to Tomcat</a></li><li><i></i><a href="/mule-user-guide/v/3.9/embedding-mule-in-a-java-application-or-webapp">Embedding Mule in a Java Application or Webapp</a></li><li><i></i><a href="/mule-user-guide/v/3.9/application-server-based-hot-deployment">Application Server-Based Hot Deployment</a></li><li><i></i><a href="/mule-user-guide/v/3.9/deploying-to-multiple-environments">Configuring Mule App for Deployment Anywhere</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/configuring-mule-for-different-deployment-scenarios">Configuring Mule for Different Deployment Scenarios</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-mule-as-a-linux-or-unix-daemon">Configuring Mule as a Linux or Unix Daemon</a></li><li><i></i><a href="/mule-user-guide/v/3.9/configuring-mule-as-a-windows-service">Configuring Mule as a Windows Service</a></li><li><i></i><a href="/mule-user-guide/v/3.9/configuring-mule-to-run-from-a-script">Configuring Mule to Run From a Script</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/classloader-control-in-mule">Classloader Control in Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/fine-grain-classloader-control">Fine Grain Classloader Control</a></li></ul></li>
-</ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-server-notifications">Mule Server Notifications</a></li><li><i></i><a href="/mule-user-guide/v/3.9/hardening-your-mule-installation">Hardening your Mule Installation</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/reference">Reference</a><ul>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/flows-and-subflows">Flows and Subflows</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/flow-references">Flow References and Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.9/flow-processing-strategies">Flow Processing Strategies</a></li><li><i></i><a href="/mule-user-guide/v/3.9/flow-reference-component-reference">Flow Reference Element</a></li><li><i></i><a href="/mule-user-guide/v/3.9/flow-architecture-advanced-use-case">Flow Architecture Advanced Use Case</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/anypoint-connectors">Anypoint Connectors</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.9/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/amazon-ec2-connector">Amazon EC2 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/amazon-sns-connector">Amazon SNS Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/amqp-connector">AMQP Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.9/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/box-connector">Box Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/cassandra-connector-about">Cassandra Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-conf-task">To Configure Cassandra Authentication</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-install-conf-task">To Install and Configure the Cassandra Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-run-demo-task">To Run the Cassandra Connector Demo</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-create-keyspace-task">To Create a Keyspace</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-create-table-task">To Create a Cassandra Table</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-datatypes">Cassandra Connector Data Types Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cassandra-connector-ops-reference">Cassandra Connector Operations Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/concur-connector">Concur Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/database-connector">Database Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/database-connector-examples">To Query a Database</a></li><li><i></i><a href="/mule-user-guide/v/3.9/database-batch-task">To Batch-Write to a File</a></li><li><i></i><a href="/mule-user-guide/v/3.9/database-stored-task">To Pass Parameters to a Stored Procedure</a></li><li><i></i><a href="/mule-user-guide/v/3.9/database-connector-reference">Database Connector Reference</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/dotnet-connector-guide">.NET Connector Guide</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/dotnet-connector-user-guide">.NET Connector User Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/anypoint-extensions-for-visual-studio">Anypoint Extensions for Visual Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dotnet-connector-migration-guide">DotNet Connector Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dotnet-connector-faqs">DotNet Connector FAQs</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/file-connector">File Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ftp-connector">FTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/generic-connector">Generic Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/hdfs-connector">Hadoop HDFS Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/hdfs-apidoc">Hadoop HDFS Connector Technical Reference</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/http-connector">HTTP Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/http-listener-connector">HTTP Listener Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/http-request-connector">HTTP Request Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/authentication-in-http-requests">Authentication in HTTP Requests</a></li><li><i></i><a href="/mule-user-guide/v/3.9/http-connector-reference">HTTP Connector Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/tls-configuration">TLS Configuration</a></li><li><i></i><a href="/mule-user-guide/v/3.9/tls1-0-migration">TLS 1.0 Migration</a></li><li><i></i><a href="/mule-user-guide/v/3.9/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/http-connector-deprecated">HTTP Connector - Deprecated</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/ibm-ctg-connector">IBM CTG Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/imap-connector">IMAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jdbc-connector">JDBC Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/kafka-connector">Kafka Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ldap-connector">LDAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/marketo-connector">Marketo Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-365-connector">Microsoft Dynamics 365 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-365-operations-connector">Microsoft Dynamics 365 for Operations Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-ax-2012-connector">Microsoft Dynamics AX 2012 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-crm-connector">Microsoft Dynamics CRM Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-gp-connector">Microsoft Dynamics GP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-dynamics-nav-connector">Microsoft Dynamics NAV Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/microsoft-service-bus-connector">Microsoft Service Bus Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/microsoft-service-bus-connector-faq">Microsoft Service Bus Connector FAQ</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/microsoft-sharepoint-2013-connector">Microsoft SharePoint 2013 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-sharepoint-2010-connector">Microsoft SharePoint 2010 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/microsoft-sharepoint-online-connector">Microsoft SharePoint Online Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/mongodb-connector">MongoDB Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mongo-apidoc">MongoDB Connector API Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mongodb-connector-migration-guide">MongoDB Connector Migration Guide</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/msmq-connector">MSMQ Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/msmq-connector-user-guide">MSMQ Connector User Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/windows-gateway-services-guide">Windows Gateway Services Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/msmq-connector-faqs">MSMQ Connector FAQs</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/neo4j-connector">Neo4J Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/netsuite-connector">NetSuite Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/netsuite-apidoc">NetSuite Connector API Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/netsuite-openair-connector">NetSuite OpenAir Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/object-store-connector">Object Store Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/oracle-ebs-connector-user-guide">Oracle E-Business Suite Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/oracle-ebs-122-connector">Oracle E-Business Suite 12.2.x Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/peoplesoft-connector">PeopleSoft Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/pop3-connector">POP3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/quartz-connector">Quartz Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/redis-connector">Redis Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/remedy-connector">Remedy Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/rosettanet-connector">RosettaNet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/salesforce-analytics-cloud-connector">Salesforce Analytics Cloud Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/salesforce-connector">Salesforce Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/salesforce-connector-authentication">Salesforce Connector Authentication</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/salesforce-composite-connector">Salesforce Composite Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/salesforce-marketing-cloud-connector">Salesforce Marketing Cloud Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/sap-connector">SAP Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/servicenow-connector-5.0">ServiceNow Connector 5.x</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/servicenow-connector">ServiceNow Connector 4.0</a></li><li><i></i><a href="/mule-user-guide/v/3.9/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sftp-connector">SFTP Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/siebel-connector">Siebel Connector</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/siebel-bo-apidoc">Siebel Business Objects Connector API Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/siebel-bs-apidoc">Siebel Business Services Connector API Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/siebel-io-apidoc">Siebel Integration Object Connector API Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/successfactors-connector">SuccessFactors Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/twilio-connector">Twilio Connector</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/web-service-consumer">Web Service Consumer</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/web-service-consumer-reference">Web Service Consumer Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/windows-powershell-connector-guide">Windows PowerShell Connector Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/wmq-connector">WMQ Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.9/workday-connector">Workday Connector 7.0 and later</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/workday-connector-6.0">Workday Connector 6.0</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/workday-connector-6.0-migration-guide">Workday Connector 6.0 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/zuora-connector">Zuora Connector</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/dataweave">DataWeave</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/dataweave-quickstart">DataWeave Quickstart Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-language-introduction">Language Introduction</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-selectors">Selectors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-operators">Operators</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-types">Types</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-formats">Formats</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-memory-management">Memory Management</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-examples">DataWeave Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-xml-reference">DataWeave XML Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-flat-file-schemas">Flat File Schemas</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-migrator">DataWeave Migrator Tool</a></li><li><i></i><a href="/mule-user-guide/v/3.9/dataweave-reference-documentation">DataWeave Reference Documentation</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/transformers">Transformers</a><ul>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/using-transformers">Using Transformers</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/transformers-configuration-reference">Transformers Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/native-support-for-json">Native Support for JSON</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xmlprettyprinter-transformer">XmlPrettyPrinter Transformer</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/append-string-transformer-reference">Append String Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/attachment-transformer-reference">Attachment Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/expression-transformer-reference">Expression Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/java-transformer-reference">Java Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/object-to-xml-transformer-reference">Object to XML Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/parse-template-reference">Parse Template Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/property-transformer-reference">Property Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/script-transformer-reference">Script Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/session-variable-transformer-reference">Session Variable Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/set-payload-transformer-reference">Set Payload Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/variable-transformer-reference">Variable Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xml-to-object-transformer-reference">XML to Object Transformer Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xslt-transformer-reference">XSLT Transformer Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/creating-custom-transformers">Creating Custom Transformers</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/creating-flow-objects-and-transformers-using-annotations">Creating Flow Objects and Transformers Using Annotations</a></li><li><i></i><a href="/mule-user-guide/v/3.9/function-annotation">Function Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/groovy-annotation">Groovy Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/inboundattachments-annotation">InboundAttachments Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/inboundheaders-annotation">InboundHeaders Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/lookup-annotation">Lookup Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-annotation">Mule Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/outboundattachments-annotation">OutboundAttachments Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/outboundheaders-annotation">OutboundHeaders Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/payload-annotation">Payload Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/schedule-annotation">Schedule Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/transformer-annotation">Transformer Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xpath-annotation">XPath Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-custom-transformer-classes">Creating Custom Transformer Classes</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/migration-munit">Migrating MUnit</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/migration-munit-assert-processor-changes">Migrating Assert Processors (MUnit)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/migration-munit-mock-processor-changes">Migrating the Mock Processor (MUnit)</a></li></ul></li>
 </ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/components">Components</a><ul>
+<a href="/mule-user-guide/v/4.1/mule-application-about">About the Mule App</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/about-flows">About Flows</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-operations">About Operations</a></li><li><i></i><a href="/mule-user-guide/v/4.1/scopes-concept">About Scopes</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-routers">About Routers</a></li><li><i></i><a href="/mule-user-guide/v/4.1/global-elements">About Global Elements</a></li><li><i></i><a href="/mule-user-guide/v/4.1/tls-configuration">About TLS Configuration</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/configuring-components">Configuring Components</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-java-components">Configuring Java Components</a></li><li><i></i><a href="/mule-user-guide/v/3.9/developing-components">Developing Components</a></li><li><i></i><a href="/mule-user-guide/v/3.9/entry-point-resolver-configuration-reference">Entry Point Resolver Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/component-bindings">Component Bindings</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-interceptors">Using Interceptors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/cxf-component-reference">CXF Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/echo-component-reference">Echo Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/expression-component-reference">Expression Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cors-component-concept">About CORS Validate Component</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cors-validate-component-reference">CORS Validate Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cors-validation-task">To Set CORS Validation in a Flow</a></li><li><i></i><a href="/mule-user-guide/v/3.9/http-static-resource-handler">HTTP Static Resource Handler</a></li><li><i></i><a href="/mule-user-guide/v/3.9/http-response-builder">HTTP Response Builder</a></li><li><i></i><a href="/mule-user-guide/v/3.9/invoke-component-reference">Invoke Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/java-component-reference">Java Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/logger-component-reference">Logger Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/rest-component-reference">REST Component Reference</a></li><li>
+<a href="/mule-user-guide/v/4.1/about-mule-event">About the Mule Event</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/about-mule-message">About the Mule Message</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-mule-variables">About Variables in the Mule Event</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-processors">About Event Processors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/about-event-source">About the Event Source</a></li></ul></li>
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/script-component-reference">Script Component Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/groovy-component-reference">Groovy Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/javascript-component-reference">JavaScript Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/python-component-reference">Python Component Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ruby-component-reference">Ruby Component Reference</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/about-components">Mule Components</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/async-scope-reference">Async Scope</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/batch-processing-concept">Batch Processors</a><ul>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/batch-job-concept">Batch Job</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/filter-records-batch-faq">FAQ: How to Filter Records in a Batch Step</a></li><li><i></i><a href="/mule-user-guide/v/4.1/batch-execution-order-faq">FAQ: Batch Jobs Execution Order</a></li><li><i></i><a href="/mule-user-guide/v/4.1/batch-error-handling-faq">FAQ: How to Handle Failures During Batch Job</a></li><li><i></i><a href="/mule-user-guide/v/4.1/batch-performance-faq">FAQ: Understanding Batch Job Performance</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/batch-aggregator-concept">Batch Aggregator</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/fix-batch-aggregator-concept">Fixed Size Batch Aggregator</a></li><li><i></i><a href="/mule-user-guide/v/4.1/stream-batch-aggregator-concept">Streaming Batch Aggregator</a></li></ul></li>
 </ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/error-handling">Error Handling</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/catch-exception-strategy">Catch Exception Strategy</a></li><li><i></i><a href="/mule-user-guide/v/3.9/choice-exception-strategy">Choice Exception Strategy</a></li><li><i></i><a href="/mule-user-guide/v/3.9/reference-exception-strategy">Reference Exception Strategy</a></li><li><i></i><a href="/mule-user-guide/v/3.9/rollback-exception-strategy">Rollback Exception Strategy</a></li><li>
+<a href="/mule-user-guide/v/4.1/cache-scope">Cache Scope</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/cache-scope-to-configure">To Configure the Cache Scope</a></li><li><i></i><a href="/mule-user-guide/v/4.1/cache-scope-strategy">To Set Up a Caching Strategy</a></li></ul></li>
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/exception-strategy-most-common-use-cases">Exception Strategy Most Common Use Cases</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-exception-strategies">Mule Exception Strategies</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/choice-router-concept">Choice Router</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/choice-router-xml-reference">Choice Router XML Reference</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dynamic-evaluate-component-reference">Dynamic Evaluate Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/flowref-about">Flow Ref</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/for-each-scope-concept">For Each Scope</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/for-each-scope-xml-reference">For Each Scope Reference</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/logger-component-reference">Logger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/raise-error-component-reference">Raise Error Component</a></li><li><i></i><a href="/mule-user-guide/v/4.1/remove-variable">Remove Variable</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/scheduler-concept">Scheduler</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/scheduler-xml-reference">Scheduler XML Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/scatter-gather-concept">Scatter-Gather</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/scatter-gather-xml-reference">Scatter-Gather XML Reference</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/set-payload-transformer-reference">Set Payload</a></li><li><i></i><a href="/mule-user-guide/v/4.1/variable-transformer-reference">Set Variable</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/transform-component-about">Transform Message</a><ul>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/transform-workflow-create-mapping-ui-studio">Workflow: Create a Mapping in Anypoint Studio</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/transform-input-output-structure-transformation-studio-task">To Define Input and Output Structure of a Transformation</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-graphically-construct-mapping-studio-task">To Graphically Construct a Mapping</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-preview-transformation-output-studio-task">To Preview the Output of a Transformation</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-tips-transform-message-ui-studio">Tips on the Transform Message UI</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-change-target-output-transformation-studio-task">To Change the Target Output of a Transformation</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-add-another-output-transform-studio-task">To Add Another Output Target</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-move-transformations-separate-file-studio-task">To Move Transformations to Separate Files</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/transform-workflow-create-mapping-ui-design-center">Workflow: Create a Mapping in Design Center</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/transform-input-output-structure-transformation-design-center-task">To Define Input and Output Structure of a Transformation</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-graphically-construct-mapping-design-center-task">To Graphically Construct a Mapping</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-preview-transformation-output-design-center-task">To Preview the Output of a Transformation</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/transform-to-change-target-output-design-center">To Output a Transformation to an Attribute or Variable</a></li><li><i></i><a href="/mule-user-guide/v/4.1/transform-dataweave-xml-reference">Transform XML Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/try-scope-concept">Try Scope</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/try-scope-xml-reference">Try Scope XML Reference</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/on-error-scope-concept">On-Error Scopes</a></li><li><i></i><a href="/mule-user-guide/v/4.1/until-successful-scope">Until Successful</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/mule-app-strategies">Strategies and Patterns for Mule Apps</a><ul>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/reconnection-strategy-about">Reconnection Strategies</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/reconnection-strategy-reference">Reconnection Strategy Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/streaming-about">About Streaming</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/streaming-strategies-reference">Streaming Strategies Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/error-handling">About Error Handling</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/mule-error-concept">About the Mule Error</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/configuring-properties">About Property Placeholders</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/mule-app-properties-to-configure">To Create Property Placeholders for Mule Apps</a></li><li><i></i><a href="/mule-user-guide/v/4.1/mule-app-properties-system">Working with System Properties</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/target-variables">About Target Variables</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/mmp-concept">About the Mule Maven Plugin</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/add-mmp-task">To Add the Mule Maven Plugin to a Project</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/packager-concept">About the Mule Packager Tool</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/package-task-mmp">To Package a Mule Application (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/application-structure-reference">Application Structure Reference</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/mmp-deployment-concept">About Deploying a Mule Application (Mule Maven Plugin)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/ch-deploy-mule-application-mmp-task">To Deploy a Mule Application to CloudHub (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/cloudhub-deployment-mmp-reference">CloudHub Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/stnd-deploy-mule-application-mmp-task">To Deploy a Mule Application to a Standalone Mule Runtime (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/stnd-deployment-mmp-reference">Standalone Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/arm-deploy-mule-application-mmp-task">To Deploy a Mule Application Using ARM API (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/arm-deploy-mule-application-mmp-reference">ARM Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/agent-deploy-mule-application-mmp-task">To Deploy a Mule Application Using the Mule Agent (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/agent-deploy-mule-application-mmp-reference">Mule Agent Deployment Reference (Mule Maven Plugin)</a></li></ul></li>
 </ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/debugging">Debugging</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.9/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.9/logging">Logging Using Mule Components</a></li><li><i></i><a href="/mule-user-guide/v/3.9/logging-in-mule">Logging Configurations in Mule</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dataweave">DataWeave Language</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-language-introduction">About DataWeave Scripts</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-selectors">DataWeave Selectors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-formats">Data Formats Supported by DataWeave</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/dataweave-types">DataWeave Types</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-types-coercion">About Type Coercion with DataWeave</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-functions">About DataWeave Functions</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/dataweave-import-module">To Import DataWeave Function Modules</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-create-module">To Create a DataWeave Function Module</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/mule-expression-language-mel">Mule Expression Language (MEL)</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mel-cheat-sheet">MEL Cheat Sheet</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-expression-language-basic-syntax">Mule Expression Language Basic Syntax</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-expression-language-examples">Mule Expression Language Examples</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/mule-expression-language-reference">Mule Expression Language Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-expression-language-date-and-time-functions">Mule Expression Language Date and Time Functions</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mel-dataweave-functions">MEL DataWeave Functions</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-expression-language-tips">Mule Expression Language Tips</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-functions">DataWeave Function Reference</a><ul>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/testing">Testing</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/introduction-to-testing-mule">Testing</a></li><li><i></i><a href="/mule-user-guide/v/3.9/unit-testing">Unit Testing</a></li><li><i></i><a href="/mule-user-guide/v/3.9/functional-testing">Functional Testing</a></li><li><i></i><a href="/mule-user-guide/v/3.9/testing-strategies">Testing Strategies</a></li><li><i></i><a href="/mule-user-guide/v/3.9/profiling-mule">Profiling Mule</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-core">Core (dw::Core)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-plusplus">++</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-minusminus">--</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-abs">abs</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-avg">avg</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-ceil">ceil</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-contains">contains</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-daysbetween">daysBetween</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-distinctby">distinctBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-endswith">endsWith</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-filter">filter</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-filterobject">filterObject</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-find">find</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-flatmap">flatMap</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-flatten">flatten</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-floor">floor</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-groupby">groupBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isblank">isBlank</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isdecimal">isDecimal</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isempty">isEmpty</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-iseven">isEven</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isinteger">isInteger</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isleapyear">isLeapYear</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-isodd">isOdd</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-joinby">joinBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-log">log</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-lower">lower</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-map">map</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-mapobject">mapObject</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-match">match</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-matches">matches</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-max">max</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-maxby">maxBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-min">min</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-minby">minBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-mod">mod</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-native">native</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-now">now</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-orderby">orderBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-pluck">pluck</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-pow">pow</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-random">random</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-randomint">randomInt</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-read">read</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-readurl">readUrl</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-reduce">reduce</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-replace">replace</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-round">round</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-scan">scan</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-sizeof">sizeOf</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-splitby">splitBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-sqrt">sqrt</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-startswith">startsWith</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-sum">sum</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-to">to</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-trim">trim</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-typeof">typeOf</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-unzip">unzip</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-upper">upper</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-uuid">uuid</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-with">with</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-write">write</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-functions-zip">zip</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-core-types">Core Types</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/routers">Routers</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/all-flow-control-reference">All Flow Control Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/choice-flow-control-reference">Choice Flow Control Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/scatter-gather">Scatter-Gather</a></li><li><i></i><a href="/mule-user-guide/v/3.9/splitter-flow-control-reference">Splitter Flow Control Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-custom-routers">Creating Custom Routers</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-crypto">Crypto (dw::Crypto)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-crypto-functions-hmacbinary">HMACBinary</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-crypto-functions-hmacwith">HMACWith</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-crypto-functions-md5">MD5</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-crypto-functions-sha1">SHA1</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-crypto-functions-hashwith">hashWith</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/scopes">Scopes</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/async-scope-reference">Async Scope Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cache-scope">Cache Scope</a></li><li><i></i><a href="/mule-user-guide/v/3.9/foreach">Foreach</a></li><li><i></i><a href="/mule-user-guide/v/3.9/message-enricher">Message Enricher</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/poll-reference">Poll Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/poll-schedulers">Poll Schedulers</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-runtime">Runtime (dw::Runtime)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-fail">fail</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-failif">failIf</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-locationstring">locationString</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-prop">prop</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-props">props</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-try">try</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-functions-wait">wait</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-runtime-types">Runtime Types</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/request-reply-scope">About the Request-Reply Scope</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configure-request-reply-scope-task">To Configure a Request-Reply Scope (Anypoint Studio)</a></li><li><i></i><a href="/mule-user-guide/v/3.9/request-reply-scope-reference">Request-Reply Scope XML Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/transactional">Transactional</a></li><li><i></i><a href="/mule-user-guide/v/3.9/until-successful-scope">Until Successful Scope</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-system">System (dw::System)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-system-functions-envvar">envVar</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-system-functions-envvars">envVars</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/batch-processing">Batch Processing</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/batch-filters-and-batch-commit">Batch Filters and Batch Commit</a></li><li><i></i><a href="/mule-user-guide/v/3.9/batch-job-instance-id">Batch Job Instance ID</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/batch-processing-reference">Batch Processing Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/using-mel-with-batch-processing">Using MEL with Batch Processing</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/batch-streaming-and-job-execution">Batch Streaming and Job Execution</a></li><li><i></i><a href="/mule-user-guide/v/3.9/record-variable">Record Variable</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-arrays">Arrays (dw::core::Arrays)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-arrays-functions-countby">countBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-arrays-functions-divideby">divideBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-arrays-functions-every">every</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-arrays-functions-some">some</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-arrays-functions-sumby">sumBy</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/validations-module">Validators</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/json-schema-validator">JSON Schema Validator</a></li><li><i></i><a href="/mule-user-guide/v/3.9/building-a-custom-validator">Building a Custom Validator</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-binaries">Binaries (dw::core::Binaries)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-binaries-functions-frombase64">fromBase64</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-binaries-functions-fromhex">fromHex</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-binaries-functions-tobase64">toBase64</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-binaries-functions-tohex">toHex</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/filters">Filters</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/custom-filter">Custom Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/exception-filter">Exception Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/logic-filter">Logic Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/message-filter">Message Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/message-property-filter">Message Property Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/regex-filter">Regex Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/schema-validation-filter">Schema Validation Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/wildcard-filter">Wildcard Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/idempotent-filter">Idempotent Filter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/filter-ref">Filter Ref</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-objects">Objects (dw::core::Objects)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-divideby">divideBy</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-entryset">entrySet</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-keyset">keySet</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-mergewith">mergeWith</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-nameset">nameSet</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-objects-functions-valueset">valueSet</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/publishing-and-consuming-apis-with-mule">Using APIs and Web Services in Mule</a><ul>
+<a href="/mule-user-guide/v/4.1/dw-strings">Strings (dw::core::Strings)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-camelize">camelize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-capitalize">capitalize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-charcode">charCode</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-charcodeat">charCodeAt</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-dasherize">dasherize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-fromcharcode">fromCharCode</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-ordinalize">ordinalize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-pluralize">pluralize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-singularize">singularize</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-strings-functions-underscore">underscore</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/using-web-services">Using Web Services</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/proxying-web-services">Proxying Web Services</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-.net-web-services-with-mule">Using .NET Web Services with Mule</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/consuming-a-soap-api">Consuming a SOAP API</a></li><li><i></i><a href="/mule-user-guide/v/3.9/publishing-a-rest-api">Publishing a REST API</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/consuming-a-rest-api">Consuming a REST API</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/rest-api-examples">REST API Examples</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-url">URL (dw::core::URL)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-compose">compose</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-decodeuri">decodeURI</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-decodeuricomponent">decodeURIComponent</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-encodeuri">encodeURI</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-encodeuricomponent">encodeURIComponent</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-functions-parseuri">parseURI</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-url-types">URL Types</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/publishing-a-soap-api">Publishing a SOAP API</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/securing-a-soap-api">Securing a SOAP API</a></li><li><i></i><a href="/mule-user-guide/v/3.9/extra-cxf-component-configurations">Extra CXF Component Configurations</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dw-diff">Diff (dw::util::Diff)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-diff-functions-diff">diff</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-diff-types">Diff Types</a></li></ul></li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/dw-timer">Timer (dw::util::Timer)</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dw-timer-functions-currentmilliseconds">currentMilliseconds</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-timer-functions-duration">duration</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-timer-functions-time">time</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-timer-functions-tomilliseconds">toMilliseconds</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dw-timer-types">Timer Types</a></li></ul></li>
 </ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/understanding-mule-configuration">Understanding Mule Configuration</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/about-the-xml-configuration-file">About the Mule Application XML Configuration File</a></li><li><i></i><a href="/mule-user-guide/v/3.9/configuring-properties">Configuring Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.9/about-configuration-builders">About Configuration Builders</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-versus-web-application-server">Mule versus Web Application Server</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-project-archetypes">Creating Project Archetypes</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dataweave-cookbook">DataWeave Cookbook</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-extract-data">To Extract Data</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-perform-basic-transformation">To Perform a Basic Transformation</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-map">To Map Data</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-map-an-object">To Map an Object</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-map-object-elements-as-an-array">To Map Object Elements as an Array</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-java-methods">To Call Java Methods</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-rename-keys">To Rename Keys</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-output-a-field-when-present">To Output a Field When Present</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-format-according-to-type">To Change Format According to Type</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-regroup-fields">To Regroup Fields</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-zip-arrays-together">Zip Arrays Together</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-pick-top-elements">Pick Top Elements</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-change-value-of-a-field">To Change the Value of a Field</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-exclude-field">To Exclude Fields from the Output</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-use-constant-directives">To Use Constant Directives</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-define-a-custom-addition-function">To Define a Custom Addition Function</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-define-function-to-flatten-list">To Define a Function that Flattens Data in a List</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-output-self-closing-xml-tags">To Output self-closing XML tags</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-insert-attribute">To Insert an Attribute into an XML Tag</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-remove-certain-xml-attributes">To Remove Certain XML Attributes</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-include-xml-namespaces">Include XML Namespaces</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-reference-multiple-inputs">To Reference Multiple Inputs</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-merge-multiple-payloads">To Merge Multiple Payloads</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-use-constant-directives">To Use Constant Directives</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-parse-dates">To Parse Dates</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-add-and-subtract-time">To Add and Subtracting Dates</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-conditional-list-reduction-via-function">To Conditionally Reduce a List Via a Function</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-map-based-on-an-external-definition">To Map Based On an External Definition</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-cookbook-pass-functions-as-arguments">To Pass Functions as Arguments</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-functions-lambdas">Working with Functions and Lambdas in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-memory-management">DataWeave Memory Management</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.9/understanding-enterprise-integration-patterns-using-mule">Understanding Enterprise Integration Patterns Using Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/understanding-orchestration-using-mule">Understanding Orchestration Using Mule</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/using-mule-with-spring">Using Mule with Spring</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/sending-and-receiving-mule-events-in-spring">Sending and Receiving Mule Events in Spring</a></li><li><i></i><a href="/mule-user-guide/v/3.9/spring-application-contexts">Spring Application Contexts</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-spring-beans-as-flow-components">Using Spring Beans as Flow Components</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-esb-3-and-test-api-javadoc">Mule 3 API Javadoc</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/schema-documentation">Mule XML Schema Documentation</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/notes-on-mule-3.0-schema-changes">Notes on Mule 3.0 Schema Changes</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/using-maven-with-mule">Using Maven with Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-maven-to-work-with-mule-esb">Configuring Maven to Work with Mule</a></li><li><i></i><a href="/mule-user-guide/v/3.9/maven-tools-for-mule-esb">Maven Tools for Mule</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-maven-plugin">Mule Maven Plugin</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-esb-plugin-for-maven">Mule Plugin For Maven (deprecated)</a></li><li><i></i><a href="/mule-user-guide/v/3.9/maven-reference">Maven Reference</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/transaction-management">Transaction Management</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/single-resource-transactions">Single Resource Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.9/multiple-resource-transactions">Multiple Resource Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xa-transactions">XA Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-bitronix-to-manage-transactions">Using Bitronix to Manage Transactions</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/shared-resources">Shared Resources</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/setting-environment-variables">Setting Environment Variables</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/object-scopes">Object Scopes</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/storing-objects-in-the-registry">Storing Objects in the Registry</a></li><li><i></i><a href="/mule-user-guide/v/3.9/bootstrapping-the-registry">Specifying Objects to Bootstrap to Registry</a></li><li><i></i><a href="/mule-user-guide/v/3.9/unifying-the-mule-registry">Unifying the Mule Registry</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/securing">Securing</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-security">Security in Mule</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/anypoint-enterprise-security">Anypoint Enterprise Security</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/installing-anypoint-enterprise-security">Installing Anypoint Enterprise Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-secure-token-service">Mule Secure Token Service</a></li><li><i></i><a href="/mule-user-guide/v/3.9/authorization-grant-types">Authorization Grant Types</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-credentials-vault">Mule Credentials Vault</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-message-encryption-processor">Mule Message Encryption Processor</a></li><li><i></i><a href="/mule-user-guide/v/3.9/pgp-encrypter">PGP Encrypter</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-digital-signature-processor">Mule Digital Signature Processor</a></li><li><i></i><a href="/mule-user-guide/v/3.9/anypoint-filter-processor">Anypoint Filter Processor</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-crc32-processor">Mule CRC32 Processor</a></li><li><i></i><a href="/mule-user-guide/v/3.9/anypoint-enterprise-security-example-application">Anypoint Enterprise Security Example Application</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-sts-oauth-2.0-example-application">Mule STS Oauth 2.0 Example Application</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/mulesoft-security-update-policy">MuleSoft Security Update Policy</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/configuring-security">Configuring Security</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-the-spring-security-manager">Configuring the Spring Security Manager</a></li><li><i></i><a href="/mule-user-guide/v/3.9/component-authorization-using-spring-security">Component Authorization Using Spring Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/setting-up-ldap-provider-for-spring-security">Setting up LDAP Provider for Spring Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/upgrading-from-acegi-to-spring-security">Upgrading from Acegi to Spring Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/encryption-strategies">Encryption Strategies</a></li><li><i></i><a href="/mule-user-guide/v/3.9/pgp-security">PGP Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jaas-security">Jaas Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/saml-module">SAML Module</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/fips-140-2-compliance-support">FIPS 140-2 Compliance Support</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/transports-reference">Transports Reference</a><ul>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/connecting-using-transports">Connecting Using Transports</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-a-transport">Configuring a Transport</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-transports">Creating Transports</a></li><li><i></i><a href="/mule-user-guide/v/3.9/transport-archetype">Transport Archetype</a></li><li><i></i><a href="/mule-user-guide/v/3.9/transport-service-descriptors">Transport Service Descriptors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/deprecated-http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/jetty-transport-reference">Jetty Transport Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/jms-transport-reference">JMS Transport Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/activemq-integration">ActiveMQ Integration</a></li><li><i></i><a href="/mule-user-guide/v/3.9/hornetq-integration">HornetQ Integration</a></li><li><i></i><a href="/mule-user-guide/v/3.9/open-mq-integration">Open MQ Integration</a></li><li><i></i><a href="/mule-user-guide/v/3.9/solace-jms">Solace JMS</a></li><li><i></i><a href="/mule-user-guide/v/3.9/tibco-ems-integration">Tibco EMS Integration</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/multicast-transport-reference">Multicast Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/pop3-transport-reference">POP3 Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/quartz-transport-reference">Quartz Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/rmi-transport-reference">RMI Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/servlet-transport-reference">Servlet Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sftp-transport-reference">SFTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/smtp-transport-reference">SMTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/ssl-and-tls-transports-reference">SSL and TLS Transports Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/stdio-transport-reference">STDIO Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/tcp-transport-reference">TCP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/udp-transport-reference">UDP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/vm-transport-reference">VM Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-wmq-transport-reference">Mule WMQ Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/wsdl-connectors">WSDL Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xmpp-transport-reference">XMPP Transport Reference</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/modules-reference">Modules Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/atom-module-reference">Atom Module Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/bpm-module-reference">BPM Module Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/drools-module-reference">Drools Module Reference</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/cxf-module-reference">CXF Module Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/cxf-module-overview">CXF Module Overview</a></li><li><i></i><a href="/mule-user-guide/v/3.9/building-web-services-with-cxf">Building Web Services with CXF</a></li><li><i></i><a href="/mule-user-guide/v/3.9/consuming-web-services-with-cxf">Consuming Web Services with CXF</a></li><li><i></i><a href="/mule-user-guide/v/3.9/enabling-ws-addressing">Enabling WS-Addressing</a></li><li><i></i><a href="/mule-user-guide/v/3.9/enabling-ws-security">Enabling WS-Security</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cxf-error-handling">CXF Error Handling</a></li><li><i></i><a href="/mule-user-guide/v/3.9/proxying-web-services-with-cxf">Proxying Web Services with CXF</a></li><li><i></i><a href="/mule-user-guide/v/3.9/supported-web-service-standards">Supported Web Service Standards</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-a-web-service-client-directly">Using a Web Service Client Directly</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-http-get-requests">Using HTTP GET Requests</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-mtom">Using MTOM</a></li><li><i></i><a href="/mule-user-guide/v/3.9/cxf-module-configuration-reference">CXF Module Configuration Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/data-bindings-reference">Data Bindings Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jaas-module-reference">JAAS Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jboss-transaction-manager-reference">JBoss Transaction Manager Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jersey-module-reference">Jersey Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/json-module-reference">JSON Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/object-store-module-reference">Mule Object Store Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/mule-object-stores">Mule Object Store Usage</a></li><li><i></i><a href="/mule-user-guide/v/3.9/rss-module-reference">RSS Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/scripting-module-reference">Scripting Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/spring-extras-module-reference">Spring Extras Module Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sxc-module-reference">SXC Module Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/xml-module-reference">XML Module Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/domtoxml-transformer">DomToXml Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jaxb-bindings">JAXB Bindings</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jaxb-transformers">JAXB Transformers</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jxpath-extractor-transformer">JXPath Extractor Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xml-namespaces">XML Namespaces</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xmlobject-transformers">XmlObject Transformers</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xmltoxmlstreamreader-transformer">XmlToXMLStreamReader Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xquery-support">XQuery Support</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xquery-transformer">XQuery Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xslt-transformer">XSLT Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xpath-extractor-transformer">XPath Extractor Transformer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/xpath">XPath</a></li></ul></li>
-</ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/extending">Extending</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/extending-mule">Extending Mule</a></li><li><i></i><a href="/mule-user-guide/v/3.9/extending-components">Extending Components</a></li><li><i></i><a href="/mule-user-guide/v/3.9/custom-message-processors">Custom Message Processors</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-example-archetypes">Creating Example Archetypes</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-a-custom-xml-namespace">Creating a Custom XML Namespace</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-module-archetypes">Creating Module Archetypes</a></li><li><i></i><a href="/mule-user-guide/v/3.9/internationalizing-strings">Internationalizing Strings</a></li></ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/team-development-with-mule">Team Development with Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/modularizing-your-configuration-files-for-team-development">Modularizing Your Configuration Files for Team Development</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-side-by-side-configuration-files">Using Side-by-Side Configuration Files</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-modules-in-your-application">Using Modules In Your Application</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-mule-with-web-services">Using Mule with Web Services</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sharing-custom-code">Sharing Custom Code</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sharing-custom-configuration-fragments">Sharing Custom Configuration Fragments</a></li><li><i></i><a href="/mule-user-guide/v/3.9/sharing-applications">Sharing Applications</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/sustainable-software-development-practices-with-mule">Sustainable Software Development Practices with Mule</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/reproducible-builds">Reproducible Builds</a></li><li><i></i><a href="/mule-user-guide/v/3.9/continuous-integration">Continuous Integration</a></li></ul></li>
-</ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/general-configuration-reference">General Configuration Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/bpm-configuration-reference">BPM Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/component-configuration-reference">Component Configuration Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/endpoint-configuration-reference">Endpoint Configuration Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/mule-endpoint-uris">Mule Endpoint URIs</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/exception-strategy-configuration-reference">Exception Strategy Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/filters-configuration-reference">Filters Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/global-settings-configuration-reference">Global Settings Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/notifications-configuration-reference">Notifications Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/properties-configuration-reference">Properties Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/security-manager-configuration-reference">Security Manager Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/transactions-configuration-reference">Transactions Configuration Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/dependency-injection">Dependency Injection</a></li><li><i></i><a href="/mule-user-guide/v/3.9/business-events">Business Events</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/choosing-the-right-clustering-topology">Clustering Runtime Instances</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/creating-and-managing-a-cluster-manually">Creating and Managing a Cluster Manually</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/evaluating-mule-high-availability-clusters-demo">Configuring Mule High Availability Clusters Demo</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/1-installing-the-demo-bundle">1 - Installing the Demo Bundle</a></li><li><i></i><a href="/mule-user-guide/v/3.9/2-creating-a-cluster">2 - Creating a Cluster</a></li><li><i></i><a href="/mule-user-guide/v/3.9/3-deploying-an-application">3 - Deploying an Application</a></li><li><i></i><a href="/mule-user-guide/v/3.9/4-applying-load-to-the-cluster">4 - Applying Load to the Cluster</a></li><li><i></i><a href="/mule-user-guide/v/3.9/5-witnessing-failover">5 - Witnessing Failover</a></li><li><i></i><a href="/mule-user-guide/v/3.9/6-troubleshooting-and-next-steps">6 - Troubleshooting and Next Steps</a></li></ul></li>
-</ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/reliability-patterns">Reliability Patterns</a></li><li><i></i><a href="/mule-user-guide/v/3.9/passing-additional-arguments-to-the-jvm-to-control-mule">Passing Additional Arguments to the JVM to Control Mule</a></li><li><i></i><a href="/mule-user-guide/v/3.9/tuning-performance">Tuning the Performance of Mule</a></li><li><i></i><a href="/mule-user-guide/v/3.9/distributed-file-polling">Distributed File Polling</a></li><li><i></i><a href="/mule-user-guide/v/3.9/distributed-locking">Distributed Locking</a></li><li><i></i><a href="/mule-user-guide/v/3.9/streaming">Streaming</a></li><li><i></i><a href="/mule-user-guide/v/3.9/improving-performance-with-the-kryo-serializer">Improving Performance with the Kryo Serializer</a></li><li><i></i><a href="/mule-user-guide/v/3.9/hadr-guide">High Availability and Disaster Recovery</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/mule-agents">Managing Mule Using Agents</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/agent-security-disabled-weak-ciphers">Agent Security: Disabled Weak Ciphers</a></li><li><i></i><a href="/mule-user-guide/v/3.9/jmx-management">JMX Management</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.9/configuring-reconnection-strategies">Configuring Reconnection Strategies</a></li><li><i></i><a href="/mule-user-guide/v/3.9/using-the-mule-client">Using the Mule Client</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.9/using-non-mel-expressions">Using Non-MEL Expressions</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.9/non-mel-expressions-configuration-reference">Non-MEL Expressions Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.9/creating-non-mel-expression-evaluators">Creating Non-MEL Expression Evaluators</a></li></ul></li>
-</ul></li>
-</ul></li>
+<a href="/mule-user-guide/v/4.1/securing">Security</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/secure-configuration-properties">Secure Configuration Properties</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/shared-resources">Shared Resources</a></li><li><i></i><a href="/mule-user-guide/v/4.1/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/4.1/runtime-installation-task">To Download and Install the Mule Runtime EE Standalone</a></li></ul></li>
 <li>
 <i></i>
 <a href="/connectors/">Connectors and Modules</a><ul>
@@ -1067,24 +935,44 @@
 <li><i></i><a href="/anypoint-data-gateway/installing-anypoint-data-gateway">Installing Anypoint Data Gateway</a></li><li><i></i><a href="/anypoint-data-gateway/creating-and-configuring-a-gateway">Creating and Configuring a Gateway</a></li><li><i></i><a href="/anypoint-data-gateway/managing-gateways">Managing Gateways</a></li><li><i></i><a href="/anypoint-data-gateway/quick-guide-to-accessing-gateways-and-objects">Quick Guide to Accessing Gateways and Objects</a></li><li><i></i><a href="/anypoint-data-gateway/troubleshooting-data-gateway">Troubleshooting Data Gateway</a></li></ul></li>
 <li>
 <i></i>
-<a href="/munit/v/1.3/">MUnit</a><ul>
-<li><i></i><a href="/munit/v/1.3/munit-suite">Test Suite</a></li><li><i></i><a href="/munit/v/1.3/using-munit-in-anypoint-studio">Using MUnit in Anypoint Studio</a></li><li>
-<i></i>
-<a href="/munit/v/1.3/munit-maven-support">Maven Support</a><ul>
-<li><i></i><a href="/munit/v/1.3/munit-maven-plugin">Maven Plugin</a></li><li><i></i><a href="/munit/v/1.3/munit-maven-plugin-configuration">Maven Plugin Configuration</a></li></ul></li>
-<li><i></i><a href="/munit/v/1.3/munit-domain-support">Domain Support</a></li><li><i></i><a href="/munit/v/1.3/munit-coverage-report">Coverage Report</a></li><li>
-<i></i>
-<a href="/munit/v/1.3/message-processors">Message Processors</a><ul>
-<li><i></i><a href="/munit/v/1.3/assertion-message-processor">Assertion</a></li><li><i></i><a href="/munit/v/1.3/set-message-processor">Set</a></li><li><i></i><a href="/munit/v/1.3/mock-message-processor">Mock</a></li><li><i></i><a href="/munit/v/1.3/verify-message-processor">Verify</a></li><li><i></i><a href="/munit/v/1.3/spy-message-processor">Spy</a></li></ul></li>
-<li><i></i><a href="/munit/v/1.3/munit-matchers">Matchers</a></li><li>
-<i></i>
-<a href="/munit/v/1.3/munit-utils">Utilities</a><ul>
-<li><i></i><a href="/munit/v/1.3/munit-database-server">Database Server</a></li><li><i></i><a href="/munit/v/1.3/munit-ftp-server">FTP Server</a></li><li><i></i><a href="/munit/v/1.3/run-and-wait-scope">Run and Wait Scope</a></li></ul></li>
+<a href="/munit/v/2.1/">About MUnit</a><ul>
 <li>
 <i></i>
-<a href="/munit/v/1.3/munit-examples">Examples</a><ul>
-<li><i></i><a href="/munit/v/1.3/munit-short-tutorial">Short Tutorial</a></li><li><i></i><a href="/munit/v/1.3/example-testing-apikit">Testing APIkit</a></li><li><i></i><a href="/munit/v/1.3/logging-in-munit">Logging</a></li><li><i></i><a href="/munit/v/1.3/testing-sap">Testing SAP</a></li></ul></li>
-<li><i></i><a href="/munit/v/1.3/munit-tests-with-java">Tests With Java</a></li><li><i></i><a href="/munit/v/1.3/munit-1.3-migration-guide">MUnit 1.3 Migration Guide</a></li></ul></li>
+<a href="/munit/v/2.1/munit-suite">About MUnit Test Suite</a><ul>
+<li>
+<i></i>
+<a href="/munit/v/2.1/munit-test-concept">About Munit Test</a><ul>
+<li><i></i><a href="/munit/v/2.1/munit-scaffold-test-task">To Generate an MUnit Test Suite from RAML</a></li><li><i></i><a href="/munit/v/2.1/munit-test-reference">MUnit Test Reference</a></li></ul></li>
+<li><i></i><a href="/munit/v/2.1/enable-flow-sources-concept">About Enable Flow Sources</a></li><li>
+<i></i>
+<a href="/munit/v/2.1/before-after-scopes-concept">About Before/After Scopes</a><ul>
+<li><i></i><a href="/munit/v/2.1/before-after-scopes-reference">Before/After Scopes Reference</a></li></ul></li>
+</ul></li>
+<li>
+<i></i>
+<a href="/munit/v/2.1/munit-maven-support">About MUnit Maven Plugin</a><ul>
+<li><i></i><a href="/munit/v/2.1/to-set-up-munit-maven-plugin">To Set Up MUnit Maven Plugin (Maven)</a></li><li><i></i><a href="/munit/v/2.1/to-configure-munit-maven-plugin-maven">To Configure MUnit Maven Plugin From the POM File</a></li><li>
+<i></i>
+<a href="/munit/v/2.1/faq-working-with-parent-pom">FAQ: How To Handle Parent POM Files</a><ul>
+<li><i></i><a href="/munit/v/2.1/to-inherit-parent-plugin">To Inherit Parent’s Plugin</a></li><li><i></i><a href="/munit/v/2.1/to-ignore-parent-plugin">To Ignore a Parent’s Plugin</a></li><li><i></i><a href="/munit/v/2.1/to-override-parent-plugin">To Override a Parent’s Plugin</a></li></ul></li>
+<li><i></i><a href="/munit/v/2.1/munit-maven-plugin">To Operate the MUnit Maven Plugin</a></li><li><i></i><a href="/munit/v/2.1/faq-how-to-read-munit-test-results">FAQ: How To Read MUnit Test Results</a></li><li><i></i><a href="/munit/v/2.1/munit-maven-plugin-configuration">MUnit Maven Plugin Configuration Reference</a></li></ul></li>
+<li><i></i><a href="/munit/v/2.1/munit-domain-support">About MUnit Support for Domain Based Applications</a></li><li>
+<i></i>
+<a href="/munit/v/2.1/munit-coverage-report">About Coverage Report</a><ul>
+<li><i></i><a href="/munit/v/2.1/faq-how-munit-coverage">FAQ: How Does MUnit Calculate Coverage</a></li><li><i></i><a href="/munit/v/2.1/coverage-maven-concept">About Coverage in Maven</a></li><li><i></i><a href="/munit/v/2.1/coverage-studio-concept">About Coverage Report (Studio)</a></li><li><i></i><a href="/munit/v/2.1/to-disable-coverage-studio">To Disable Coverage Reports (Studio)</a></li></ul></li>
+<li>
+<i></i>
+<a href="/munit/v/2.1/message-processors">About MUnit Event Processors</a><ul>
+<li>
+<i></i>
+<a href="/munit/v/2.1/assertion-message-processor">About Assert That Event Processor</a><ul>
+<li>
+<i></i>
+<a href="/munit/v/2.1/munit-matchers">About MUnit Matchers</a><ul>
+<li><i></i><a href="/munit/v/2.1/core-matchers-reference">Core Matchers Reference</a></li><li><i></i><a href="/munit/v/2.1/string-matchers-reference">String Matchers Reference</a></li><li><i></i><a href="/munit/v/2.1/comparable-matchers-reference">Comparable Matchers Reference</a></li><li><i></i><a href="/munit/v/2.1/iterable-map-matchers-reference">Iterable and Map Matchers Reference</a></li></ul></li>
+</ul></li>
+<li><i></i><a href="/munit/v/2.1/fail-event-processor">About Fail Event Processor</a></li><li><i></i><a href="/munit/v/2.1/run-custom-event-processor">About Run Custom Event Processor</a></li><li><i></i><a href="/munit/v/2.1/set-message-processor">About Set Event Processor</a></li><li><i></i><a href="/munit/v/2.1/mock-message-processor">About Mock When Event Processor</a></li><li><i></i><a href="/munit/v/2.1/verify-message-processor">About Verify Event Processor</a></li><li><i></i><a href="/munit/v/2.1/spy-processor-concept">About the Spry Event Processor</a></li></ul></li>
+</ul></li>
 <li>
 <i></i>
 <a href="/anypoint-b2b/">Anypoint B2B</a><ul>
@@ -1383,7 +1271,7 @@
     <!-- END older version notification -->
     <!-- START article content -->
     <div class="article-content col-md-7">
-      <div class="older-version-notification col-md-9" data-swiftype-index='false'>You are viewing an older version of this section. Click <a href="/anypoint-studio/v/6/mapping-elements-inside-lists">here</a> to navigate to the latest version.</div>
+      <div class="older-version-notification col-md-9" data-swiftype-index='false'>You are viewing an older version of this section. Click <a href="/anypoint-studio/v/7.1">here</a> to navigate to the latest version.</div>
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Anypoint Studio</a>/<a href="anypoint-studio-features">Studio Reference</a>/<a href="datamapper-user-guide-and-reference">DataMapper (Deprecated)</a>/<a href="mapping-elements-inside-lists" class="breadcrumb-active-link">Mapping Elements Inside Lists</a></div>
       <h1>Mapping Elements Inside Lists</h1>
       <div id="preamble"> 
