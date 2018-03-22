@@ -1864,7 +1864,7 @@
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to add is already present, then don’t throw INVALID_ATTRIBUTE error.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to add is already present, then don’t throw the INVALID_ATTRIBUTE error.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2385,7 +2385,7 @@
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute or value to delete is not present, then don’t throw INVALID_ATTRIBUTE error</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute or value to delete is not present, then don’t throw the INVALID_ATTRIBUTE error.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2515,7 +2515,7 @@
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute or value to delete is not present, then don’t throw INVALID_ATTRIBUTE error.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute or value to delete is not present, then don’t throw the INVALID_ATTRIBUTE error.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2913,7 +2913,7 @@
          <p>Array of String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes that should be returned in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes to return in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2925,7 +2925,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it is optional.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it’s optional.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3174,7 +3174,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to update. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it is optional.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to update. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it’s optional.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3231,7 +3231,7 @@ objectclass: myentry</pre></td>
    <p><code>&lt;ldap:modify-multi-value-attribute&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Updates (replaces) the value or values of the attribute defined by attributeName with the new values defined by attributeValues. If the attribute was not present in the entry, then the value is added.</p> 
+   <p>Updates (replaces) the value or values of the attribute defined by attributeName with the new values defined by attributeValues. If the attribute is not present in the entry, then the value is added.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-15"><a class="anchor" href="#parameters-15"></a>Parameters</h3> 
@@ -3304,7 +3304,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to modify is already present, then don’t throw INVALID_ATTRIBUTE error</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to modify is already present, then don’t throw the INVALID_ATTRIBUTE error.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3361,7 +3361,7 @@ objectclass: myentry</pre></td>
    <p><code>&lt;ldap:modify-single-value-attribute&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Updates (replaces) the value or values of the attribute defined by attributeName with the new value defined by attributeValue. If the attribute is not present in the entry, then the value is added. If you want to update a value with a type different than String, then use the update-multi-value-attribute operation and define a single element list with the value.</p> 
+   <p>Updates (replaces) the value or values of the attribute defined by attributeName with the new value defined by attributeValue. If the attribute is not present in the entry, then the value is added. To update a value with a type different than String, use the update-multi-value-attribute operation and define a single element list with the value.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-16"><a class="anchor" href="#parameters-16"></a>Parameters</h3> 
@@ -3422,7 +3422,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The new value for the attribute</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The new value for the attribute.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
      </tr> 
@@ -3434,7 +3434,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to modify is already present, then don’t throw INVALID_ATTRIBUTE error</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the attribute value to modify is already present, then don’t throw the INVALID_ATTRIBUTE error.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3468,18 +3468,17 @@ objectclass: myentry</pre></td>
    <h3 id="throws-13"><a class="anchor" href="#throws-13"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -3492,16 +3491,16 @@ objectclass: myentry</pre></td>
    <p><code>&lt;ldap:paged-result-search&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Performs a LDAP search and streams result to the rest of the flow.</p> 
+   <p>Performs a LDAP search and streams the result to the rest of the flow.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>This means that instead of returning a list with all results it partitions the LDAP search result into pages (individual entry if resultPageSize is 1) or lists of size resultPageSize.</p> 
+   <p>This means that instead of returning a list with all results, this operation partitions the LDAP search result into pages or an individual entry if resultPageSize is 1, or lists of size resultPageSize.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>This is an intercepting operation what means that for each result (individual entry if resultPageSize is 1 or List of resultPageSize size) the rest of the flow will be executed. Each of these executions will return a result that will be aggregated into a List of results. For queries returning large results it is recommended to use pagination (not all LDAP servers support this or are configured to support it).</p> 
+   <p>This is an intercepting operation, which means that for each result, or an individual entry if resultPageSize is 1 or List of resultPageSize size, the rest of the flow executes. Each execution returns a result that aggregates into a List of results.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For that you need to provide a fetch size (page size) value that should be less or equal than max results (count limit). If you are getting a Size Limit Exceeded exception message then you should check that the authenticated user has enough privileges or the LDAP server is not limited by configuration. In that case, just reduce the value of the fetch size. &lt;p/&gt;</p> 
+   <p>For queries returning large results, use pagination; however, not all LDAP servers support this or are configured to support it. To use pagination, provide a page size value that’s less than or equal to the max results (count limit). If you get a size limit exceeded exception, ensure that the authenticated user has sufficient privileges, or that the LDAP server is not limited by its configuration. In that case, just reduce the value of the fetch size.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-17"><a class="anchor" href="#parameters-17"></a>Parameters</h3> 
@@ -3562,7 +3561,7 @@ objectclass: myentry</pre></td>
          <p>Array of String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes that should be returned in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes to return in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3605,7 +3604,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates that all entries will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates to return all entries.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3617,7 +3616,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables/disables returning objects returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables or disables returning objects that are returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object is returned.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3629,7 +3628,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the LDAP server supports paging results set in this attribute the size of the page. If the pageSize is less or equals than 0, then paging will be disabled.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the LDAP server supports paging results, set this attribute to the size of the page. If the pageSize is less or equals than 0, paging is disabled.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3653,7 +3652,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If orderBy was set, whether to sort in ascending or descending order.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If orderBy is set, indicates whether to sort in ascending or descending order.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3665,7 +3664,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it is optional.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it’s optional.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3677,7 +3676,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of LDAP entries retrieved at once per page</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of LDAP entries retrieved at once per page.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3693,7 +3692,7 @@ objectclass: myentry</pre></td>
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3776,16 +3775,16 @@ objectclass: myentry</pre></td>
    <h3 id="throws-14"><a class="anchor" href="#throws-14"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -3835,7 +3834,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">DN of the existing entry that will be renamed.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">DN of the existing entry to rename.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
      </tr> 
@@ -3881,18 +3880,17 @@ objectclass: myentry</pre></td>
    <h3 id="throws-15"><a class="anchor" href="#throws-15"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -3905,7 +3903,7 @@ objectclass: myentry</pre></td>
    <p><code>&lt;ldap:search&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Performs a LDAP search returning a list with all the resulting LDAP entries. For queries returning large results it is recommended to use pagination (not all LDAP servers support this or are configured to support it). For that you need to provide a page size value that should be less or equal than max results (count limit). If you are getting a Sizelimit Exceeded exception then you should check that the authenticated user has enough privileges or the LDAP server is not limited by configuration.</p> 
+   <p>Performs a LDAP search that returns a list of all resulting LDAP entries. For queries returning large results, use pagination; however, not all LDAP servers support this or are configured to support it. To use pagination, provide a page size value that’s less than or equal to the max results (count limit). If you get a size limit exceeded exception, ensure that the authenticated user has sufficient privileges, or that the LDAP server is not limited by its configuration.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-19"><a class="anchor" href="#parameters-19"></a>Parameters</h3> 
@@ -3966,7 +3964,7 @@ objectclass: myentry</pre></td>
          <p>Array of String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes that should be returned in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes to return in the result. If the attributes list is empty or null, by default all LDAP entry attributes are returned.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4009,7 +4007,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates that all entries will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates to return all entries.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4021,7 +4019,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables/disables returning objects returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables or disables objects returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object is also returned.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4033,7 +4031,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the LDAP server supports paging results set in this attribute the size of the page. If the pageSize is less or equals than 0, then paging will be disabled.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the LDAP server supports paging results, set this attribute to the size of the page. If the pageSize is less or equals than 0, then paging is disabled.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4045,7 +4043,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it is optional.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it’s optional.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4128,18 +4126,17 @@ objectclass: myentry</pre></td>
    <h3 id="throws-16"><a class="anchor" href="#throws-16"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -4152,7 +4149,7 @@ objectclass: myentry</pre></td>
    <p><code>&lt;ldap:search-one&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Performs a LDAP search that is supposed to return a unique result. If the search returns more than one result, then a warn log message is generated and the first element of the result is returned. Use this operation over #lookup(LDAPConfiguration, LDAPConnectionWrapper, String, List, String) when you know don’t know the DN of the entry you need to retrieve but you have a set of attributes that you know should return a single entry (for example an email address)</p> 
+   <p>Performs a LDAP search that is supposed to return a unique result. If the search returns more than one result, a warning log message is generated and the first element of the result is returned. Use this operation over <code>#lookup(LDAPConfiguration, LDAPConnectionWrapper, String, List, String)</code> when you don’t know the DN of the entry you need to retrieve but have a set of attributes that you know should return a single entry (for example an email address).</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-20"><a class="anchor" href="#parameters-20"></a>Parameters</h3> 
@@ -4213,7 +4210,7 @@ objectclass: myentry</pre></td>
          <p>Array of String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes that should be returned in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the attributes to return in the result. If the attributes list is empty or null, then by default all LDAP entry attributes are returned.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4232,7 +4229,7 @@ objectclass: myentry</pre></td>
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The scope of the search. Valid attributes are: </p><p class="tableblock">* OBJECT: This value is used to indicate searching only the entry at the base DN, resulting in only that entry being returned (keeping in mind that it also has to meet the search filter criteria!) * ONE_LEVEL: This value is used to indicate searching all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN. * SUB_TREE: This value is used to indicate searching of all entries at all levels under and including the specified base DN.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The scope of the search. Valid attributes are: </p><p class="tableblock">* OBJECT: Indicates to search only for the entry at the base DN, resulting in only that entry being returned (keep in mind that it also has to meet the search filter criteria). * ONE_LEVEL: Indicates to search for all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN. * SUB_TREE: Indicates to search for all entries at all levels under and including the specified base DN.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">ONE_LEVEL</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4256,7 +4253,7 @@ objectclass: myentry</pre></td>
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates that all entries will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of entries to return as a result of the search. 0 indicates to return all entries.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4268,7 +4265,7 @@ objectclass: myentry</pre></td>
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables/disables returning objects returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object will be returned.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enables or disables returning objects returned as part of the result. If disabled, only the name and class of the object is returned. If enabled, the object also returns.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4280,7 +4277,7 @@ objectclass: myentry</pre></td>
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it is optional.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of entry to return. Only for DataSense purposes to be used in Anypoint Studio IDE. Has no impact on runtime, that’s why it’s optional.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -4363,18 +4360,17 @@ objectclass: myentry</pre></td>
    <h3 id="throws-17"><a class="anchor" href="#throws-17"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -4446,329 +4442,346 @@ objectclass: myentry</pre></td>
    <h3 id="throws-18"><a class="anchor" href="#throws-18"></a>Throws</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
-     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
-     <li> <p>LDAP:UNKNOWN</p> </li> 
-     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
-     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
-     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
-     <li> <p>LDAP:CONNECTIVITY</p> </li> 
      <li> <p>LDAP:COMMUNICATION</p> </li> 
+     <li> <p>LDAP:CONNECTIVITY</p> </li> 
+     <li> <p>LDAP:CONTEXT_NOT_EMPTY</p> </li> 
+     <li> <p>LDAP:INVALID_ATTRIBUTE</p> </li> 
+     <li> <p>LDAP:INVALID_ENTRY</p> </li> 
+     <li> <p>LDAP:NAME_ALREADY_BOUND</p> </li> 
+     <li> <p>LDAP:NAME_NOT_FOUND</p> </li> 
+     <li> <p>LDAP:OPERATION_NOT_SUPPORTED</p> </li> 
      <li> <p>LDAP:PERMISSION</p> </li> 
+     <li> <p>LDAP:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>LDAP:UNKNOWN</p> </li> 
     </ul> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="types"><a class="anchor" href="#types"></a>Types</h2> 
+ <h2 id="reconnection-type"><a class="anchor" href="#reconnection-type"></a>Reconnection Type</h2> 
  <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="Reconnection"><a class="anchor" href="#Reconnection"></a>Reconnection</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Fails Deployment</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The reconnection strategy to use</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Frequency</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How often (in ms) to reconnect</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Count</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How many reconnection attempts to make</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Frequency</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How often (in ms) to reconnect</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Idle Time</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Time Unit</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>NANOSECONDS</p> </li> 
-          <li> <p>MICROSECONDS</p> </li> 
-          <li> <p>MILLISECONDS</p> </li> 
-          <li> <p>SECONDS</p> </li> 
-          <li> <p>MINUTES</p> </li> 
-          <li> <p>HOURS</p> </li> 
-          <li> <p>DAYS</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="repeatable-in-memory-iterable"><a class="anchor" href="#repeatable-in-memory-iterable"></a>Repeatable In Memory Iterable</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Initial Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is the amount of instances that will be initially be allowed to be kept in memory in order to consume the stream and provide random access to it. If the stream contains more data than can fit into this buffer, then it will be expanded according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize. Default value is 100 instances.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Buffer Size Increment</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is by how much will the buffer size by expanded if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full. Default value is 100 instances.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="repeatable-file-store-iterable"><a class="anchor" href="#repeatable-file-store-iterable"></a>Repeatable File Store Iterable</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max In Memory Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is the maximum amount of instances that will be kept in memory. If more than that is required, then it will start to buffer the content on disk.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Buffer Unit</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>BYTE</p> </li> 
-          <li> <p>KB</p> </li> 
-          <li> <p>MB</p> </li> 
-          <li> <p>GB</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The unit in which maxInMemorySize is expressed</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Fails Deployment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Boolean</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>reconnect</p> </li> 
+         <li> <p>reconnect-forever</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The reconnection strategy to use.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Count</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>NANOSECONDS</p> </li> 
+         <li> <p>MICROSECONDS</p> </li> 
+         <li> <p>MILLISECONDS</p> </li> 
+         <li> <p>SECONDS</p> </li> 
+         <li> <p>MINUTES</p> </li> 
+         <li> <p>HOURS</p> </li> 
+         <li> <p>DAYS</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-in-memory-iterable"><a class="anchor" href="#repeatable-in-memory-iterable"></a>Repeatable In-Memory Iterable Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the amount of instances to initially allow to be kept in memory to consume the stream and provide random access to it. If the stream contains more data than can fit into this buffer, the the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize. Default value is 100 instances.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is by how much the buffer size expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, and to raise a STREAM_MAXIMUM_SIZE_EXCEEDED error when the buffer gets full. Default value is 100 instances.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory to use. If more than that is used, then a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised. A value lower or equal to zero means no limit.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-file-store-iterable"><a class="anchor" href="#repeatable-file-store-iterable"></a>Repeatable File Store Iterable Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of instances to keep in memory. If more than that is required, then it starts to buffer the content on disk.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>BYTE</p> </li> 
+         <li> <p>KB</p> </li> 
+         <li> <p>MB</p> </li> 
+         <li> <p>GB</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a>.</p> </li> 
+    <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a>.</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -4776,7 +4789,7 @@ objectclass: myentry</pre></td>
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#basic-configuration-type">Basic Configuration Type</a></li><li><a class="scroll-menu-link" href="#tls-configuration-type">TLS Configuration Type</a></li><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#add">Add Entry</a></li><li><a class="scroll-menu-link" href="#addMultiValueAttribute">Add Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#addSingleValueAttribute">Add Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#bind">Bind</a></li><li><a class="scroll-menu-link" href="#delete">Delete Entry</a></li><li><a class="scroll-menu-link" href="#deleteMultiValueAttribute">Delete Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#deleteSingleValueAttribute">Delete Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#exists">Exists</a></li><li><a class="scroll-menu-link" href="#ldapEntryToLdif">LDAPEntry To LDIF</a></li><li><a class="scroll-menu-link" href="#lookup">Lookup</a></li><li><a class="scroll-menu-link" href="#modify">Modify Entry</a></li><li><a class="scroll-menu-link" href="#modifyMultiValueAttribute">Modify Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#modifySingleValueAttribute">Modify Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#pagedResultSearch">Paged Result Search</a></li><li><a class="scroll-menu-link" href="#rename">Rename entry</a></li><li><a class="scroll-menu-link" href="#search">Search</a></li><li><a class="scroll-menu-link" href="#searchOne">Search One</a></li><li><a class="scroll-menu-link" href="#unbind">Unbind</a></li><li><a class="scroll-menu-link" href="#types">Types</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#basic-configuration-type">Basic Configuration Type</a></li><li><a class="scroll-menu-link" href="#tls-configuration-type">TLS Configuration Type</a></li><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#add">Add Entry</a></li><li><a class="scroll-menu-link" href="#addMultiValueAttribute">Add Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#addSingleValueAttribute">Add Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#bind">Bind</a></li><li><a class="scroll-menu-link" href="#delete">Delete Entry</a></li><li><a class="scroll-menu-link" href="#deleteMultiValueAttribute">Delete Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#deleteSingleValueAttribute">Delete Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#exists">Exists</a></li><li><a class="scroll-menu-link" href="#ldapEntryToLdif">LDAPEntry To LDIF</a></li><li><a class="scroll-menu-link" href="#lookup">Lookup</a></li><li><a class="scroll-menu-link" href="#modify">Modify Entry</a></li><li><a class="scroll-menu-link" href="#modifyMultiValueAttribute">Modify Multi Value Attribute</a></li><li><a class="scroll-menu-link" href="#modifySingleValueAttribute">Modify Single Value Attribute</a></li><li><a class="scroll-menu-link" href="#pagedResultSearch">Paged Result Search</a></li><li><a class="scroll-menu-link" href="#rename">Rename entry</a></li><li><a class="scroll-menu-link" href="#search">Search</a></li><li><a class="scroll-menu-link" href="#searchOne">Search One</a></li><li><a class="scroll-menu-link" href="#unbind">Unbind</a></li><li><a class="scroll-menu-link" href="#reconnection-type">Reconnection Type</a></li><li><a class="scroll-menu-link" href="#reconnect">Reconnect Type</a></li><li><a class="scroll-menu-link" href="#reconnect-forever">Reconnect Forever Type</a></li><li><a class="scroll-menu-link" href="#ExpirationPolicy">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-in-memory-iterable">Repeatable In-Memory Iterable Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-iterable">Repeatable File Store Iterable Type</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
