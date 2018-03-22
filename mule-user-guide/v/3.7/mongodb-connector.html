@@ -1427,7 +1427,7 @@
    <p><a href="https://www.mongodb.org">MongoDB</a> is a cross-platform document-oriented database. Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas (MongoDB calls the format BSON), making the integration of data in certain types of applications easier and faster.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Note:</strong> MongoDB Connector v4.1 introduced the <a href="http://mulesoft.github.io/mongo-connector/4.1.0/apidocs/mongo-apidoc.html#_map_reduce_objects">Map Reduce feature</a>.</p> 
+   <p><strong>Note:</strong> MongoDB Connector v4.1 introduced the <a href="http://mulesoft.github.io/mule-mongodb-connector/4.1.0/apidocs/mongo-apidoc.html#_map_reduce_objects">Map Reduce feature</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1551,7 +1551,7 @@
      <li> <p>Click Login in Anypoint Exchange.</p> </li> 
      <li> <p>Search for this connector and click Install.</p> </li> 
      <li> <p>Follow the prompts to install the connector.</p> </li> 
-     <li> <p>Click <strong>Next</strong>, <strong>Next</strong>, and accept the license agreement.</p> </li> 
+     <li> <p>Click Next, Next, and accept the license agreement.</p> </li> 
      <li> <p>Restart Studio when prompted.</p> </li> 
     </ol> 
    </div> 
@@ -1572,14 +1572,14 @@
        <li> <p>Follow the prompts to install the connector.</p> </li> 
       </ol> 
      </div> </li> 
-    <li> <p>Ensure that the Maven dependencies have been updated correctly from <strong>Mongo DB[v3.X.X]</strong> to <strong>Mongo DB[v4.1.0]</strong>.</p> </li> 
-    <li> <p>Update flows that are using <strong>Phased Out</strong> or <strong>Deprecated operations</strong>.</p> 
+    <li> <p>Ensure that the Maven dependencies have been updated correctly from Mongo DB[v3.X.X] to Mongo DB[v4.1.0].</p> </li> 
+    <li> <p>Update flows that are using Phased Out or Deprecated operations.</p> 
      <div class="ulist"> 
       <ul> 
-       <li> <p>Most operation names have been changed to comply with Mongo Driver v3, so if you had an <strong>InsertObject</strong> operation, it now appears as <strong>InsertDocument</strong>.</p> </li> 
+       <li> <p>Most operation names have been changed to comply with Mongo Driver v3, so if you had an InsertObject operation, it now appears as InsertDocument.</p> </li> 
        <li> <p>WriteResult objects have been removed. Now your operations only return Strings, Documents, and DBObjects.</p> </li> 
-       <li> <p>MongoDB <strong>transformers</strong> have been replaced by implicit ones. So, if your input data is a <strong>Map</strong> and, you want to perform an Insert operation, just drag a MongoDB connector into the workspace, choose the <strong>InsertDocument</strong> operation and you’re done! You no longer require the use of the transformer.</p> </li> 
-       <li> <p>Remember that <code>mongo:config</code> does <strong>NOT</strong> support the <strong>port</strong> field anymore. Specify the port inside the <strong>host</strong> field of your <code>mongo:config</code> using the format <strong>"host:port"</strong>. For more information see the <a href="/mule-user-guide/v/3.7/mongodb-connector-migration-guide">MongoDB Connector 4.1.0 Migration Guide</a>.</p> </li> 
+       <li> <p>MongoDB transformers have been replaced by implicit ones. So, if your input data is a Map and, you want to perform an Insert operation, just drag a MongoDB connector into the workspace, choose the InsertDocument operation and you’re done! You no longer require the use of the transformer.</p> </li> 
+       <li> <p>Remember that <code>mongo:config</code> does NOT support the port field anymore. Specify the port inside the host field of your <code>mongo:config</code> using the format "host:port". For more information see the <a href="/mule-user-guide/v/3.7/mongodb-connector-migration-guide">MongoDB Connector 4.1.0 Migration Guide</a>.</p> </li> 
       </ul> 
      </div> </li> 
    </ul> 
@@ -1594,10 +1594,10 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Your MongoDB credentials and endpoints in a <strong>.properties</strong> file and load them using the <strong>Property Placeholder</strong> component.</p> </li> 
-    <li> <p>An inbound endpoint into your flow. For example, <strong>HTTP</strong>.</p> </li> 
-    <li> <p>A <strong>Transform Message</strong> component.</p> </li> 
-    <li> <p>A <strong>MongoDB</strong> transformer for example, <strong>Document to json</strong>.</p> 
+    <li> <p>Your MongoDB credentials and endpoints in a .properties file and load them using the Property Placeholder component.</p> </li> 
+    <li> <p>An inbound endpoint into your flow. For example, HTTP.</p> </li> 
+    <li> <p>A Transform Message component.</p> </li> 
+    <li> <p>A MongoDB transformer for example, Document to json.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mg_basic_flow.png" alt="MongoDB Connector initial flow"></span></p> 
      </div> </li> 
@@ -1610,16 +1610,16 @@
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Go to the <strong>Global Element</strong> tab and click the <strong>Create</strong> button.</p> </li> 
-     <li> <p>Inside the filter textbox type "Mongo", and select <strong>MongoDB</strong>, from the <strong>Connector Configuration</strong> directory.</p> </li> 
+     <li> <p>Go to the Global Element tab and click the Create button.</p> </li> 
+     <li> <p>Inside the filter textbox type "Mongo", and select MongoDB, from the Connector Configuration directory.</p> </li> 
      <li> <p>When you select the global element of your choice, you are presented with the global element properties to enter.</p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
-        <li> <p>The <strong>Username</strong> field refers to the username you use to access your MongoDB instance.</p> </li> 
-        <li> <p>The <strong>Password</strong> field should contain the corresponding password.</p> </li> 
-        <li> <p>You also need to specify the <strong>Database</strong> used to send and retrieve data from your MongoDB instance. Before running your application, make sure that the user has the necessary permissions to do so.</p> </li> 
-        <li> <p>You may also need to set the <strong>Servers</strong> property, which is composed of a host:port comma-separated list (in case you have a replica set). This attribute is optional, and if left empty, it defaults to <strong>localhost:27017</strong>.</p> </li> 
-        <li> <p>You may adjust the values for the <strong>Connect Timeout</strong>, <strong>Connections Per Host</strong>, <strong>Max Wait Time</strong>, and the <strong>Socket Timeout</strong> for requests that are sent to MongoDB. The default value for <strong>Connect Timeout</strong> is 30000ms. This means that any connection requests that take longer than 30 seconds to be sent and received throw an exception. You can override this behavior by setting their values to 0, meaning that the MongoDB connector waits indefinitely until a request is successfully sent and a response is received.</p> </li> 
+        <li> <p>The Username field refers to the username you use to access your MongoDB instance.</p> </li> 
+        <li> <p>The Password field should contain the corresponding password.</p> </li> 
+        <li> <p>You also need to specify the Database used to send and retrieve data from your MongoDB instance. Before running your application, make sure that the user has the necessary permissions to do so.</p> </li> 
+        <li> <p>You may also need to set the Servers property, which is composed of a host:port comma-separated list (in case you have a replica set). This attribute is optional, and if left empty, it defaults to localhost:27017.</p> </li> 
+        <li> <p>You may adjust the values for the Connect Timeout, Connections Per Host, Max Wait Time, and the Socket Timeout for requests that are sent to MongoDB. The default value for Connect Timeout is 30000ms. This means that any connection requests that take longer than 30 seconds to be sent and received throw an exception. You can override this behavior by setting their values to 0, meaning that the MongoDB connector waits indefinitely until a request is successfully sent and a response is received.</p> </li> 
        </ol> 
       </div> </li> 
     </ol> 
@@ -1646,7 +1646,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Username</strong></p> 
+         <p>Username</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1660,7 +1660,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Password</strong></p> 
+         <p>Password</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1674,7 +1674,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Database</strong></p> 
+         <p>Database</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1688,7 +1688,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Servers</strong></p> 
+         <p>Servers</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1708,7 +1708,7 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>In the <strong>Global Element</strong> tab for your MongoDB connection, make sure you check <strong>SSL</strong> property field.</p> </li> 
+     <li> <p>In the Global Element tab for your MongoDB connection, make sure you check SSL property field.</p> </li> 
      <li> <p>Remember, your instance must support this feature. For more information check <a href="http://docs.mongodb.org/manual/tutorial/configure-ssl">MongoDB documentation</a>.</p> </li> 
     </ul> 
    </div> 
@@ -1716,16 +1716,16 @@
   <div class="sect2"> 
    <h3 id="invoking-an-operation"><a class="anchor" href="#invoking-an-operation"></a>Invoking an Operation</h3> 
    <div class="paragraph"> 
-    <p>To invoke a simple operation such as the <strong>insertDocument</strong> operation, follow these steps:</p> 
+    <p>To invoke a simple operation such as the insertDocument operation, follow these steps:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Locate, and drag and drop the <strong>HTTP connector</strong>, <strong>Transform Message</strong>, and <strong>MongoDB connector</strong> onto the Anypoint Studio Canvas.</p> </li> 
-     <li> <p>Configure the MongoDB connector by selecting the <strong>Connector Configuration</strong> you created in the previous section and choosing the operation to invoke.</p> 
+     <li> <p>Locate, and drag and drop the HTTP connector, Transform Message, and MongoDB connector onto the Anypoint Studio Canvas.</p> </li> 
+     <li> <p>Configure the MongoDB connector by selecting the Connector Configuration you created in the previous section and choosing the operation to invoke.</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/mg_insertconnector.png" alt="MongoDB Connector"></span></p> 
       </div> </li> 
-     <li> <p>Click <strong>Transform Message</strong> and enter these two key-value pairs:</p> 
+     <li> <p>Click Transform Message and enter these two key-value pairs:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="dataweave">
@@ -1758,30 +1758,22 @@
       </div> </li> 
     </ol> 
    </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#tab-1_1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#tab-1_2" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
+   <div class="sect3"> 
+    <h4 id="studio-visual-editor"><a class="anchor" href="#studio-visual-editor"></a>Studio Visual Editor</h4> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/mg_final_flow.png" alt="Transform Message"></span></p> 
     </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="tab-1_1"> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/mg_final_flow.png" alt="Transform Message"></span></p> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="tab-1_2"> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-    
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
+   </div> 
+   <div class="sect3"> 
+    <h4 id="xml-editor"><a class="anchor" href="#xml-editor"></a>XML Editor</h4> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1795,26 +1787,26 @@
 12
 13
 14
+15
 </pre></td> 
-             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="insert-document-flow"<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>dw:transform-message doc:name="Transform Message"<span class="entity">&amp;gt;</span>
-            <span class="entity">&amp;lt;</span>dw:set-payload<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[%dw 1.0
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">insert-document-flow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/java
 ---
 {
     name:"Peter",
     age:"42"
-}]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/dw:set-payload<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>/dw:transform-message<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>mongo:insert-document config-ref="Mongo_DB__Configuration" collection="People" doc:name="Insert Document"/<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>mongo:document-to-json doc:name="Document to Json"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> 
+}<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
+        <span class="tag">&lt;/dw:transform-message&gt;</span>
+        <span class="tag">&lt;mongo:insert-document</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Mongo_DB__Configuration</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">People</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Insert Document</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;mongo:document-to-json</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Document to Json</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1826,7 +1818,7 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>For additional technical information, regarding MongoDB Connector please visit our <a href="http://mulesoft.github.io/mongo-connector/">online documentation</a>.</p> </li> 
+    <li> <p>For additional technical information, visit the <a href="http://mulesoft.github.io/mule-mongodb-connector/">MongoDB Connector Reference</a>.</p> </li> 
     <li> <p>For more information on the MongoDB API, visit its <a href="http://docs.mongodb.com/manual">API documentation page</a>.</p> </li> 
    </ul> 
   </div> 

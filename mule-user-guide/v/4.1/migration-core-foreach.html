@@ -1346,7 +1346,7 @@
          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persons</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;http:listener</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">person</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">POST</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">http</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;json:json-to-object-transformer</span> <span class="tag">/&gt;</span>
-  <span class="tag">&lt;foreach</span> <span class="attribute-name">batchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.personss]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;foreach</span> <span class="attribute-name">batchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.persons]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">processPerson</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;/foreach&gt;</span>
 <span class="tag">&lt;/flow&gt;</span></pre></td> 
@@ -1374,12 +1374,10 @@
 4
 5
 6
-7
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persons</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;http:listener</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">person</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">POST</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">http</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;json:json-to-object-transformer</span> <span class="tag">/&gt;</span>
-  <span class="tag">&lt;foreach</span> <span class="attribute-name">batchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.personss]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;foreach</span> <span class="attribute-name">batchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.persons]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">processPerson</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;/foreach&gt;</span>
 <span class="tag">&lt;/flow&gt;</span></pre></td> 
