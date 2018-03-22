@@ -1816,6 +1816,48 @@ output application/xml
   <div class="paragraph"> 
    <p>In addition to specifying DataWeave scripts in the Transform and other components, you can also specify the scripts in a <code>.dwl</code> file. In Studio projects, your script files are stored in <code>src/main/resources</code>.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>You can use the <code>${file::filename}</code> syntax for any XML tag that expects an expression. For example, see the <code>when expression="${file::logic.dwl}"</code> in the Choice router here:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="XML">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;http:listener</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Listener</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_config</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/test</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;http:response</span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;http:body</span> <span class="tag">&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>#[${file::transform.dwl}]<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/http:body&gt;</span>
+        <span class="tag">&lt;/http:response&gt;</span>
+<span class="tag">&lt;/http:listener&gt;</span>
+<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span>  <span class="tag">&gt;</span>
+        <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">${file::logic.dwl}</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">It's greater than 4!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span>  <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/when&gt;</span>
+        <span class="tag">&lt;otherwise</span> <span class="tag">&gt;</span>
+                <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">It's less than 4!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/otherwise&gt;</span>
+<span class="tag">&lt;/choice&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
