@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/shared-resources" />
-  <meta name="description" content="Mule supports the ability to define selected connectors as common resources and expose them to all applications deployed under a same domain. These..." />
+  <meta name="description" content="Mule can define selected connectors as common resources and expose them to all apps deployed under a same domain. These resources are known as&nbsp..." />
   <meta class="swiftype" name="title" data-type="string" content="Shared Resources" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -447,7 +447,7 @@
 <li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/index-migration">Mule 4 for Mule 3 Users</a><ul>
-<li>
+<li><i></i><a href="/mule-user-guide/v/4.1/mule-runtime-updates">What’s New in Mule 4</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/intro-overview">Introduction to Mule 4</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/intro-studio">Studio 7</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-mule-message">The Mule Message</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-expressions">DataWeave Expression Language</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-transformations">Transformations and Streaming</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-connectors">Connectors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-error-handlers">Error Handlers</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-java-integration">Java Integration</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-dataweave2">DataWeave Language Changes</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-packaging">Packaging Applications</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-configuration">Configuring Applications</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-programming-model">Mule 4 Programming Model</a></li><li><i></i><a href="/mule-user-guide/v/4.1/intro-engine">Execution Engine, Threads, and Concurrency</a></li></ul></li>
@@ -1277,7 +1277,7 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Mule supports the ability to define selected connectors as common resources and expose them to all applications deployed under a same domain. These resources are known as&nbsp;shared resources. To host them, you must create a Mule Domain Project and then reference it on each of the projects that are meant to use the elements in it. Once defined, any Mule application associated with a particular domain can access&nbsp;resources in this file. Note that Mule applications can be associated with only one domain at a time.</p> 
+   <p>Mule can define selected connectors as common resources and expose them to all apps deployed under a same domain. These resources are known as&nbsp;shared resources. To host them, you must create a Mule Domain Project and then reference it from each of the projects that use the elements in it. Once defined, any Mule app associated with a particular domain can access&nbsp;resources in this file. Note that Mule apps can be associated with only one domain at a time.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Shared resources allow multiple development teams to work in parallel using the same set of reusable connectors. Defining these connectors as shared resources at the domain level allows the team to:</p> 
@@ -1286,8 +1286,8 @@
    <ul> 
     <li> <p>Expose multiple services within the domain through the same port.</p> </li> 
     <li> <p>Share the connection to persistent storage.</p> </li> 
-    <li> <p>Share services between applications through a well-defined interface.</p> </li> 
-    <li> <p>Ensure consistency between applications upon any changes because the configuration is only set in one place.</p> </li> 
+    <li> <p>Share services between apps through a well-defined interface.</p> </li> 
+    <li> <p>Ensure consistency between apps upon any changes because the configuration is only set in one place.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1296,7 +1296,7 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are using Anypoint Studio with Mule runtime 4.0 or newer, or that you are building your applications using Studio and deploying them to Mule Standalone <strong>4.0</strong>&nbsp;runtime or newer.&nbsp;</p> 
+   <p>This document assumes that you are using Anypoint Studio 7 with Mule runtime 4, or that you are building your apps using Studio 7 and deploying them to Mule 4&nbsp;Standalone runtime.&nbsp;</p> 
   </div> 
  </div> 
 </div> 
@@ -1328,7 +1328,7 @@
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pom.xml</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the dependencies file descriptor. It’s just a Maven POM file with required plugins for domains projects.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the dependencies file descriptor. It is a Maven POM file with required plugins for domains projects.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/mule-artifact.json</code></p></td> 
@@ -1340,7 +1340,7 @@
   <div class="sect2"> 
    <h3 id="domain-artifact"><a class="anchor" href="#domain-artifact"></a>Domain Artifact</h3> 
    <div class="paragraph"> 
-    <p>The following files are the ones that you can find when you package a domain into a jar file:</p> 
+    <p>You can find the following files when you package a domain into a JAR file:</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -1349,23 +1349,23 @@
     </colgroup> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mule-domain-config.xml</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mule-domain-config.xml</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">This is the shared resources configuration file. This file must have the <code>mule-domain-config.xml</code> file name.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/repository</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A maven like repository with all the dependencies of the domain.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/repository</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A Maven-like repository with all the dependencies of the domain.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/META-INF/maven/groupId/artifactId/pom.xml</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact maven descriptor file.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/META-INF/maven/groupId/artifactId/pom.xml</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact Maven descriptor file.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/META-INF/mule-artifact/classloader-model.json</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Internal mule file used for dependency management.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/META-INF/mule-artifact/classloader-model.json</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Internal Mule file used for dependency management.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/META-INF/mule-artifact/mule-artifact.json</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/META-INF/mule-artifact/mule-artifact.json</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">This file is a descriptor for the domain artifact.</p></td> 
      </tr> 
     </tbody> 
@@ -1377,13 +1377,13 @@
  <h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To use shared resources in your applications, you must complete the following tasks.</p> 
+   <p>To use shared resources in your apps, you must complete the following tasks.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p><a href="#creating-a-new-domain">Create a new domain</a>.</p> </li> 
+    <li> <p><a href="#Creating a New Domain">Create a new domain</a>.</p> </li> 
     <li> <p>Define one or more shared resources&nbsp;in that domain.</p> </li> 
-    <li> <p><a href="#associating-applications-with-the-domain">Associate applications with the domain</a>.</p> </li> 
+    <li> <p><a href="#Associating Applications with the Domain">Associate applications with the domain</a>.</p> </li> 
     <li> <p><a href="#referencing-shared-resources">Reference shared resources</a>&nbsp;in your applications.</p> </li> 
     <li> <p><a href="#deploying-with-shared-resources">Deploy</a>&nbsp;the domain and the applications with shared resources. Note that you can also deploy domain and apps together in a <a href="#deploying-domain-bundles">domain bundle</a>.</p> </li> 
    </ol> 
@@ -1391,17 +1391,15 @@
   <div class="paragraph"> 
    <p>The sections below describe the procedure for each of these steps.</p> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="creating-a-new-domain"><a class="anchor" href="#creating-a-new-domain"></a>Creating a New Domain</h2> 
- <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><a id="create_domain_project"></a>] == Creating a New Domain</p> 
+  </div> 
   <div class="paragraph"> 
    <p>To create a new domain in Anypoint Studio:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>In the top menu bar select,&nbsp;<strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Domain Project</strong>.</p> 
+    <li> <p>In the top menu bar select,&nbsp;File &gt; New &gt; Mule Domain Project.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/new+domain.png" alt="new+domain"></span><br></p> 
      </div> </li> 
@@ -1409,44 +1407,78 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/create+new+domain.png" alt="create+new+domain"></span><br></p> 
      </div> 
-     <div class="paragraph"> 
-      <p>Provide a name for the project, and select a runtime. Optionally, create a <code>.gitignore</code> file if you plan to share this project through git or GitHub.</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Provide a name for the project, and select a Mule runtime version.</p> </li> 
+      </ul> 
      </div> </li> 
    </ol> 
   </div> 
   <div class="sect2"> 
    <h3 id="defining-shared-resources"><a class="anchor" href="#defining-shared-resources"></a>Defining Shared Resources</h3> 
    <div class="paragraph"> 
-    <p>You can configure the domain project that you just created in the previous step by defining shared resources in the&nbsp;<code>mule-domain-config.xml</code>&nbsp;file. You can define multiple resources in this configuration file. In Anypoint Studio, there are two different views for editing this file:</p> 
+    <p>You can configure the <a href="#create_domain_project">Domain Project</a> by defining shared resources in your <code>mule-domain-config.xml</code>&nbsp;file. You can define multiple resources in this configuration file. In Anypoint Studio, you can edit this file in a couple of ways:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>Configuration file: This&nbsp;view should be the most familiar for those accustomed to the XML editor in regular Studio Mule projects.</p> </li> 
+     <li> <p>Configuration file: Through the XML similar to the XML configuration file for a Mule app, for example:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="XML">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td> 
+             <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;domain:mule-domain</span>
+        <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:domain</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="comment">&lt;!-- configure here resource to be shared within the domain --&gt;</span>
+
+<span class="tag">&lt;/domain:mule-domain&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
      <li> <p>Global Elements: This view provides a graphical interface for defining shared resources.</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
-    <p>You can add modules/connectors dependencies to you domain project so you can use them as shared resources.</p> 
+    <p>You can add module or connector dependencies to you domain project so you can use them as shared resources.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="associating-applications-with-the-domain"><a class="anchor" href="#associating-applications-with-the-domain"></a>Associating Applications with the Domain</h3> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> Applications may only be associated with one domain at a time. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
+   <h3 id="associating-apps-with-the-domain"><a class="anchor" href="#associating-apps-with-the-domain"></a>Associating Apps with the Domain</h3> 
+   <div class="paragraph"> 
+    <p>Note that apps can only be associated with one domain at a time.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>In Anypoint Studio, to associate an existing application with a domain:</p> 
+    <p>To associate an existing app with a domain (Anypoint Studio):</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>In the project explorer view, double click on the Mule application <strong>Properties</strong> &gt; <strong>Mule Project</strong>. Notice a <strong>Domain</strong> field, which by default is set to <code>default</code>. This value gives each project its independent domain. Change this value. The dropdown list on this field displays all of the domains you’ve created in the current workspace.</p> </li> 
+     <li> <p>In the Project Explorer view, double click on the Mule app <strong>Properties</strong> &gt; <strong>Mule Project</strong>. Notice a <strong>Domain</strong> field, which by default is set to <code>default</code>. This value gives each project its independent domain. Change this value. The dropdown list on this field displays all of the domains you’ve created in the current workspace.</p> </li> 
     </ol> 
    </div> 
    <div class="paragraph"> 
@@ -1462,7 +1494,7 @@
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>If you’re creating your applications outside Studio, then to associate an existing application with a domain, edit the&nbsp;<code>mule-artifact.json</code>&nbsp;file to include the domain property:</p> 
+         <p>If you are creating your apps outside Studio, you need to include the domain property in the&nbsp;<code>mule-artifact.json</code>&nbsp;file to associate an existing app:</p> 
         </div> 
         <div class="paragraph"> 
          <p><code>domain: &lt;name of domain folder&gt;</code></p> 
@@ -1934,7 +1966,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#creating-a-new-domain">Creating a New Domain</a></li><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#example-mule-domain-projects">Example Mule Domain Projects</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#example-mule-domain-projects">Example Mule Domain Projects</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
