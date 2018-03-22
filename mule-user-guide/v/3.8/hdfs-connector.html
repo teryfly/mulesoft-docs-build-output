@@ -1417,7 +1417,7 @@
    <p>The Anypoint Connector for the Hadoop Distributed File System (HDFS) is used as a bi-directional gateway between Mule applications and HDFS.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Read through this user guide to understand how to set up and configure a basic flow using the connector. Track feature additions, compatibility, limitations and API version updates with each release of the connector using the <a href="/release-notes/hdfs-connector-release-notes">Connector Release Notes</a>. Review the connector operations and functionality using the <a href="http://mulesoft.github.io/hdfs-connector/">Technical Reference</a> and the <a href="https://www.anypoint.mulesoft.com/exchange/org.mule.modules/mule-module-hdfs/">Anypoint Exchange HDFS connector</a>.</p> 
+   <p>Read through this user guide to understand how to set up and configure a basic flow using the connector. Track feature additions, compatibility, limitations and API version updates with each release of the connector using the <a href="/release-notes/hdfs-connector-release-notes">Connector Release Notes</a>. Review the connector operations and functionality using the <a href="http://mulesoft.github.io/mule-hadoop-connector/">Technical Reference</a> and the <a href="https://www.anypoint.mulesoft.com/exchange/org.mule.modules/mule-module-hdfs/">Anypoint Exchange HDFS connector</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Since version 5.0.0, MuleSoft maintains this connector under the <a href="/mule-user-guide/v/3.8/anypoint-connectors#connector-categories"><em>Select</em></a> support policy.</p> 
@@ -1738,7 +1738,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> See a full list of operations for any version of the connector at <a href="http://mulesoft.github.io/hdfs-connector" class="bare">http://mulesoft.github.io/hdfs-connector</a>. </td> 
+      <td class="content"> See a full list of operations for any version of the connector in the <a href="http://mulesoft.github.io/mule-hadoop-connector/">HDFS Hadoop Reference</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1855,7 +1855,7 @@
  <h2 id="demo-mule-application-using-connector"><a class="anchor" href="#demo-mule-application-using-connector"></a>Demo Mule Application Using Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Existing demos demonstrate how to use the connector for <a href="http://mulesoft.github.io/hdfs-connector/">basic file system operations</a> and how to <a href="http://mulesoft.github.io/hdfs-connector/">poll data from a file</a> at a specific interval.</p> 
+   <p>Existing demos demonstrate how to use the connector for <a href="http://mulesoft.github.io/mule-hadoop-connector/">basic file system operations</a> and how to <a href="http://mulesoft.github.io/mule-hadoop-connector/">poll data from a file</a> at a specific interval.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h3> 
@@ -1864,10 +1864,10 @@
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>In Anypoint Studio, click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>, name the project, and click <strong>OK</strong>.</p> </li> 
-     <li> <p>In the search field, type "http" and drag the <strong>HTTP</strong> connector to the canvas, click the green plus sign to the right of <strong>Connector Configuration</strong>, and in the next screen, click <strong>OK</strong> to accept the default settings. Name the endpoint <strong>/createFile</strong>.</p> </li> 
-     <li> <p>In the Search bar type "HDFS" and drag the <strong>HDFS</strong> connector onto the canvas. Configure as explained <a href="#configure-the-connector-global-element">Configure the Connector Global Element</a></p> </li> 
-     <li> <p>Choose <strong>Write to path</strong> as an operation. Set <strong>Path</strong> to <code>/test.txt</code> (this is the path of the file that is going to be created into HDFS) and leave other options with default values.</p> </li> 
+     <li> <p>In Anypoint Studio, click File &gt; New &gt; Mule Project, name the project, and click OK.</p> </li> 
+     <li> <p>In the search field, type "http" and drag the HTTP connector to the canvas, click the green plus sign to the right of Connector Configuration, and in the next screen, click OK to accept the default settings. Name the endpoint <code>/createFile</code>.</p> </li> 
+     <li> <p>In the Search bar type "HDFS" and drag the HDFS connector onto the canvas. Configure as explained <a href="#configure-the-connector-global-element">Configure the Connector Global Element</a></p> </li> 
+     <li> <p>Choose Write to path as an operation. Set Path to <code>/test.txt</code> (this is the path of the file that is going to be created into HDFS) and leave other options with default values.</p> </li> 
      <li> <p>The flow should look like this:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/create-file-flow.png" alt="Create file flow"></span></p> 
