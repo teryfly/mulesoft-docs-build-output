@@ -4,7 +4,7 @@
     
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>To Troubleshoot SAML Assertions // MuleSoft Documentation </title>
+  <title>To view a SAML response in your Browser // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -22,8 +22,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/access-management/troubleshoot-saml-assertions-task" />
-  <meta name="description" content="Some IdPs support generating sample assertions. If your IdP generates sample assertions, follow this procedure to get MuleSoft to assist you in tro..." />
-  <meta class="swiftype" name="title" data-type="string" content="To Troubleshoot SAML Assertions" />
+  <meta name="description" content="https://anypoint.mulesoft.com/accounts/login/receive-id Click on the specific row that has the above mentioned URL. In the Form data window on the ..." />
+  <meta class="swiftype" name="title" data-type="string" content="To view a SAML response in your Browser" />
 </head>
 <body>
 <!-- START Swiftype -->
@@ -1271,17 +1271,19 @@
     <div class="article-content col-md-7">
       
       <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Access Management</a>/<a href="external-identity">About Identity Management</a>/<a href="external-identity-index">External Identity Configurations</a>/<a href="managing-users">To Configure SAML</a>/<a href="troubleshoot-saml-assertions-task" class="breadcrumb-active-link">To Troubleshoot SAML Assertions</a></div>
-      <h1>To Troubleshoot SAML Assertions</h1>
-      <div class="paragraph"> 
- <p>Some IdPs support generating sample assertions. If your IdP generates sample assertions, follow this procedure to get MuleSoft to assist you in troubleshooting your SAML assertions.</p> 
-</div> 
-<div class="olist arabic"> 
+      <h1>To view a SAML response in your Browser</h1>
+      <div class="olist arabic"> 
  <ol class="arabic"> 
+  <li> <p>Open a new tab in your browser and use Chrome Developer Tools, Firebug for Firefox, or a SAML tracer to be prepared to capture the SAML response. Ensure that you are prevserving logs.</p> </li> 
+  <li> <p>Go to anypoint.mulesoft.com/accounts/login/&lt;domainname&gt;. This will redirect you to your IDP’s Sigle sign on page. Note: You can view your anypoint organization’s domain name by clicking Access Management → Organizations → &lt;Master org&gt;</p> </li> 
+  <li> <p>Enter IDP account credentials and authenticate yourself.</p> </li> 
   <li> <p>After successfully authenticating to the IdP, capture a SAML assertion by inspecting the <code>HTTP POST</code> sent by the browser to the following SAML Assertion URL:</p> 
    <div class="paragraph"> 
     <p><code>https://anypoint.mulesoft.com/accounts/login/receive-id</code></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Click on the specific row that has the above mentioned URL. In the Form data window on the right select the Params tab and copy the SAML response element.</p> 
    </div> </li> 
-  <li> <p>Use Chrome Developer Tools, Firebug for Firefox, or a SAML tracer to inspect the HTTP request, which is base64-encoded.</p> </li> 
   <li> <p>Log in to the MuleSoft Support Portal at the following URL:</p> 
    <div class="paragraph"> 
     <p><code>https://www.mulesoft.com/support-login</code></p> 
