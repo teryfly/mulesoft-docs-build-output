@@ -1471,46 +1471,76 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="associating-apps-with-the-domain"><a class="anchor" href="#associating-apps-with-the-domain"></a>Associating Apps with the Domain</h3> 
+   <h3 id="associating-apps-with-the-domain-in-studio"><a class="anchor" href="#associating-apps-with-the-domain-in-studio"></a>Associating Apps with the Domain in Studio</h3> 
    <div class="paragraph"> 
     <p>Note that apps can only be associated with one domain at a time.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To associate an existing app with a domain (Anypoint Studio):</p> 
+    <p>To associate an existing app with a domain:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>In the Project Explorer view, double click on the Mule app <strong>Properties</strong> &gt; <strong>Mule Project</strong>. Notice a <strong>Domain</strong> field, which by default is set to <code>default</code>. This value gives each project its independent domain. Change this value. The dropdown list on this field displays all of the domains you’ve created in the current workspace.</p> </li> 
+     <li> <p>In the Project Explorer or Package Explorer view, double-click the Mule app.</p> </li> 
+     <li> <p>In the menu that opens, click Properties.</p> </li> 
+     <li> <p>From Properties, click Mule Project.</p> </li> 
+     <li> <p>From the Domain field, select a domain for your project.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/assign+domain.png" alt="assign+domain"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>Note that when you select a domain, the Server Runtime for your project will match the domain’s Server Runtime automatically.</p> 
+      </div> </li> 
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/assign+domain.png" alt="assign+domain"></span></p> 
+    <p>The domain will appear in the <code>pom.xml</code> for your project, for example:</p> 
    </div> 
-   <div class="paragraph"> 
-    <p>Note that when picking a domain, the Server Runtime of your project automatically becomes that of the domain because these must always match.</p> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="XML">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;dependency&gt;</span>
+      <span class="tag">&lt;groupId&gt;</span>com.mycompany<span class="tag">&lt;/groupId&gt;</span>
+      <span class="tag">&lt;artifactId&gt;</span>mymuledomain<span class="tag">&lt;/artifactId&gt;</span>
+      <span class="tag">&lt;version&gt;</span>1.0.0<span class="tag">&lt;/version&gt;</span>
+      <span class="tag">&lt;classifier&gt;</span>mule-domain-SNAPSHOT<span class="tag">&lt;/classifier&gt;</span>
+      <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+  <span class="tag">&lt;/dependency&gt;</span>
+<span class="tag">&lt;/dependencies&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>If you are creating your apps outside Studio, you need to include the domain property in the&nbsp;<code>mule-artifact.json</code>&nbsp;file to associate an existing app:</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><code>domain: &lt;name of domain folder&gt;</code></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>For example:&nbsp;</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><code>domain: mule-test-domain</code></p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="associating-mule-apps-with-a-domain-outside-studio"><a class="anchor" href="#associating-mule-apps-with-a-domain-outside-studio"></a>Associating Mule Apps with a Domain (Outside Studio)</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>When creating a Mule app outside Studio, you need to include the <code>domain</code> property in the&nbsp;<code>mule-artifact.json</code>&nbsp;file to associate the domain your app:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>domain: &lt;name of domain folder&gt;</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Example:&nbsp;</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>domain: mule-test-domain</code></p> 
   </div> 
   <div class="sect2"> 
    <h3 id="referencing-shared-resources"><a class="anchor" href="#referencing-shared-resources"></a>Referencing Shared Resources</h3> 
@@ -1968,7 +1998,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#create_domain_project">Creating a New Domain</a></li><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#example-mule-domain-projects">Example Mule Domain Projects</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#create_domain_project">Creating a New Domain</a></li><li><a class="scroll-menu-link" href="#associating-mule-apps-with-a-domain-outside-studio">Associating Mule Apps with a Domain (Outside Studio)</a></li><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#example-mule-domain-projects">Example Mule Domain Projects</a></li><li><a class="scroll-menu-link" href="#tips">Tips</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
