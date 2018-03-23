@@ -1412,7 +1412,7 @@
    <p>The Anypoint Connector for Salesforce Composite provides you a way to integrate with Salesforce Composite API <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite.htm">Salesforce Composite API</a>. The connector exposes convenient methods for preparing sub-requests, execute them in one batch and parse the results. Also it offers the posibillity of creating SObject Trees through an operation separate from the batch ones, called "createSobjectTree". It provides <a href="https://docs.mulesoft.com/mule-user-guide/v/3.6/datasense">DataSense</a> on both preparation of sub-requests and parsing response of their execution and on the creation of the SObject Trees.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Read through this User Guide to understand how to set up and configure a basic integration flow using the connector. Read through the <a href="http://mulesoft.github.io/salesforce-composite-connector/">Technical Reference</a> to understand how the connector operations tie in with the Salesforce Composite API calls. You will also find <strong>demo applications</strong> here that illustrate how to use the connector operations.</p> 
+   <p>Read through this User Guide to understand how to set up and configure a basic integration flow using the connector. Read through the <a href="http://mulesoft.github.io/mule-salesforce-composite-connector/">Technical Reference</a> to understand how the connector operations tie in with the Salesforce Composite API calls. You will also find <strong>demo applications</strong> here that illustrate how to use the connector operations.</p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>Release Notes</strong>:&nbsp;<a href="/release-notes/salesforce-composite-connector-release-notes">Salesforce Composite Connector Release Notes</a>.</p> 
@@ -2064,8 +2064,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-composite http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</pre></td> 
+             <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-composite
+http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2074,20 +2076,10 @@
      <li> <p>Add the data-weave namespace as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml">xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"</code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>Add location of data weave schema referred by "dw" namespace with the following value:</p> 
+     <li> <p>Add location of DataWeave schema referred by "dw" namespace with the following value:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2096,8 +2088,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</pre></td> 
+             <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/dw
+http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2106,17 +2100,7 @@
      <li> <p>Add the context namespace as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>xmlns:context="http://www.springframework.org/schema/context"</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml">xmlns:context="http://www.springframework.org/schema/context"</code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Add location of contact schema referred by "context" namespace with the following value:</p> 
@@ -2138,17 +2122,7 @@
      <li> <p>Add the file namespace as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>xmlns:file="http://www.mulesoft.org/schema/mule/file"</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml">xmlns:file="http://www.mulesoft.org/schema/mule/file"</code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Add location of file schema referred by "file" namespace with the following value:</p> 
@@ -2160,8 +2134,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre>http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</pre></td> 
+             <td class="code"><pre>http://www.mulesoft.org/schema/mule/file
+http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2170,20 +2146,10 @@
      <li> <p>Add the vm namespace as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml">xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>Add location of vm schema referred by "vm" namespace with the following value:</p> 
+     <li> <p>Add location of the VM schema referred by "vm" namespace with the following value:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2192,8 +2158,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre>http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</pre></td> 
+             <td class="code"><pre>http://www.mulesoft.org/schema/mule/vm
+http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2202,17 +2170,7 @@
      <li> <p>Add a context:property-placeholder element to your project, then configure its attributes as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-app.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-app.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Add a sfdc-composite:config element to your project, then configure its attributes as follows:</p> 
@@ -2224,8 +2182,14 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
+4
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span> <span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span>
+<span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2258,8 +2222,12 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/input</span><span class="delimiter">"</span></span> <span class="attribute-name">moveToDirectory</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/processed</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/input</span><span class="delimiter">"</span></span>
+<span class="attribute-name">moveToDirectory</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/processed</span><span class="delimiter">"</span></span>
+<span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2274,8 +2242,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/items/item', payload, 'NODESET')]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span>
+<span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/items/item', payload, 'NODESET')]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2284,17 +2254,7 @@
      <li> <p>Within the flow element add a "mulexml:dom-to-xml-transformer" element after splitter as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;mulexml:dom-to-xml-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">DOM to XML</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;mulexml:dom-to-xml-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">DOM to XML</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Within the flow element add an empty "choice" element after dom-to-xml transformer as follows:</p> 
@@ -2328,8 +2288,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Unable to route item based on operation.</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Unable to route item based on operation.</span><span class="delimiter">"</span></span>
+<span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2402,8 +2364,12 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span>
+<span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2476,8 +2442,12 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2550,8 +2520,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Account</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Account</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2624,8 +2596,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2634,33 +2608,13 @@
      <li> <p>Within the flow element add a "collection-aggregator" element after "choice" as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Within the flow element add a "vm:outbound-endpoint" element after "collection-aggregator" as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Add another empty flow element to your project as follows:</p> 
@@ -2684,17 +2638,7 @@
      <li> <p>Within the flow element add a "vm:inbound-endpoint" element as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Within the flow element add a "sfdc-composite:execute-composite-batch" element after "vm:inbound-endpoint" as follows:</p> 
@@ -2706,8 +2650,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:execute-composite-batch</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Execute Sub-Requests</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:execute-composite-batch</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+ <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Execute Sub-Requests</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2716,17 +2662,7 @@
      <li> <p>Within the flow element add a "collection-splitter" element after "sfdc-composite:execute-composite-batch" as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;collection-splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;collection-splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Within the flow element add an empty "first-successful" element after "collection-splitter" as follows:</p> 
@@ -2756,8 +2692,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2772,8 +2710,10 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2806,8 +2746,12 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2874,8 +2818,12 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
+3
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+<span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span>
+<span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -2918,17 +2866,7 @@
      <li> <p>Within the flow element add a "collection-aggregator" element after "first-successful" as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Within the flow element add a "dw:transform-message" element after "collection-aggregator" as follows:</p> 
@@ -2974,14 +2912,16 @@
            <tbody> 
             <tr> 
              <td class="line-numbers"><pre>1
+2
 </pre></td> 
-             <td class="code"><pre><span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">batch_output.json</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+             <td class="code"><pre><span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/output</span><span class="delimiter">"</span></span>
+<span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">batch_output.json</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>In the end the xml file should look like this:</p> 
+     <li> <p>In the end the XML file should look like this:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -3112,6 +3052,43 @@
 121
 122
 123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
 </pre></td> 
              <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -3128,19 +3105,34 @@
         <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
         <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span>
         <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
-<span class="content">http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span> <span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="content">http://www.mulesoft.org/schema/mule/core</span>
+<span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/file</span>
+<span class="content">http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/xml</span>
+<span class="content">http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite</span>
+<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
+<span class="content">http://www.springframework.org/schema/context</span>
+<span class="content">http://www.springframework.org/schema/context/spring-context-current.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/vm</span>
+<span class="content">http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-app.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">project-nameFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/input</span><span class="delimiter">"</span></span> <span class="attribute-name">moveToDirectory</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/processed</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/items/item', payload, 'NODESET')]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/input</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">moveToDirectory</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/processed</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/items/item', payload, 'NODESET')]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;mulexml:dom-to-xml-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">DOM to XML</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
             <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/item/operation') == 'updateAccount']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
@@ -3153,7 +3145,9 @@
         Id: payload.item.sObject.id
 }<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
-                <span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;/when&gt;</span>
             <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/item/operation') == 'updateContact']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
                 <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Update Contact Transformer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
@@ -3165,7 +3159,9 @@
         Title: payload.item.sObject.Title
 }<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
-                <span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:pre-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                 <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span>
+                 <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;/when&gt;</span>
             <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/item/operation') == 'retrieveAccount']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
                 <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Retrieve Account Transformer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
@@ -3178,7 +3174,9 @@
         Type: payload.item.type
 }<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
-                <span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Account</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                 <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Account</span><span class="delimiter">"</span></span>
+                 <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;/when&gt;</span>
             <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath3('/item/operation') == 'retrieveContact']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
                 <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Retrieve Contact Transformer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
@@ -3191,24 +3189,35 @@
         Type: payload.item.type
 }<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
-                <span class="tag">&lt;sfdc-composite:pre-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:pre-retrieve</span>
+                <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Pre-Retrieve Contact</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;/when&gt;</span>
             <span class="tag">&lt;otherwise&gt;</span>
-                <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Unable to route item based on operation.</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Unable to route item based on operation.</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;/otherwise&gt;</span>
         <span class="tag">&lt;/choice&gt;</span>
-        <span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/flow&gt;</span>
     <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">project-nameFlow1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/toBeExecuted</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">VM</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;sfdc-composite:execute-composite-batch</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Execute Sub-Requests</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;sfdc-composite:execute-composite-batch</span>
+        <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Execute Sub-Requests</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;collection-splitter</span> <span class="attribute-name">enableCorrelation</span>=<span class="string"><span class="delimiter">"</span><span class="content">ALWAYS</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Splitter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;first-successful</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">First Successful</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+            <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Account</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;sfdc-composite:post-update</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+            <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">updateContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Update Contact</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
             <span class="tag">&lt;processor-chain&gt;</span>
-                <span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:post-retrieve</span>
+                <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveAccountSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
                 <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Retrieve Account Transformer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
                     <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/java
@@ -3217,7 +3226,10 @@ payload<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
             <span class="tag">&lt;/processor-chain&gt;</span>
             <span class="tag">&lt;processor-chain&gt;</span>
-                <span class="tag">&lt;sfdc-composite:post-retrieve</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;sfdc-composite:post-retrieve</span>
+                <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">subRequestCorrelationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">retrieveContactSubRequest</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Contact</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
                 <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Post Retrieve Contact Transformer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
                     <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/java
@@ -3226,14 +3238,16 @@ payload<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set
                 <span class="tag">&lt;/dw:transform-message&gt;</span>
             <span class="tag">&lt;/processor-chain&gt;</span>
         <span class="tag">&lt;/first-successful&gt;</span>
-        <span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;collection-aggregator</span> <span class="attribute-name">timeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">failOnTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Collection Aggregator</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
             <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/json
 ---
 payload<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
         <span class="tag">&lt;/dw:transform-message&gt;</span>
-        <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">batch_output.json</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">src/main/resources/output</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">batch_output.json</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
             </tr> 
@@ -3257,11 +3271,11 @@ payload<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set
      <li> <p>After creating the configuration, we need to validate the credentials through the "Test Connection…​" button.</p> </li> 
      <li> <p>Now that we know the credentials are ok and we can connect to Salesforce, we will choose the Operation that we want to execute, in this case: "Create sobject tree".</p> </li> 
      <li> <p>Two parameters should appear under the General section: "SObject Root Type" and "SObject Tree".</p> </li> 
-     <li> <p>The "SObject Root Type" parameter represents the Sobject type of the root of the trees that will be created. When a value is chosen (e.g. "Account"), DataSense will bring the input and output metadata based on the chosen root type. The metadata tree has a depth of 5 levels, since that is the current limitation from <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm">Salesforce</a>.</p> </li> 
+     <li> <p>The "SObject Root Type" parameter represents the Sobject type of the root of the trees that will be created. When a value is chosen (for example "Account"), DataSense will bring the input and output metadata based on the chosen root type. The metadata tree has a depth of 5 levels, since that is the current limitation from <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm">Salesforce</a>.</p> </li> 
      <li> <p>The "SObject Tree" parameter will take as input a reference to a Map containing the Sobject Trees to be created. For more details you can check this <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/requests_composite_sobject_tree.htm#sobject-tree-input">SObject Tree Input example from Salesforce</a>.</p> </li> 
      <li> <p>To create the Map containig the tree, a Transform Message component can be used, to map the information from any format to the format expected by the operation.</p> </li> 
      <li> <p>The output of the operation will contain the Salesforce Id, and the referece Id of the objects create successfully along with a flag called "hasErrors" that gives the status of the whole request ("false" if the entire tree was created successfully and "true" if the creation of any of the objects has failed).</p> </li> 
-     <li> <p>An example flow could be the one below:</p> 
+     <li> <p>An example flow follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -3340,24 +3354,68 @@ payload<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set
 69
 70
 71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
 </pre></td> 
              <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
-<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:json</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/json</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:dw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:metadata</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/metadata</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:sfdc-composite</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
+<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:json</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/json</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:dw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:metadata</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/metadata</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:sfdc-composite</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+<span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
         <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
         <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span> <span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span>
+        <span class="content">http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/core</span>
+<span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/http</span>
+<span class="content">http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite</span>
+<span class="content">http://www.mulesoft.org/schema/mule/sfdc-composite/current/mule-sfdc-composite.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span>
+<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/json</span>
+<span class="content">http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span>
+     <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;sfdc-composite:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">consumerKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerKey}</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.consumerSecret}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">securityToken</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.securityToken}</span><span class="delimiter">"</span></span> <span class="attribute-name">tokenEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.tokenEndpoint}</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce Composite: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">salesforce-composite-create-sobject-trees</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/create-trees</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">metadata:id</span>=<span class="string"><span class="delimiter">"</span><span class="content">ca0b6bb9-ba1d-4f8a-9ffd-cba303bd8903</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/create-trees</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
             <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/java
 ---
@@ -3397,10 +3455,14 @@ payload.sObjectTrees.records map ((record , indexOfRecord) -&gt; {
         }
 })<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
         <span class="tag">&lt;/dw:transform-message&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The input data is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log the payload after it is transformed into a Map</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The input data is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log the payload after it is transformed into a Map</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 
-        <span class="tag">&lt;sfdc-composite:create-sobject-tree</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Composite Create SObject Tree</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The result is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log the result received from Salesforce</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;sfdc-composite:create-sobject-tree</span>
+        <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce_Composite__Configuration</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Composite Create SObject Tree</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The result is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log the result received from Salesforce</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform the response from Salesforce to JSON</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
             <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/json
@@ -3419,7 +3481,7 @@ payload.sObjectTrees.records map ((record , indexOfRecord) -&gt; {
        </div> 
       </div> </li> 
      <li> <p>DataWeave was used in the previous example to map the trees taken from a JSON to the Map that the operation is expecting.</p> </li> 
-     <li> <p>For a practical example you can check the "salesforce-composite-sobject-tree-demo" from <a href="http://mulesoft.github.io/salesforce-composite-connector/">Technical Reference</a>.</p> </li> 
+     <li> <p>For a practical example you can check the "salesforce-composite-sobject-tree-demo" from <a href="http://mulesoft.github.io/mule-salesforce-composite-connector/">Technical Reference</a>.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -3430,10 +3492,10 @@ payload.sObjectTrees.records map ((record , indexOfRecord) -&gt; {
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn about the <a href="/mule-user-guide/v/3.7/dataweave-tutorial">Data Weave</a> transformer, the most efficient way to assign mappings to data.</p> </li> 
-    <li> <p>Learn about the <a href="/mule-user-guide/v/3.7/choice-flow-control-reference">Choice</a></p> </li> 
-    <li> <p>Learn about the <a href="/mule-user-guide/v/3.6/splitter-flow-control-reference">Splitter</a></p> </li> 
-    <li> <p>Read more about <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
+    <li> <p>Learn about the <a href="/mule-user-guide/v/3.9/dataweave-tutorial">Data Weave</a> transformer, the most efficient way to assign mappings to data.</p> </li> 
+    <li> <p>Learn about the <a href="/mule-user-guide/v/3.9/choice-flow-control-reference">Choice</a></p> </li> 
+    <li> <p>Learn about the <a href="/mule-user-guide/v/3.9/splitter-flow-control-reference">Splitter</a></p> </li> 
+    <li> <p>Read more about <a href="/mule-user-guide/v/3.9/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 

@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.9/netsuite-openair-connector" />
-  <meta name="description" content="Anypoint Connector for NetSuite OpenAir is a closed source enterprise connector which provides a connection between OpenAir and third-party softwar..." />
+  <meta name="description" content="Select Anypoint Connector for NetSuite OpenAir is a closed source enterprise connector which provides a connection between OpenAir and third-party ..." />
   <meta class="swiftype" name="title" data-type="string" content="NetSuite OpenAir Connector" />
   <meta class="swiftype" name="version" data-type="enum" content="3.9" />
 </head>
@@ -1409,10 +1409,13 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
+   <p><em>Select</em></p> 
+  </div> 
+  <div class="paragraph"> 
    <p>Anypoint Connector for NetSuite OpenAir is a closed source enterprise connector which provides a connection between OpenAir and third-party software. The OpenAir connector is a SOAP-based connector developed with link:/anypoint-connector-devkit/v/3.8/Anypoint Connector DevKit 3.8.1].</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Read through this user guide to understand how to set up and configure a basic flow using the connector. Track feature additions, compatibility, limitations and API version updates with each release of the connector using the <a href="/release-notes/netsuite-openair-connector-release-notes">OpenAir Connector Release Notes</a>. Review the connector operations and functionality using the <a href="http://mulesoft.github.io/openair-connector/">Connector ApiDoc Technical Reference and demo applications</a>.</p> 
+   <p>Read through this user guide to understand how to set up and configure a basic flow using the connector. Track feature additions, compatibility, limitations and API version updates with each release of the connector using the <a href="/release-notes/netsuite-openair-connector-release-notes">OpenAir Connector Release Notes</a>. Review the connector operations and functionality using the <a href="http://mulesoft.github.io/mule-netsuite-openair-connector/">Connector API Doc Technical Reference and demo applications</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>MuleSoft maintains this connector under the <a href="/mule-user-guide/v/3.9/anypoint-connectors#connector-categories"><em>Select</em></a> support policy.</p> 
@@ -1618,7 +1621,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> See the full list of operations for the latest version of the connector <a href="http://mulesoft.github.io/openair-connector/">here</a> </td> 
+      <td class="content"> See the full list of operations for the latest version of the connector <a href="http://mulesoft.github.io/mule-netsuite-openair-connector/">here</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1626,7 +1629,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
   <div class="sect2"> 
    <h3 id="configuring-the-global-element"><a class="anchor" href="#configuring-the-global-element"></a>Configuring the Global Element</h3> 
    <div class="paragraph"> 
-    <p>To use the OpenAir connector in your Mule application, configure a global OpenAir element that can be used by the OpenAir connector (read more about <a href="/mule-user-guide/v/3.9/global-elements">Global Elements</a>.) The OpenAir connector offers one global configuration, requiring the following credentials: <strong>Username</strong>, <strong>Password</strong>, <strong>Company ID</strong>, <strong>API Namespace</strong>, and <strong>API Key</strong>.</p> 
+    <p>To use the OpenAir connector in your Mule application, configure a global OpenAir element that can be used by the OpenAir connector (read more about <a href="/mule-user-guide/v/3.9/global-elements">Global Elements</a>.) The OpenAir connector offers one global configuration, requiring the following credentials: Username, Password, Company ID, API Namespace, and API Key.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -1644,7 +1647,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Username</strong></p> 
+         <p>Username</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1658,7 +1661,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Password</strong></p> 
+         <p>Password</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1672,7 +1675,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Company ID</strong></p> 
+         <p>Company ID</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1686,7 +1689,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>API Namespace</strong></p> 
+         <p>API Namespace</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1700,7 +1703,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>API Key</strong></p> 
+         <p>API Key</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1714,7 +1717,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Connection Timeout</strong></p> 
+         <p>Connection Timeout</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1728,7 +1731,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><strong>Read Timeout</strong></p> 
+         <p>Read Timeout</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1779,7 +1782,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>To enable the automatic <strong>Reconnection</strong> feature:</p> 
+         <p>To enable the automatic Reconnection feature:</p> 
         </div> 
         <div class="olist arabic"> 
          <ol class="arabic"> 
@@ -1884,7 +1887,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
      <li> <p>Create a new Mule Project in Anypoint Studio.</p> </li> 
      <li> <p>Drag and drop an HTTP Listener onto the canvas and configure it to listen on port 8081.</p> </li> 
      <li> <p>Drag and drop the OpenAir connector into the flow and configure the connector as described above. (The "Add" operation is selected as the demonstrated operation for this use case.)</p> </li> 
-     <li> <p>Drag and drop a <strong>Transform Message</strong> component between the HTTP connector and the OpenAir connector.</p> </li> 
+     <li> <p>Drag and drop a Transform Message component between the HTTP connector and the OpenAir connector.</p> </li> 
      <li> <p>Inside the component insert the DataWeave code below into the DataWeave editor. The script adds both oaCustomer objects to your NetSuite OpenAir instance.</p> 
       <div class="listingblock"> 
        <div class="content"> 
@@ -1935,7 +1938,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
           </table></code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>Drag and drop another <strong>Transform Message</strong> component after the OpenAir connector, and insert the DataWeave script below into the <strong>Transform Message</strong> component’s DataWeave editor. The script should return the IDs of the newly added OpenAir objects.</p> 
+     <li> <p>Drag and drop another Transform Message component after the OpenAir connector, and insert the DataWeave script below into the Transform Message component’s DataWeave editor. The script should return the IDs of the newly added OpenAir objects.</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="code">
@@ -1965,7 +1968,7 @@ http://www.mulesoft.org/schema/mule/openair http://www.mulesoft.org/schema/mule/
           </table></code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>Save and run the project as a Mule Application by right-clicking the project name in the Package Explorer, selecting <strong>Run As</strong> &gt; <strong>Mule Application</strong>.</p> </li> 
+     <li> <p>Save and run the project as a Mule Application by right-clicking the project name in the Package Explorer, selecting Run As &gt; Mule Application.</p> </li> 
      <li> <p>After hitting the HTTP endpoint you configured, your browser should display the following JSON:</p> 
       <div class="listingblock"> 
        <div class="content"> 
