@@ -849,7 +849,7 @@
 <li class="active expanded">
 <i></i>
 <a href="/connectors/x12-edi-connector">X12 EDI Connector</a><ul style="display: block;">
-<li><i></i><a href="/connectors/x12-edi-connector-hipaa">X12 EDI Connector HIPAA</a></li><li><i></i><a href="/connectors/x12-edi-connector-reference">X12 EDI Connector Reference</a></li><li><i></i><a href="/connectors/x12-edi-supported-doc-types">X12 EDI Supported Document Types</a></li><li><i></i><a href="/connectors/x12-edi-schema-language-reference">X12 EDI Schema Language Reference</a></li></ul></li>
+<li><i></i><a href="/connectors/x12-edi-connector-hipaa">X12 EDI Connector HIPAA</a></li><li><i></i><a href="/connectors/x12-edi-connector-reference">X12 EDI Connector Reference</a></li><li><i></i><a href="/connectors/x12-edi-supported-doc-types">X12 EDI Supported Document Types</a></li><li><i></i><a href="/connectors/x12-edi-schema-language-reference">X12 EDI Schema Language Reference</a></li><li><i></i><a href="/connectors/x12-edi-versions-hipaa">X12 EDI Supported HIPAA Versions</a></li><li><i></i><a href="/connectors/x12-edi-versions-x12">X12 Supported X12 Versions</a></li></ul></li>
 <li>
 <i></i>
 <a href="/connectors/xml-module">XML Module</a><ul>
@@ -1306,6 +1306,7 @@
    <ul> 
     <li> <p>X12 EDI connector 1.x only supports working with transaction sets from a single version of the standard. Mule 4 X12 EDI connector 2.x supports working with transaction sets from multiple versions of the standards. The version information included in the group (GS segment) data is used to identify the standard version, and the transaction set identifier determines the particular schema.</p> </li> 
     <li> <p>Clearer configuration options are provided for standard X12 vs HIPAA usage. The formValidation parameter selects whether you’re using standard X12, HIPAA with SNIP Type 1 validation, or HIPAA with SNIP Type 2 validation (other SNIP validation types are not implemented at the connector level, but can be implemented in your application code). Only standard X12 schemas may be used when X12 is selected; only HIPAA schemas may be used when either HIPAA option is selected.</p> </li> 
+    <li> <p>The default character encoding is taken from the Mule platform, but can be changed to one of the standard X12 character encodings in the configuration.</p> </li> 
     <li> <p>Identification parameters are no longer used for the read and write operations. You can configure all parameter values in the actual message data passed to the write operation.</p> </li> 
     <li> <p>X12 EDI Connector 1.x provides a validateBeforeWrite configuration option to check for any errors in data before writing to the output stream. In the X12 EDI connector 2.x this behavior is the only mode of operation and the configuration parameter is no longer supported.</p> </li> 
    </ul> 
@@ -1401,7 +1402,7 @@
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p>Overlay schemas are very similar in structure to a complete schema definition, but instead of providing all the details of the schema structure they only list changes. Overlay schemas specify how to use implementation conventions with a particular trading partner to extend and customizes the standard.</p> 
+    <p>Overlay schemas are very similar in structure to a <a href="/anypoint-b2b/edi-schema-language-reference">complete schema definition</a>, but instead of providing all the details of the schema structure they only list changes. Overlay schemas specify how to use implementation conventions with a particular trading partner to extend and customizes the standard.</p> 
    </div> 
    <div class="paragraph"> 
     <p>The following example provides the start of a sample overlay schema that modifies the basic X12 005010 850 transaction set definition. This example customizes the CUR segment and specifies that it is unused, thereby ensuring it is hidden from the mapping structures in Anypoint Studio.</p> 
@@ -1948,15 +1949,13 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>Fail when a receive value is longer or shorter than allowed.</p> </li> 
-     <li> <p>Fail when an invalid character is in a value.</p> </li> 
-     <li> <p>Fail when there are too many repeats of a value.</p> </li> 
-     <li> <p>Fail when an unknown segment is present in a transaction set.</p> </li> 
-     <li> <p>Fail when a segment is out of order in a transaction set.</p> </li> 
-     <li> <p>Fail when an unused segment is included in a transaction set.</p> </li> 
-     <li> <p>Fail when there are too many repeats of a segment.</p> </li> 
-     <li> <p>Fail when a required value is missing.</p> </li> 
-     <li> <p>Fail when a value length is outside an allowed range.</p> </li> 
+     <li> <p>Enforce minimum and maximum lengths for receive values.</p> </li> 
+     <li> <p>Enforce allowed character set.</p> </li> 
+     <li> <p>Enforce repetition count limits for receive values.</p> </li> 
+     <li> <p>Allow unknown segments in a transaction set.</p> </li> 
+     <li> <p>Enforce segment order in a transaction set.</p> </li> 
+     <li> <p>Allow segments marked as Unused in a transaction set.</p> </li> 
+     <li> <p>Enforce segment repetition count limits in a transaction set.</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -1967,12 +1966,13 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>Report segment error details in the generated acknowledgments.</p> </li> 
-     <li> <p>Require unique ISA control numbers.</p> </li> 
-     <li> <p>Require unique GS control numbers.</p> </li> 
-     <li> <p>Require unique transaction set control numbers.</p> </li> 
-     <li> <p>Acknowledge every received transaction set (rather than using implicit acknowledgments for transaction sets without errors).</p> </li> 
-     <li> <p>Generate 997 Functional Acknowledgments or 999 Implementation Acknowledgments. The 997 Functional Acknowledgments are generated by default when <code>Generate 999 Functional Acknowledgments</code> is set to false. When set to true, the X12 connector generates 999 Implementation Acknowledgments. Note that the support for 999 Implementation Acknowledgments does not include CTX segment generation.</p> </li> 
+     <li> <p>Require unique ISA Interchange Control Numbers (ISA13).</p> </li> 
+     <li> <p>Enforce globally unique Group Control Numbers (GS06) for received functional groups.</p> </li> 
+     <li> <p>Enforce globally unique Transaction Set Control Numbers (ST02) for received transaction sets.</p> </li> 
+     <li> <p>Set the minimum number of days to store interchange, group, and transaction set numbers for checking uniqueness.</p> </li> 
+     <li> <p>Include a separate AK2/AK5 (997) or AK2/IK5 (999) acknowledgment for every received transaction set (rather than using implicit acknowledgments for transaction sets without errors).</p> </li> 
+     <li> <p>Generate 999 Implementation Acknowledgments, rather than the 997 Functional Acknowledgments generated by default. Note that the support for 999 Implementation Acknowledgments does not include CTX segment generation.</p> </li> 
+     <li> <p>Report segment error details to sender in the generated 997/999 acknowledgments.</p> </li> 
      <li> <p>Automatically include a standard 997 or 999 schema that matches the generated acknowledgment in the configuration for received messages.</p> </li> 
     </ul> 
    </div> 
@@ -2140,8 +2140,8 @@ output application/java
       <td class="tableblock halign-left valign-top"><p class="tableblock">List of paths for schemas to be used by connector. The paths may be either for a file system or classpath.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">characterEncoding="ASCII"/"ISO8859_1"/"IBM1047"/"UTF8"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Character encoding for messages, default is "ASCII". This character encoding is always used to both send and receive messages.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">characterEncoding="PLATFORM"/"ASCII"/"ISO8859_1"/"IBM1047"/"UTF8"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Character encoding for messages, default is "PLATFORM", meaning the Mule platform default encoding. This character encoding is always used to both send and receive messages.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">stringCharacterSet="BASIC"/"EXTENDED"/"UNRESTRICTED"</p></td> 
@@ -2149,7 +2149,7 @@ output application/java
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">stringSubstitutionChar="?"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Substitution character used to replace invalid characters in string values.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Substitution character used to replace invalid characters in string values. Default is none.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">versionIdentifierSuffix="XYZ"</p></td> 
@@ -2216,7 +2216,7 @@ output application/java
     </tbody> 
    </table> 
    <div class="paragraph"> 
-    <p>Parser parameters control the parser operation (all are optional, with default values as shown):</p> 
+    <p>Parser parameters control the parser operation and the types of error conditions which cause receive transaction sets to be rejected (all are optional, with default values as shown):</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -2231,44 +2231,48 @@ output application/java
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">valueLengthErrorFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value length outside allowed range flag.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">enforceLengthLimits="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce minimum and maximum lengths for receive values.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">invalidCharacterInValueFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value contains invalid characters flag.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">enforceCharacterSet="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce allowed character set.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">wrongValuesRepeatsFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value is repeated too many times.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">enforceValueRepeats="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce repetition count limits for receive values.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">unknownSegmentFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when an unknown segment is present in a transaction set.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">allowUnknownSegments="false"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow unknown segments in a transaction sett.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">segmentOutOfOrderFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment is out of order in a transaction set.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">enforceSegmentOrder="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment order in a transaction set.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">unusedSegmentPresentFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment marked as Unused is included in a transaction set.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">allowUnusedSegments="false"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow segments marked as 'Unused' in a transaction set.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">wrongSegmentsRepeatsFail="true"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment occurs too many times in a transaction set.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">enforceSegmentRepeats="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment repetition count limits in a transaction set.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueInterchangeNumbers="false"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject an interchange if the Interchange Control Number has previously been processed. The default behavior is to record the interchange numbers previously processed and reject any duplicate interchange numbers from the same partner (as determined by the interchange sender and receiver identification). If false, this instead allows processing of the received interchange to continue and leaves it to the application flow to track numbers and handle appropriately.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueInterchanges="true"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique ISA Interchange Control Numbers (ISA13). The default behavior is to record the interchange numbers previously processed and reject any duplicate interchange numbers from the same partner (as determined by the interchange sender and receiver identification). If false, this instead allows processing of the received interchange to continue and leaves it to the application flow to track numbers and handle appropriately.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueGroupNumbers="false"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject a functional group if the Group Control Number has previously been processed. By default, group numbers only need to be unique with an interchange. If true, this instead requires group numbers to be unique across all interchanges received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueGroups="false"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">"Enforce globally unique Group Control Numbers (GS06) for received functional groups. By default, group numbers only need to be unique with an interchange. If true, this instead requires group numbers to be unique across all interchanges received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueTransactionNumbers="false"</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject a transaction set if the Transaction Set Control Number has previously been processed. By default, transaction set control numbers only need to be unique with a particular functional group. If true, this instead requires transaction set numbers to be unique across all functional groups received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">requireUniqueTransactionSets="false"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce globally unique Transaction Set Control Numbers (ST02) for received transaction sets. By default, transaction set control numbers only need to be unique with a particular functional group. If true, this instead requires transaction set numbers to be unique across all functional groups received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">daysToStore="30"</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days to store interchange, group, and transaction set numbers for checking uniqueness.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">ackAllSets="false"</p></td> 
@@ -2728,6 +2732,7 @@ output application/java
   <div class="ulist"> 
    <ul> 
     <li> <p><a href="/release-notes/x12-connector-release-notes">X12 EDI Connector Release Notes</a>.</p> </li> 
+    <li> <p><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a>.</p> </li> 
     <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a>.</p> </li> 
     <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a>.</p> </li> 
    </ul> 
