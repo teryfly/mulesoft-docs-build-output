@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/connectors/x12-edi-connector-reference" />
-  <meta name="description" content="Connection ExpirationPolicy String String String String String String Enumeration, one of: Array of String Enumeration, one of: Enumeration, one of..." />
+  <meta name="description" content="ExpirationPolicy String String String String String String Enumeration, one of: Array of String Enumeration, one of: Enumeration, one of: String St..." />
   <meta class="swiftype" name="title" data-type="string" content="X12 EDI Connector Reference" />
 </head>
 <body>
@@ -1303,18 +1303,6 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Connection</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Connection</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The connection types that can be provided to this configuration.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-     </tr> 
-     <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Expiration Policy</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
@@ -1322,12 +1310,12 @@
          <p>ExpirationPolicy</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean the platform expires an eligible instance. The runtime purges instances as it sees fit.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform expires the instance at the exact moment that it becomes eligible. The runtime actually purges the instances as it sees fit.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule interchange sender/receiver ID qualifier (ISA05/ISA07)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule ID qualifier</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1339,7 +1327,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule interchange sender/receiver ID (ISA06/ISA08)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule interchange ID</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1351,7 +1339,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule application sender/receiver code (GS02/GS03)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule application code</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1363,7 +1351,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner interchange sender/receiver ID qualifier (ISA05/ISA07)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner ID qualifier</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1375,7 +1363,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner interchange sender/receiver ID (ISA06/ISA08)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner interchange ID</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1387,14 +1375,14 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner application sender/receiver code (GS02/GS03)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Partner application code</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Application Code for partner in group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the GS Application Sender’s Code must match this value. On the send side, this value is used as the default GS Application Receiver’s Code when not set in the message data.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Application Code for partner in group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the GS Application Sender’s Code must match this value. On the send side, this value is used as the default GS Application Reciever’s Code when not set in the message data.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1438,6 +1426,7 @@
         </div> 
         <div class="ulist"> 
          <ul> 
+          <li> <p>PLATFORM</p> </li> 
           <li> <p>ASCII</p> </li> 
           <li> <p>ISO8859_1</p> </li> 
           <li> <p>IBM1047</p> </li> 
@@ -1446,7 +1435,7 @@
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Character encoding for messages. This character encoding is always used for both send and receive messages.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ASCII</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">PLATFORM</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
@@ -1469,7 +1458,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">String substitution character</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Substitution character</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1481,139 +1470,151 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Version identifier code suffix</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Version identifier suffix</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Version identifier code suffix for group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the GS Version / Release / Industry Identifier Code must consist of the X12 schema version (004010, 005010, etc.) followed by this suffix. If this value is not set, the receive only verifies that the GS version identifier code starts with the configured schema version. On the send side, the combination of the X12 schema version and this suffix is used as the GS version identifier code.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Version identifier code suffix for group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the the GS Version, Release, and Industry Identifier Code must consist of the X12 schema version (004010, 005010, etc.) followed by this suffix. If this value is not set, the receive only verifies that the GS version identifier code starts with the configured schema version. On the send side, the combination of the X12 schema version and this suffix is used as the GS version identifier code.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a value length is outside an allowed range.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce length limits</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value length outside allowed range flag. If true, a transaction with this error is rejected; if false, the value is used anyway and the transaction is not rejected. In either case the error is logged and reported in 997/999 functional acknowledgments.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce minimum and maximum lengths for receive values. If true, a transaction with values too long or too short is rejected; if false, the values are used anyway and the transaction is not rejected. In either case the error is logged and reported in 997/999 acknowledgments.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when an invalid character is in a value.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce character set</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value contains invalid characters flag. If true, a transaction with this error is rejected; if false, the character is either passed through or substituted and the transaction is not rejected. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce allowed character set flag. If true, a transaction with invalid characters is rejected; if false, the characters are either passed through or substituted and the transaction is not rejected. In either case the error is reported in 997/999 acknowledgments.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when there are too many repeats of a value.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce value repeats</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when receive value is repeated too many times. If true, a transaction with this error is rejected; if false, the value is accepted and the transaction is not rejected. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce repetition count limits for receive values. If true, a transaction with values repeated too many or too few times is rejected; if false, the value are accepted and the transaction is not rejected. In either case the error is reported in 997/999 acknowledgments.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when an unknown segment is in the message.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow unknown segments</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when an unknown segment is present in a transaction set. If true, a transaction with this error is rejected; if false, the segment is ignored and the transaction is not rejected. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment is out of order in a message.</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment is out of order in a transaction set. If true, a transaction with this error is rejected; if false and the segment can be reordered the transaction is not rejected. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when an unused segment is included in a message.</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment marked as Unused is included in a transaction set. If true, a transaction with this error is rejected; if false, the transaction is not rejected and the unused segment is ignored. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when there are too many repeats of a segment.</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Fail when a segment occurs too many times in a transaction set. If true, a transaction with this error is rejected; if false, the transaction is not rejected. In either case the error is reported in 997/999 functional acknowledgments.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique ISA control numbers</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject an interchange if the Interchange Control Number has previously been processed. The normal behavior is to record the interchange numbers previously processed and reject any duplicate interchange numbers from the same partner (as determined by the interchange sender and receiver identification). If false, this instead allows processing of the received interchange to continue and leaves it to the application flow to track numbers and handle appropriately.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow unknown segments in a transaction set. If false, a transaction containing any unknown segments is rejected; if true, unknown segments are ignored and the transaction is not rejected. In either case the error is reported in 997/999 acknowledgments.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique GS control numbers</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment order</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject a functional group if the Group Control Number has previously been processed. By default, group numbers only need to be unique with an interchange. If true, this instead requires group numbers to be unique across all interchanges received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment order in a transaction set. If true, a transaction with segments out of order is rejected; if false and the segment can be reordered the transaction is not rejected. In either case the error is reported in 997/999 acknowledgments.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique transaction set control numbers</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow unused segments</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reject a transaction set if the Transaction Set Control Number has previously been processed. By default, transaction set control numbers only need to be unique with a particular functional group. If true, this instead requires transaction set numbers to be unique across all functional groups received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Allow segments marked as 'Unused' in a transaction set. If false, a transaction containing segments marked as unused in the schema is rejected; if true, the transaction is not rejected and the unused segments are ignored. In either case the error is reported in 997/999 acknowledgments.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledge every received transaction set</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment repeats</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce segment repetition count limits in a transaction set. If true, a transaction with a segment repeated too many times is rejected; if false, the transaction is not rejected. In either case the error is reported in 997/999 acknowledgments.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique interchanges</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique Interchange Control Numbers (ISA13) for received interchanges. The normal behavior is to record the interchange numbers previously processed and reject any duplicate interchange numbers from the same partner (as determined by the interchange sender and receiver identification). If false, this instead allows processing of the received interchange to continue and leaves it to the application flow to track numbers and handle appropriately.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique groups</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce globally unique Group Control Numbers (GS06) for received functional groups. By default, group numbers only need to be unique with an interchange. If true, this instead requires group numbers to be unique across all interchanges received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique transactions</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Enforce globally unique Transaction Set Control Numbers (ST02) for received transaction sets. By default, transaction set control numbers only need to be unique with a particular functional group. If true, this instead requires transaction set numbers to be unique across all functional groups received from the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Store time-to-live</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days to store interchange, group, and transaction set numbers for checking uniqueness. This value is only used when unique interchange, group, and/or transaction set numbers are required by the configuration. The default persistent object store from the Mule configuration is always used for storing the received identifier numbers, and this parameter sets the entry time-to-live for these stored values.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledge every transaction</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1625,7 +1626,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Generate 999 Functional Acknowledgments</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Generate 999 acknowledgments</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1637,79 +1638,79 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Report segment error details to sender (in 997/999)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Report segment details</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Report segment error details to sender in 997/999 flag. If true, the details of any segment errors will be included in a generated 997/999. If false, the details will not be included.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Report segment error details to sender in 997/999. If true, the details of any segment errors are included in a generated 997/999. If false, the details are not included.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Automatically include 997/999 Functional Acknowledgment schema</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Include Acknowledgment schema</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Expect 997 or 999 Functional Acknowledgments and include 997/999 schema. By default, the schema for 997/999 acknowledgment transaction sets is automatically included in the set of schemas used by the X12 EDI Module. If false, you need to directly specify the 997 and/or 999 schema if you want these to be processed as input. The schemas used for generating 997 or 999 Functional Acknowledgments are hard coded and cannot be modified.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Expect 997 or 999 Functional Acknowledgments and include 997/999 schema. By default, the schema for 997/999 acknowledgment transaction sets is automatically included in the set of schemas used by the X12 EDI Module. If false, you need to directly specify the 997 and/or 999 schema if you want these to be processed as input. The schemas used for generating 997 or 999 Functional Acknowledgments are hardcoded and cannot be modified.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Data element separator character</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Data element separator</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Optional data element separator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Data element separator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Component element separator character</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Component element separator</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Optional component separator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Component element separator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Repetition separator character</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Repetition separator</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Optional repetition separator character. The configured value is used by default for all output messages, but can be overridden at the message level. The value 'U' means repetitions are not used.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Repetition separator character (if used). The configured value is used by default for all output messages, but can be overridden at the message level. The value 'U' means repetitions are not used.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Segment terminator character</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Segment terminator</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Optional segment terminator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Segment terminator character. The configured value is used by default for all output messages, but can be overridden at the message level.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Line ending between segments</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Segment line ending</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1729,43 +1730,43 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use unique GS control numbers</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Unique group numbers</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Send unique Group Control Numbers. By default, functional group control numbers are assigned sequentially within each interchange and are reused in different interchanges. If true, this instead assigns unique group numbers across all interchanges sent to the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send globally unique Group Control Numbers (GS06). By default, functional group control numbers are assigned sequentially within each interchange and are reused in different interchanges. If true, this instead assigns unique group numbers across all interchanges sent to the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use unique Transaction Set control numbers</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Unique transaction numbers</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Send unique Transaction Set Control Numbers. By default, transaction set control numbers are assigned sequentially within each functional group and are reused in different groups. If true, this instead assigns unique transaction set numbers across all interchanges sent to the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send globally unique Transaction Set Control Numbers (ST02). By default, transaction set control numbers are assigned sequentially within each functional group and are reused in different groups. If true, this instead assigns unique transaction set numbers across all interchanges sent to the same partner and application (as determined by the interchange sender and receiver identification, combined with the functional group sender and receiver application codes).</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation convention reference (ST03)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation reference</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation convention reference for transactions (ST segment). If this value is set, it is used as the ST Implementation Convention Reference unless overridden in the message parameters.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation convention reference for transactions (ST03). If this value is set, it is used as the ST03 Implementation Convention Reference unless overridden in the message parameters.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Interchange control number</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial interchange number</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1777,7 +1778,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial GS control number</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial group number</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1789,7 +1790,7 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Transaction Set control number</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial transaction number</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
@@ -1801,77 +1802,34 @@
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Request Interchange acknowledgments (ISA14)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Request acknowledgments</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Request acknowledgments for sent transactions flag. If true, 997/999 acknowledgments will be requested for all sent transactions.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Request acknowledgments for sent transactions flag (ISA14). If true, 997/999 acknowledgments are requested for all sent transactions.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Default Interchange usage indicator (ISA15)</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Default usage indicator</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Default ISA15 interchange usage indicator ("I" for Information, "P" for Production Data, "T" for Test Data).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Default interchange usage indicator (ISA15): I for Information, P for Production Data, and T for Test Data.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="connection-types"><a class="anchor" href="#connection-types"></a>Connection Types</h2> 
- <div class="sectionbody"> 
-  <div class="sect4"> 
-   <h5 id="config_connection"><a class="anchor" href="#config_connection"></a>Connection</h5> 
-  </div> 
-  <div class="sect4"> 
-   <h5 id="parameters-2"><a class="anchor" href="#parameters-2"></a>Parameters</h5> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Default Value</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Reconnection</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect3"> 
-   <h4 id="associated-operations"><a class="anchor" href="#associated-operations"></a>Associated Operations</h4> 
+  <div class="sect2"> 
+   <h3 id="associated-operations"><a class="anchor" href="#associated-operations"></a>Associated Operations</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>read</p> </li> 
@@ -1882,18 +1840,16 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="operations"><a class="anchor" href="#operations"></a>Operations</h2> 
- <div class="sectionbody"> 
- </div> 
-</div> 
-<div class="sect1"> 
  <h2 id="read"><a class="anchor" href="#read"></a>Read</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p><code>&lt;x12:read&gt;</code></p> 
   </div> 
+  <div class="paragraph"> 
+   <p>Transform an input stream of EDI text into the maps and lists structure of the EDI data.</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="parameters-3"><a class="anchor" href="#parameters-3"></a>Parameters</h3> 
+   <h3 id="parameters-2"><a class="anchor" href="#parameters-2"></a>Parameters</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col> 
@@ -1939,7 +1895,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable that stores the output of this operation.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable that stores the operation’s output.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1951,23 +1907,8 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate this expression against the operation’s output and store the results in the target variable.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression to evaluate against the operation’s output and to store the outcome of that expression in the target variable.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
@@ -1975,6 +1916,22 @@
   </div> 
   <div class="sect2"> 
    <h3 id="output"><a class="anchor" href="#output"></a>Output</h3> 
+   <div class="paragraph"> 
+    <p>[cols="30a,70a]|=== |Type |Object</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 100%;"> 
+    </colgroup> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">=== For Configurations </p><p class="tableblock">* config </p><p class="tableblock">=== Throws </p><p class="tableblock">* X12:UNKNOWN * X12:WRITE * X12:SCHEMA * X12:PARSE </p><p class="tableblock"></p><p class="tableblock">== Write </p><p class="tableblock"><code>&lt;x12:write&gt;</code> </p><p class="tableblock">Transform the maps and lists structure of EDI data into an EDI text stream. </p><p class="tableblock"></p><p class="tableblock">=== Parameters </p><p class="tableblock">[%header%autowidth.spread]</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p>| Name | Type | Description | Default Value | Required | Configuration | String | The name of the configuration to use. | |x | Write Content a| Object | | <code><mark>[payload]</mark></code> | | Streaming Strategy a| * repeatable-in-memory-stream * repeatable-file-store-stream * non-repeatable-stream | Configure if repeatable streams should be used and their behavior. | | | Target Variable a| String | The name of a variable that stores the operation’s output. | | | Target Value a| String | An expression to evaluate against the operation’s output and to store the outcome of that expression in the target variable. | <code>[payload]</code> |</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 50%;"> 
@@ -1982,18 +1939,12 @@
     </colgroup> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Type</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Object</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">=== Output </p><p class="tableblock">[cols="30a,70a]</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">===</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Binary</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -2011,24 +1962,19 @@
    <div class="ulist"> 
     <ul> 
      <li> <p>X12:UNKNOWN</p> </li> 
-     <li> <p>X12:RETRY_EXHAUSTED</p> </li> 
      <li> <p>X12:WRITE</p> </li> 
-     <li> <p>X12:PARSE</p> </li> 
      <li> <p>X12:SCHEMA</p> </li> 
-     <li> <p>X12:CONNECTIVITY</p> </li> 
+     <li> <p>X12:PARSE</p> </li> 
     </ul> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="write"><a class="anchor" href="#write"></a>Write</h2> 
+ <h2 id="types"><a class="anchor" href="#types"></a>Types</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><code>&lt;x12:write&gt;</code></p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="parameters-4"><a class="anchor" href="#parameters-4"></a>Parameters</h3> 
+   <h3 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col> 
@@ -2039,7 +1985,7 @@
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Field</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
       <th class="tableblock halign-left valign-top">Default Value</th> 
@@ -2048,76 +1994,37 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Write Content</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Object</p> 
+         <p>Number</p> 
         </div> 
        </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code></p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Streaming Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
+        <div class="paragraph"> 
+         <p>Enumeration, one of:</p> 
+        </div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>repeatable-in-memory-stream</p> </li> 
-          <li> <p>repeatable-file-store-stream</p> </li> 
-          <li> <p>non-repeatable-stream</p> </li> 
+          <li> <p>NANOSECONDS</p> </li> 
+          <li> <p>MICROSECONDS</p> </li> 
+          <li> <p>MILLISECONDS</p> </li> 
+          <li> <p>SECONDS</p> </li> 
+          <li> <p>MINUTES</p> </li> 
+          <li> <p>HOURS</p> </li> 
+          <li> <p>DAYS</p> </li> 
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure to use repeatable streams and their behavior.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Variable</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable that stores the output of this operation.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Value</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate this expression against the operation’s output and store the results in the target variable.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2125,397 +2032,138 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="output-2"><a class="anchor" href="#output-2"></a>Output</h3> 
+   <h3 id="repeatable-in-memory-stream"><a class="anchor" href="#repeatable-in-memory-stream"></a>Repeatable In Memory Stream</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
     <tbody> 
      <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Type</p> 
+         <p>Number</p> 
         </div> 
        </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The amount of memory to allocate to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Binary</p> 
+         <p>Number</p> 
         </div> 
        </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">By how the buffer expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised when the buffer gets full.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory to use. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error ise raised. A value lower or equal to zero means no limit.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Enumeration, one of:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>BYTE</p> </li> 
+          <li> <p>KB</p> </li> 
+          <li> <p>MB</p> </li> 
+          <li> <p>GB</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which all these attributes are expressed</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="for-configurations-2"><a class="anchor" href="#for-configurations-2"></a>For Configurations</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>config</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="throws-2"><a class="anchor" href="#throws-2"></a>Throws</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>X12:UNKNOWN</p> </li> 
-     <li> <p>X12:RETRY_EXHAUSTED</p> </li> 
-     <li> <p>X12:WRITE</p> </li> 
-     <li> <p>X12:PARSE</p> </li> 
-     <li> <p>X12:SCHEMA</p> </li> 
-     <li> <p>X12:CONNECTIVITY</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="reconnection-type"><a class="anchor" href="#reconnection-type"></a>Reconnection Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Fails Deployment</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Boolean</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>reconnect</p> </li> 
-         <li> <p>reconnect-forever</p> </li> 
-        </ul> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The reconnection strategy to use.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Count</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Enumeration, one of:</p> 
-       </div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>NANOSECONDS</p> </li> 
-         <li> <p>MICROSECONDS</p> </li> 
-         <li> <p>MILLISECONDS</p> </li> 
-         <li> <p>SECONDS</p> </li> 
-         <li> <p>MINUTES</p> </li> 
-         <li> <p>HOURS</p> </li> 
-         <li> <p>DAYS</p> </li> 
-        </ul> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="repeatable-in-memory-stream"><a class="anchor" href="#repeatable-in-memory-stream"></a>Repeatable In Memory Stream Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The amount of memory to allocate to consume the stream and provide random access to the stream. If the stream contains more data than can fit in the buffer, the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How much the buffer size expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, and that a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised when the buffer gets full.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum amount of memory to use. If more than that is used, then a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised. A value lower or equal to zero means no limit.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Enumeration, one of:</p> 
-       </div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>BYTE</p> </li> 
-         <li> <p>KB</p> </li> 
-         <li> <p>MB</p> </li> 
-         <li> <p>GB</p> </li> 
-        </ul> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which all these attributes are expressed.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="repeatable-file-store-stream"><a class="anchor" href="#repeatable-file-store-stream"></a>Repeatable File Store Stream Type</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-    <col> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Field</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Default Value</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Number</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it starts to buffer the content on disk.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Enumeration, one of:</p> 
-       </div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>BYTE</p> </li> 
-         <li> <p>KB</p> </li> 
-         <li> <p>MB</p> </li> 
-         <li> <p>GB</p> </li> 
-        </ul> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed.</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a>.</p> </li> 
-    <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a>.</p> </li> 
-   </ul> 
+   <h3 id="repeatable-file-store-stream"><a class="anchor" href="#repeatable-file-store-stream"></a>Repeatable File Store Stream</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it starts to buffer the content on disk.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Enumeration, one of:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>BYTE</p> </li> 
+          <li> <p>KB</p> </li> 
+          <li> <p>MB</p> </li> 
+          <li> <p>GB</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
  </div> 
 </div>
@@ -2523,7 +2171,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#connection-types">Connection Types</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#read">Read</a></li><li><a class="scroll-menu-link" href="#write">Write</a></li><li><a class="scroll-menu-link" href="#reconnection-type">Reconnection Type</a></li><li><a class="scroll-menu-link" href="#reconnect">Reconnect Type</a></li><li><a class="scroll-menu-link" href="#reconnect-forever">Reconnect Forever Type</a></li><li><a class="scroll-menu-link" href="#ExpirationPolicy">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-in-memory-stream">Repeatable In Memory Stream Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-stream">Repeatable File Store Stream Type</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#read">Read</a></li><li><a class="scroll-menu-link" href="#types">Types</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
