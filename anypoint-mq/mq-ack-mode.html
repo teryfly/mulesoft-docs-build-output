@@ -1355,7 +1355,7 @@
        </ul> 
       </div> </li> 
      <li> <p><strong>MANUAL</strong> - An application indicates that it sends its own Ack or Nack using the Anypoint MQ connector local state. The MQ connector doesn’t provide any actions automatically. See <a href="#manualflow">Creating a Manual Acknowledge Flow in Anypoint Studio</a> for an example.</p> </li> 
-     <li> <p><strong>NONE</strong> - An application receives a message and the MQ connector immediately acknowledges and deletes the message. This state risks losing the message if it is not consumed correctly, but is typically used when there is a flow of constantly updating messages, such as a news feed where each subsequent message provides more detail on any messages that preceded the message. This state takes a risk, but makes coding easier. See <a href="#noneflow">Creating a None Acknowledge Flow in Anypoint Studio</a> for an example.</p> 
+     <li> <p><strong>NONE</strong> - An application receives a message and the MQ connector immediately acknowledges and deletes the message. This state risks losing the message if it is not consumed correctly, but is typically used when there is a flow of constantly updating messages, such as a news feed where each subsequent message provides more detail on any messages that preceded the message. This state takes a risk, but makes coding easier. See <a href="#noneflow">Creating a None Acknowledge Flow in Anypoint Studio</a> for an example. <strong>Note:</strong> In Mule 4 MQ, NONE is called IMMEDIATE, but has the same functionality.</p> 
       <div class="paragraph"> 
        <p>You can set the global state in the <strong>Acknowledgement Mode</strong> field:</p> 
       </div> 
@@ -1669,13 +1669,16 @@ mq.clientSecret=&lt;Client_Secret&gt;
  <h2 id="noneflow"><a class="anchor" href="#noneflow"></a>Creating a None Acknowledge Mode in Anypoint Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can set the None Acknowledgement Mode from the Anypoint MQ connector’s Global Element Properties:</p> 
+   <p>You can set the NONE Acknowledgement Mode from the Anypoint MQ connector’s Global Element Properties:</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/mq-global-mode-set.png" alt="mq-global-mode-set"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>In the NONE flow, the Anypoint MQ connector always sends an ACK no matter what occurs. The example that follows emphasizes this risk by using the Java class <a href="#randomerror">RandomError</a> to create possible exceptions, but ignores the exceptions and sends the ACK regardless:</p> 
+   <p>In the NONE flow, the Anypoint MQ connector always sends an ACK no matter what occurs. <strong>Note:</strong> NONE is called IMMEDIATE in the Mule 4 Anypoint MQ connector even though the functionality is the same.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The example that follows emphasizes this risk by using the Java class <a href="#randomerror">RandomError</a> to create possible exceptions, but ignores the exceptions and sends the ACK regardless:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 

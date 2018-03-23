@@ -1275,304 +1275,299 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p> Anypoint MQ is a multi-tenant, cloud messaging service that enables customers to perform advanced asynchronous messaging scenarios between their applications. </p> 
+   <p>Anypoint MQ is a multi-tenant, cloud messaging service that enables customers to perform advanced asynchronous messaging scenarios between their applications.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="configurations"><a class="anchor" href="#configurations"></a>Configurations</h2> 
+ <h2 id="default-subscriber-configuration"><a class="anchor" href="#default-subscriber-configuration"></a>Default Subscriber Configuration</h2> 
  <div class="sectionbody"> 
-  <hr> 
   <div class="sect2"> 
-   <h3 id="default-subscriber"><a class="anchor" href="#default-subscriber"></a>Default Subscriber</h3> 
-   <div class="sect3"> 
-    <h4 id="parameters"><a class="anchor" href="#parameters"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Name</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name for this configuration. Connectors reference the configuration with this name.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Connection</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#default-subscriber_connection">Connection</a></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The connection types that can be provided to this configuration.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Expiration Policy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#ExpirationPolicy">Expiration Policy</a></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement Mode</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Enumeration, one of:</p> 
-         </div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p>IMMEDIATE</p> </li> 
-           <li> <p>AUTO</p> </li> 
-           <li> <p>MANUAL</p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement mode to use for the messages retrieved from the subscribers.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">AUTO</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement Timeout</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Duration that a message is held by a broker waiting for an Acknowledgement or Not Acknowledgement. After that duration elapses, the message is again available to any subscriber.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">0</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Polling Time</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">How much time (milliseconds) to be waited if the requested messages are not ready to be consumed.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">1000</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Redelivery</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Number of redeliveries to try in case message processing fails. To avoid a poison message, the default value is set to -1 (infinite).</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">-1</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Fetch Size</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Number of messages to receive when asking for messages. The response can contain fewer messages than this number depending on the poolingTime set.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">10</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Fetch Timeout</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Maximum duration in milliseconds to wait for the required amount of messages. If this duration elapses, the response is sent with as many messages as received during the period.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">1000</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Frequency</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Duration in milliseconds to execute the retrieve operation when the prefetch queue is not empty.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">5000</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
+   <h3 id="parameters"><a class="anchor" href="#parameters"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name for this configuration. Connectors reference the configuration with this name.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Connection</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#default-subscriber_connection">Connection</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The connection types that can be provided to this configuration.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Expiration Policy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#ExpirationPolicy">Expiration Policy Type</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement Mode</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Enumeration, one of:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>IMMEDIATE - An application receives a message and the MQ connector immediately acknowledges and deletes the message.</p> </li> 
+          <li> <p>AUTO - The Anypoint MQ connector automatically sends an Ack or Nack at the end of a flow depending on whether the MQ connector detects a Catch Exception Strategy (ACK) or a Rollback Exception Strategy (NACK).</p> </li> 
+          <li> <p>MANUAL - An application indicates that it sends its own Ack or Nack using the Anypoint MQ connector local state.</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement mode to use for the messages retrieved from the subscribers.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">AUTO</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement Timeout</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Duration that a message is held by a broker waiting for an Acknowledgement or Not Acknowledgement. After that duration elapses, the message is again available to any subscriber.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Polling Time</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">How much time (milliseconds) to be waited if the requested messages are not ready to be consumed.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1000</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Redelivery</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Number of redeliveries to try in case message processing fails. To avoid a poison message, the default value is set to -1 (infinite).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Fetch Size</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Number of messages to receive when asking for messages. The response can contain fewer messages than this number depending on the poolingTime set.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Fetch Timeout</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Maximum duration in milliseconds to wait for the required amount of messages. If this duration elapses, the response is sent with as many messages as received during the period.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1000</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Duration in milliseconds to execute the retrieve operation when the prefetch queue is not empty.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">5000</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="connection-type"><a class="anchor" href="#connection-type"></a>Connection Type</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="parameters-2"><a class="anchor" href="#parameters-2"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">URL</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The MQ connector provides the URL depending on queue region. In Anypoint Platform &gt; MQ, you can change your region and copy/paste the new URL into this field."</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">https://mq-us-east-1.anypoint.mulesoft.com/api/v1</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Client App ID</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">In Anypoint Platform &gt; MQ &gt; Client Apps, click an app name (or create a new app) and click Copy for the Client App ID field. Paste this value in the Studio Client App ID field</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Client Secret</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">In Anypoint Platform &gt; MQ &gt; Client Apps, click an app name (or create a new app) and click Copy for the Client Secret field. Paste this value in the Studio Client Secret field.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Proxy Config</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#ProxyParameterGroup">[ProxyParameterGroup]</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">TCP Client Socket Properties</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#TcpClientSocketParameterGroup">Tcp Client Socket Parameter Group</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">TLS Context</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#Tls">TLS Type</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#Reconnection">Reconnection Type</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Pooling Profile</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#PoolingProfile">Pooling Profile Type</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics of the connection pool</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="associated-operations"><a class="anchor" href="#associated-operations"></a>Associated Operations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#ack">Ack</a></p> </li> 
+     <li> <p><a href="#consume">Consume</a></p> </li> 
+     <li> <p><a href="#nack">Nack</a></p> </li> 
+     <li> <p><a href="#publish">Publish</a></p> </li> 
+    </ul> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="connection-types"><a class="anchor" href="#connection-types"></a>Connection Types</h4> 
-    <div class="sect4"> 
-     <h5 id="default-subscriber_connection"><a class="anchor" href="#default-subscriber_connection"></a>Connection</h5> 
-     <div class="sect5"> 
-      <h6 id="parameters-2"><a class="anchor" href="#parameters-2"></a>Parameters</h6> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: 20%;"> 
-        <col style="width: 20%;"> 
-        <col style="width: 35%;"> 
-        <col style="width: 20%;"> 
-        <col style="width: 5%;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-middle">Name</th> 
-         <th class="tableblock halign-left valign-middle">Type</th> 
-         <th class="tableblock halign-left valign-middle">Description</th> 
-         <th class="tableblock halign-left valign-middle">Default Value</th> 
-         <th class="tableblock halign-center valign-middle">Required</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">URL</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p>String</p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">The MQ connector provides the URL depending on queue region. In Anypoint Platform &gt; MQ, you can change your region and copy/paste the new URL into this field."</p></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">https://mq-us-east-1.anypoint.mulesoft.com/api/v1</p></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Client App ID</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p>String</p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">In Anypoint Platform &gt; MQ &gt; Client Apps, click an app name (or create a new app) and click Copy for the Client App ID field. Paste this value in the Studio Client App ID field</p></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Client Secret</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p>String</p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">In Anypoint Platform &gt; MQ &gt; Client Apps, click an app name (or create a new app) and click Copy for the Client Secret field. Paste this value in the Studio Client Secret field.</p></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Proxy Config</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><a href="#ProxyParameterGroup">Proxy Parameter Group</a></p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">TCP Client Socket Properties</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><a href="#TcpClientSocketParameterGroup">Tcp Client Socket Parameter Group</a></p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">TLS Context</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><a href="#Tls">Tls</a></p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><a href="#Reconnection">Reconnection</a></p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy</p></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Pooling Profile</p></td> 
-         <td class="tableblock halign-left valign-middle"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><a href="#PoolingProfile">Pooling Profile</a></p> 
-           </div> 
-          </div></td> 
-         <td class="tableblock halign-left valign-middle"><p class="tableblock">Characteristics of the connection pool</p></td> 
-         <td class="tableblock halign-left valign-middle"></td> 
-         <td class="tableblock halign-center valign-middle"></td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="associated-operations"><a class="anchor" href="#associated-operations"></a>Associated Operations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#ack">Ack</a></p> </li> 
-      <li> <p><a href="#consume">Consume</a></p> </li> 
-      <li> <p><a href="#nack">Nack</a></p> </li> 
-      <li> <p><a href="#publish">Publish</a></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="associated-sources"><a class="anchor" href="#associated-sources"></a>Associated Sources</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#subscriber">Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="associated-sources"><a class="anchor" href="#associated-sources"></a>Associated Sources</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#subscriber">Subscriber</a></p> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
@@ -1580,614 +1575,622 @@
 <div class="sect1"> 
  <h2 id="operations"><a class="anchor" href="#operations"></a>Operations</h2> 
  <div class="sectionbody"> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="ack"><a class="anchor" href="#ack"></a>Ack</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><code>&lt;anypoint-mq:ack&gt;</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p> Executes an Acknowledgement over a given AnypointMQMessageContext indicating that the message has been consumed correctly and deletes the message from In Flight status. </p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="ack"><a class="anchor" href="#ack"></a>Ack</h3> 
-   <div class="paragraph"> 
-    <p><code>&lt;anypoint-mq:ack&gt;</code></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p> Executes an Acknowledgement over a given AnypointMQMessageContext indicating that the message has been consumed correctly and deletes the message from In Flight status. </p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="parameters-3"><a class="anchor" href="#parameters-3"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Context</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-           <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="for-configurations"><a class="anchor" href="#for-configurations"></a>For Configurations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#default-subscriber">Default Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="throws"><a class="anchor" href="#throws"></a>Throws</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
-      <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
-      <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
-      <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
-     </ul> 
-    </div> 
+   <h3 id="parameters-3"><a class="anchor" href="#parameters-3"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Message Context</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+          <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="for-configurations"><a class="anchor" href="#for-configurations"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#default-subscriber">[default-subscriber]</a></p> </li> 
+    </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="consume"><a class="anchor" href="#consume"></a>Consume</h3> 
-   <div class="paragraph"> 
-    <p><code>&lt;anypoint-mq:consume&gt;</code></p> 
+   <h3 id="throws"><a class="anchor" href="#throws"></a>Throws</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
+     <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
+     <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
+    </ul> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="parameters-4"><a class="anchor" href="#parameters-4"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Destination</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Queue or Exchange name from where to fetch a Message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement Mode</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Enumeration, one of:</p> 
-         </div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p>IMMEDIATE</p> </li> 
-           <li> <p>MANUAL</p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement mode to use for the messages retrieved from this subscriber. Can be only used 'MANUAL' or 'NONE'.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">MANUAL</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Polling Time</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">How much time (milliseconds) to be waited if the requested messages are not ready to be consumed.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">10000</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Acknowledgement Timeout</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Number</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Duration that a message is held by a broker waiting for an Acknowledgement or Not Acknowledgement. After that duration expires, the message is again available to any subscriber.</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">0</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Mime Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The mime type of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Encoding</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Streaming Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#repeatable-in-memory-stream">Repeatable In Memory Stream</a></p> </li> 
-           <li> <p><a href="#repeatable-file-store-stream">Repeatable File Store Stream</a></p> </li> 
-           <li> <p><a href="#non-repeatable-stream">[non-repeatable-stream]</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Target Variable</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Target Value</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">#[payload]</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-           <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="output"><a class="anchor" href="#output"></a>Output</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 50%;"> 
-      <col style="width: 50%;"> 
-     </colgroup> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Binary</p> 
-         </div> 
-        </div></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
-         </div> 
-        </div></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="for-configurations-2"><a class="anchor" href="#for-configurations-2"></a>For Configurations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#default-subscriber">Default Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="throws-2"><a class="anchor" href="#throws-2"></a>Throws</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
-      <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
-      <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
-      <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
-     </ul> 
-    </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="consume"><a class="anchor" href="#consume"></a>Consume</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><code>&lt;anypoint-mq:consume&gt;</code></p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="parameters-4"><a class="anchor" href="#parameters-4"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Destination</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Queue or Exchange name from where to fetch a Message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement Mode</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Enumeration, one of:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>IMMEDIATE - An application receives a message and the MQ connector immediately acknowledges and deletes the message.</p> </li> 
+          <li> <p>MANUAL - An application indicates that it sends its own Ack or Nack using the Anypoint MQ connector local state.</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement mode to use for the messages retrieved from this subscriber. Can be only used 'MANUAL' or 'IMMEDIATE'.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">MANUAL</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Polling Time</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">How much time (milliseconds) to be waited if the requested messages are not ready to be consumed.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Acknowledgement Timeout</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Duration that a message is held by a broker waiting for an Acknowledgement or Not Acknowledgement. After that duration expires, the message is again available to any subscriber.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Mime Type</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Encoding</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Streaming Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#repeatable-in-memory-stream">Repeatable In Memory Stream Type</a></p> </li> 
+          <li> <p><a href="#repeatable-file-store-stream">Repeatable File Store Stream Type</a></p> </li> 
+          <li> <p><a href="#non-repeatable-stream">[non-repeatable-stream]</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Variable</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Value</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+          <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="output"><a class="anchor" href="#output"></a>Output</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Binary</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="for-configurations-2"><a class="anchor" href="#for-configurations-2"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#default-subscriber">[default-subscriber]</a></p> </li> 
+    </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="nack"><a class="anchor" href="#nack"></a>Nack</h3> 
-   <div class="paragraph"> 
-    <p><code>&lt;anypoint-mq:nack&gt;</code></p> 
+   <h3 id="throws-2"><a class="anchor" href="#throws-2"></a>Throws</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
+     <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
+     <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
+    </ul> 
    </div> 
-   <div class="paragraph"> 
-    <p> Executes an Not Acknowledgement over a given AnypointMQMessageContext and change the status of the message from In Flight to In Queue to be consumed again for a subscriber </p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="parameters-5"><a class="anchor" href="#parameters-5"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Context</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-           <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="for-configurations-3"><a class="anchor" href="#for-configurations-3"></a>For Configurations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#default-subscriber">Default Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="throws-3"><a class="anchor" href="#throws-3"></a>Throws</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
-      <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
-      <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
-      <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
-     </ul> 
-    </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="nack"><a class="anchor" href="#nack"></a>Nack</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><code>&lt;anypoint-mq:nack&gt;</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p> Executes an Not Acknowledgement over a given AnypointMQMessageContext and change the status of the message from In Flight to In Queue to be consumed again for a subscriber </p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="parameters-5"><a class="anchor" href="#parameters-5"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 20%;"> 
+     <col style="width: 20%;"> 
+     <col style="width: 35%;"> 
+     <col style="width: 20%;"> 
+     <col style="width: 5%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-middle">Name</th> 
+      <th class="tableblock halign-left valign-middle">Type</th> 
+      <th class="tableblock halign-left valign-middle">Description</th> 
+      <th class="tableblock halign-left valign-middle">Default Value</th> 
+      <th class="tableblock halign-center valign-middle">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Context</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
+      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+          <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-center valign-middle"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="for-configurations-3"><a class="anchor" href="#for-configurations-3"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#default-subscriber">[default-subscriber]</a></p> </li> 
+    </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="publish"><a class="anchor" href="#publish"></a>Publish</h3> 
-   <div class="paragraph"> 
-    <p><code>&lt;anypoint-mq:publish&gt;</code></p> 
+   <h3 id="throws-3"><a class="anchor" href="#throws-3"></a>Throws</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
+     <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
+     <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
+    </ul> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="parameters-6"><a class="anchor" href="#parameters-6"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Destination</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Queue or Exchange name from where to fetch a Message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Body</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Binary</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Body of the message</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">#[payload]</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Id</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">ID of the message to publish</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Send Content Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Boolean</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Indicates whether the content type of the Mule Message should be attached or not</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">true</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Properties</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Object</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Additional properties to be sent within the message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Mime Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The mime type of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Encoding</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Streaming Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#repeatable-in-memory-stream">Repeatable In Memory Stream</a></p> </li> 
-           <li> <p><a href="#repeatable-file-store-stream">Repeatable File Store Stream</a></p> </li> 
-           <li> <p><a href="#non-repeatable-stream">[non-repeatable-stream]</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Target Variable</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Target Value</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">#[payload]</p></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-           <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="publish"><a class="anchor" href="#publish"></a>Publish</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><code>&lt;anypoint-mq:publish&gt;</code></p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="parameters-6"><a class="anchor" href="#parameters-6"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Destination</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Queue or Exchange name from where to fetch a Message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Binary</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Body of the message</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Message Id</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the message to publish</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send Content Type</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the content type of the Mule Message should be attached or not</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Properties</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Object</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Additional properties to be sent within the message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Mime Type</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Encoding</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Streaming Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#repeatable-in-memory-stream">Repeatable In Memory Stream Type</a></p> </li> 
+          <li> <p><a href="#repeatable-file-store-stream">Repeatable File Store Stream Type</a></p> </li> 
+          <li> <p><a href="#non-repeatable-stream">[non-repeatable-stream]</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Variable</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Value</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression to evaluate against the operation's output and the outcome of that expression will be stored in the target variable.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+          <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="output-2"><a class="anchor" href="#output-2"></a>Output</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Binary</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#AnypointMqMessagePublishAttributes">Anypoint MQ Message Publish Attributes</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="for-configurations-4"><a class="anchor" href="#for-configurations-4"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#default-subscriber">[default-subscriber]</a></p> </li> 
+    </ul> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="output-2"><a class="anchor" href="#output-2"></a>Output</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 50%;"> 
-      <col style="width: 50%;"> 
-     </colgroup> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Binary</p> 
-         </div> 
-        </div></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#AnypointMqMessagePublishAttributes">Anypoint Mq Message Publish Attributes</a></p> 
-         </div> 
-        </div></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="for-configurations-4"><a class="anchor" href="#for-configurations-4"></a>For Configurations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#default-subscriber">Default Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="throws-4"><a class="anchor" href="#throws-4"></a>Throws</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
-      <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
-      <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
-      <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
-     </ul> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="throws-4"><a class="anchor" href="#throws-4"></a>Throws</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>ANYPOINT-MQ:UNKNOWN</p> </li> 
+     <li> <p>ANYPOINT-MQ:RETRY_EXHAUSTED</p> </li> 
+     <li> <p>ANYPOINT-MQ:CONNECTIVITY</p> </li> 
+     <li> <p>ANYPOINT-MQ:RESOURCE_NOT_FOUND</p> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
@@ -2203,784 +2206,789 @@
    <div class="paragraph"> 
     <p> Anypoint MQ Subscriber Message Source, retrieves messages from the given destination name. </p> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="parameters-7"><a class="anchor" href="#parameters-7"></a>Parameters</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 35%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 5%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-middle">Name</th> 
-       <th class="tableblock halign-left valign-middle">Type</th> 
-       <th class="tableblock halign-left valign-middle">Description</th> 
-       <th class="tableblock halign-left valign-middle">Default Value</th> 
-       <th class="tableblock halign-center valign-middle">Required</th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Destination</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Queue name from where to retrieve messages.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Mime Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The mime type of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Output Encoding</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>String</p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Redelivery Policy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#RedeliveryPolicy">Redelivery Policy</a></p> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Defines a policy for processing the redelivery of the same message</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="ulist"> 
-          <ul> 
-           <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-           <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-          </ul> 
-         </div> 
-        </div></td> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-       <td class="tableblock halign-left valign-middle"></td> 
-       <td class="tableblock halign-center valign-middle"></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="output-3"><a class="anchor" href="#output-3"></a>Output</h4> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 50%;"> 
-      <col style="width: 50%;"> 
-     </colgroup> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p>Binary</p> 
-         </div> 
-        </div></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
-       <td class="tableblock halign-left valign-middle"> 
-        <div> 
-         <div class="paragraph"> 
-          <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
-         </div> 
-        </div></td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="for-configurations-5"><a class="anchor" href="#for-configurations-5"></a>For Configurations</h4> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p><a href="#default-subscriber">Default Subscriber</a></p> </li> 
-     </ul> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="parameters-7"><a class="anchor" href="#parameters-7"></a>Parameters</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Destination</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Queue name from where to retrieve messages.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Mime Type</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Output Encoding</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The encoding of the payload that this operation outputs.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Redelivery Policy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#RedeliveryPolicy">Redelivery Policy Type</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a policy for processing the redelivery of the same message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+          <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="output-3"><a class="anchor" href="#output-3"></a>Output</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Binary</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-middle"><p class="tableblock">Attributes Type</p></td> 
+      <td class="tableblock halign-left valign-middle"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="for-configurations-5"><a class="anchor" href="#for-configurations-5"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="#default-subscriber">[default-subscriber]</a></p> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="types"><a class="anchor" href="#types"></a>Types</h2> 
+ <h2 id="proxy-parameter-group-type"><a class="anchor" href="#proxy-parameter-group-type"></a>Proxy Parameter Group Type</h2> 
  <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="ProxyParameterGroup"><a class="anchor" href="#ProxyParameterGroup"></a>Proxy Parameter Group</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Host</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Port</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Username</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Password</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Username</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
   <div class="sect2"> 
    <h3 id="TcpClientSocketParameterGroup"><a class="anchor" href="#TcpClientSocketParameterGroup"></a>Tcp Client Socket Parameter Group</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Send Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send Buffer Size</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Receive Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Receive Buffer Size</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Client Timeout</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Client Timeout</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Send Tcp No Delay</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Send Tcp No Delay</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Linger</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Linger</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Keep Alive</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Keep Alive</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">false</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Connection Timeout</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Connection Timeout</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">30000</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">30000</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="Tls"><a class="anchor" href="#Tls"></a>TLS Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Enabled Protocols</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of protocols enabled for this context.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Enabled Cipher Suites</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of cipher suites enabled for this context.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Trust Store</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#TrustStore">Trust Store Type</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Key Store</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#KeyStore">Key Store Type</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
   <div class="sect2"> 
-   <h3 id="Tls"><a class="anchor" href="#Tls"></a>Tls</h3> 
+   <h3 id="TrustStore"><a class="anchor" href="#TrustStore"></a>Trust Store Type</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Enabled Protocols</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Path</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A comma separated list of protocols enabled for this context.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The location (which will be resolved relative to the current classpath and file system, if possible) of the trust store.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Enabled Cipher Suites</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A comma separated list of cipher suites enabled for this context.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The password used to protect the trust store.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Trust Store</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><a href="#TrustStore">Trust Store</a></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Key Store</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><a href="#KeyStore">Key Store</a></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="TrustStore"><a class="anchor" href="#TrustStore"></a>Trust Store</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Path</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The location (which will be resolved relative to the current classpath and file system, if possible) of the trust store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The type of store used.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Password</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Algorithm</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The password used to protect the trust store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm used by the trust store.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The type of store used.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Algorithm</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The algorithm used by the trust store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Insecure</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Insecure</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">If true, no certificate validations will be performed, rendering connections vulnerable to attacks. Use at your own risk.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If true, no certificate validations will be performed, rendering connections vulnerable to attacks. Use at your own risk.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="KeyStore"><a class="anchor" href="#KeyStore"></a>Key Store Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Path</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The location (which will be resolved relative to the current classpath and file system, if possible) of the key store.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The type of store used.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Alias</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">When the key store contains many private keys, this attribute indicates the alias of the key that should be used. If not defined, the first key in the file will be used by default.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Key Password</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The password used to protect the private key.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Password</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The password used to protect the key store.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Algorithm</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm used by the key store.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="Reconnection"><a class="anchor" href="#Reconnection"></a>Reconnection Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Fails Deployment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Boolean</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn’t pass after exhausting the associated reconnection strategy</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><a href="#reconnect">Reconnect Type</a></p> </li> 
+         <li> <p><a href="#reconnect-forever">Reconnect Forever Type</a></p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The reconnection strategy to use</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Count</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="sect2"> 
+   <h3 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever Type</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Frequency</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Number</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="KeyStore"><a class="anchor" href="#KeyStore"></a>Key Store</h3> 
+   <h3 id="PoolingProfile"><a class="anchor" href="#PoolingProfile"></a>Pooling Profile Type</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
+      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Path</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The location (which will be resolved relative to the current classpath and file system, if possible) of the key store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The type of store used.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Alias</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">When the key store contains many private keys, this attribute indicates the alias of the key that should be used. If not defined, the first key in the file will be used by default.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Key Password</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The password used to protect the private key.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Password</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The password used to protect the key store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Algorithm</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The algorithm used by the key store.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="Reconnection"><a class="anchor" href="#Reconnection"></a>Reconnection</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Fails Deployment</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn’t pass after exhausting the associated reconnection strategy</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p><a href="#reconnect">Reconnect</a></p> </li> 
-          <li> <p><a href="#reconnect-forever">Reconnect Forever</a></p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The reconnection strategy to use</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Frequency</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Active</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How often (in ms) to reconnect</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the maximum number of Mule components that can be borrowed from a session at one time. When set to a negative value, there is no limit to the number of components that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Count</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How many reconnection attempts to make</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the maximum number of Mule components that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of Mule components that may be idle at one time.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Frequency</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Wait</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">How often (in ms) to reconnect</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the number of milliseconds to wait for a pooled component to become available when the pool is exhausted and the exhaustedAction is set to WHEN_EXHAUSTED_WAIT.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="PoolingProfile"><a class="anchor" href="#PoolingProfile"></a>Pooling Profile</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Active</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Min Eviction Millis</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Controls the maximum number of Mule components that can be borrowed from a session at one time. When set to a negative value, there is no limit to the number of components that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects will be evicted from the pool due to idle time alone.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Idle</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Eviction Check Interval Millis</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Controls the maximum number of Mule components that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of Mule components that may be idle at one time.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the number of milliseconds between runs of the object evictor. When non-positive, no object evictor is executed.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Wait</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Specifies the number of milliseconds to wait for a pooled component to become available when the pool is exhausted and the exhaustedAction is set to WHEN_EXHAUSTED_WAIT.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Min Eviction Millis</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects will be evicted from the pool due to idle time alone.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Eviction Check Interval Millis</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Specifies the number of milliseconds between runs of the object evictor. When non-positive, no object evictor is executed.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Exhausted Action</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Exhausted Action</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Enumeration, one of:</p> 
@@ -2993,13 +3001,13 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Specifies the behavior of the Mule component pool when the pool is exhausted. Possible values are: "WHEN_EXHAUSTED_FAIL", which will throw a NoSuchElementException, "WHEN_EXHAUSTED_WAIT", which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new Mule instance and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the behavior of the Mule component pool when the pool is exhausted. Possible values are: "WHEN_EXHAUSTED_FAIL", which will throw a NoSuchElementException, "WHEN_EXHAUSTED_WAIT", which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new Mule instance and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Initialisation Policy</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Initialisation Policy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Enumeration, one of:</p> 
@@ -3012,342 +3020,352 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Determines how components in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any components into the pool on startup), INITIALISE_ONE (will load one initial component into the pool on startup), or INITIALISE_ALL (will load all components in the pool on startup)</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines how components in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any components into the pool on startup), INITIALISE_ONE (will load one initial component into the pool on startup), or INITIALISE_ALL (will load all components in the pool on startup)</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Disabled</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Disabled</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p>Boolean</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Whether pooling should be disabled</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether pooling should be disabled</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Idle Time</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Time Unit</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>NANOSECONDS</p> </li> 
-          <li> <p>MICROSECONDS</p> </li> 
-          <li> <p>MILLISECONDS</p> </li> 
-          <li> <p>SECONDS</p> </li> 
-          <li> <p>MINUTES</p> </li> 
-          <li> <p>HOURS</p> </li> 
-          <li> <p>DAYS</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="RedeliveryPolicy"><a class="anchor" href="#RedeliveryPolicy"></a>Redelivery Policy</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Redelivery Count</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The maximum number of times a message can be redelivered and processed unsuccessfully before triggering process-failed-message</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Use Secure Hash</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Boolean</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Whether to use a secure hash algorithm to identify a redelivered message</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Digest Algorithm</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The secure hashing algorithm to use. If not set, the default is SHA-256.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Id Expression</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Defines one or more expressions to use to determine when a message has been redelivered. This property may only be set if useSecureHash is false.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Object Store</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><a href="#ObjectStore">[ObjectStore]</a></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The object store where the redelivery counter for each message is going to be stored.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="repeatable-in-memory-stream"><a class="anchor" href="#repeatable-in-memory-stream"></a>Repeatable In Memory Stream</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Initial Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is the amount of memory that will be allocated in order to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then it will be expanded by according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Buffer Size Increment</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is by how much will be buffer size by expanded if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Buffer Unit</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>BYTE</p> </li> 
-          <li> <p>KB</p> </li> 
-          <li> <p>MB</p> </li> 
-          <li> <p>GB</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The unit in which all these attributes are expressed</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="repeatable-file-store-stream"><a class="anchor" href="#repeatable-file-store-stream"></a>Repeatable File Store Stream</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Max In Memory Size</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it will start to buffer the content on disk.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Buffer Unit</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>BYTE</p> </li> 
-          <li> <p>KB</p> </li> 
-          <li> <p>MB</p> </li> 
-          <li> <p>GB</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The unit in which maxInMemorySize is expressed</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="AnypointMqMessagePublishAttributes"><a class="anchor" href="#AnypointMqMessagePublishAttributes"></a>Anypoint Mq Message Publish Attributes</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 30%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-middle">Field</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-left valign-middle">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Id</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>String</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>NANOSECONDS</p> </li> 
+         <li> <p>MICROSECONDS</p> </li> 
+         <li> <p>MILLISECONDS</p> </li> 
+         <li> <p>SECONDS</p> </li> 
+         <li> <p>MINUTES</p> </li> 
+         <li> <p>HOURS</p> </li> 
+         <li> <p>DAYS</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="RedeliveryPolicy"><a class="anchor" href="#RedeliveryPolicy"></a>Redelivery Policy Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Redelivery Count</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of times a message can be redelivered and processed unsuccessfully before triggering process-failed-message</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Use Secure Hash</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Boolean</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to use a secure hash algorithm to identify a redelivered message</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Message Digest Algorithm</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The secure hashing algorithm to use. If not set, the default is SHA-256.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Id Expression</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines one or more expressions to use to determine when a message has been redelivered. This property may only be set if useSecureHash is false.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Object Store</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#ObjectStore">[ObjectStore]</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The object store where the redelivery counter for each message is going to be stored.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-in-memory-stream"><a class="anchor" href="#repeatable-in-memory-stream"></a>Repeatable In Memory Stream Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the amount of memory that will be allocated in order to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then it will be expanded by according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is by how much will be buffer size by expanded if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>BYTE</p> </li> 
+         <li> <p>KB</p> </li> 
+         <li> <p>MB</p> </li> 
+         <li> <p>GB</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which all these attributes are expressed.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-file-store-stream"><a class="anchor" href="#repeatable-file-store-stream"></a>Repeatable File Store Stream Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it will start to buffer the content on disk.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>BYTE</p> </li> 
+         <li> <p>KB</p> </li> 
+         <li> <p>MB</p> </li> 
+         <li> <p>GB</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="AnypointMqMessagePublishAttributes"><a class="anchor" href="#AnypointMqMessagePublishAttributes"></a>Anypoint MQ Message Publish Attributes</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Message Id</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>String</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div>
     </div>
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#configurations">Configurations</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#sources">Sources</a></li><li><a class="scroll-menu-link" href="#types">Types</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#default-subscriber-configuration">Default Subscriber Configuration</a></li><li><a class="scroll-menu-link" href="#connection-type">Connection Type</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#ack">Ack</a></li><li><a class="scroll-menu-link" href="#consume">Consume</a></li><li><a class="scroll-menu-link" href="#nack">Nack</a></li><li><a class="scroll-menu-link" href="#publish">Publish</a></li><li><a class="scroll-menu-link" href="#sources">Sources</a></li><li><a class="scroll-menu-link" href="#proxy-parameter-group-type">Proxy Parameter Group Type</a></li><li><a class="scroll-menu-link" href="#Tls">TLS Type</a></li><li><a class="scroll-menu-link" href="#KeyStore">Key Store Type</a></li><li><a class="scroll-menu-link" href="#Reconnection">Reconnection Type</a></li><li><a class="scroll-menu-link" href="#reconnect">Reconnect Type</a></li><li><a class="scroll-menu-link" href="#ExpirationPolicy">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#RedeliveryPolicy">Redelivery Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-in-memory-stream">Repeatable In Memory Stream Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-stream">Repeatable File Store Stream Type</a></li><li><a class="scroll-menu-link" href="#AnypointMqMessagePublishAttributes">Anypoint MQ Message Publish Attributes</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
