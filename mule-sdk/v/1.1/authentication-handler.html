@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-sdk/v/1.1/authentication-handler" />
-  <meta name="description" content="This handler allows you to configure the current context’s authentication, used for encryption and inbound authentication, based on a given request..." />
+  <meta name="description" content="This handler allows you to configure the current context’s authentication, which is used for encryption and inbound authentication, based on a give..." />
   <meta class="swiftype" name="title" data-type="string" content="Authentication Handler" />
   <meta class="swiftype" name="version" data-type="enum" content="1.1" />
 </head>
@@ -1277,7 +1277,7 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This handler allows you to configure the current context’s authentication, used for encryption and inbound authentication, based on a given request.</p> 
+   <p>This handler allows you to configure the current context’s authentication, which is used for encryption and inbound authentication, based on a given request.</p> 
   </div> 
  </div> 
 </div> 
@@ -1285,17 +1285,17 @@
  <h2 id="how-to-use-the-authentication-handler"><a class="anchor" href="#how-to-use-the-authentication-handler"></a>How to Use the Authentication Handler</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You must add a parameter of type <code>AuthenticationHandler</code> to your Operation, and the Authentication Handler instance from the current context will be injected in runtime. With this instance you will be able to check the current authentication (if there is any ), and set a new one.</p> 
+   <p>When you add a parameter of type <code>AuthenticationHandler</code> to your operation, the Authentication Handler instance from the current context will be injected in runtime. You can use this instance to check the current authentication (if there is any) and set a new one.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The Authentication Handler interface provides the following methods:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong>createCredentialsBuilder:</strong> returns a builder that is used to create a <code>Credentials</code> instance.</p> </li> 
-    <li> <p><strong>createAuthentication:</strong> given an instance of <code>Credentials</code>, creates an <code>Authentication</code> instance.</p> </li> 
-    <li> <p><strong>setAuthentication:</strong> given an <code>Authentication</code>, set that value as the current context’s authentication. Optionally you can also give a List of security providers(the names) that will be added to the SecurityManager.</p> </li> 
-    <li> <p><strong>getAuthentication:</strong> returns the <code>Authentication</code> from the current context. There may be no <code>Authentication</code> for the current context.</p> </li> 
+    <li> <p><code>createCredentialsBuilder</code> returns a builder that is used to create a <code>Credentials</code> instance.</p> </li> 
+    <li> <p><code>createAuthentication</code>, when given an instance of <code>Credentials</code>, creates an <code>Authentication</code> instance.</p> </li> 
+    <li> <p><code>setAuthentication</code>, when given an <code>Authentication</code>, sets that value as the current context’s authentication. Optionally, you can also provide a List of security providers (the names) that will be added to the <code>SecurityManager</code>.</p> </li> 
+    <li> <p><code>getAuthentication</code> returns the <code>Authentication</code> from the current context. There may be no <code>Authentication</code> for the current context.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1304,10 +1304,10 @@
  <h2 id="usage-example"><a class="anchor" href="#usage-example"></a>Usage Example</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Imagine that after receiving an HTTP Request you want to authenticate and store the credentials on the current context’s Authentication Handler. You can use the <code>basic-security-filter</code> Operation from the HTTP Connector for it.</p> 
+   <p>Imagine that after receiving an HTTP Request, you want to authenticate and store the credentials on the current context’s Authentication Handler. You can use the <code>basic-security-filter</code> operation from the HTTP Connector for this use case.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>This is a simplifies version of how it is implemented:</p> 
+   <p>This simplified example shows how the <code>basic-security-filter</code> is implemented:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1363,7 +1363,7 @@
     <tbody> 
      <tr> 
       <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>The Operation has an <code>AuthenticationHandler</code> as a parameter that will be injected in runtime.</td> 
+      <td>The operation has an <code>AuthenticationHandler</code> parameter that will be injected in runtime.</td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1474,7 +1474,7 @@
     <tbody> 
      <tr> 
       <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td><code>HttpRequestAttributes</code> from where the username and password will be taken from.</td> 
+      <td><code>HttpRequestAttributes</code> from where the username and password will be taken.</td> 
      </tr> 
      <tr> 
       <td><i class="conum" data-value="2"></i><b>2</b></td> 
@@ -1490,13 +1490,13 @@
      </tr> 
      <tr> 
       <td><i class="conum" data-value="5"></i><b>5</b></td> 
-      <td>When the authentication information was invalid, and an exception is thrown.</td> 
+      <td>When the authentication information is invalid, and an exception is thrown.</td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>If there is another operation in the flow that has a Authentication Handler as a parameter, the instance that is injected will be the same as the one that is handled on the <code>basic-authentication-filter</code> operation. This way, by using the <code>getAuthentication</code> method you will get the <code>Authentication</code> with the credentials from the HTTP Request.</p> 
+   <p>If there is another operation in the flow that has an Authentication Handler as a parameter, the instance that is injected will be the same as the one that is handled on the <code>basic-authentication-filter</code> operation. This way, by using the <code>getAuthentication</code> method, you will get the <code>Authentication</code> with the credentials from the HTTP Request.</p> 
   </div> 
  </div> 
 </div>
