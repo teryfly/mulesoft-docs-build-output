@@ -877,7 +877,7 @@
 <li><i></i><a href="/mule-sdk/v/1.1/isolation">Classloading Isolation</a></li><li>
 <i></i>
 <a href="/mule-sdk/v/1.1/security">Security</a><ul>
-<li><i></i><a href="/mule-sdk/v/1.1/tls">TLS</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth">OAuth</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-configuring">Configuring OAuth</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-dance">OAuth Dance</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-token-expiration">OAuth Token Expiration</a></li></ul></li>
+<li><i></i><a href="/mule-sdk/v/1.1/authentication-handler">Authentication Handler</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth">OAuth</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-configuring">Configuring OAuth</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-dance">OAuth Dance</a></li><li><i></i><a href="/mule-sdk/v/1.1/oauth-token-expiration">OAuth Token Expiration</a></li><li><i></i><a href="/mule-sdk/v/1.1/tls">TLS</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-sdk/v/1.1/advanced-parameter-handling">Advanced Parameter Handling</a><ul>
@@ -1329,7 +1329,7 @@
          <p><a href="#ExpirationPolicy">Expiration Policy Type</a></p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform expires the instance at the exact moment that it becomes eligible. The runtime actually purges the instances when it sees fit.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1505,7 +1505,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><a href="#TcpClientSocketParameterGroup">Tcp Client Socket Parameter Group</a></p> 
+         <p><a href="#TcpClientSocketParameterGroup">TCP Client Socket Parameter Group</a></p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"></td> 
@@ -1584,7 +1584,7 @@
    <p><code>&lt;anypoint-mq:ack&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p> Executes an Acknowledgement over a given AnypointMQMessageContext indicating that the message has been consumed correctly and deletes the message from In Flight status. </p> 
+   <p>Executes an Acknowledgement over a given AnypointMQMessageContext indicating that the message has been consumed correctly and deletes the message from in-flight status.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-3"><a class="anchor" href="#parameters-3"></a>Parameters</h3> 
@@ -1636,7 +1636,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1718,7 +1718,7 @@
         </div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>IMMEDIATE - An application receives a message and the MQ connector immediately acknowledges and deletes the message.</p> </li> 
+          <li> <p>IMMEDIATE - An application receives a message and the MQ connector immediately acknowledges and deletes the message. <strong>Note:</strong> In Mule 3, this enum is known as NONE - the functionality is the same.</p> </li> 
           <li> <p>MANUAL - An application indicates that it sends its own Ack or Nack using the Anypoint MQ connector local state.</p> </li> 
          </ul> 
         </div> 
@@ -1787,7 +1787,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1799,7 +1799,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation's output will be placed.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1811,7 +1811,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">+++An expression to evaluate against the operation’s output and store the outcome of that expression in the target variable.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1826,7 +1826,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1890,50 +1890,50 @@
    <p><code>&lt;anypoint-mq:nack&gt;</code></p> 
   </div> 
   <div class="paragraph"> 
-   <p> Executes an Not Acknowledgement over a given AnypointMQMessageContext and change the status of the message from In Flight to In Queue to be consumed again for a subscriber </p> 
+   <p>Executes an Not Acknowledgement over a given AnypointMQMessageContext and change the status of the message from in-flight to in-queue to be consumed again for a subscriber.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="parameters-5"><a class="anchor" href="#parameters-5"></a>Parameters</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 35%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 5%;"> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
+     <col> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-middle">Name</th> 
-      <th class="tableblock halign-left valign-middle">Type</th> 
-      <th class="tableblock halign-left valign-middle">Description</th> 
-      <th class="tableblock halign-left valign-middle">Default Value</th> 
-      <th class="tableblock halign-center valign-middle">Required</th> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+      <th class="tableblock halign-left valign-top">Default Value</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Configuration</p></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">String</p></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">The name of the configuration to use.</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Message Context</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Message Context</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
          <p><a href="#AnypointMQMessageContext">[AnypointMQMessageContext]</a></p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-center valign-middle"><p class="tableblock">x</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">AnypointMQMessageContext that represents the received message</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">Reconnection Strategy</p></td> 
-      <td class="tableblock halign-left valign-middle"> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="ulist"> 
          <ul> 
@@ -1942,9 +1942,9 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-middle"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
-      <td class="tableblock halign-left valign-middle"></td> 
-      <td class="tableblock halign-center valign-middle"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -2099,7 +2099,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">+++Configure if repeatable streams should be used and their behavior.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2111,7 +2111,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation's output will be placed</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">+++The name of a variable that stores the operation’s output.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2123,7 +2123,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression to evaluate against the operation's output and the outcome of that expression will be stored in the target variable.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression to evaluate against the operation's output and stores the outcome of that expression in the target variable.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2138,7 +2138,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2411,7 +2411,7 @@
    </tbody> 
   </table> 
   <div class="sect2"> 
-   <h3 id="TcpClientSocketParameterGroup"><a class="anchor" href="#TcpClientSocketParameterGroup"></a>Tcp Client Socket Parameter Group</h3> 
+   <h3 id="TcpClientSocketParameterGroup"><a class="anchor" href="#TcpClientSocketParameterGroup"></a>TCP Client Socket Parameter Group</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col> 
@@ -2548,7 +2548,7 @@
         <p>String</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of protocols enabled for this context.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma-separated list of protocols enabled for this context.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -2560,7 +2560,7 @@
         <p>String</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of cipher suites enabled for this context.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A comma-separated list of cipher suites enabled for this context.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -2801,7 +2801,7 @@
         <p>Boolean</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn’t pass after exhausting the associated reconnection strategy</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment fails if the test doesn’t pass after exhausting the associated reconnection strategy</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -2853,7 +2853,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -2865,7 +2865,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -2899,7 +2899,7 @@
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">How often in milliseconds to reconnect.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -2970,7 +2970,7 @@
          <p>Number</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects will be evicted from the pool due to idle time alone.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects are evicted from the pool due to idle time alone.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3001,7 +3001,7 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the behavior of the Mule component pool when the pool is exhausted. Possible values are: "WHEN_EXHAUSTED_FAIL", which will throw a NoSuchElementException, "WHEN_EXHAUSTED_WAIT", which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new Mule instance and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the behavior of the Mule component pool when the pool is exhausted. Possible values are: "WHEN_EXHAUSTED_FAIL", which throws a NoSuchElementException, "WHEN_EXHAUSTED_WAIT", which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which creates a new Mule instance and returns it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it blocks for at most that many milliseconds, after which a NoSuchElementException is thrown. If maxThreadWait is a negative value, it blocks indefinitely.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3020,7 +3020,19 @@
          </ul> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines how components in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any components into the pool on startup), INITIALISE_ONE (will load one initial component into the pool on startup), or INITIALISE_ALL (will load all components in the pool on startup)</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Determines how components in a pool should be initialized. The possible values are:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>INITIALISE_NONE - Load any components into the pool on startu.</p> </li> 
+          <li> <p>INITIALISE_ONE - Load one initial component into the pool on startup.</p> </li> 
+          <li> <p>INITIALISE_ALL - Load all components in the pool on startup.</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -3070,7 +3082,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3093,7 +3105,7 @@
         </ul> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3130,7 +3142,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of times a message can be redelivered and processed unsuccessfully before triggering process-failed-message</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of times a message can be redelivered and processed unsuccessfully before triggering process-failed-message.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3142,7 +3154,7 @@
         <p>Boolean</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to use a secure hash algorithm to identify a redelivered message</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to use a secure hash algorithm to identify a redelivered message.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3215,7 +3227,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the amount of memory that will be allocated in order to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then it will be expanded by according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The amount of memory to allocate to consume the stream and provide random access to it. If the stream contains more data than can fit into this buffer, the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3227,7 +3239,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">This is by how much will be buffer size by expanded if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">By how much the buffer size expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised when the buffer gets full.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3239,7 +3251,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used, then a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised. A value lower or equal to zero means no limit.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3296,7 +3308,7 @@
         <p>Number</p> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it will start to buffer the content on disk.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed, it buffers the content on disk.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
@@ -3316,7 +3328,7 @@
         </ul> 
        </div> 
       </div></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed.</p></td> 
      <td class="tableblock halign-left valign-top"></td> 
      <td class="tableblock halign-left valign-top"></td> 
     </tr> 
