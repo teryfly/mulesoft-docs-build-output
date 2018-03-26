@@ -1285,18 +1285,14 @@
   <div class="paragraph"> 
    <p>You specify the identifier when you apply the policy.</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/rate-limit-identifier.png" alt="rate limit identifier"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/rate-limit-identifier.png" alt="rate limit identifier"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>This example makes Rate limiting effective for every method. The quota is independent for each method (3 requests per 10 seconds). Such a policy configuration could result in the events over a hypothetical period of time shown below:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/three-req-per-10.png" alt="three req per 10"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/three-req-per-10.png" alt="three req per 10"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The example shows the following things:</p> 
@@ -1311,7 +1307,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters"><a class="anchor" href="#to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters"></a>To Apply Rate Limiting Using an Identifier on Non-obligatory Parameters</h2> 
+ <h2 id="to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters"><a class="anchor" href="#to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters"></a>To Apply Rate Limiting Using an Identifier on Non-Obligatory Parameters</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>The identifier is a non-obligatory parameter. By default the identifier is blank, preserving compatibility with all previous versions of the Rate limiting policy as follows:</p> 
@@ -1327,12 +1323,10 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>The following image illustrates the latter case, which corresponds to a 3-requests- per-10-seconds quota with the DataWeave expression #[attributes.queryParam[‘customIdentifier’]] as the policy identifier:</p> 
+   <p>The following image illustrates the latter case, which corresponds to a 3-requests-per-10-seconds quota with the DataWeave expression: <code>#[attributes.queryParam[‘customIdentifier’]]</code> as the policy identifier:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/rate-limit-identifier.png" alt="rate limit identifier"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/rate-limit-identifier.png" alt="rate limit identifier"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>In the case, the following actions occur:</p> 
@@ -1354,10 +1348,8 @@
   <div class="paragraph"> 
    <p>For example, you can configure a rate limiting policy with an identifier that uses one bucket for all Class A &amp; C LAN requests, and another one for everything else.</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/dw-apply-limiting.png" alt="dw apply limiting"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/dw-apply-limiting.png" alt="dw apply limiting"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>This configuration creates a false or a true bucket that corresponds to the locality of the IP that made the request.</p> 
@@ -1386,7 +1378,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters">To Apply Rate Limiting Using an Identifier on Non-obligatory Parameters</a></li><li><a class="scroll-menu-link" href="#to-apply-rate-limiting-using-dataweave-expressions">To Apply Rate Limiting Using DataWeave Expressions</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#to-apply-rate-limiting-using-an-identifier-on-non-obligatory-parameters">To Apply Rate Limiting Using an Identifier on Non-Obligatory Parameters</a></li><li><a class="scroll-menu-link" href="#to-apply-rate-limiting-using-dataweave-expressions">To Apply Rate Limiting Using DataWeave Expressions</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
