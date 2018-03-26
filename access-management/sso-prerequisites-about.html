@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/access-management/sso-prerequisites-about" />
-  <meta name="description" content="Observe the following prerequisites: If a user session times out, the user is redirected to the federated identity login page instead of the generi..." />
+  <meta name="description" content="This topic describes the prerequisites and limitations for using SSO within Anypoint Platform. Before using SSO, ensure that you have performed the..." />
   <meta class="swiftype" name="title" data-type="string" content="About SSO Prerequisites and Limitations" />
 </head>
 <body>
@@ -427,7 +427,7 @@
 <li>
 <i></i>
 <a href="/access-management/managing-users">To Configure SAML</a><ul>
-<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
+<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li><i></i><a href="/access-management/saml-bearer-token">To Obtain the Bearer Token Using SAML</a></li><li><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
 <li><i></i><a href="/access-management/conf-openid-connect-task">To Configure OpenID Connect</a></li><li><i></i><a href="/access-management/test-external-identity-task">To Test External Identity Configuration</a></li><li><i></i><a href="/access-management/change-id-mgmt-conf-about">To Change an Identity Management Configuration</a></li></ul></li>
 <li>
 <i></i>
@@ -1275,24 +1275,43 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Observe the following prerequisites:</p> 
+   <p>This topic describes the prerequisites and limitations for using SSO within Anypoint Platform.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Before using SSO, ensure that you have performed the following:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Configure your IdP to send the your user name and email in your assertion.</p> </li> 
-    <li> <p>Configure Anypoint Platform to map the user name and email to the expected attribute name. Otherwise, the login fails with a 403 unauthorized error message.</p> </li> 
-    <li> <p>The identity provider (IdP) issues the SAML assertion as an XML file. Ensure that this assertion is signed, but unencrypted, for verification of its integrity because the assertion itself is POSTed through HTTPS.</p> </li> 
-    <li> <p>Prepare users for the following changes.</p> 
+    <li> <p>Configure your identity provide to send the user name and email in your assertion.</p> </li> 
+    <li> <p>Configure Anypoint Platform to map the user name and email to the expected attribute name. If you do not configure this setting, login fails with a 403 unauthorized error message.</p> </li> 
+    <li> <p>Configure the SAML assertion of the identity provider as signed, but unencrypted. The identity provider issues the SAML assertion as an XML file which is sent through HTTP as a POST request.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="client-considerations"><a class="anchor" href="#client-considerations"></a>Client Considerations</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Be aware of the following considerations related to client behavior:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>User accounts created before configuring your federated organization remain within the organization. However, users can only login through the Anypoint Platform sign in page. They cannot login from the redirected login page of the identity provider.</p> </li> 
+    <li> <p>When external identity is enabled, the invite button is disabled within Access Management. You cannot add new non-federated users. Existing non-federated users can continue to work as normally, but with the following exceptions:</p> 
      <div class="ulist"> 
       <ul> 
-       <li> <p>User accounts that you create before configuring your federated organization remain. However, your users can login only through the Anypoint Platform Sign In page, not the IdP redirected custom login page.</p> </li> 
-       <li> <p>With external identity enabled, the invite button is disabled and no new non-federated users can be added. Existing non-federated users can continue to work normally, with some exceptions:</p> 
-        <div class="paragraph"> 
-         <p>If a user session times out, the user is redirected to the federated identity login page instead of the generic one. Links and bookmarks that identify the organization redirect the user to the federated login page, which fails for non-federated users.</p> 
-        </div> </li> 
-       <li> <p>If you configure an IdP to handle user information assertion, users need to log into Anypoint Platform at the following location:</p> 
-        <div class="paragraph"> 
-         <p><code>https://anypoint.mulesoft.com/accounts/login/{yourorgDomain}</code></p> 
+       <li> <p>If a user session times out, the user is redirected to the federated identity login page instead of the generic one. Links and bookmarks that identify the organization redirect the user to the federated login page, which fails for non-federated users.</p> </li> 
+       <li> <p>If you configure your identity provider to handle user information assertion, users must log into Anypoint Platform using the following URL:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre>https://anypoint.mulesoft.com/accounts/login/{your_org_domain}</pre> 
+         </div> 
         </div> </li> 
       </ul> 
      </div> </li> 
@@ -1305,14 +1324,11 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Federated users cannot use platform APIs.</p> </li> 
     <li> <p>OpenID Connect does not support single logout.</p> </li> 
-    <li> <p>OpenID Connect does not support role mapping.</p> 
-     <div class="paragraph"> 
-      <p>If a SAML user belongs to certain groups, Anypoint Platform does not automatically grant equivalent roles in the organization.</p> 
-     </div> </li> 
-    <li> <p>Anypoint Platform does not generate the SAML assertion for the single sign on. Your IdP generates the Sign On URL that you configure.</p> </li> 
-    <li> <p>External Identity configuration is only available at Organization level. Business Unit level external identity configuration is not currently supported.</p> </li> 
+    <li> <p>OpenID Connect does not support role mapping.</p> </li> 
+    <li> <p>If a SAML user belongs to certain groups, Anypoint Platform does not automatically grant equivalent roles in the organization.</p> </li> 
+    <li> <p>Anypoint Platform does not generate the SAML assertion for single sign on. Your IdP generates the Sign On URL that you configure.</p> </li> 
+    <li> <p>External Identity configuration is only available at the Organization level. You cannot configure an external identity provider for a Business Unit.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1321,7 +1337,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#client-considerations">Client Considerations</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->

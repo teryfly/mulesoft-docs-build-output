@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/access-management/troubleshoot-saml-assertions-task" />
-  <meta name="description" content="https://anypoint.mulesoft.com/accounts/login/receive-id Click on the specific row that has the above mentioned URL. In the Form data window on the ..." />
+  <meta name="description" content="Click on the specific row that has the above mentioned URL. In the Form data window on the right select the Params tab and copy the SAML response e..." />
   <meta class="swiftype" name="title" data-type="string" content="To view a SAML response in your Browser" />
 </head>
 <body>
@@ -427,7 +427,7 @@
 <li class="expanded">
 <i></i>
 <a href="/access-management/managing-users">To Configure SAML</a><ul style="display: block;">
-<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li class="active"><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
+<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li><i></i><a href="/access-management/saml-bearer-token">To Obtain the Bearer Token Using SAML</a></li><li class="active"><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
 <li><i></i><a href="/access-management/conf-openid-connect-task">To Configure OpenID Connect</a></li><li><i></i><a href="/access-management/test-external-identity-task">To Test External Identity Configuration</a></li><li><i></i><a href="/access-management/change-id-mgmt-conf-about">To Change an Identity Management Configuration</a></li></ul></li>
 <li>
 <i></i>
@@ -1277,16 +1277,38 @@
   <li> <p>Open a new tab in your browser and use Chrome Developer Tools, Firebug for Firefox, or a SAML tracer to be prepared to capture the SAML response. Ensure that you are prevserving logs.</p> </li> 
   <li> <p>Go to anypoint.mulesoft.com/accounts/login/&lt;domainname&gt;. This will redirect you to your IDP’s Sigle sign on page. Note: You can view your anypoint organization’s domain name by clicking Access Management → Organizations → &lt;Master org&gt;</p> </li> 
   <li> <p>Enter IDP account credentials and authenticate yourself.</p> </li> 
-  <li> <p>After successfully authenticating to the IdP, capture a SAML assertion by inspecting the <code>HTTP POST</code> sent by the browser to the following SAML Assertion URL:</p> 
-   <div class="paragraph"> 
-    <p><code>https://anypoint.mulesoft.com/accounts/login/receive-id</code></p> 
+  <li> <p>Open a new tab in your browser and use Chrome Developer Tools, Firebug for Firefox, or a SAML tracer to be prepared to capture the SAML response. Ensure that you are preserving logs.</p> </li> 
+  <li> <p>Select Access Management → Organizations → &lt;Master org&gt; to determine your organizations’s domain name.</p> </li> 
+  <li> <p>Go to the following URL, replacing <code>domain_name</code> with your organization’s domain name:</p> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>anypoint.mulesoft.com/accounts/login/&lt;domain_name&gt;</pre> 
+    </div> 
    </div> 
    <div class="paragraph"> 
     <p>Click on the specific row that has the above mentioned URL. In the Form data window on the right select the Params tab and copy the SAML response element.</p> 
    </div> </li> 
   <li> <p>Log in to the MuleSoft Support Portal at the following URL:</p> 
-   <div class="paragraph"> 
-    <p><code>https://www.mulesoft.com/support-login</code></p> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>https://anypoint.mulesoft.com/accounts/login/receive-id</pre> 
+    </div> 
+   </div> </li> 
+  <li> <p>Click on the specific row that contains the URL mentioned above.</p> </li> 
+  <li> <p>In the Form data window on the right select the Params tab.</p> </li> 
+  <li> <p>Record the SAML response element.</p> </li> 
+ </ol> 
+</div> 
+<div class="paragraph"> 
+ <p>After recording the SAML response element, you can use it to obtain a bearer token to access platform APIs. It is also useful to provide the SAML response for troubleshooting when contacting MuleSoft support.</p> 
+</div> 
+<div class="olist arabic"> 
+ <ol class="arabic"> 
+  <li> <p>Log in to the MuleSoft Support Portal at the following URL:</p> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>https://www.mulesoft.com/support-login</pre> 
+    </div> 
    </div> </li> 
   <li> <p>Provide a screen shot of your SAML configuration in Anypoint Platform.</p> </li> 
   <li> <p>Include an XML SAML assertion.</p> </li> 

@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/release-notes/api-mocking-service-release-notes" />
-  <meta name="description" content="February 24, 2018 This release fixes several bugs. January 13, 2018 This release resolves a few issues: December 16, 2017 This release introduces t..." />
+  <meta name="description" content="March 24, 2018 This release bumps the parser and includes bug fixes. Bumped parser to 1.1.41. February 24, 2018 This release fixes several bugs. Ja..." />
   <meta class="swiftype" name="title" data-type="string" content="API Mocking Service Release Notes" />
 </head>
 <body>
@@ -427,7 +427,7 @@
 <li>
 <i></i>
 <a href="/access-management/managing-users">To Configure SAML</a><ul>
-<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
+<li><i></i><a href="/access-management/verify-saml-info-task">To Verify SAML Information</a></li><li><i></i><a href="/access-management/saml-bearer-token">To Obtain the Bearer Token Using SAML</a></li><li><i></i><a href="/access-management/troubleshoot-saml-assertions-task">To Troubleshoot SAML Assertions</a></li><li><i></i><a href="/access-management/update-user-profile-task">To Update Your User Profile</a></li><li><i></i><a href="/access-management/single-log-out-task">To Configure Single Log Out</a></li></ul></li>
 <li><i></i><a href="/access-management/conf-openid-connect-task">To Configure OpenID Connect</a></li><li><i></i><a href="/access-management/test-external-identity-task">To Test External Identity Configuration</a></li><li><i></i><a href="/access-management/change-id-mgmt-conf-about">To Change an Identity Management Configuration</a></li></ul></li>
 <li>
 <i></i>
@@ -1276,6 +1276,7 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
+    <li> <p><a href="#api-mocking-service-1-1-7">API Mocking Service 1.1.7</a></p> </li> 
     <li> <p><a href="#api-mocking-service-1-1-6">API Mocking Service 1.1.6</a></p> </li> 
     <li> <p><a href="#api-mocking-service-1-1-5">API Mocking Service 1.1.5</a></p> </li> 
     <li> <p><a href="#api-mocking-service-1-1-4">API Mocking Service 1.1.4</a></p> </li> 
@@ -1283,6 +1284,33 @@
     <li> <p><a href="#api-mocking-service-1-1-2">API Mocking Service 1.1.2</a></p> </li> 
     <li> <p><a href="#api-mocking-service-1-1-1">API Mocking Service 1.1.1</a></p> </li> 
    </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="api-mocking-service-1-1-7"><a class="anchor" href="#api-mocking-service-1-1-7"></a>API Mocking Service 1.1.7</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>March 24, 2018</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This release bumps the parser and includes bug fixes.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="improvements"><a class="anchor" href="#improvements"></a>Improvements</h3> 
+   <div class="paragraph"> 
+    <p>Bumped parser to 1.1.41.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="fixed-issues"><a class="anchor" href="#fixed-issues"></a>Fixed Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Parsing no longer returns an Error for XML and Schema valid.</p> </li> 
+     <li> <p>Fixed an issue with getting validation errors while building RAML for XML with Attributes and Inner text.</p> </li> 
+     <li> <p>Fixed an issue that prevented some methods that return an Array from correctly showing the response example.</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1296,7 +1324,7 @@
    <p>This release fixes several bugs.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="fixed-issues"><a class="anchor" href="#fixed-issues"></a>Fixed Issues</h3> 
+   <h3 id="fixed-issues-2"><a class="anchor" href="#fixed-issues-2"></a>Fixed Issues</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>A problem that prevented validation datetime query parameters with format RFC3339.</p> </li> 
@@ -1338,7 +1366,7 @@
    <p>This release introduces the following improvements and resolved issues:</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="improvements"><a class="anchor" href="#improvements"></a>Improvements</h3> 
+   <h3 id="improvements-2"><a class="anchor" href="#improvements-2"></a>Improvements</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>Using the mocking service from a proxy application overrides the mocking service of the API itself.</p> </li> 
@@ -1373,7 +1401,7 @@
    <p>This release focuses on bug fixes.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="improvements-2"><a class="anchor" href="#improvements-2"></a>Improvements</h3> 
+   <h3 id="improvements-3"><a class="anchor" href="#improvements-3"></a>Improvements</h3> 
    <div class="ulist"> 
     <ul> 
      <li> <p>Enhanced the Mocking Server to respond with random examples if more than one is available.</p> </li> 
@@ -1434,7 +1462,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-6">API Mocking Service 1.1.6</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-5">API Mocking Service 1.1.5</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-4">API Mocking Service 1.1.4</a></li><li><a class="scroll-menu-link" href="#resolved-issues-2">Resolved Issues</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-3">API Mocking Service 1.1.3</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-2">API Mocking Service 1.1.2</a></li><li><a class="scroll-menu-link" href="#resolved-issues-4">Resolved Issues</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-1">API Mocking Service 1.1.1</a></li><li><a class="scroll-menu-link" href="#resolved-issues-5">Resolved Issues</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-7">API Mocking Service 1.1.7</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-6">API Mocking Service 1.1.6</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-5">API Mocking Service 1.1.5</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-4">API Mocking Service 1.1.4</a></li><li><a class="scroll-menu-link" href="#resolved-issues-2">Resolved Issues</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-3">API Mocking Service 1.1.3</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-2">API Mocking Service 1.1.2</a></li><li><a class="scroll-menu-link" href="#resolved-issues-4">Resolved Issues</a></li><li><a class="scroll-menu-link" href="#api-mocking-service-1-1-1">API Mocking Service 1.1.1</a></li><li><a class="scroll-menu-link" href="#resolved-issues-5">Resolved Issues</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
