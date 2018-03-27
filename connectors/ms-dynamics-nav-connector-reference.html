@@ -1721,8 +1721,8 @@
        <div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
+          <li> <p>Reconnect</p> </li> 
+          <li> <p>Reconnect Forever</p> </li> 
          </ul> 
         </div> 
        </div></td> 
@@ -1832,9 +1832,8 @@
        <div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>repeatable-in-memory-iterable</p> </li> 
-          <li> <p>repeatable-file-store-iterable</p> </li> 
-          <li> <p>non-repeatable-iterable</p> </li> 
+          <li> <p>Repeatable In Memory Iterable</p> </li> 
+          <li> <p>Repeatable File Store Iterable</p> </li> 
          </ul> 
         </div> 
        </div></td> 
@@ -1872,8 +1871,8 @@
        <div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
+          <li> <p>Reconnect</p> </li> 
+          <li> <p>Reconnect Forever</p> </li> 
          </ul> 
         </div> 
        </div></td> 
@@ -2018,8 +2017,8 @@
        <div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>reconnect</p> </li> 
-          <li> <p>reconnect-forever</p> </li> 
+          <li> <p>Reconnect</p> </li> 
+          <li> <p>Reconnect Forever</p> </li> 
          </ul> 
         </div> 
        </div></td> 
@@ -2105,8 +2104,8 @@
       <div> 
        <div class="ulist"> 
         <ul> 
-         <li> <p>reconnect</p> </li> 
-         <li> <p>reconnect-forever</p> </li> 
+         <li> <p>Reconnect</p> </li> 
+         <li> <p>Reconnect Forever</p> </li> 
         </ul> 
        </div> 
       </div></td> 
@@ -2397,65 +2396,67 @@
     </tr> 
    </tbody> 
   </table> 
-  <div class="sect2"> 
-   <h3 id="repeatable-in-memory-iterable"><a class="anchor" href="#repeatable-in-memory-iterable"></a>Repeatable In Memory Iterable Type</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Default Value</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the amount of instances that will be initially be allowed to be kept in memory in order to consume the stream and provide random access to it. If the stream contains more data than can fit into this buffer, then it will be expanded according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize. Default value is 100 instances.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This is by how much will the buffer size expands if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full. Default value is 100 instances.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-in-memory-iterable"><a class="anchor" href="#repeatable-in-memory-iterable"></a>Repeatable In Memory Iterable Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the amount of instances that will be initially be allowed to be kept in memory in order to consume the stream and provide random access to it. If the stream contains more data than can fit into this buffer, then it will be expanded according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize. Default value is 100 instances.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is by how much will the buffer size expands if it exceeds its initial size. Setting a value of zero or lower will mean that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised when the buffer gets full. Default value is 100 instances.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory that will be used. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error will be raised. A value lower or equal to zero means no limit.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -2519,7 +2520,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#dynamics-nav-configuration">Dynamics Nav Configuration</a></li><li><a class="scroll-menu-link" href="#ntlm-connection-type">NTLM Connection Type</a></li><li><a class="scroll-menu-link" href="#dynamics-nav-config_oauth">OAuth Connection Type</a></li><li><a class="scroll-menu-link" href="#associated-operations">Associated Operations</a></li><li><a class="scroll-menu-link" href="#codeunit-operation">Codeunit Operation</a></li><li><a class="scroll-menu-link" href="#odata-query">OData Query</a></li><li><a class="scroll-menu-link" href="#pageOperation">Page Operation</a></li><li><a class="scroll-menu-link" href="#reconnection-type">Reconnection Type</a></li><li><a class="scroll-menu-link" href="#reconnect">Reconnect Type</a></li><li><a class="scroll-menu-link" href="#reconnect-forever">Reconnect Forever Type</a></li><li><a class="scroll-menu-link" href="#PoolingProfile">Pooling Profile Type</a></li><li><a class="scroll-menu-link" href="#ExpirationPolicy">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-iterable">Repeatable File Store Iterable Type</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#dynamics-nav-configuration">Dynamics Nav Configuration</a></li><li><a class="scroll-menu-link" href="#ntlm-connection-type">NTLM Connection Type</a></li><li><a class="scroll-menu-link" href="#dynamics-nav-config_oauth">OAuth Connection Type</a></li><li><a class="scroll-menu-link" href="#associated-operations">Associated Operations</a></li><li><a class="scroll-menu-link" href="#codeunit-operation">Codeunit Operation</a></li><li><a class="scroll-menu-link" href="#odata-query">OData Query</a></li><li><a class="scroll-menu-link" href="#pageOperation">Page Operation</a></li><li><a class="scroll-menu-link" href="#reconnection-type">Reconnection Type</a></li><li><a class="scroll-menu-link" href="#reconnect">Reconnect Type</a></li><li><a class="scroll-menu-link" href="#reconnect-forever">Reconnect Forever Type</a></li><li><a class="scroll-menu-link" href="#PoolingProfile">Pooling Profile Type</a></li><li><a class="scroll-menu-link" href="#ExpirationPolicy">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-in-memory-iterable">Repeatable In Memory Iterable Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-iterable">Repeatable File Store Iterable Type</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
