@@ -1328,7 +1328,6 @@
 9
 10
 11
-12
 </pre></td> 
          <td class="code"><pre>%dw 2.0
 import * from dw::core::Strings
@@ -1337,25 +1336,14 @@ output application/json
 payload mapObject ((elementValue, elementKey) -&gt; {
   (if (elementValue is Array)
       pluralize(elementKey)
-      else if(elementValue is Number)
-        camelize(elementKey)
-        else capitalize(elementKey))
-   : elementValue
+    else if(elementValue is Number)
+      camelize(elementKey)
+    else capitalize(elementKey)) : elementValue
 })</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
    </div> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Note that the <code>when not</code> condition in this case scopes the value of the element, not the key. <code>(camelize(elmentKey))</code> is always applied. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
