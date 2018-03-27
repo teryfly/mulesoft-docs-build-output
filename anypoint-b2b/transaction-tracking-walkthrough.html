@@ -1012,7 +1012,7 @@
 <li class="expanded">
 <i></i>
 <a href="/anypoint-b2b/tutorials">Tutorials</a><ul style="display: block;">
-<li><i></i><a href="/anypoint-b2b/apm-tutorial-td">Anypoint Partner Manager Tutorial: Designing a Transaction</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li class="active"><i></i><a href="/anypoint-b2b/transaction-tracking-walkthrough">Transaction Tracking Walkthrough</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/apm-tutorial-td">Anypoint Partner Manager Tutorial: Designing a Transaction</a></li><li class="active"><i></i><a href="/anypoint-b2b/transaction-tracking-walkthrough">Transaction Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/anypoint-partner-manager-api">Anypoint Partner Manager API</a></li><li><i></i><a href="/anypoint-b2b/glossary">Glossary</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/partner-manager-connector">Partner Manager Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
@@ -1313,7 +1313,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <a href="_attachments/partner-manager-tracking-transmission-walkthrough.zip">application</a> and import it into Anypoint Studio.</p> </li> 
+    <li> <p>Download the <a href="https://drive.google.com/open?id=1-59ej2jTORbPqI3vOt58SabbzOeIpHEw">application</a> and import it into Anypoint Studio.</p> </li> 
     <li> <p>From your web browser, log into Anypoint Partner Manager. Go to the Home Organization page and copy your secret API key.</p> </li> 
     <li> <p>From the imported Mule project in Anypoint Studio, click the file <code>b2b-tracking-transmission.xml</code> in the <code>app</code> folder, and select the <strong>Global Elements</strong> view tab. Open the Partner Manager Connector configuration and set the API Key you generated from Anypoint Partner Manager.</p> </li> 
     <li> <p>Right-click the imported project folder from the <strong>Project Explorer</strong> view. Select <strong>Run As</strong> and click <strong>Mule Application</strong>.</p> </li> 
@@ -1333,7 +1333,11 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Launch Anypoint Studio and create a new Mule project.</p> </li> 
-    <li> <p>Switch to the <strong>Global Elements</strong> view and create a Partner Manager Connector configuration as described in the <a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and X12 Purchase Order Walkthrough</a>.</p> </li> 
+    <li> <p>Switch to the <strong>Global Elements</strong> view and create a Partner Manager Connector configuration.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
     <li> <p>Go back to the <strong>Message Flow</strong> view. Drag the <strong>File Connector</strong> from the palette to the canvas in order to create a message source:</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/transmission-tracking-walk-1.png" alt="transmission-tracking-walk-1"></span></p> 
@@ -1405,14 +1409,18 @@
       <p><span class="image"><img src="./_images/transmission-tracking-walk-9.png" alt="transmission-tracking-walk-9"></span></p> 
      </div> 
      <div class="paragraph"> 
-      <p>If you have enabled S3 storage in the Partner Manager Connector config, then you need to add the AWS and S3 parameters to the Mule application VM arguments. Consult the <a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and X12 Purchase Order Walkthrough</a> for information on how to add the parameters.</p> 
-     </div> </li> 
-    <li> <p>Drop the file <a href="_attachments/b2b-tracking-po.xml">b2b-tracking-po.xml</a> in the <code>outbox</code> directory. You should see the file moved to the <code>inbox</code> directory.</p> </li> 
-    <li> <p>Access the Anypoint Partner Manager and go to the B2B transmissions view to confirm that the exchange was tracked:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/transmission-tracking-walk-10.png" alt="transmission-tracking-walk-10"></span></p> 
+      <p>If you have enabled S3 storage in the Partner Manager Connector config, then you need to add the AWS and S3 parameters to the Mule application VM arguments.</p> 
      </div> </li> 
    </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ . Drop the file <a href="https://drive.google.com/open?id=1-59ej2jTORbPqI3vOt58SabbzOeIpHEw">b2b-tracking-po.xml</a> in the <code>outbox</code> directory. You should see the file moved to the <code>inbox</code> directory.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ . Access the Anypoint Partner Manager and go to the B2B transmissions view to confirm that the exchange was tracked:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ <span class="image"><img src="./_images/transmission-tracking-walk-10.png" alt="transmission-tracking-walk-10"></span></p> 
   </div> 
  </div> 
 </div>
