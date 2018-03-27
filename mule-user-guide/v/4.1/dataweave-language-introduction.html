@@ -571,10 +571,10 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/dataweave-types">DataWeave Types</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-types-coercion">About Type Coercion with DataWeave</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-functions">About DataWeave Functions</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
 <i></i>
-<a href="/mule-user-guide/v/4.1/dataweave-import-module">To Import DataWeave Function Modules</a><ul>
-<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-create-module">To Create a DataWeave Function Module</a></li></ul></li>
+<a href="/mule-user-guide/v/4.1/dataweave-functions">About DataWeave Functions</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-import-module">To Import DataWeave Function Modules</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-create-module">To Create a DataWeave Function Module</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/dw-functions">DataWeave Function Reference</a><ul>
@@ -1301,7 +1301,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>You can also store DataWeave code in external files and read them in to other DataWeave scripts, or you can factor DataWeave code into modules (libraries) of reusable DataWeave functions that can be shared by all the components in a Mule app.</p> 
+   <p>You can also store DataWeave code in <a href="#dwl_file">external files</a> and read them into other DataWeave scripts, or you can factor DataWeave code into modules (libraries) of reusable DataWeave functions that can be shared by all the components in a Mule app.</p> 
   </div> 
  </div> 
 </div> 
@@ -1321,7 +1321,7 @@
    <p>When you include a header, the header appears above the body separated by a delimiter consisting of three dashes: <code>---</code>.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Here is an example DataWeave file with an output directive declared in the header, followed by a DataWeave expression to create a user object that contains two child key/value pairs:</p> 
+   <p>Here is an example of a DataWeave file with an output directive declared in the header, followed by a DataWeave expression to create a user object that contains two child key/value pairs:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1468,6 +1468,9 @@ output application/json
           </tbody> 
          </table></code></pre> 
       </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>For details, see <a href="dataweave-variables">About DataWeave Variables</a>.</p> 
      </div> </li> 
     <li> <p><code>type</code>: For specifying a custom type that you can use in the expression.</p> </li> 
     <li> <p><code>ns</code>: Namespaces, used to import a namespace.</p> 
@@ -1543,9 +1546,9 @@ fun toUser = (user) -&gt; {firstName: user.name, lastName: user.lastName}
   <div class="paragraph"> 
    <p>This DataWeave script takes the entire payload of the JSON input above and outputs it to the <code>application/xml</code> format.</p> 
   </div> 
-  <div class="listingblock"> 
+  <div id="script_output_xml" class="listingblock"> 
    <div class="title">
-     Example: DataWeave Script 
+     Example: Script that Outputs application/xml 
    </div> 
    <div class="content"> 
     <pre class="CodeRay highlight"><code data-lang="DataWeave">
@@ -1597,31 +1600,7 @@ payload</pre></td>
    <p>However, a script can throw errors due to DataWeave coding errors and due to formatting errors. So when transforming one data format to another, it is important to keep in mind the constraints of the formats. For example, XML requires a single root node.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>If you use the next script in the attempt to transform the <a href="#json_input">JSON input</a> below to XML, you will receive an error (<code>Unexpected internal error</code>) because the JSON input lacks a single root.</p> 
-  </div> 
-  <div id="script_simple" class="listingblock"> 
-   <div class="title">
-     Example: Script that Outputs application/xml 
-   </div> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="DataWeave">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-</pre></td> 
-         <td class="code"><pre>%dw 2.0
-output application/xml
----
-payload</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+   <p>If you use the <a href="#script_output_xml">DataWeave script above</a> in the attempt to transform this JSON input to XML, you will receive an error (<code>Unexpected internal error</code>) because the JSON input lacks a single root:</p> 
   </div> 
   <div id="json_input" class="listingblock"> 
    <div class="title">
@@ -1652,7 +1631,7 @@ payload</pre></td>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>A good mental model for approaching a script is to normalize the input to the JSON-like <a href="dataweave-formats.html#format_dataweave">application/dw</a> format. In fact, if you get an error, you can transform your input to <code>application/dw</code>. If the transformation is successful, then the error is likely a formatting error. If it is unsuccessful, then the error is a coding error.</p> 
+   <p>A good mental model for approaching a script is to normalize the input to the JSON-like <a href="dataweave-formats.html#format_dataweave">application/dw</a> format. In fact, if you get an error, you can simply transform your input to <code>application/dw</code>. If the transformation is successful, then the error is likely a formatting error. If it is unsuccessful, then the error is a coding error.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This example changes the output format to <code>application/dw</code>:</p> 
@@ -1682,7 +1661,7 @@ payload</pre></td>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>You can see that the script successfully produces <code>application/dw</code> output:</p> 
+   <p>You can see that the script successfully produces <code>application/dw</code> output from the <a href="#json_input">JSON input example</a> above:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1698,7 +1677,7 @@ payload</pre></td>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>So you know that the previous error is specific to the format, not the coding. You can see that that the <code>application/dw</code> output above does not provide a single root element, as required by the XML format. So, to fix the script for <em>XML</em> output, you need to provide a single root element, for example:</p> 
+   <p>So you know that the previous error (<code>Unexpected internal error</code>) is specific to the format, not the coding. You can see that that the <code>application/dw</code> output above does not provide a single root element, as required by the XML format. So, to fix the script for <em>XML</em> output, you need to provide a single root element to your script, for example:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1811,7 +1790,7 @@ output application/xml
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="dwl-file"><a class="anchor" href="#dwl-file"></a>dwl File</h2> 
+ <h2 id="dwl_file"><a class="anchor" href="#dwl_file"></a>dwl File</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>In addition to specifying DataWeave scripts in the Transform and other components, you can also specify the scripts in a <code>.dwl</code> file. In Studio projects, your script files are stored in <code>src/main/resources</code>.</p> 
@@ -1884,7 +1863,7 @@ output application/xml
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#the-structure-of-dataweave-scripts">The Structure of DataWeave Scripts</a></li><li><a class="scroll-menu-link" href="#dataweave-header">DataWeave Header</a></li><li><a class="scroll-menu-link" href="#dataweave-body">DataWeave Body</a></li><li><a class="scroll-menu-link" href="#dataweave-comments">DataWeave Comments</a></li><li><a class="scroll-menu-link" href="#dwl-file">dwl File</a></li><li><a class="scroll-menu-link" href="#see_also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#the-structure-of-dataweave-scripts">The Structure of DataWeave Scripts</a></li><li><a class="scroll-menu-link" href="#dataweave-header">DataWeave Header</a></li><li><a class="scroll-menu-link" href="#dataweave-body">DataWeave Body</a></li><li><a class="scroll-menu-link" href="#dataweave-comments">DataWeave Comments</a></li><li><a class="scroll-menu-link" href="#dwl_file">dwl File</a></li><li><a class="scroll-menu-link" href="#see_also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
