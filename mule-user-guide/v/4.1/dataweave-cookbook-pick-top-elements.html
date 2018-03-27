@@ -1332,7 +1332,7 @@ output application/json
     TopCandidateList: (payload.candidates map ((candidate) -&gt; {
         firstName: candidate.name,
         rank: candidate.score
-    }) orderBy $.rank) [ -payload.availabePositions to -1]
+    }) orderBy $.rank) [ -payload.availablePositions to -1]
 }</pre></td> 
         </tr> 
        </tbody> 
@@ -1381,7 +1381,7 @@ output application/json
 30
 </pre></td> 
          <td class="code"><pre>{
- <span class="key"><span class="delimiter">"</span><span class="content">availabePositions</span><span class="delimiter">"</span></span>: <span class="integer">3</span>,
+ <span class="key"><span class="delimiter">"</span><span class="content">availablePositions</span><span class="delimiter">"</span></span>: <span class="integer">3</span>,
  <span class="key"><span class="delimiter">"</span><span class="content">candidates</span><span class="delimiter">"</span></span>:
     [
       {
@@ -1409,7 +1409,7 @@ output application/json
         <span class="key"><span class="delimiter">"</span><span class="content">score</span><span class="delimiter">"</span></span>:<span class="integer">52</span>
       }
     ]
-  }</pre></td> 
+}</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

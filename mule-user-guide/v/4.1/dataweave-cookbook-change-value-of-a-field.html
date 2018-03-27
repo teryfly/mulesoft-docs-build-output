@@ -1330,11 +1330,9 @@
 14
 15
 16
-17
 </pre></td> 
          <td class="code"><pre>%dw 2.0
 output application/xml
-input payload application/xml
 ---
 users: { (payload.users mapObject (userObject) -&gt; {
     user: {
