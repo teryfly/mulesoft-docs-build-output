@@ -1332,7 +1332,7 @@
 output application/json
 ---
 items: payload.books map (item, index) -&gt; {
-      type: "book",
+      category: "book",
       price: item.price as Number,
       id: index,
       properties: {
@@ -1540,7 +1540,7 @@ items: payload.books map (item, index) -&gt; {
          <td class="code"><pre>{
   <span class="key"><span class="delimiter">"</span><span class="content">items</span><span class="delimiter">"</span></span>: [
     {
-      <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">category</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
       <span class="key"><span class="delimiter">"</span><span class="content">price</span><span class="delimiter">"</span></span>: <span class="float">30.00</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">properties</span><span class="delimiter">"</span></span>: {
@@ -1553,7 +1553,7 @@ items: payload.books map (item, index) -&gt; {
       }
     },
     {
-      <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">category</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
       <span class="key"><span class="delimiter">"</span><span class="content">price</span><span class="delimiter">"</span></span>: <span class="float">29.99</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="integer">1</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">properties</span><span class="delimiter">"</span></span>: {
@@ -1566,7 +1566,7 @@ items: payload.books map (item, index) -&gt; {
       }
     },
     {
-      <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">category</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
       <span class="key"><span class="delimiter">"</span><span class="content">price</span><span class="delimiter">"</span></span>: <span class="float">49.99</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="integer">2</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">properties</span><span class="delimiter">"</span></span>: {
@@ -1585,7 +1585,7 @@ items: payload.books map (item, index) -&gt; {
       }
     },
     {
-      <span class="key"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">category</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">book</span><span class="delimiter">"</span></span>,
       <span class="key"><span class="delimiter">"</span><span class="content">price</span><span class="delimiter">"</span></span>: <span class="float">39.95</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="integer">3</span>,
       <span class="key"><span class="delimiter">"</span><span class="content">properties</span><span class="delimiter">"</span></span>: {
@@ -1650,7 +1650,7 @@ items: payload.books map (item, index) -&gt; {
 output application/json
 ---
 items: (payload.books map {
-      type: "book",
+      category: "book",
       price: $.price as Number,
       id: $$,
       properties: {

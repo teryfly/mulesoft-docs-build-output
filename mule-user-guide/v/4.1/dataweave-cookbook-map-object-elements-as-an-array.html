@@ -1331,13 +1331,13 @@
 output application/json
 ---
 items: payload.inventory.*book map (item, index) -&gt; {
-      type: "book",
-      id: index,
-      category: item.category,
-      title: item.text,
-      author: item.author,
-      year: item.year,
-      price: item.price
+      "type": "book",
+      "id": index,
+      "category": item.category,
+      "title": item.text,
+      "author": item.author,
+      "year": item.year,
+      "price": item.price
 }</pre></td> 
         </tr> 
        </tbody> 
