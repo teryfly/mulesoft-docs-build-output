@@ -1329,10 +1329,10 @@ output application/xml
 ---
 users: { (payload map
         user: {
-          'name': $.name,
-          ('insurance': $.insurance) when $.insurance?
+          name: $.name,
+          (insurance: $.insurance) if($.insurance?)
         } )
- }</pre></td> 
+}</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

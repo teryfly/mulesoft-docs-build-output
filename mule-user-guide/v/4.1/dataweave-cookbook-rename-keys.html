@@ -1301,8 +1301,8 @@
   <div class="ulist"> 
    <ul> 
     <li> <p><code>mapObject</code> to go through the <code>key:value</code> pairs in a JSON object.</p> </li> 
-    <li> <p><code>when</code> by itself to determine when to change the name of a key.</p> </li> 
-    <li> <p><code>when</code> with <code>and</code> to retain the name of all keys except the two with new names.</p> </li> 
+    <li> <p><code>if</code> by itself to determine when to change the name of a key.</p> </li> 
+    <li> <p><code>if</code> with <code>and</code> to retain the name of all keys except the two with new names.</p> </li> 
     <li> <p><code>as</code> to coerce the type of the keys into a String.</p> </li> 
    </ul> 
   </div> 
@@ -1331,10 +1331,10 @@
 output application/json
 ---
 payload.flights map (flight) -&gt; {
-(flight mapObject (value, key) -&gt; {
-        (emptySeats: value) when key as String == 'availableSeats',
-        (airline: value) when key as String == 'airlineName',
-        ((key):value) when key as String !='availableSeats' and key as String != 'airlineName'
+    (flight mapObject (value, key) -&gt; {
+        (emptySeats: value) if(key as String == 'availableSeats'),
+        (airline: value) if(key as String == 'airlineName'),
+        ((key):value) if(key as String !='availableSeats' and key as String != 'airlineName')
     })
 }</pre></td> 
         </tr> 
