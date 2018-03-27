@@ -4,7 +4,7 @@
     
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Create a VPC Using Runtime Manager // MuleSoft Documentation </title>
+  <title>Tutorial: Creating a VPC (Runtime Manager) // MuleSoft Documentation </title>
   <link rel="shortcut icon" href="/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/vendor.min.css?t=1513800862">
   <link rel="stylesheet" type="text/css" href="/css/mulesoft.min.css?t=1513800862">
@@ -22,8 +22,8 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/runtime-manager/vpc-tutorial" />
-  <meta name="description" content=" To be able to create a VPC, your organization needs to purchase a VPC offering and your account needs to meet the necessary permissions to create ..." />
-  <meta class="swiftype" name="title" data-type="string" content="Create a VPC Using Runtime Manager" />
+  <meta name="description" content="This tutorial walks you through the creation of a virtual private cloud configuring firewall rules. To be able to create a VPC, your organization n..." />
+  <meta class="swiftype" name="title" data-type="string" content="Tutorial: Creating a VPC (Runtime Manager)" />
 </head>
 <body>
 <!-- START Swiftype -->
@@ -325,7 +325,7 @@
 <li><i></i><a href="/runtime-manager/runtime-manager-switch-env">To Switch Environments using Runtime Manager</a></li><li class="expanded">
 <i></i>
 <a href="/runtime-manager/tutorials">Tutorials</a><ul style="display: block;">
-<li><i></i><a href="/runtime-manager/building-an-https-service">Building an HTTPS Service</a></li><li class="active"><i></i><a href="/runtime-manager/vpc-tutorial">Create a VPC using Runtime Manager</a></li><li><i></i><a href="/runtime-manager/create-vpc-cli">Create a VPC using Anypoint Platform CLI</a></li></ul></li>
+<li><i></i><a href="/runtime-manager/building-an-https-service">Building an HTTPS Service</a></li><li class="active"><i></i><a href="/runtime-manager/vpc-tutorial">Tutorial: Creating a VPC (Runtime Manager)</a></li><li><i></i><a href="/runtime-manager/create-vpc-cli">Tutorial: Creating a VPC (Anypoint Platform CLI)</a></li><li><i></i><a href="/runtime-manager/vpc-configure-private-domain-task">To Configure Private Domains (Runtime Manager)</a></li></ul></li>
 <li>
 <i></i>
 <a href="/runtime-manager/deployment-strategies">Deployment Strategies</a><ul>
@@ -336,7 +336,7 @@
 <li>
 <i></i>
 <a href="/runtime-manager/managing-applications-on-cloudhub">Managing Applications on CloudHub</a><ul>
-<li><i></i><a href="/runtime-manager/managing-queues">Managing Queues</a></li><li><i></i><a href="/runtime-manager/managing-schedules">Managing Schedules</a></li><li><i></i><a href="/runtime-manager/secure-application-properties">Secure Application Properties</a></li><li><i></i><a href="/runtime-manager/managing-application-data-with-object-stores">Managing App Data using Object Stores</a></li><li><i></i><a href="/runtime-manager/virtual-private-cloud">Virtual Private Cloud</a></li><li><i></i><a href="/runtime-manager/custom-application-alerts">Custom Application Alerts</a></li><li><i></i><a href="/runtime-manager/autoscaling-in-cloudhub">Autoscaling in CloudHub</a></li></ul></li>
+<li><i></i><a href="/runtime-manager/managing-queues">Managing Queues</a></li><li><i></i><a href="/runtime-manager/managing-schedules">Managing Schedules</a></li><li><i></i><a href="/runtime-manager/secure-application-properties">Secure Application Properties</a></li><li><i></i><a href="/runtime-manager/managing-application-data-with-object-stores">Managing App Data using Object Stores</a></li><li><i></i><a href="/runtime-manager/custom-application-alerts">Custom Application Alerts</a></li><li><i></i><a href="/runtime-manager/autoscaling-in-cloudhub">Autoscaling in CloudHub</a></li></ul></li>
 <li>
 <i></i>
 <a href="/runtime-manager/managing-applications-on-your-own-servers">Managing Applications on Your Own Servers</a><ul>
@@ -358,6 +358,14 @@
 <a href="/runtime-manager/cluster-about">About Clusters (Hybrid)</a><ul>
 <li><i></i><a href="/runtime-manager/cluster-create">To Create a Cluster (Hybrid)</a></li><li><i></i><a href="/runtime-manager/cluster-add-srv">To Add a Server to a Cluster (Hybrid)</a></li><li><i></i><a href="/runtime-manager/cluster-del-srv">To Delete a Server From a Cluster (Hybrid)</a></li><li><i></i><a href="/runtime-manager/cluster-delete">To Delete a Cluster (Hybrid)</a></li></ul></li>
 </ul></li>
+<li>
+<i></i>
+<a href="/runtime-manager/virtual-private-cloud">About Virtual Private Cloud</a><ul>
+<li><i></i><a href="/runtime-manager/vpc-architecture-concept">About VPC Architecture</a></li><li><i></i><a href="/runtime-manager/vpc-provisioning-concept">About Provisioning a VPC</a></li><li>
+<i></i>
+<a href="/runtime-manager/to-request-vpc-connectivity">To Request VPC Connectivity to Your Network</a><ul>
+<li><i></i><a href="/runtime-manager/vpc-connectivity-methods-concept">About VPC Connectivity Methods</a></li></ul></li>
+<li><i></i><a href="/runtime-manager/vpc-firewall-rules-concept">About VPC Firewall Rules</a></li></ul></li>
 <li><i></i><a href="/runtime-manager/runtime-manager-api">About the Runtime Manager API</a></li><li>
 <i></i>
 <a href="/runtime-manager/monitoring">Monitoring</a><ul>
@@ -381,7 +389,7 @@
 <li>
 <i></i>
 <a href="/runtime-manager/dedicated-load-balancer-tutorial">About Load Balancers (CloudHub)</a><ul>
-<li><i></i><a href="/runtime-manager/lb-architecture">About Load Balancer Architecture</a></li><li><i></i><a href="/runtime-manager/lb-create-arm">To Create a Load Balancer using Runtime Manager</a></li><li><i></i><a href="/runtime-manager/lb-create-cli">To Create a Load Balancer using the CLI</a></li><li><i></i><a href="/runtime-manager/lb-create-api">To Create a Load Balancer using the API</a></li><li>
+<li><i></i><a href="/runtime-manager/lb-architecture">About Load Balancer Architecture</a></li><li><i></i><a href="/runtime-manager/lb-create-arm">To Create a Load Balancer (Runtime Manager)</a></li><li><i></i><a href="/runtime-manager/lb-create-cli">To Create a Load Balancer (Anypoint Platform CLI)</a></li><li><i></i><a href="/runtime-manager/lb-create-api">To Create a Load Balancer (CloudHub API)</a></li><li>
 <i></i>
 <a href="/runtime-manager/lb-cert-endpoints">About Load Balancer SSL Endpoints and Certificates</a><ul>
 <li><i></i><a href="/runtime-manager/lb-cert-upload">About Uploading Certificates</a></li><li><i></i><a href="/runtime-manager/lb-cert-validation">About Certificate Validation</a></li></ul></li>
@@ -1278,37 +1286,13 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Runtime Manager</a>/<a href="tutorials">Tutorials</a>/<a href="vpc-tutorial" class="breadcrumb-active-link">Create a VPC using Runtime Manager</a></div>
-      <h1>Create a VPC Using Runtime Manager</h1>
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Runtime Manager</a>/<a href="tutorials">Tutorials</a>/<a href="vpc-tutorial" class="breadcrumb-active-link">Tutorial: Creating a VPC (Runtime Manager)</a></div>
+      <h1>Tutorial: Creating a VPC (Runtime Manager)</h1>
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-cloud-active.png" alt="logo cloud active" title="CloudHub"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-hybrid-disabled.png" alt="logo hybrid disabled" title="Hybrid Deployment"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-server-disabled.png" alt="logo server disabled" title="Anypoint Platform Private Cloud Edition"></a></span> <span class="image"><a class="image" href="/runtime-manager/deployment-strategies"><img src="./_images/logo-pcf-disabled.png" alt="logo pcf disabled" title="Pivotal Cloud Foundry"></a></span></p> 
+   <p>This tutorial walks you through the creation of a <strong>virtual private cloud</strong> configuring firewall rules.<br> To be able to create a VPC, your organization needs to purchase a VPC offering and your account needs to meet the necessary permissions to create and administrate a VPC.</p> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>To be able to create a VPC, your organization needs to purchase a <a href="https://www.mulesoft.com/platform/services/vpc-virtual-private-cloud">VPC offering</a> and your account needs to meet the <a href="/runtime-manager/virtual-private-cloud#vpc-management-permissions">necessary permissions</a> to create and administrate a VPC.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>This tutorial assumes that you are familiar with <a href="/runtime-manager/virtual-private-cloud">Virtual private Cloud terminology</a>, and <a href="/runtime-manager/cloudhub-architecture">CloudHub architecture</a>.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>This tutorial walks you through the creation of a <strong>virtual private cloud</strong> configuring firewall rules.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="create-a-vpc"><a class="anchor" href="#create-a-vpc"></a>Create a VPC</h2> 
- <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>To create a VPC, log in to your Anypoint Platform and follow these steps:</p> 
   </div> 
@@ -1409,31 +1393,18 @@
     </tbody> 
    </table> 
   </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>Additionally, you can <a href="/runtime-manager/create-vpc-cli">create a VPC using the Anypoint Platform CLI</a>.</p> 
-       </div> </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
   <div class="paragraph"> 
    <p>From this moment on, any application that is deployed to US-EAST (disregarding the environment used), will be deployed to this VPC.<br></p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="connect-to-your-vpc"><a class="anchor" href="#connect-to-your-vpc"></a>Connect to your VPC</h3> 
-   <div class="paragraph"> 
-    <p><a href="/runtime-manager/virtual-private-cloud#vpc-connectivity-methods">VPC connectivity methods</a> (IPSEC, AWS Peering, etc) are not a self-serve function at this time.<br> To configure a connection between your Cloudhub VPC and your infrastructure, download <a href="_attachments/VPC-form-v9.2-template.xlsx">the VPC discovery form</a> (requires at least MS Excel 2007 with macros enabled), enter data to communicate the necessary details required for your connectivity method and send it to MuleSoft customer support.&nbsp;</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The SLA for configuring VPC is 5 business days after the VPC discovery form has been completed and returned, though it may be completed sooner.</p> 
-   </div> 
-  </div> 
+ </div> 
+</div> 
+<div class="sect2"> 
+ <h3 id="connect-to-your-vpc"><a class="anchor" href="#connect-to-your-vpc"></a>Connect to your VPC</h3> 
+ <div class="paragraph"> 
+  <p><a href="/runtime-manager/virtual-private-cloud#vpc-connectivity-methods">VPC connectivity methods</a> (IPSEC, AWS Peering, etc) are not a self-serve function at this time.<br> To configure a connection between your Cloudhub VPC and your infrastructure, download <a href="_attachments/VPC-form-v9.3-template.xlsx">the VPC discovery form</a> (requires at least MS Excel 2007 with macros enabled), enter data to communicate the necessary details required for your connectivity method and send it to MuleSoft customer support.&nbsp;</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>The SLA for configuring VPC is 5 business days after the VPC discovery form has been completed and returned, though it may be completed sooner.</p> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -1483,8 +1454,11 @@
 <div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Learn how to associate a load balancer following the <a href="/runtime-manager/dedicated-load-balancer-tutorial">load balancer tutorial</a>.</p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Learn how to associate a load balancer following the <a href="/runtime-manager/dedicated-load-balancer-tutorial">load balancer tutorial</a>.</p> </li> 
+    <li> <p><a href="/runtime-manager/vpc-management-permission-topic">FAQ: Where To Place a VPC Inside my Organization</a></p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -1492,7 +1466,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#create-a-vpc">Create a VPC</a></li><li><a class="scroll-menu-link" href="#update-an-existing-vpc">Update an Existing VPC</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#update-an-existing-vpc">Update an Existing VPC</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
