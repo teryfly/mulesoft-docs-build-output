@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/dataweave-cookbook-use-constant-directives" />
-  <meta name="description" content="This example builds URLs from constants that are defined as variables (var) in the DataWeave header. It also conditionally outputs fields when they..." />
+  <meta name="description" content="This example builds URLs from constants that are defined as variables (var) in the DataWeave header. It also conditionally outputs fields if they a..." />
   <meta class="swiftype" name="title" data-type="string" content="Example: Using Constant Directives" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -1293,7 +1293,7 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This example builds URLs from constants that are defined as variables (<code>var</code>) in the DataWeave header. It also conditionally outputs fields when they present in the input.</p> 
+   <p>This example builds URLs from constants that are defined as variables (<code>var</code>) in the DataWeave header. It also conditionally outputs fields if they are present in the input.</p> 
   </div> 
   <div class="paragraph"> 
    <p>It uses these functions:</p> 
@@ -1302,7 +1302,7 @@
    <ul> 
     <li> <p><code>++</code> (concatenate) to build constant directives into URLs.</p> </li> 
     <li> <p><code>map</code> to go through the fields in the input.</p> </li> 
-    <li> <p><code>when</code> to output <code>summary</code> and <code>brand</code> fields.</p> </li> 
+    <li> <p><code>if</code> to output <code>summary</code> and <code>brand</code> fields.</p> </li> 
    </ul> 
   </div> 
   <div class="listingblock"> 
@@ -1378,19 +1378,19 @@ using (pageSize = payload.getItemsResponse.PageInfo.pageSize) {
         ({
             href: urlPage ++ "?pageIndex=" ++ (pageIndex - pageSize) ++ "&amp;pageSize=" ++ requestedPageSize,
             rel: "prev"
-        }) when (pageIndex &gt; 0)
+        }) if(pageIndex &gt; 0)
      ],
      collection: {
         size: pageSize,
         items: payload.getItemsResponse.*Item map (item) -&gt; {
             id: item.id,
-            type: item.type,
+            'type': item.'type',
             name: item.name,
-            (summary: item.summary) when item.summary?,
-            (brand: item.brand) when item.brand?,
+            (summary: item.summary) if(item.summary?),
+            (brand: item.brand) if(item.brand?),
             links: (item.images.*image map (image) -&gt; {
                 href: trim(image),
-                rel: image.@type
+                rel: image.@'type'
             }) + {
                 href: baseUrl ++ "/" ++ item.id,
                 rel: "self"
