@@ -1329,15 +1329,15 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-rename-keys">Renaming Keys</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Renames some keys in a JSON object while retaining the names of all other keys in the output. Uses <code>mapObject</code>, <code>when</code>, <code>as</code>, and <code>and</code>.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Renames some keys in a JSON object while retaining the names of all other keys in the output. Uses <code>mapObject</code>, <code>if</code>, <code>as</code>, and <code>and</code>.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-output-a-field-when-present">Outputting a Field When Present</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>when</code> with <code>map</code> to determine whether to include a field in the output. You might use it to exclude fields that contain sensitive data.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>if</code> with <code>map</code> to determine whether to include a field in the output. You might use it to exclude fields that contain sensitive data.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-format-according-to-type">Format According to Type</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>when</code> together with <code>is</code> to apply different string transformations to keys, depending on the type of each element in an object. It uses <code>mapObject</code> to go over both the keys and values of the payload.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>mapObject</code> to apply changes to the keys in an object, depending on the type of their corresponding values. Uses <code>camelize</code>, <code>capitalize</code>, and <code>pluralize</code> depending on the <code>if</code> and <code>else if</code> statement.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-regroup-fields">Regroup Fields</a></p></td> 
@@ -1353,7 +1353,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-change-value-of-a-field">Changing the Value of a Field</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Masks sensitive data by changing values of some keys to asterisks (****). Uses <code>mapObject</code> and <code>if/else</code>.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Masks sensitive data by changing values of some keys to asterisks (<code>****`</code>). Uses <code>mapObject</code>, <code>if</code>, and <code>else</code>.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-exclude-field">Excluding Fields from the Output</a></p></td> 
@@ -1361,7 +1361,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-use-constant-directives">Use Constant Directives</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a series of constant strings and numbers in the header, these are used to filter input and to concatenate into URLs. Uses <code>map</code>, <code>when</code> and <code>++</code> to concatenate strings.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a series of constant strings and numbers in the header, these are used to filter input and to concatenate into URLs. Uses <code>map</code>, <code>if</code> and <code>++</code> to concatenate strings.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-define-a-custom-addition-function">Define a Custom Addition Function</a></p></td> 
@@ -1369,7 +1369,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-define-function-to-flatten-list">Defining a Function that Flattens Data in a List</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>reduce</code>, <code>map</code>, <code>when</code>, and <code>splitBy</code> to modify and conditionally output fields from a list.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Uses <code>reduce</code>, <code>map</code>, <code>if</code>, and <code>splitBy</code> to modify and conditionally output fields from a list.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-output-self-closing-xml-tags">Outputting self-closing XML tags</a></p></td> 
@@ -1381,7 +1381,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-remove-certain-xml-attributes">Remove Certain XML Attributes</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a function that recursively checks an element and all of its children for a specific XML attribute and removes it with <code>-</code>. It also uses <code>mapObject</code>, <code>when</code> and <code>is</code> (to match types).</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a function that recursively checks an element and all of its children for a specific XML attribute and removes it with <code>-</code>. It also uses <code>mapObject</code>, <code>if</code> and <code>is</code> (to match types).</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-include-xml-namespaces">Include XML Namespaces</a></p></td> 
@@ -1409,7 +1409,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-conditional-list-reduction-via-function">Conditionally Reduce a List Via a Function</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a function that reduces a list of elements into one field. It then calls this function only when a certain field has values. Uses <code>map</code>, <code>reduce</code>, <code>splitBy</code>, <code>when</code> and <code>++</code> to append to an array.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a function that reduces a list of elements into one field. It then calls this function only when a certain field has values. Uses <code>map</code>, <code>reduce</code>, <code>splitBy</code>, <code>if</code> and <code>++</code> to append to an array.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="dataweave-cookbook-map-based-on-an-external-definition">Dynamic Mapping Based On a Definition</a></p></td> 
