@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1522165653"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/dataweave-formats" />
-  <meta name="description" content="DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats as input and output: ..." />
+  <meta name="description" content="DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats (or mime types) as in..." />
   <meta class="swiftype" name="title" data-type="string" content="Data Formats Supported by DataWeave" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -1300,7 +1300,7 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats as input and output:</p> 
+   <p>DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats (or mime types) as input and output:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1360,6 +1360,139 @@
     </tr> 
    </tbody> 
   </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="setting-mime-types"><a class="anchor" href="#setting-mime-types"></a>Setting Mime Types</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>You can specify the mime type for the input and output data.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For DataWeave transformations, you can specify the mime type for the output data. For example, you might set the <code>output</code> header directive of an expression in the Transform component or a Write operation to <code>output application/json</code> or <code>output application/csv</code>. This example sets the mime type through a File Write operation:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Example: Mime Type for the CSV Writer 
+   </div> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre>&lt;file:write doc:name="Write" config-ref="File_Config" path="my_transform"&gt;
+  &lt;file:content &gt;&lt;![CDATA[#[output application/csv --- payload]]]&gt;&lt;/file:content&gt;
+&lt;/file:write&gt;</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>When reading input data, Mule sources (such as the On New File listener), Mule operations (such as Read operations), and DataWeave expressions attempt to infer the mime type from metadata that is associated with input payloads, attributes, and variables in the Mule event. In cases where it is not possible to make that inference and where the source or the operation does not specify a static mime type, Mule sources and operations allow you to specify the input mime type. For example, you might set the mime type for the On New File listener to <code>outputMimeType='application/csv'</code> for CSV file input. This setting provides information about the file format to the reader. However, note that it will not perform a transformation from one format to another.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Example: Mime Type for the CSV Reader 
+   </div> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="XML">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;file:listener</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">On New File</span><span class="delimiter">"</span></span>
+  <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File_Config</span><span class="delimiter">"</span></span>
+  <span class="attribute-name">outputMimeType</span>=<span class="string"><span class="delimiter">'</span><span class="content">application/csv</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;/file:listener&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can also set special reader and writer properties for use by the reader or writer. See <a href="#reader_writer_properties">Using Reader and Writer Properties</a>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="reader_writer_properties"><a class="anchor" href="#reader_writer_properties"></a>Using Reader and Writer Properties</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In some cases, it is necessary to modify or specify aspects of the format through format-specific properties. For example, you can specify CSV input and output properties, such as the <code>separator</code> (or delimiter) to use in the CSV file. For Cobol copybook, you need to specify the path to a schema file using the <code>schemaPath</code> property.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can specify reader properties through the Mime Type (<code>outputMimeType</code>) attribute for components in your Mule app. All the listener components accept the Mime Type setting. For example, this HTTP listener example identifies the <code>,</code> separator for a CSV input file:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Example: Properties for the CSV Reader 
+   </div> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="XML">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;file:listener</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">On New File</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File_Config</span><span class="delimiter">"</span></span> <span class="attribute-name">outputMimeType</span>=<span class="string"><span class="delimiter">'</span><span class="content">application/csv; separator=","</span><span class="delimiter">'</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;scheduling-strategy</span> <span class="tag">&gt;</span>
+    <span class="tag">&lt;fixed-frequency</span> <span class="attribute-name">frequency</span>=<span class="string"><span class="delimiter">"</span><span class="content">45</span><span class="delimiter">"</span></span> <span class="attribute-name">timeUnit</span>=<span class="string"><span class="delimiter">"</span><span class="content">SECONDS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/scheduling-strategy&gt;</span>
+  <span class="tag">&lt;file:matcher</span> <span class="attribute-name">filenamePattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">comma_separated.csv</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/file:listener&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Note that the <code>outputMimeType</code> setting above helps the CSV <em>reader</em> interpret the format and delimiter of the input <code>comma_separated.csv</code> file, not the writer.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To specify the output format, you can provide the mime type and any writer properties to a writer, such as the CSV or JSON writer. For example, you might need to write a pipe (<code>|</code>) delimiter in your CSV output payload, instead of some other delimiter used in the input. To do this, you append the property and its value to the <code>output</code> directive of a DataWeave expression. For example, this Write operation specifies the pipe as a <code>separator</code>:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Example: output Directive for the CSV Writer 
+   </div> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre>&lt;file:write doc:name="Write" config-ref="File_Config" path="my_transform"&gt;
+  &lt;file:content &gt;&lt;![CDATA[#[output application/csv separator="|" --- payload]]]&gt;&lt;/file:content&gt;
+&lt;/file:write&gt;</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The sections below list the reader and writer properties available for each supported format.</p> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -3648,7 +3781,7 @@ payload.*key[0] ++ payload.'key 1'</pre></td>
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#format_cobol_copybook">Cobol Copybook</a></li><li><a class="scroll-menu-link" href="#format_csv">CSV</a></li><li><a class="scroll-menu-link" href="#format_dataweave">DataWeave</a></li><li><a class="scroll-menu-link" href="#format_excel">Excel</a></li><li><a class="scroll-menu-link" href="#format_fixed_width">Fixed Width</a></li><li><a class="scroll-menu-link" href="#format_flat_file">Flat File</a></li><li><a class="scroll-menu-link" href="#format_form_data">Multipart (Form-Data)</a></li><li><a class="scroll-menu-link" href="#format_java">Java</a></li><li><a class="scroll-menu-link" href="#format_json">JSON</a></li><li><a class="scroll-menu-link" href="#format_xml">XML</a></li><li><a class="scroll-menu-link" href="#format_url_encoded">URL Encoding</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#setting-mime-types">Setting Mime Types</a></li><li><a class="scroll-menu-link" href="#reader_writer_properties">Using Reader and Writer Properties</a></li><li><a class="scroll-menu-link" href="#format_cobol_copybook">Cobol Copybook</a></li><li><a class="scroll-menu-link" href="#format_csv">CSV</a></li><li><a class="scroll-menu-link" href="#format_dataweave">DataWeave</a></li><li><a class="scroll-menu-link" href="#format_excel">Excel</a></li><li><a class="scroll-menu-link" href="#format_fixed_width">Fixed Width</a></li><li><a class="scroll-menu-link" href="#format_flat_file">Flat File</a></li><li><a class="scroll-menu-link" href="#format_form_data">Multipart (Form-Data)</a></li><li><a class="scroll-menu-link" href="#format_java">Java</a></li><li><a class="scroll-menu-link" href="#format_json">JSON</a></li><li><a class="scroll-menu-link" href="#format_xml">XML</a></li><li><a class="scroll-menu-link" href="#format_url_encoded">URL Encoding</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
