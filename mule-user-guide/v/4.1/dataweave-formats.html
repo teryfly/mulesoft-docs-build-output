@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/dataweave-formats" />
-  <meta name="description" content="DataWeave can read and write many types of data formats, such as JSON, XML, and many others. It also accepts format-specific properties, such as CS..." />
+  <meta name="description" content="DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats as input and output: ..." />
   <meta class="swiftype" name="title" data-type="string" content="Data Formats Supported by DataWeave" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -1293,10 +1293,7 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>DataWeave can read and write many types of data formats, such as JSON, XML, and many others. It also accepts format-specific properties, such as CSV input and output (for example, the <code>separator</code> delimiter and <code>encoding</code> properties) and for a Cobol copybook, it accepts path to a schema file (the <code>schemaPath</code>).</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>DataWeave supports these formats as input and output:</p> 
+   <p>DataWeave can read and write many types of data formats, such as JSON, XML, and many others. DataWeave supports these formats as input and output:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1755,7 +1752,7 @@ Leandro,Shokida</pre></td>
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="writer-properties-for-csv"><a class="anchor" href="#writer-properties-for-csv"></a>Writer Properties (for CSV)</h3> 
+   <h3 id="writer_properties_csv"><a class="anchor" href="#writer_properties_csv"></a>Writer Properties (for CSV)</h3> 
    <div class="paragraph"> 
     <p>When defining an output of type CSV, there are a few optional parameters you can add to the output directive to customize how the data is parsed:</p> 
    </div> 
@@ -3348,6 +3345,9 @@ output application/json
         </tbody> 
        </table></code></pre> 
     </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>See also, <a href="dataweave-cookbook-output-self-closing-xml-tags">Example: Outputting Self-closing XML Tags</a>.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="skip-null-on-for-xml"><a class="anchor" href="#skip-null-on-for-xml"></a>Skip Null On (for XML)</h4> 
