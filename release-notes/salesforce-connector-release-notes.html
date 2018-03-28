@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1513800862"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/release-notes/salesforce-connector-release-notes" />
-  <meta name="description" content="February 2018 Select Starting with v.6.0.2, the Salesforce Connector is licensed commercially with Anypoint Platform as with other Select connector..." />
+  <meta name="description" content="March 2018 Select Starting with v.6.0.2, the Salesforce Connector is licensed commercially with Anypoint Platform as with other Select connectors. ..." />
   <meta class="swiftype" name="title" data-type="string" content="Salesforce Connector Release Notes" />
 </head>
 <body>
@@ -1291,13 +1291,89 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><strong>February 2018</strong></p> 
+   <p><strong>March 2018</strong></p> 
   </div> 
   <div class="paragraph"> 
    <p><em>Select</em></p> 
   </div> 
   <div class="paragraph"> 
    <p>Starting with v.6.0.2, the Salesforce Connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions are freely available to the community.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="version-8-6-0-march-28-2018"><a class="anchor" href="#version-8-6-0-march-28-2018"></a>Version 8.6.0 - March 28, 2018</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-8-6-0-compatibility"><a class="anchor" href="#version-8-6-0-compatibility"></a>Version 8.6.0 - Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>Salesforce connector version 8.6.0 is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Enterprise Edition 3.5.2 and later</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Only works with Studio 5.4.0 and later</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Salesforce</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">v37.0, v38.0, v39.0, v40.0, v41.0</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-8-6-0-features"><a class="anchor" href="#version-8-6-0-features"></a>Version 8.6.0 - Features</h3> 
+   <div class="paragraph"> 
+    <p>Added extra parameter bufferSizeInBytes for Replay Streaming Channel source. User can set the internal buffer size for the message consumer. Default value is 26 MB.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-8-6-0-fixed-in-this-release"><a class="anchor" href="#version-8-6-0-fixed-in-this-release"></a>Version 8.6.0 - Fixed in this Release</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Customer received no error or exception on 403::Organization total events daily limit exceeded.</p> 
+      <div class="paragraph"> 
+       <p>In previous versions when 'error=403::Organization total events daily limit exceeded' occurred, the connector would throw an exception to let the customer know about this issue. The connector now fires an event when the reconnection count is greater than 10, but in case this never occurs, a custom notification is fired. The notification ID for this error is always 100888 and it also contains the appropriate message.</p> 
+      </div> </li> 
+     <li> <p>Salesforce connector invoked REST apex and ignored null values.</p> 
+      <div class="paragraph"> 
+       <p>When Salesforce connector invoke-apex-rest-method sends JSON to Salesforce, it ignores all null fields. We need those null fields so we can update fields in Salesforce to null, otherwise Salesforce won’t update those fields.</p> 
+      </div> </li> 
+     <li> <p>Salesforce Streaming flow when set to processingStrategy as Synchronous does not catch exception strategy.</p> 
+      <div class="paragraph"> 
+       <p>Using Salesforce connector with operation "Replay Streaming Channel" as message listener and explicitly specifying the flow processing strategy as "synchronous" does not forward the exception thrown to the exception strategy defined. Whereas if no processingStrategy is defined in the flow then the exception is handled by the exception strategy.</p> 
+      </div> </li> 
+     <li> <p>Salesforce topic disconnected when proxy with CONNECT.</p> 
+      <div class="paragraph"> 
+       <p>Using previous versions to subscribe to a Salesforce Topic will fail with exception when the connection goes throw a proxy. The bug is documented here: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=475546" class="bare">https://bugs.eclipse.org/bugs/show_bug.cgi?id=475546</a>. Fixed by upgrading to jetty-9.2.24.</p> 
+      </div> </li> 
+     <li> <p>CVE Security Vunerabilities in jackson-databind-2.4.3.</p> 
+      <div class="paragraph"> 
+       <p>CVE-2017-7525 jackson-databind: Deserialization vulnerability via readValue method of ObjectMapper See <code>https://bugzilla.redhat.com/show_bug.cgi?id=1462702</code> and <code>https://nvd.nist.gov/vuln/detail/CVE-2017-7525</code>. Upgraded to 2.9.4 jackson-databind dependency.</p> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-8-6-0-known-issues"><a class="anchor" href="#version-8-6-0-known-issues"></a>Version 8.6.0 - Known Issues</h3> 
+   <div class="paragraph"> 
+    <p>None.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -2845,7 +2921,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#version-8-5-0-february-22-2018">Version 8.5.0 - February 22, 2018</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-4-1-january-19-2018">Salesforce Connector 8.4.1 - January 19, 2018</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-4-0-october-26-2017">Salesforce Connector 8.4.0 - October 26, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-3-1-july-3-2017">Salesforce Connector 8.3.1 - July 3, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-3-0-april-17-2017">Salesforce Connector 8.3.0 - April 17, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-2-1-march-10-2017">Salesforce Connector 8.2.1 - March 10, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-2-0-march-2-2017">Salesforce Connector 8.2.0 - March 2, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-1-0-december-2-2016">Salesforce Connector 8.1.0 - December 2, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-0-0-october-26-2016">Salesforce Connector 8.0.0 - October 26, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-2-0-august-23-2016">Salesforce Connector 7.2.0 - August 23, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-2-june-3-2016">Salesforce Connector 7.1.2 - June 3, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-1-april-25-2016">Salesforce Connector 7.1.1 - April 25, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-0-april-13-2015">Salesforce Connector 7.1.0 - April 13, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-1-december-9-2015">Salesforce Connector 7.0.1 - December 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-0-december-1-2015">Salesforce Connector 7.0.0 - December 1, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#version-8-6-0-march-28-2018">Version 8.6.0 - March 28, 2018</a></li><li><a class="scroll-menu-link" href="#version-8-5-0-february-22-2018">Version 8.5.0 - February 22, 2018</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-4-1-january-19-2018">Salesforce Connector 8.4.1 - January 19, 2018</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-4-0-october-26-2017">Salesforce Connector 8.4.0 - October 26, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-3-1-july-3-2017">Salesforce Connector 8.3.1 - July 3, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-3-0-april-17-2017">Salesforce Connector 8.3.0 - April 17, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-2-1-march-10-2017">Salesforce Connector 8.2.1 - March 10, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-2-0-march-2-2017">Salesforce Connector 8.2.0 - March 2, 2017</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-1-0-december-2-2016">Salesforce Connector 8.1.0 - December 2, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-8-0-0-october-26-2016">Salesforce Connector 8.0.0 - October 26, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-2-0-august-23-2016">Salesforce Connector 7.2.0 - August 23, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-2-june-3-2016">Salesforce Connector 7.1.2 - June 3, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-1-april-25-2016">Salesforce Connector 7.1.1 - April 25, 2016</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-1-0-april-13-2015">Salesforce Connector 7.1.0 - April 13, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-1-december-9-2015">Salesforce Connector 7.0.1 - December 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-0-december-1-2015">Salesforce Connector 7.0.0 - December 1, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
