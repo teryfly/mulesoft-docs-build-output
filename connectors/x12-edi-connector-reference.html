@@ -1405,7 +1405,7 @@
          <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Application Code for partner in group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the GS Application Sender’s Code must match this value. On the send side, this value is used as the default GS Application Reciever’s Code when not set in the message data.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Application Code for partner in group (GS segment). If this value is set, it affects both send and receive message handling. On the receive side, the GS Application Sender’s Code must match this value. On the send side, this value is used as the default GS Application Receiver’s Code when not set in the message data.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
@@ -1939,35 +1939,25 @@
   </div> 
   <div class="sect2"> 
    <h3 id="output"><a class="anchor" href="#output"></a>Output</h3> 
-   <div class="paragraph"> 
-    <p>[cols="30a,70a]|=== |Type |Object</p> 
-   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 100%;"> 
+     <col style="width: 30%;"> 
+     <col style="width: 70%;"> 
     </colgroup> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">=== For Configurations </p><p class="tableblock">* config </p><p class="tableblock">=== Throws </p><p class="tableblock">* X12:UNKNOWN * X12:WRITE * X12:SCHEMA * X12:PARSE </p><p class="tableblock"></p><p class="tableblock">== Write </p><p class="tableblock"><code>&lt;x12:write&gt;</code> </p><p class="tableblock">Transform the maps and lists structure of EDI data into an EDI text stream. </p><p class="tableblock"></p><p class="tableblock">=== Parameters </p><p class="tableblock">[%header%autowidth.spread]</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>| Name | Type | Description | Default Value | Required | Configuration | String | The name of the configuration to use. | |x | Write Content a| Object | | <code><mark>[payload]</mark></code> | | Streaming Strategy a| * repeatable-in-memory-stream * repeatable-file-store-stream * non-repeatable-stream | Configure if repeatable streams should be used and their behavior. | | | Target Variable a| String | The name of a variable that stores the operation’s output. | | | Target Value a| String | An expression to evaluate against the operation’s output and to store the outcome of that expression in the target variable. | <code>[payload]</code> |</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
-    </colgroup> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">=== Output </p><p class="tableblock">[cols="30a,70a]</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">===</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Binary</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Type</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Object</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1994,10 +1984,16 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="types"><a class="anchor" href="#types"></a>Types</h2> 
+ <h2 id="write"><a class="anchor" href="#write"></a>Write</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><code>&lt;x12:write&gt;</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Transform the maps and lists structure of EDI data into an EDI text stream.</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="ExpirationPolicy"><a class="anchor" href="#ExpirationPolicy"></a>Expiration Policy</h3> 
+   <h3 id="parameters-3"><a class="anchor" href="#parameters-3"></a>Parameters</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col> 
@@ -2008,7 +2004,7 @@
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
+      <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
       <th class="tableblock halign-left valign-top">Default Value</th> 
@@ -2017,176 +2013,319 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Write Content</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Number</p> 
+         <p>Object</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code></p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Streaming Strategy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p>repeatable-in-memory-stream</p> </li> 
+          <li> <p>repeatable-file-store-stream</p> </li> 
+          <li> <p>non-repeatable-stream</p> </li> 
+         </ul> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behavior.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Variable</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>NANOSECONDS</p> </li> 
-          <li> <p>MICROSECONDS</p> </li> 
-          <li> <p>MILLISECONDS</p> </li> 
-          <li> <p>SECONDS</p> </li> 
-          <li> <p>MINUTES</p> </li> 
-          <li> <p>HOURS</p> </li> 
-          <li> <p>DAYS</p> </li> 
-         </ul> 
+         <p>String</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable that stores the operation’s output.</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Target Value</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>String</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An expression to evaluate against the operation’s output and to store the outcome of that expression in the target variable.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code></p></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="repeatable-in-memory-stream"><a class="anchor" href="#repeatable-in-memory-stream"></a>Repeatable In Memory Stream</h3> 
+   <h3 id="output-2"><a class="anchor" href="#output-2"></a>Output</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
+     <col style="width: 30%;"> 
+     <col style="width: 70%;"> 
     </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Default Value</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-     </tr> 
-    </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Number</p> 
+         <p>Type</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The amount of memory to allocate to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Number</p> 
+         <p>Binary</p> 
         </div> 
        </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">By how the buffer expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised when the buffer gets full.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory to use. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error ise raised. A value lower or equal to zero means no limit.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>BYTE</p> </li> 
-          <li> <p>KB</p> </li> 
-          <li> <p>MB</p> </li> 
-          <li> <p>GB</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which all these attributes are expressed</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="repeatable-file-store-stream"><a class="anchor" href="#repeatable-file-store-stream"></a>Repeatable File Store Stream</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-     <col> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Default Value</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Number</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it starts to buffer the content on disk.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Enumeration, one of:</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p>BYTE</p> </li> 
-          <li> <p>KB</p> </li> 
-          <li> <p>MB</p> </li> 
-          <li> <p>GB</p> </li> 
-         </ul> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed.</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="for-configurations-2"><a class="anchor" href="#for-configurations-2"></a>For Configurations</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>config</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="throws-2"><a class="anchor" href="#throws-2"></a>Throws</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>X12:UNKNOWN</p> </li> 
+     <li> <p>X12:WRITE</p> </li> 
+     <li> <p>X12:SCHEMA</p> </li> 
+     <li> <p>X12:PARSE</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="expiration-policy-type"><a class="anchor" href="#expiration-policy-type"></a>Expiration Policy Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Idle Time</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it’s considered eligible for expiration.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Time Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>NANOSECONDS</p> </li> 
+         <li> <p>MICROSECONDS</p> </li> 
+         <li> <p>MILLISECONDS</p> </li> 
+         <li> <p>SECONDS</p> </li> 
+         <li> <p>MINUTES</p> </li> 
+         <li> <p>HOURS</p> </li> 
+         <li> <p>DAYS</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A time unit that qualifies the maxIdleTime attribute.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-in-memory-stream-type"><a class="anchor" href="#repeatable-in-memory-stream-type"></a>Repeatable In Memory Stream Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Initial Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The amount of memory to allocate to consume the stream and provide random access to it. If the stream contains more data than can be fit into this buffer, then the buffer expands according to the bufferSizeIncrement attribute, with an upper limit of maxInMemorySize.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Size Increment</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">By how the buffer expands if it exceeds its initial size. Setting a value of zero or lower means that the buffer should not expand, meaning that a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised when the buffer gets full.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max Buffer Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">This is the maximum amount of memory to use. If more than that is used then a STREAM_MAXIMUM_SIZE_EXCEEDED error is raised. A value lower or equal to zero means no limit.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>BYTE</p> </li> 
+         <li> <p>KB</p> </li> 
+         <li> <p>MB</p> </li> 
+         <li> <p>GB</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which all these attributes are expressed.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="repeatable-file-store-stream-type"><a class="anchor" href="#repeatable-file-store-stream-type"></a>Repeatable File Store Stream Type</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+    <col> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Field</th> 
+     <th class="tableblock halign-left valign-top">Type</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+     <th class="tableblock halign-left valign-top">Default Value</th> 
+     <th class="tableblock halign-left valign-top">Required</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Max In Memory Size</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Number</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum memory that the stream should use to keep data in memory. If more than that is consumed then it starts to buffer the content on disk.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Buffer Unit</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Enumeration, one of:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>BYTE</p> </li> 
+         <li> <p>KB</p> </li> 
+         <li> <p>MB</p> </li> 
+         <li> <p>GB</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The unit in which maxInMemorySize is expressed.</p></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+     <td class="tableblock halign-left valign-top"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://forums.mulesoft.com">MuleSoft Forum</a>.</p> </li> 
+    <li> <p><a href="https://support.mulesoft.com">Contact MuleSoft Support</a>.</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -2194,7 +2333,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#read">Read</a></li><li><a class="scroll-menu-link" href="#types">Types</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#default-configuration">Default Configuration</a></li><li><a class="scroll-menu-link" href="#read">Read</a></li><li><a class="scroll-menu-link" href="#write">Write</a></li><li><a class="scroll-menu-link" href="#expiration-policy-type">Expiration Policy Type</a></li><li><a class="scroll-menu-link" href="#repeatable-in-memory-stream-type">Repeatable In Memory Stream Type</a></li><li><a class="scroll-menu-link" href="#repeatable-file-store-stream-type">Repeatable File Store Stream Type</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
