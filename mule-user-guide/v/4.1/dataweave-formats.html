@@ -1369,7 +1369,7 @@
    <p>You can specify the mime type for the input and output data that flows through a Mule app.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For DataWeave transformations, you can specify the mime type for the output data. For example, you might set the <code>output</code> header directive of an expression in the Transform component or a Write operation to <code>output application/json</code> or <code>output application/csv</code>. This example sets the mime type through a File Write operation:</p> 
+   <p>For DataWeave transformations, you can specify the mime type for the output data. For example, you might set the <code>output</code> header directive of an expression in the Transform component or a Write operation to <code>output application/json</code> or <code>output application/csv</code>. This example sets the mime type through a File Write operation to ensure that a format-specific writer, the CSV writer, outputs the payload in CSV format:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1394,7 +1394,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>For input data, format-specific readers for Mule sources (such as the On New File listener), Mule operations (such as Read operations), and DataWeave expressions attempt to infer the mime type from metadata that is associated with input payloads, attributes, and variables in the Mule event. When the mime type cannot be inferred from the metadata and that metadata is not static, Mule sources and operations allow you to specify the mime type for the reader. For example, you might set the mime type for the On New File listener to <code>outputMimeType='application/csv'</code> for CSV file <em>input</em>. This setting provides information about the file format to the CSV reader.</p> 
+   <p>For input data, format-specific readers for Mule sources (such as the On New File listener), Mule operations (such as Read operations), and DataWeave expressions attempt to infer the mime type from metadata that is associated with input payloads, attributes, and variables in the Mule event. When the mime type cannot be inferred from the metadata (and when that metadata is not static), Mule sources and operations allow you to specify the mime type for the reader. For example, you might set the mime type for the On New File listener to <code>outputMimeType='application/csv'</code> for CSV file <em>input</em>. This setting provides information about the file format to the CSV reader.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
