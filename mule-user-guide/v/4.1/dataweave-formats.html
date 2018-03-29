@@ -1366,7 +1366,7 @@
  <h2 id="setting-mime-types"><a class="anchor" href="#setting-mime-types"></a>Setting Mime Types</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can specify the mime type for the input and output data.</p> 
+   <p>You can specify the mime type for the input and output data that flows through a Mule app.</p> 
   </div> 
   <div class="paragraph"> 
    <p>For DataWeave transformations, you can specify the mime type for the output data. For example, you might set the <code>output</code> header directive of an expression in the Transform component or a Write operation to <code>output application/json</code> or <code>output application/csv</code>. This example sets the mime type through a File Write operation:</p> 
@@ -1394,7 +1394,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>When reading input data, Mule sources (such as the On New File listener), Mule operations (such as Read operations), and DataWeave expressions attempt to infer the mime type from metadata that is associated with input payloads, attributes, and variables in the Mule event. In cases where it is not possible to make that inference and where the source or the operation does not specify a static mime type, Mule sources and operations allow you to specify the mime type for the reader. For example, you might set the mime type for the On New File listener to <code>outputMimeType='application/csv'</code> for CSV file <em>input</em>. This setting provides information about the file format to the CSV reader. However, note that it will not perform a transformation from one format to another.</p> 
+   <p>For input data, format-specific readers for Mule sources (such as the On New File listener), Mule operations (such as Read operations), and DataWeave expressions attempt to infer the mime type from metadata that is associated with input payloads, attributes, and variables in the Mule event. When the mime type cannot be inferred from the metadata and that metadata is not static, Mule sources and operations allow you to specify the mime type for the reader. For example, you might set the mime type for the On New File listener to <code>outputMimeType='application/csv'</code> for CSV file <em>input</em>. This setting provides information about the file format to the CSV reader.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1421,6 +1421,9 @@
    </div> 
   </div> 
   <div class="paragraph"> 
+   <p>Note that reader settings <em>are not</em> used to perform a transformation from one format to another. They simply help the reader interpret the format of the input.</p> 
+  </div> 
+  <div class="paragraph"> 
    <p>You can also set special reader and writer properties for use by the format-specific reader or writer of a source, operation, or component. See <a href="#reader_writer_properties">Using Reader and Writer Properties</a>.</p> 
   </div> 
  </div> 
@@ -1432,7 +1435,7 @@
    <p>In some cases, it is necessary to modify or specify aspects of the format through format-specific properties. For example, you can specify CSV input and output properties, such as the <code>separator</code> (or delimiter) to use in the CSV file. For Cobol copybook, you need to specify the path to a schema file using the <code>schemaPath</code> property.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You can specify reader properties through the Mime Type (<code>outputMimeType</code>) attribute for components in your Mule app. All the listener components accept the Mime Type setting. For example, this HTTP listener example identifies the <code>,</code> separator for a CSV input file:</p> 
+   <p>You can append reader properties to the mime type (<code>outputMimeType</code>) attribute for components in your Mule app. Listeners and Read operations accept these settings. For example, this On New File listener example identifies the <code>,</code> separator for a CSV input file:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1466,7 +1469,7 @@
    <p>Note that the <code>outputMimeType</code> setting above helps the CSV <em>reader</em> interpret the format and delimiter of the input <code>comma_separated.csv</code> file, not the writer.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>To specify the output format, you can provide the mime type and any writer properties to a writer, such as the CSV or JSON writer. For example, you might need to write a pipe (<code>|</code>) delimiter in your CSV output payload, instead of some other delimiter used in the input. To do this, you append the property and its value to the <code>output</code> directive of a DataWeave expression. For example, this Write operation specifies the pipe as a <code>separator</code>:</p> 
+   <p>To specify the output format, you can provide the mime type and any writer properties for the writer, such as the CSV or JSON writer used by a File Write operation. For example, you might need to write a pipe (<code>|</code>) delimiter in your CSV output payload, instead of some other delimiter used in the input. To do this, you append the property and its value to the <code>output</code> directive of a DataWeave expression. For example, this Write operation specifies the pipe as a <code>separator</code>:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1491,7 +1494,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>The sections below list the reader and writer properties available for each supported format.</p> 
+   <p>The sections below list the format-specific reader and writer properties available for each supported format.</p> 
   </div> 
  </div> 
 </div> 
