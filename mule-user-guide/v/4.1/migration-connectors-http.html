@@ -1310,6 +1310,7 @@
     <li> <p>Inbound properties such as <code>http.queryParams</code> have been removed in favor of HTTP specific message attributes.</p> </li> 
     <li> <p>Threading configuration has been removed since it’s now all handled at the Mule Runtime level.</p> </li> 
     <li> <p>Special handling for <code>application/x-www-form-urlencoded</code> and <code>multipart/*</code> media types has been removed in favor of DataWeave.</p> </li> 
+    <li> <p>RAML metadata support has been removed from the HTTP request operation in favor of REST Connect.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1705,6 +1706,9 @@
         </tbody> 
        </table></code></pre> 
     </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Note that RAML metadata support has been removed because REST Connect can now generate a specific connector for a given RAML, which can then be reused.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="http-authentication"><a class="anchor" href="#http-authentication"></a>HTTP Authentication</h4> 
@@ -2437,6 +2441,9 @@
   </div> 
   <div class="paragraph"> 
    <p><a href="migration-core">Migrating Components</a></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><a href="anypoint-exchange/to-deploy-using-rest-connect">REST Connect</a></p> 
   </div> 
  </div> 
 </div>
