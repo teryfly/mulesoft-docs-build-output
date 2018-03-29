@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1522165653"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/runtime-manager/vpc-architecture-concept" />
-  <meta name="description" content="A VPC is a logically private and isolated network hosted inside Cloudhub. You can connect your private intranet to your Cloudhub VPC as if they wer..." />
+  <meta name="description" content="A VPC is a logically private and isolated network hosted inside CloudHub. You can connect your private intranet to your CloudHub VPC as if they wer..." />
   <meta class="swiftype" name="title" data-type="string" content="About VPC Architecture" />
 </head>
 <body class="ms-docs">
@@ -1298,10 +1298,10 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A VPC is a logically private and isolated network hosted inside Cloudhub. You can connect your private intranet to your Cloudhub VPC as if they were all part of a single, private network.<br> The VPC configuration exposes the DNS record "mule-worker-internal-&lt;app-name&gt;.cloudhub.io". This is a DNS A record which includes the IP addresses of all your workers. This DNS record cannot be accessed from outside your VPC.</p> 
+   <p>A VPC is a logically private and isolated network hosted inside CloudHub. You can connect your private intranet to your CloudHub VPC as if they were all part of a single, private network.<br> The VPC configuration exposes the DNS record "mule-worker-internal-&lt;app-name&gt;.cloudhub.io". This is a DNS A record which includes the IP addresses of all your workers. This DNS record cannot be accessed from outside your VPC.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Each VPC allows you to configure firewall rules to check inbound connections directly to your workers.<br> Four firewall rules are created by default: 2 rules allowing your private address space through ports 8091 and 8092, and 2 rules that whitelist external requests proxied by Cloudhub’s shared load balancer through ports 8081 and 8092.<br> All traffic that is not whitelisted in a firewall rule, is blocked by default.</p> 
+   <p>Each VPC allows you to configure firewall rules to check inbound connections directly to your workers.<br> Four firewall rules are created by default: 2 rules allowing your private address space through ports 8091 and 8092, and 2 rules that whitelist external requests proxied by CloudHub’s shared load balancer through ports 8081 and 8092.<br> All traffic that is not whitelisted in a firewall rule, is blocked by default.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The graphic below shows a default VPC architecture:</p> 

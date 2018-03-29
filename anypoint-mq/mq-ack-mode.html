@@ -1312,6 +1312,41 @@
   <div class="paragraph"> 
    <p>The Anypoint MQ connector provides tools for setting these states globally or locally in your Studio application.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p><strong>Notes:</strong></p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>With the Mule 4 Anypoint MQ connector, when using Ack and Nack components, you need to pass an AnypointMQMessageContext object. This object is in the MQ connector attributes to the Subscriber or Consumer components. You can insert <code>#[attributes]</code> in the Ack or Nack component that follows a Subscriber or Consumer and the MQ connector passes the AnypointMQMessageContext object for you.</p> </li> 
+    <li> <p>Other operations can potentially overwrite <code>#[attributes]</code> with new values, so if such operators exist in your flow between the Subscriber or Consumer and Ack/Nack, be sure to save Subscriber or Consumer’s attributes in a variable to avoid losing it.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Flow example:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;anypoint-mq:subscriber</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Subscriber</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Default_subscriber</span><span class="delimiter">"</span></span> <span class="attribute-name">destination</span>=<span class="string"><span class="delimiter">"</span><span class="content">test</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Received MQ msg: #[payload]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;anypoint-mq:ack</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Ack</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Default_subscriber</span><span class="delimiter">"</span></span> <span class="attribute-name">messageContext</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[attributes]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
