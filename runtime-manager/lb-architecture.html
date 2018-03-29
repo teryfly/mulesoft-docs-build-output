@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1522165653"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/runtime-manager/lb-architecture" />
-  <meta name="description" content="Your CloudHub Dedicated Load Balancer has an internal domain name that is used by applications and clients within the VPC. The naming convention us..." />
+  <meta name="description" content="A CloudHub Dedicated Load Balancer (DLB) lets you route external HTTP and HTTPS traffic to Mule applications deployed into CloudHub workers inside ..." />
   <meta class="swiftype" name="title" data-type="string" content="About Dedicated Load Balancer Architecture" />
 </head>
 <body class="ms-docs">
@@ -1298,7 +1298,54 @@
       <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Your CloudHub Dedicated Load Balancer has an internal domain name that is used by applications and clients within the VPC. The naming convention used by the internal domain is:</p> 
+   <p>A CloudHub Dedicated Load Balancer (DLB) lets you route external HTTP and HTTPS traffic to Mule applications deployed into CloudHub workers inside a particular Virtual Private Cloud (VPC). Each CloudHub Dedicated Load Balancer is assigned to a particular VPC, and that VPC runs within a particular service region. This means that the dedicated load balancer routes traffic, both external and internally to the VPC, to CloudHub workers deployed into that VPC.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The public CloudHub Load Balancer already routes HTTP requests to <a href="http://<a href=" #appname"="">[appname]</a>.cloudhub.io" class="bare"&gt;http://<a href="#appname">[appname]</a>.cloudhub.io to mule-worker-<a href="#appname">[appname]</a>.cloudhub.io:8081, and HTTPS traffic to <a href="https://<a href=" #appname"="">[appname]</a>.cloudhub.io:443" class="bare"&gt;https://<a href="#appname">[appname]</a>.cloudhub.io:443 to <a href="https://mule-worker-<a href=" #appname"="">[appname]</a>.cloudhub.io:8082" class="bare"&gt;https://mule-worker-<a href="#appname">[appname]</a>.cloudhub.io:8082.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="routing-external-requests-to-the-dedicated-load-balancer"><a class="anchor" href="#routing-external-requests-to-the-dedicated-load-balancer"></a>Routing External Requests to the Dedicated Load Balancer</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>A CloudHub Dedicated Load Balancer provides an alternative domain name to route HTTP requests to Mule applications listening on port 8091, and HTTPS requests to Mule applications listening on port 8092. In addition, you can write mapping rules to rename requests to the CloudHub Dedicated Load Balancer to a different Mule application domain name.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For example, supose you define a create a load balancer named <strong>lb-name</strong>. Then the dedicated load Balancer exposes an external domain name that resolves to two public IP addresses which are accessible from outside your CloudHub VPC network.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre> lb-name.lb.anypointdns.net</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="renaming-external-mule-application-urls-through-a-dedicated-load-balancer"><a class="anchor" href="#renaming-external-mule-application-urls-through-a-dedicated-load-balancer"></a>Renaming External Mule Application URLs Through a Dedicated Load Balancer</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>You can create a mapping rule to rename the Mule application, so it can be accessed through a different domain name.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For example, suppose you deploy a Mule application named <code>myApp-myCompany-prod.cloudhub.io</code>. Recall that CloudHub domain names must be globally unique among every other MuleSoft customer and Mule application. A dedicated load balancer helps you hide this naming complexity within your corporate DNS domain name.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You could then set a mapping rule in your dedicated load balancer so external clients can access the Mule application on <code><a href="http://myApp.lb-name.lb.anypointdns.net" class="bare">http://myApp.lb-name.lb.anypointdns.net</a></code>, or <code><a href="https://myApp.lb-name.lb.anypointdns.net:443" class="bare">https://myApp.lb-name.lb.anypointdns.net:443</a></code>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>In addition, you can set a CNAME record in your corporate DNS nameserver to mask the <code>lb-name.lb.anypointdns.net</code> domain to your companies "vanity" domain.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For example, suppose your company owns the DNS domain example.com. You can create a CNAME record to route requests to myapp.example.com to <code>myapp.lb-name.lb.anypointdns.net</code>. Now you have hidden the complexity of the CloudHub domian name in the <code>cloudhub.io</code> domain.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="routing-internal-requests-to-the-dedicated-load-balancer"><a class="anchor" href="#routing-internal-requests-to-the-dedicated-load-balancer"></a>Routing Internal Requests to the Dedicated Load Balancer</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Your CloudHub Dedicated Load Balancer also has an internal domain name that is used by applications and clients within the VPC. The naming convention used by the internal domain is:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1306,15 +1353,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p><code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it. Additionally, your dedicated load Balancer exposes an external domain name that resolves to two public IP addresses which are accessible from outside your CloudHub VPC network.</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre> &lt;lb-name&gt;.lb.anypointdns.net</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p><code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it.</p> 
+   <p>where <code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Each dedicated load balancer has a DNS A Record <code>&lt;lb-name&gt;.lb.anypointdns.net</code> that resolves to the two public IP addresses of the two instances. Through your DNS provider, you can add a CNAME record pointing to this record and use your own domain names to access.</p> 
@@ -1330,6 +1369,9 @@
   </div> 
   <div class="paragraph"> 
    <p>Your load balancer listens for outside requests over HTTPS and, by default, communicates internally with your worker over HTTP. If you configured your Mule application within the VPC to listen on HTTPS, you must set upstreamProtocol to HTTPS when creating the mapping list using the load-balancer mappings add command.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The Internal HTTP Mode lets you configure how HTTP requests are handled. They are either silently ignored, mapped HTTPS on the default SSL endpoint, or the URL is mapped straight through to the corresponding HTTPS URL.</p> 
   </div> 
  </div> 
 </div> 
@@ -1348,7 +1390,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#routing-external-requests-to-the-dedicated-load-balancer">Routing External Requests to the Dedicated Load Balancer</a></li><li><a class="scroll-menu-link" href="#renaming-external-mule-application-urls-through-a-dedicated-load-balancer">Renaming External Mule Application URLs Through a Dedicated Load Balancer</a></li><li><a class="scroll-menu-link" href="#routing-internal-requests-to-the-dedicated-load-balancer">Routing Internal Requests to the Dedicated Load Balancer</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->

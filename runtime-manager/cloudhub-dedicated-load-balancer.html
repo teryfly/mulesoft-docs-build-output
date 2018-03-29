@@ -1300,12 +1300,22 @@
   <div class="paragraph"> 
    <p>CloudHub features a backend load-balancing service designed to automate the provisioning of infrastructure components. You can use this service to deploy one or more custom load-balancers within a <a href="/runtime-manager/virtual-private-cloud">VPC</a>.</p> 
   </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> You must have at least one VPC defined in your organization before you can configure a dedicated load balancer. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
   <div class="paragraph"> 
    <p>Each dedicated load balancers allows you to:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Handle Load balancing amongst the different CloudHub workers that run your application.</p> </li> 
+    <li> <p>Handle Load balancing amongst the different CloudHub workers that run a Mule application.</p> </li> 
     <li> <p>Define <a href="#ssl-endpoints">SSL configurations</a> to provide custom certificates and optionally enforce two-way SSL client authentication.</p> </li> 
     <li> <p>Easily configure <a href="#mapping-rules">proxy rules</a> that map your applications to custom domains, enabling you to for example host everything under a single vanity domain.</p> </li> 
    </ol> 
@@ -1332,7 +1342,23 @@
  <h2 id="load-balancer-architecture"><a class="anchor" href="#load-balancer-architecture"></a>Load Balancer Architecture</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Your CloudHub Dedicated Load Balancer has an internal domain name to be used by applications and clients within the VPC. The structure is <code>internal-&lt;lb-name&gt;.lb.anypointdns.net</code> where <code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it. Additionally, your Dedicated Load Balancer exposes an external domain name resolving to 2 public IP addresses which can be reached from outside of your CloudHub VPC network: <code>&lt;lb-name&gt;.lb.anypointdns.net</code> where <code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it.</p> 
+   <p>A CloudHub Dedicated Load Balancer can be used to route both internal and external traffic, and can route requests for multiple deployed Mule applications.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>A CloudHub Dedicated Load Balancer is assigned to a particular Virtual Private Cloud (VPC). The dedicated load balancer then routes traffic to that particular VPC within the particular service region of the VPC.</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> For a Mule application to be managed by the dedicated load balancer, the Mule application must be deployed into the VPC for the dedicated load balancer. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Your CloudHub Dedicated Load Balancer has an internal domain name to be used by applications and clients within the VPC. The structure is <code>internal-&lt;lb-name&gt;.lb.anypointdns.net</code> where <code>&lt;lb-name&gt;</code> is the name you give the load balancer when you created it. Additionally, your Dedicated Load Balancer exposes an external domain name resolving to 2 public IP addresses which can be reached from outside of your CloudHub VPC network: <code>&lt;lb-name&gt;.lb.anypointdns.net</code> where <code>&lt;lb-name&gt;</code> is the name you gave the load balancer when you created it.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Each Dedicated Load Balancer has a DNS A Record <code>&lt;lb-name&gt;.lb.anypointdns.net</code> resolving to 2 Public IP addresses of its two instances.<br> Through your DNS provider, you can add a CNAME record pointing to this A record and use your own domain names to access.</p> 
@@ -1603,6 +1629,9 @@ AES128-SHA</pre>
     <p>A pattern is a string that defines a template for matching an input text. Whatever is placed into curly brackets (<code>{ }</code>) is treated like a variable. These variables can contain only letters (a-z) and cannot contain any other characters, such as digits, slashes, etc. The variable values can contain the following characters ‘a-z0-1.&amp;?-_’ but no slashes.</p> 
    </div> 
    <div class="paragraph"> 
+    <p>Suppose you have set up a DNS CNAME records from <code>example.com</code> to <code>&lt;lb-name&gt;.lb.anypointdns.net</code>. Then you can map <code>app.example.com</code> to a different deployed CloudHub Mule application name.</p> 
+   </div> 
+   <div class="paragraph"> 
     <p>For example, you can literally bind two hostnames for redirect:</p> 
    </div> 
    <div class="listingblock"> 
@@ -1639,7 +1668,10 @@ AES128-SHA</pre>
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>The example above causes that both ’example.com/bookings’ and ‘example.com/sales’ match to <code>app-bookings/data</code> and <code>app-sales/data</code> respectively, as the variable <code>mypattern</code> holds these values.<br> For input=”bookings.example.com”, the pattern can be resolved by assigning <code><em>mypattern</em>=”bookings” and for input=`sales.example.com</code>, the pattern is resolved to assign `<em>mypattern</em>=”sales”</p> 
+    <p>The example above ensures both ’example.com/bookings’ and ‘example.com/sales’ match to <code>app-bookings/data</code> and <code>app-sales/data</code> respectively, as the variable <code>mypattern</code> holds these values.<br></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>For input=”bookings.example.com”, the pattern can be resolved by assigning <code><em>mypattern</em>=”bookings” and for input=`sales.example.com</code>, the pattern is resolved to assign `<em>mypattern</em>=”sales”</p> 
    </div> 
    <div class="paragraph"> 
     <p>Depending on your design, you can choose to leverage your internal redirects to your endpoints using patterns or simply literal mappings.</p> 
@@ -1649,7 +1681,7 @@ AES128-SHA</pre>
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-caution" title="Caution"></i> </td> 
-       <td class="content"> Note that currently patterns in the application URI are not supported. </td> 
+       <td class="content"> Currently patterns in the application URI are not supported. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1705,6 +1737,9 @@ AES128-SHA</pre>
   </div> 
   <div class="sect2"> 
    <h3 id="mapping-rule-examples"><a class="anchor" href="#mapping-rule-examples"></a>Mapping Rule Examples</h3> 
+   <div class="paragraph"> 
+    <p>For these examples, suppose you have already configured a DNS CNAME record to route <code>example.com</code> to <code>lb-name.lb.anypointdns.net</code>.</p> 
+   </div> 
    <div class="paragraph"> 
     <p>The table below contains some mapping rule examples:</p> 
    </div> 
