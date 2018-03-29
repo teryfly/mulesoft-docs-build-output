@@ -1376,7 +1376,7 @@
      Example: Mime Type for the CSV Writer 
    </div> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+    <pre class="CodeRay highlight"><code data-lang="XML">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1385,9 +1385,9 @@
 2
 3
 </pre></td> 
-         <td class="code"><pre>&lt;file:write doc:name="Write" config-ref="File_Config" path="my_transform"&gt;
-  &lt;file:content &gt;&lt;![CDATA[#[output application/csv --- payload]]]&gt;&lt;/file:content&gt;
-&lt;/file:write&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;file:write</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Write</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File_Config</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">my_transform</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;file:content</span> <span class="tag">&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>#[output application/csv --- payload]<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/file:content&gt;</span>
+<span class="tag">&lt;/file:write&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1435,7 +1435,7 @@
    <p>In some cases, it is necessary to modify or specify aspects of the format through format-specific properties. For example, you can specify CSV input and output properties, such as the <code>separator</code> (or delimiter) to use in the CSV file. For Cobol copybook, you need to specify the path to a schema file using the <code>schemaPath</code> property.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You can append reader properties to the mime type (<code>outputMimeType</code>) attribute for components in your Mule app. Listeners and Read operations accept these settings. For example, this On New File listener example identifies the <code>,</code> separator for a CSV input file:</p> 
+   <p>You can append reader properties to the mime type (<code>outputMimeType</code>) attribute for certain components in your Mule app. Listeners and Read operations accept these settings. For example, this On New File listener example identifies the <code>,</code> separator for a CSV input file:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -1476,7 +1476,7 @@
      Example: output Directive for the CSV Writer 
    </div> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+    <pre class="CodeRay highlight"><code data-lang="XML">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1485,9 +1485,9 @@
 2
 3
 </pre></td> 
-         <td class="code"><pre>&lt;file:write doc:name="Write" config-ref="File_Config" path="my_transform"&gt;
-  &lt;file:content &gt;&lt;![CDATA[#[output application/csv separator="|" --- payload]]]&gt;&lt;/file:content&gt;
-&lt;/file:write&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;file:write</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Write</span><span class="delimiter">"</span></span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">File_Config</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">my_transform</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;file:content</span> <span class="tag">&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>#[output application/csv separator="|" --- payload]<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/file:content&gt;</span>
+<span class="tag">&lt;/file:write&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
