@@ -586,7 +586,11 @@
 <i></i>
 <a href="/mule-user-guide/v/4.1/dataweave-types">DataWeave Types</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-types-coercion">About Type Coercion with DataWeave</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a><ul>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables-context">DataWeave Variables for Mule Runtime</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/dataweave-functions">About DataWeave Functions</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-import-module">To Import DataWeave Function Modules</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-create-module">To Create a DataWeave Function Module</a></li></ul></li>
@@ -1495,7 +1499,10 @@ output application/json
      <div class="paragraph"> 
       <p>For details, see <a href="dataweave-variables">About DataWeave Variables</a>.</p> 
      </div> </li> 
-    <li> <p><code>type</code>: For specifying a custom type that you can use in the expression.</p> </li> 
+    <li> <p><code>type</code>: For specifying a custom type that you can use in the expression.</p> 
+     <div class="paragraph"> 
+      <p>For a more complete example, see <a href="dataweave-types-coercion">About Type Coercion with DataWeave</a>.</p> 
+     </div> </li> 
     <li> <p><code>ns</code>: Namespaces, used to import a namespace.</p> 
      <div class="paragraph"> 
       <p>Example: <code>ns msg http://www.mulesoft.com/anypoint/SOA/message/v1.0</code></p> 
@@ -1652,7 +1659,7 @@ payload</pre></td>
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="errors"><a class="anchor" href="#errors"></a>Errors</h2> 
+ <h2 id="errors-scripting-versus-formatting-errors"><a class="anchor" href="#errors-scripting-versus-formatting-errors"></a>Errors (Scripting versus Formatting Errors)</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A DataWeave script can throw errors due to DataWeave coding errors and due to formatting errors. So when transforming one data format to another, it is important to keep in mind the constraints of both the language and the formats. For example, XML requires a single root node. If you use the <a href="#script_output_xml">DataWeave script above</a> in the attempt to transform this JSON input to XML, you will receive an error (<code>Unexpected internal error</code>) because the JSON input lacks a single root:</p> 
@@ -1888,7 +1895,7 @@ output application/xml
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#the-structure-of-dataweave-scripts">The Structure of DataWeave Scripts</a></li><li><a class="scroll-menu-link" href="#dataweave-header">DataWeave Header</a></li><li><a class="scroll-menu-link" href="#dataweave-body">DataWeave Body</a></li><li><a class="scroll-menu-link" href="#errors">Errors</a></li><li><a class="scroll-menu-link" href="#dataweave-comments">DataWeave Comments</a></li><li><a class="scroll-menu-link" href="#dwl_file">dwl File</a></li><li><a class="scroll-menu-link" href="#see_also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#the-structure-of-dataweave-scripts">The Structure of DataWeave Scripts</a></li><li><a class="scroll-menu-link" href="#dataweave-header">DataWeave Header</a></li><li><a class="scroll-menu-link" href="#dataweave-body">DataWeave Body</a></li><li><a class="scroll-menu-link" href="#errors-scripting-versus-formatting-errors">Errors (Scripting versus Formatting Errors)</a></li><li><a class="scroll-menu-link" href="#dataweave-comments">DataWeave Comments</a></li><li><a class="scroll-menu-link" href="#dwl_file">dwl File</a></li><li><a class="scroll-menu-link" href="#see_also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->

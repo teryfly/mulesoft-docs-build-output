@@ -456,9 +456,9 @@
 <a href="/access-management/managing-api-clients">About Client Management</a><ul>
 <li><i></i><a href="/access-management/conf-client-mgmt-openam-task">To Configure OpenAM Client Management</a></li><li><i></i><a href="/access-management/conf-client-mgmt-pf-task">To Configure PingFederate Client Management</a></li><li><i></i><a href="/access-management/configure-client-management-openid-task">To Configure OpenID Connect Client Management</a></li></ul></li>
 <li><i></i><a href="/access-management/audit-logging">Audit Logging</a></li><li><i></i><a href="/access-management/managing-permissions">Managing Permissions</a></li><li><i></i><a href="/access-management/troubleshooting-anypoint-platform-access">Troubleshooting Anypoint Platform Access</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/">About Mule</a><ul>
+<a href="/mule-user-guide/v/4.1/">About Mule</a><ul style="display: block;">
 <li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/index-migration">Mule 4 for Mule 3 Users</a><ul>
@@ -579,14 +579,18 @@
 <a href="/mule-user-guide/v/4.1/mmp-deployment-concept">About Deploying a Mule Application (Mule Maven Plugin)</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/ch-deploy-mule-application-mmp-task">To Deploy a Mule Application to CloudHub (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/cloudhub-deployment-mmp-reference">CloudHub Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/stnd-deploy-mule-application-mmp-task">To Deploy a Mule Application to a Standalone Mule Runtime (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/stnd-deployment-mmp-reference">Standalone Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/arm-deploy-mule-application-mmp-task">To Deploy a Mule Application Using ARM API (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/arm-deploy-mule-application-mmp-reference">ARM Deployment Reference (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/agent-deploy-mule-application-mmp-task">To Deploy a Mule Application Using the Mule Agent (Mule Maven Plugin)</a></li><li><i></i><a href="/mule-user-guide/v/4.1/agent-deploy-mule-application-mmp-reference">Mule Agent Deployment Reference (Mule Maven Plugin)</a></li></ul></li>
 </ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/4.1/dataweave">DataWeave Language</a><ul>
+<a href="/mule-user-guide/v/4.1/dataweave">DataWeave Language</a><ul style="display: block;">
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-language-introduction">About DataWeave Scripts</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-selectors">DataWeave Selectors</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-formats">Data Formats Supported by DataWeave</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/dataweave-types">DataWeave Types</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-types-coercion">About Type Coercion with DataWeave</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
+<li class="expanded">
+<i></i>
+<a href="/mule-user-guide/v/4.1/dataweave-variables">About DataWeave Variables</a><ul style="display: block;">
+<li class="active"><i></i><a href="/mule-user-guide/v/4.1/dataweave-variables-context">DataWeave Variables for Mule Runtime</a></li></ul></li>
+<li><i></i><a href="/mule-user-guide/v/4.1/dataweave-flow-control">About Flow Control in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-pattern-matching">Pattern Matching in DataWeave</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-lookup">Using lookup to Call External Flows</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/4.1/dataweave-functions">About DataWeave Functions</a><ul>
 <li><i></i><a href="/mule-user-guide/v/4.1/dataweave-import-module">To Import DataWeave Function Modules</a></li><li><i></i><a href="/mule-user-guide/v/4.1/dataweave-create-module">To Create a DataWeave Function Module</a></li></ul></li>
@@ -1295,7 +1299,7 @@
     <!-- START article content -->
     <div class="article-content col-md-7">
       
-      
+      <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">About Mule</a>/<a href="dataweave">DataWeave Language</a>/<a href="dataweave-variables">About DataWeave Variables</a>/<a href="dataweave-variables-context" class="breadcrumb-active-link">DataWeave Variables for Mule Runtime</a></div>
       <h1>DataWeave Variables for Mule Runtime</h1>
       <div class="paragraph"> 
  <p>DataWeave expressions accept variables that can retrieve values from a variety of Mule Runtime objects. Commonly used variables include <code>attributes</code>, <code>payload</code>, and <code>vars</code>, the main parts of the Mule event.</p> 
@@ -1326,7 +1330,7 @@
          <ul> 
           <li> <p><code>encoding</code>: Encoding used by the Mule message processor.</p> </li> 
           <li> <p><code>name</code>: Name of your project and Mule app.</p> </li> 
-          <li> <p><code>standalone</code>: <em>TODO</em>: Returns <code>true</code> or <code>false</code>.</p> </li> 
+          <li> <p><code>standalone</code>: Returns <code>true</code> or <code>false</code>.</p> </li> 
           <li> <p><code>workDir</code>: Working directory for the Mule app. For Studio, this is an Eclipse plugin directory.</p> </li> 
          </ul> 
         </div> </li> 
@@ -1350,20 +1354,19 @@
   </tr> 
   <tr> 
    <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>authentication</code></strong></p></td> 
-   <td class="tableblock halign-left valign-top"><p class="tableblock">Either authentication <em>TODO</em> or <code>null</code>.</p></td> 
+   <td class="tableblock halign-left valign-top"></td> 
    <td class="tableblock halign-left valign-top"> 
     <div> 
      <div class="ulist"> 
       <ul> 
        <li> <p>Fields: No fields.</p> </li> 
-       <li> <p>Example: <code><em>TODO</em></code></p> </li> 
       </ul> 
      </div> 
     </div></td> 
   </tr> 
   <tr> 
    <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>correlationId</code></strong></p></td> 
-   <td class="tableblock halign-left valign-top"><p class="tableblock"><em>TODO</em></p></td> 
+   <td class="tableblock halign-left valign-top"></td> 
    <td class="tableblock halign-left valign-top"> 
     <div> 
      <div class="ulist"> 
@@ -1391,14 +1394,7 @@
    <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>error</code></strong></p></td> 
    <td class="tableblock halign-left valign-top"><p class="tableblock">Error associated with a Mule message object.</p></td> 
    <td class="tableblock halign-left valign-top"> 
-    <div> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Fields: <em>TODO</em></p> </li> 
-       <li> <p>Example: <code><em>TODO</em></code></p> </li> 
-      </ul> 
-     </div> 
-    </div></td> 
+    <div></div></td> 
   </tr> 
   <tr> 
    <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>flow</code></strong></p></td> 
@@ -1448,7 +1444,7 @@
        <li> <p>Fields:</p> 
         <div class="ulist"> 
          <ul> 
-          <li> <p><code>clusterId</code>: Cluster ID. <em>TODO: what cluster?</em></p> </li> 
+          <li> <p><code>clusterId</code>: Cluster ID.</p> </li> 
           <li> <p><code>home</code>: Home directory.</p> </li> 
           <li> <p><code>nodeId</code>: Cluster Node ID.</p> </li> 
           <li> <p><code>version</code>: Mule version.</p> </li> 
