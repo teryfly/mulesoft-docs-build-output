@@ -1427,19 +1427,35 @@
      <div class="ulist"> 
       <ul> 
        <li> <p>Connector Icon (SVG format): <code>connector_root_project/icon/icon.svg</code></p> </li> 
-       <li> <p>Add the following docs (<code>user-manual.adoc</code> and <code>release-notes.adoc</code>) to the <code>doc</code> folder.</p> </li> 
+       <li> <p>Add the following docs (<a href="https://drive.google.com/file/d/1jB4uDCjOFhPtEttmnTxYERktdzd0AwSF/view">user-manual.adoc</a> and <a href="https://drive.google.com/file/d/1ZzJGJAN8pIOx_mI9d2xKTAXt-tubcwSS/view?usp=sharing">release-notes.adoc</a>) to the <code>doc</code> folder.</p> </li> 
       </ul> 
      </div> </li> 
     <li> <p>Add <code>License.md</code> if it is not in the root folder already:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre>About MuleSoft Certified Connectors
+       <pre class="CodeRay highlight"><code data-lang="license">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+            <td class="code"><pre>About MuleSoft Certified Connectors
 
 MuleSoft Certified Connectors are developed by MuleSoft’s partners and developer community. These connectors have been reviewed and certified by MuleSoft. To purchase the [Connector Name] Connector or to receive assistance or support for it, contact [Partner Name] directly at [Contact Information]. MuleSoft disclaims any support obligation for MuleSoft Certified Connectors.
 
 By installing this connector, you consent to MuleSoft sharing your contact information with the developer of this connector so that you can receive more information about it directly from the developer.
 
-Your license terms</pre> 
+Your license terms</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
       </div> 
      </div> 
      <div class="paragraph"> 
@@ -1562,32 +1578,30 @@ Your license terms</pre>
   <div class="ulist"> 
    <ul> 
     <li> <p>Custom license code will not be enforced in Runtime Manager. MuleSoft recommends that you use the license validation supported natively by Mule 4 SDK. You can find more information in <a href="license">Module Licensing</a>.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * In your <code>xxxExtension.java</code>, add the following annotations to use the license validation from Mule 4 SDK. This example uses SAP Hybris Connector built by Admios:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ .Example: MuleSoft Certified Connectors (Additional Fee)</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="config">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+    <li> <p>In your <code>xxxExtension.java</code>, add the following annotations to use the license validation from Mule 4 SDK. This example uses SAP Hybris Connector built by Admios:</p> 
+     <div class="listingblock"> 
+      <div class="title">
+        Example: MuleSoft Certified Connectors (Additional Fee) 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="config">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-         <td class="code"><pre>@Extension(name = “SAP Hybris”, category = CERTIFIED, provider = “Admios")
+            <td class="code"><pre>@Extension(name = “SAP Hybris”, category = CERTIFIED, provider = “Admios")
 @RequiresEnterpriseLicense
 @RequiresEntitlement(name = “sap-hybris-connector")</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
@@ -1649,7 +1663,7 @@ Your license terms</pre>
      </div> </li> 
     <li> <p>Create a Mule project in Studio 7, and open <code>pom.xml</code> for this project in Studio 7.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/pom_file" alt="pom.xml file example"></span></p> 
+      <p><span class="image"><img src="./_images/pom_file.png" alt="pom.xml file example"></span></p> 
      </div> </li> 
     <li> <p>Add a dependency setting (<code>&lt;dependency/&gt;</code>) for your connector to the <code>pom.xml</code>.</p> 
      <div class="paragraph"> 
