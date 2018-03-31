@@ -1562,16 +1562,32 @@ Your license terms</pre>
   <div class="ulist"> 
    <ul> 
     <li> <p>Custom license code will not be enforced in Runtime Manager. MuleSoft recommends that you use the license validation supported natively by Mule 4 SDK. You can find more information in <a href="license">Module Licensing</a>.</p> </li> 
-    <li> <p>In your <code>xxxExtension.java</code>, add the following annotations to use the license validation from Mule 4 SDK. This example uses SAP Hybris Connector built by Admios:</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre>MuleSoft Certified Connectors (Additional Fee)
-@Extension(name = “SAP Hybris”, category = CERTIFIED, provider = “Admios")
-@RequiresEnterpriseLicense
-@RequiresEntitlement(name = “sap-hybris-connector")</pre> 
-      </div> 
-     </div> </li> 
    </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ * In your <code>xxxExtension.java</code>, add the following annotations to use the license validation from Mule 4 SDK. This example uses SAP Hybris Connector built by Admios:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ .Example: MuleSoft Certified Connectors (Additional Fee)</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="config">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre>@Extension(name = “SAP Hybris”, category = CERTIFIED, provider = “Admios")
+@RequiresEnterpriseLicense
+@RequiresEntitlement(name = “sap-hybris-connector")</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1632,10 +1648,8 @@ Your license terms</pre>
       </div> 
      </div> </li> 
     <li> <p>Create a Mule project in Studio 7, and open <code>pom.xml</code> for this project in Studio 7.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/pom_file" alt="pom.xml file example"> 
-      </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/pom_file" alt="pom.xml file example"></span></p> 
      </div> </li> 
     <li> <p>Add a dependency setting (<code>&lt;dependency/&gt;</code>) for your connector to the <code>pom.xml</code>.</p> 
      <div class="paragraph"> 
