@@ -1363,7 +1363,7 @@
            <div class="paragraph"> 
             <p>Note that <code>4.0.0-SNAPSHOT</code> is the SNAPSHOT version of the migrator. See the <a href="#question_1">FAQ</a> for details.</p> 
            </div> </li> 
-          <li> <p>Use the <code>mvn clean</code> package command.</p> 
+          <li> <p>Use the <code>mvn clean package -Dmaven.test.skip</code> command.</p> 
            <div class="paragraph"> 
             <p>The generated Mule 4 extension appears in the target folder.</p> 
            </div> </li> 
@@ -1488,7 +1488,7 @@ Your license terms</pre></td>
      <div class="listingblock"> 
       <div class="content"> 
        <pre>&lt;groupId&gt;org.mule.tools.devkit&lt;/groupId&gt;
-&lt;artifactId&gt;mule-devkit&lt;/artifactId&gt;
+&lt;artifactId&gt;mule-devkit-parent&lt;/artifactId&gt;
 &lt;version&gt;4.0.0-SNAPSHOT&lt;/version&gt;</pre> 
       </div> 
      </div> </li> 

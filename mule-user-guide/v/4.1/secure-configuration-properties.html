@@ -22,7 +22,7 @@
   <script src="/js/scripts.js?t=1522165653"></script>
 
   <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/4.1/secure-configuration-properties" />
-  <meta name="description" content="Secure properties can encrypt properties and store the encrypted text in secure properties files. You can configure secure properties file through ..." />
+  <meta name="description" content="Secure properties can encrypt properties and store the encrypted text in secure properties files. ==Adding the Secure Configuration Properties Modu..." />
   <meta class="swiftype" name="title" data-type="string" content="Secure Configuration Properties" />
   <meta class="swiftype" name="version" data-type="enum" content="4.1" />
 </head>
@@ -1319,6 +1319,9 @@
    <p>Secure properties can encrypt properties and store the encrypted text in secure properties files.</p> 
   </div> 
   <div class="paragraph"> 
+   <p>==Adding the Secure Configuration Properties Module The Secure Configuration Properties module ships with Studio 7.</p> 
+  </div> 
+  <div class="paragraph"> 
    <p>You can configure secure properties file through the Secure Configuration Properties module (<code>&lt;secure-properties:config&gt;</code>), for example:</p> 
   </div> 
   <div class="listingblock"> 
@@ -1405,7 +1408,7 @@
     <tbody> 
      <tr> 
       <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>This uses <code>AES</code> algorithm with <code>CBC</code> mode.</td> 
+      <td>This uses the <code>AES</code> algorithm with <code>CBC</code> mode.</td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1433,7 +1436,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Key</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The word or phrase to unlock the properties value according to the system property that you define in this field. For example, <code>${production.myproperty}</code> instructs Mule to demand the key at runtime.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The word or phrase to unlock the properties value according to the system property that you define in this field. For example, <code>${production.myproperty}</code> instructs the Mule runtime to demand the key at runtime.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">File</p></td> 
@@ -1459,7 +1462,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Mode</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The procedure that allows Mule to repeatedly use a block cipher with a single key. See <a href="#supported_modes">Supported Modes</a> for a full list.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The procedure that allows the Mule runtime to repeatedly use a block cipher with a single key. See <a href="#supported_modes">Supported Modes</a> for a full list.</p></td> 
     </tr> 
    </tbody> 
   </table> 
@@ -1469,7 +1472,7 @@
  <h2 id="supported_files"><a class="anchor" href="#supported_files"></a>Supported Files</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Secure Configuration Properties module supports both YAML configuration files and properties files, as shown in the examples above. The recommended approach is to use YAML configuration files, because it allows the addition of type validations and autocompletion.</p> 
+   <p>The Secure Configuration Properties module supports both YAML configuration files and Spring-formatted properties files, as shown in the examples above. The recommended approach is to use a YAML configuration files, because it allows the addition of type validations and autocompletion.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="configuration-files-content"><a class="anchor" href="#configuration-files-content"></a>Configuration Files content</h3> 
@@ -1562,63 +1565,12 @@ testPropertyB=testValueB</pre>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>Notice that you still have to use the <code>secure::</code> prefix to access values inside a secure properties file, even if the values are non-encrypted. This behavior allows you to switch between files (or environments) without changing the entire configuration.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Here is a complete Mule app that includes the XSD schema and namespace for the Secure Configuration Properties Configuration module (<code>secure-properties:config</code>):</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-     Complete Example 
-   </div> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
-      <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-      <span class="attribute-name">xmlns:secure-properties</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/secure-properties</span><span class="delimiter">"</span></span>
-      <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-        <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-        <span class="content">http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-
-    <span class="tag">&lt;secure-properties:config</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">${runtime.property}</span><span class="delimiter">"</span></span> <span class="attribute-name">file</span>=<span class="string"><span class="delimiter">"</span><span class="content">file1.properties</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">test</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;secure-properties:encrypt</span> <span class="attribute-name">algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">AES</span><span class="delimiter">"</span></span> <span class="attribute-name">mode</span>=<span class="string"><span class="delimiter">"</span><span class="content">CBC</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/secure-properties:config&gt;</span>
-
-    <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">mainNonEncrypted</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${secure::testPropertyA}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/flow&gt;</span>
-
-<span class="tag">&lt;/mule&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+   <p>Notice that you have to use the <code>secure::</code> prefix to access all values inside a secure properties file, even if the values are non-encrypted. This behavior allows you to switch between files (or environments) without changing the entire configuration.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="working-with-more-than-one-configuration-file"><a class="anchor" href="#working-with-more-than-one-configuration-file"></a>Working with More than One Configuration File</h3> 
    <div class="paragraph"> 
-    <p>You can define more than one configuration file to read properties from. To do so, simply define a <code>&lt;secure-properties:config /&gt;</code> tag for each file you want to load. They do not need to have the same algorithm, mode, or key to be decrypted.</p> 
+    <p>You can define more than one secure configuration properties file to read properties from. To do so, simply define a <code>&lt;secure-properties:config /&gt;</code> tag for each file you want to load. Each secure configuration properties file is independently configured with an encryption algorithm, cipher mode, and encryption/decryption key. None of these settings needs to be the same between secure configuration properties files.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="title">
