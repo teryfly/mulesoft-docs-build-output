@@ -1414,7 +1414,19 @@
    <p>In Mule 4, federation policies such as, OpenId Connect access token enforcement, as well as others that behave similarly set <code>X-AGW-</code> HTTP headers only for outgoing HTTP requests. This means that other API policies applied after the federation policy do not receive these headers, so that these later policies cannot make use of, for example, the <code>x-agw-uid</code> or <code>x-agw-username</code> extracted from and supplied by the federation policy.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Nevertheless, you can still retrieve user information from DataWeave using <code>#[authentication]</code> for the user name. To retrieve the UID, use <code>#[authentication.properties.userProperties.username]</code>.</p> 
+   <p>Nevertheless, you can still retrieve user information from DataWeave.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To retrieve the user name, use:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>#[authentication]</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To retrieve the UID, use:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><code>#[authentication.properties.userProperties.username]</code></p> 
   </div> 
  </div> 
 </div> 
