@@ -1427,142 +1427,27 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Update the server where the API or API proxy is running.</p> </li> 
+    <li> <p>Update the server where the API or API proxy is running. (Optional)</p> </li> 
     <li> <p>Classify the API into the suggested environment.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>The sections that follow help you classify your APIs depending on how you deployed proxies before migration.</p> 
+   <p>Step 1 is marked as optional, it’s only needed if you would like to use environment credentials for API tracking. You can still continue to use orgnanization credentials that doesn’t require any changes on Mule runtime configuration.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="api-managed-by-proxy-deployed-through-api-manager"><a class="anchor" href="#api-managed-by-proxy-deployed-through-api-manager"></a>API Managed by Proxy Deployed Through API Manager</h3> 
-   <div class="paragraph"> 
-    <p>If your API was deployed in Runtime Manager:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>From API Manager, click an API.</p> </li> 
-     <li> <p>Click Configure Endpoint &gt; Redeploy Proxy.</p> </li> 
-     <li> <p>Specify a runtime version.</p> </li> 
-     <li> <p>Click Redeploy Proxy.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If your API was deployed in an on-premises standalone runtime:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>From API Manager, click an API.</p> </li> 
-     <li> <p>Click Configure Endpoint &gt; Redeploy Proxy.</p> </li> 
-     <li> <p>Specify a runtime version for Mule Agent 1.9 and later.</p> </li> 
-     <li> <p>Click Redeploy Proxy.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To update an existing server:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Use SSH to access the standalone runtime server.</p> </li> 
-     <li> <p>Download the Runtime Agent 1.9 or later.</p> </li> 
-     <li> <p>Update the Gateway runtime agent.</p> </li> 
-     <li> <p>Restart the Gateway.</p> </li> 
-    </ol> 
-   </div> 
+  <div class="paragraph"> 
+   <p>Even though API Manager supports tracking APIs with both organization and environment credentials, MuleSoft recommends using environment credentials as the permissions associated to them are more restrictive. But, you need to restart Mule Runtime after changing credentials which can cause downtime.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="managed-by-basic-endpoint-or-proxy-deployed-through-runtime-manager"><a class="anchor" href="#managed-by-basic-endpoint-or-proxy-deployed-through-runtime-manager"></a>Managed By Basic Endpoint Or Proxy Deployed Through Runtime Manager</h3> 
-   <div class="paragraph"> 
-    <p>If your API was deployed in Runtime Manager:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Go to Access Manager.</p> </li> 
-     <li> <p>Click Environments.</p> </li> 
-     <li> <p>Click the environment name you want to use.</p> </li> 
-     <li> <p>Copy the Client ID and Client Secret.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To update an application in Runtime Manager:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
-     <li> <p>Click Settings.</p> </li> 
-     <li> <p>Click Properties.</p> </li> 
-     <li> <p>Change the values of the following properties to the values from the Environment:</p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p>Anypoint.platform.client_id</p> </li> 
-        <li> <p>Anypoint.platform.client_secret</p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p>Click Apply changes.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To update an application deployed in standalone Mule Runtime:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Use SSH to access the standalone runtime server where the application is deployed.</p> </li> 
-     <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
-     <li> <p>Update the Runtime Agent.</p> </li> 
-     <li> <p>Restart the Mule Runtime.</p> </li> 
-    </ol> 
-   </div> 
+  <div class="paragraph"> 
+   <p>Using credentials from one environment does not allow:</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="other-deployments"><a class="anchor" href="#other-deployments"></a>Other Deployments</h3> 
-   <div class="paragraph"> 
-    <p>This section explains the manual steps needed to prepare Mule Runtime to use API environments without updating the agent or registering the server with Runtime Manager.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Getting the environment client ID and secret:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Go to Access Manager.</p> </li> 
-     <li> <p>Click Environments.</p> </li> 
-     <li> <p>Click the environment name that you want to use.</p> </li> 
-     <li> <p>Copy the Client ID and Client Secret.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Updating an application in Runtime Manager:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
-     <li> <p>Click Settings.</p> </li> 
-     <li> <p>Click Properties.</p> </li> 
-     <li> <p>Change the values of the following properties to the values from the environment:</p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p>anypoint.platform.client_id</p> </li> 
-        <li> <p>anypoint.platform.client_secret</p> </li> 
-       </ul> 
-      </div> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Updating standalone runtimes:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Use SSH to access the runtime server that you want to update.</p> </li> 
-     <li> <p>Edit the <code>&lt;mule_home&gt;/&lt;conf&gt;/wrapper.conf</code> file.</p> </li> 
-     <li> <p>Change the values of the following properties to the values from the environment:</p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p>anypoint.platform.client_id</p> </li> 
-        <li> <p>anypoint.platform.client_secret</p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p>Restart Mule Runtime.</p> </li> 
-    </ol> 
-   </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Tracking APIs from different environment</p> </li> 
+    <li> <p>Tracking APIs from different organizations</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For more information see <a href="/api-manager/v/2.x/classify-api-task">this documentation on classfication of APIs</a>.</p> 
   </div> 
  </div> 
 </div> 
