@@ -1318,10 +1318,8 @@
   <div class="paragraph"> 
    <p>This following diagram shows how the OAuth 2 policy works with an existing OpenAM or PingFederate authorization server, or OpenID Connect Token Introspection endpoint, to protect access to your API version.</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/oauth-implementation-federated.png" alt="oauth implementation federated"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/oauth-implementation-federated.png" alt="oauth implementation federated"></span></p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1356,7 +1354,7 @@
      </div> </li> 
     <li> <p>403 Forbidden</p> 
      <div class="paragraph"> 
-      <p>This error could be the result of the validation to the OAuth Provider, the scopes validation, or the result of Client Id Enforcement Policy.</p> 
+      <p>This error could be the result of the validation to the OAuth Provider, the scopes validation, or the result of Client ID Enforcement Policy.</p> 
      </div> </li> 
    </ul> 
   </div> 
@@ -1368,58 +1366,55 @@
   <div class="paragraph"> 
    <p>The following diagram represents a successfully validated token for OpenId, PingFederate, and OAuth 2.0 Access Token Enforcement Using External Provider policies:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/oauth-implementation-diagram2.png" alt="oauth implementation diagram2"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/oauth-implementation-diagram2.png" alt="oauth implementation diagram2"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents a successfully validated for OpenAM policy:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/successful-validated-openam.png" alt="successful validated openam"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/successful-validated-openam.png" alt="successful validated openam"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents an Unauthorized Token error:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/unauthorized-token.png" alt="unauthorized token"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/unauthorized-token.png" alt="unauthorized token"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents a Forbidden Error from OAuth Provider error:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/forbidden-error.png" alt="forbidden error"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/forbidden-error.png" alt="forbidden error"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents Invalid Scopes error:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/invalid-scopes.png" alt="invalid scopes"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/invalid-scopes.png" alt="invalid scopes"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents a Client Id Enforcement Validation Failed (Not valid for OpenAM Policy) error:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/oauth-implementation-diagram3.png" alt="oauth implementation diagram3"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/oauth-implementation-diagram3.png" alt="oauth implementation diagram3"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram represents a Bad Request error:</p> 
   </div> 
-  <div class="imageblock"> 
-   <div class="content"> 
-    <img src="./_images/bad-request.png" alt="bad request"> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/bad-request.png" alt="bad request"></span></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="mule-4-http-headers"><a class="anchor" href="#mule-4-http-headers"></a>Mule 4 HTTP Headers</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In Mule 4, federation policies such as, OpenId Connect access token enforcement, as well as others that behave similarly set <code>X-AGW-</code> HTTP headers only for outgoing HTTP requests. This means that other API policies applied after the federation policy do not receive these headers, so that these later policies cannot make use of, for example, the <code>x-agw-uid</code> or <code>x-agw-username</code> extracted from and supplied by the federation policy.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Nevertheless, you can still retrieve user information from DataWeave using <code>#[authentication]</code> for the user name. To retrieve the UID, use <code>#[authentication.properties.userProperties.username]</code>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1439,7 +1434,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#mule-4-implementation-scenarios">Mule 4 Implementation Scenarios</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#mule-4-implementation-scenarios">Mule 4 Implementation Scenarios</a></li><li><a class="scroll-menu-link" href="#mule-4-http-headers">Mule 4 HTTP Headers</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
