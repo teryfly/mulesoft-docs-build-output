@@ -1437,7 +1437,7 @@ fun toUser(obj) = {
   lastName: obj.field2
 }
 type Currency = String { format: “##“}
-ns msg http://www.mulesoft.com/anypoint/SOA/message/v1.0
+ns ns0 http://www.abc.com
 output application/xml
 ---
 /*
@@ -1516,8 +1516,43 @@ output application/json
       <p>For a more complete example, see <a href="dataweave-types-coercion">About Type Coercion with DataWeave</a>.</p> 
      </div> </li> 
     <li> <p><code>ns</code>: Namespaces, used to import a namespace.</p> 
-     <div class="paragraph"> 
-      <p>Example: <code>ns msg http://www.mulesoft.com/anypoint/SOA/message/v1.0</code></p> 
+     <div class="listingblock"> 
+      <div class="title">
+        Example 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="DataWeave">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> 
+            <td class="code"><pre>%dw 2.0
+output application/xml
+
+ns ns0 http://www.abc.com
+ns ns1 http://www.123.com
+---
+{
+    ns0#myroot: {
+         ns1#secondroot: "hello world"
+    }
+}</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> </li> 
     <li> <p><code>fun</code>: For creating custom functions that can be called from within the body of the script.</p> 
      <div class="listingblock"> 
