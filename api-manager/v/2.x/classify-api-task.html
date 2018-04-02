@@ -1333,35 +1333,35 @@
   <div class="paragraph"> 
    <p>If you need to track APIs in either of these ways, use organization credentials.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>If you need to track APIs using environment credentials review the advanced section.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Classifying an API:</p> 
+  </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>In API Manager, click the environment control, labeled SANDBOX, in this example:</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/environment.png" alt="environment"> 
-      </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/environment.png" alt="environment"></span></p> 
      </div> 
      <div class="paragraph"> 
-      <p>If you do not see a suitable environment for classification of the API, create one in Access Management.</p> 
+      <p>If you do not see a suitable environment for classification of the API, create the environment in Access Management.</p> 
      </div> </li> 
     <li> <p>In Switch Environment, select Unclassified.</p> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/switch-environment.png" alt="switch environment"> 
-      </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/switch-environment.png" alt="switch environment"></span></p> 
      </div> </li> 
     <li> <p>Click Switch.</p> 
      <div class="paragraph"> 
       <p>A list of unclassified APIs appears.</p> 
      </div> 
-     <div class="imageblock"> 
-      <div class="content"> 
-       <img src="./_images/classify.png" alt="classify"> 
-      </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/classify.png" alt="classify"></span></p> 
      </div> </li> 
     <li> <p>Click Classify.</p> </li> 
     <li> <p>In Target Environment, select the environment for the API from the list of environments available to you. For example, select Test.</p> </li> 
-    <li> <p>In Instance Label, optionally type a unique instance name. For example, type abc-api-1</p> 
+    <li> <p>In Instance Label, optionally type a unique instance name. For example, type <code>abc-api-1</code>.</p> 
      <div class="paragraph"> 
       <p>In environments, APIs can have more than a single instance. Therefore, an instance name is required to uniquely identify it.</p> 
      </div> 
@@ -1372,8 +1372,297 @@
      </div> </li> 
    </ol> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="two-step-classification"><a class="anchor" href="#two-step-classification"></a>Two-Step Classification</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A classification suggestion appears in the API list. Click the suggestion and follow the instructions.</p> 
+   <p>The classification process involves the following steps when the API is running:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Updating the server where the API or API proxy is running.</p> </li> 
+    <li> <p>Classifying the API into the suggested environment.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-update-the-server"><a class="anchor" href="#to-update-the-server"></a>To Update the Server</h3> 
+   <div class="paragraph"> 
+    <p>The procedure to update the server depends on how you deployed the API. Follow instructions below for your deployment type.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="managed-by-proxy-deployed-through-api-manager"><a class="anchor" href="#managed-by-proxy-deployed-through-api-manager"></a>Managed by Proxy Deployed Through API Manager</h4> 
+    <div class="paragraph"> 
+     <p>Deployed in CloudHub:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>In API Manager, click the API to classify.</p> </li> 
+      <li> <p>In Configure Endpoint, click Redeploy Proxy.</p> </li> 
+      <li> <p>Choose a Runtime version.</p> </li> 
+      <li> <p>Click Redeploy Proxy.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Deployed in a Standalone Runtime:</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>To deploy a new server with Runtime Agent 1.9.x or later:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>In API Manager, click the API to classify.</p> </li> 
+      <li> <p>In Configure Endpoint, click Deploy Proxy.</p> </li> 
+      <li> <p>Select the Runtime with Runtime Agent 1.9.x or later.</p> </li> 
+      <li> <p>Click Redeploy Proxy.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>To update an existing server:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>SSH into the standalone Runtime server.</p> </li> 
+      <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
+      <li> <p>Update the gateway Runtime agent.</p> </li> 
+      <li> <p>Restart gateway.</p> </li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="managed-by-a-basic-endpoint-or-proxy-deployed-through-runtime-manager"><a class="anchor" href="#managed-by-a-basic-endpoint-or-proxy-deployed-through-runtime-manager"></a>Managed by a Basic Endpoint or Proxy Deployed Through Runtime Manager</h4> 
+    <div class="paragraph"> 
+     <p>Anypoint Platform assigns the unique and immutable Organization ID and Environment IDs at organization and environment creation times.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Deployed in CloudHub:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Get the environment client ID and secret.</p> </li> 
+      <li> <p>Go to Access Manager.</p> </li> 
+      <li> <p>Click Environments.</p> </li> 
+      <li> <p>Click the environment name that you want to use.</p> </li> 
+      <li> <p>Copy the Client ID and Client Secret.</p> </li> 
+      <li> <p>Update the application in CloudHub:</p> </li> 
+      <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
+      <li> <p>Click Settings &gt; Properties.</p> </li> 
+      <li> <p>Change the values of the following properties to the values from the Environment:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Anypoint.platform.client_id</p> </li> 
+         <li> <p>Anypoint.platform.client_secret</p> </li> 
+         <li> <p>Click Apply changes.</p> </li> 
+        </ul> 
+       </div> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Deployed in standalone Mule Runtime:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>SSH into the standalone Runtime server where the application is deployed.</p> </li> 
+      <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
+      <li> <p>Update Runtime Agent.</p> </li> 
+      <li> <p>Restart Mule Runtime.</p> </li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="other-deployments"><a class="anchor" href="#other-deployments"></a>Other Deployments</h4> 
+    <div class="paragraph"> 
+     <p>Perform these steps to prepare Mule Runtime to use API environments without updating the agent or registering the server with Runtime Manager.</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Get the environment client ID and secret.</p> </li> 
+      <li> <p>Go to Access Manager.</p> </li> 
+      <li> <p>Click Environments.</p> </li> 
+      <li> <p>Click the environment name that you want to use.</p> </li> 
+      <li> <p>Copy the Client ID and Client Secret.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Updating an application in CloudHub:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
+      <li> <p>Click Settings &gt; Properties.</p> </li> 
+      <li> <p>Change the values of the following properties to the values from the Environment:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>anypoint.platform.client_id</p> </li> 
+         <li> <p>anypoint.platform.client_secret</p> </li> 
+        </ul> 
+       </div> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Updating standalone Runtimes:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>SSH into the Runtime server that you want to update.</p> </li> 
+      <li> <p>Edit the &lt;mule_home&gt;/&lt;conf&gt;/wrapper.conf file.</p> </li> 
+      <li> <p>Change the values of the following properties to the values from the Environment:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>anypoint.platform.client_id</p> </li> 
+         <li> <p>anypoint.platform.client_secret</p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p>Restart Mule Runtime.</p> </li> 
+     </ol> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="to-complete-api-classification"><a class="anchor" href="#to-complete-api-classification"></a>To Complete API Classification</h3> 
+   <div class="paragraph"> 
+    <p>After updating the server, when the application is up and running again,</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="advanced-classification-to-configure-mule-servers-with-environment-credentials-optional"><a class="anchor" href="#advanced-classification-to-configure-mule-servers-with-environment-credentials-optional"></a>Advanced Classification to Configure Mule Servers with Environment Credentials (Optional)</h3> 
+   <div class="paragraph"> 
+    <p>You can use this configuration to track APIs that use environment credentials. This configuration requires a server restart.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The sections that follow help you classify your APIs depending on how you deployed proxies before migration.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="api-managed-by-proxy-deployed-through-api-manager"><a class="anchor" href="#api-managed-by-proxy-deployed-through-api-manager"></a>API Managed by Proxy Deployed Through API Manager</h3> 
+   <div class="paragraph"> 
+    <p>If your API was deployed in Runtime Manager:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From API Manager, click an API.</p> </li> 
+     <li> <p>Click Configure Endpoint &gt; Redeploy Proxy.</p> </li> 
+     <li> <p>Specify a runtime version.</p> </li> 
+     <li> <p>Click Redeploy Proxy.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If your API was deployed in an on-premises standalone runtime:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From API Manager, click an API.</p> </li> 
+     <li> <p>Click Configure Endpoint &gt; Redeploy Proxy.</p> </li> 
+     <li> <p>Specify a runtime version for Mule Agent 1.9 and later.</p> </li> 
+     <li> <p>Click Redeploy Proxy.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To update an existing server:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Use SSH to access the standalone runtime server.</p> </li> 
+     <li> <p>Download the Runtime Agent 1.9 or later.</p> </li> 
+     <li> <p>Update the Gateway runtime agent.</p> </li> 
+     <li> <p>Restart the Gateway.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="managed-by-basic-endpoint-or-proxy-deployed-through-runtime-manager"><a class="anchor" href="#managed-by-basic-endpoint-or-proxy-deployed-through-runtime-manager"></a>Managed By Basic Endpoint Or Proxy Deployed Through Runtime Manager</h3> 
+   <div class="paragraph"> 
+    <p>If your API was deployed in Runtime Manager:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Go to Access Manager.</p> </li> 
+     <li> <p>Click Environments.</p> </li> 
+     <li> <p>Click the environment name you want to use.</p> </li> 
+     <li> <p>Copy the Client ID and Client Secret.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To update an application in Runtime Manager:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
+     <li> <p>Click Settings.</p> </li> 
+     <li> <p>Click Properties.</p> </li> 
+     <li> <p>Change the values of the following properties to the values from the Environment:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Anypoint.platform.client_id</p> </li> 
+        <li> <p>Anypoint.platform.client_secret</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Click Apply changes.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To update an application deployed in standalone Mule Runtime:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Use SSH to access the standalone runtime server where the application is deployed.</p> </li> 
+     <li> <p>Download Runtime Agent 1.9.x.</p> </li> 
+     <li> <p>Update the Runtime Agent.</p> </li> 
+     <li> <p>Restart the Mule Runtime.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="other-deployments-2"><a class="anchor" href="#other-deployments-2"></a>Other Deployments</h3> 
+   <div class="paragraph"> 
+    <p>This section explains the manual steps needed to prepare Mule Runtime to use API environments without updating the agent or registering the server with Runtime Manager.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Getting the environment client ID and secret:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Go to Access Manager.</p> </li> 
+     <li> <p>Click Environments.</p> </li> 
+     <li> <p>Click the environment name that you want to use.</p> </li> 
+     <li> <p>Copy the Client ID and Client Secret.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Updating an application in Runtime Manager:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Go to the proxy application in Runtime Manager.</p> </li> 
+     <li> <p>Click Settings.</p> </li> 
+     <li> <p>Click Properties.</p> </li> 
+     <li> <p>Change the values of the following properties to the values from the environment:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>anypoint.platform.client_id</p> </li> 
+        <li> <p>anypoint.platform.client_secret</p> </li> 
+       </ul> 
+      </div> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Updating standalone runtimes:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Use SSH to access the runtime server that you want to update.</p> </li> 
+     <li> <p>Edit the <code>&lt;mule_home&gt;/&lt;conf&gt;/wrapper.conf</code> file.</p> </li> 
+     <li> <p>Change the values of the following properties to the values from the environment:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>anypoint.platform.client_id</p> </li> 
+        <li> <p>anypoint.platform.client_secret</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Restart Mule Runtime.</p> </li> 
+    </ol> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1391,7 +1680,7 @@
     <!-- END article-content -->
     <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#two-step-classification">Two-Step Classification</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
   </div>
 </div>
 <!-- START footer -->
